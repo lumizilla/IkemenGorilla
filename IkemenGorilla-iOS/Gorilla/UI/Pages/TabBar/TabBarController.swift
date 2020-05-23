@@ -36,7 +36,7 @@ class TabBarController: UITabBarController {
     // MARK: - Setup Methods
     private func setupViewControllers() {
         viewControllers = [
-            UINavigationController(rootViewController: DevelopingViewController(type: "Home")),
+            UINavigationController(rootViewController: HomeViewController()),
             UINavigationController(rootViewController: DevelopingViewController(type: "Map")),
             DevelopingViewController(type: "Vote"),
             UINavigationController(rootViewController: DevelopingViewController(type: "Search")),
