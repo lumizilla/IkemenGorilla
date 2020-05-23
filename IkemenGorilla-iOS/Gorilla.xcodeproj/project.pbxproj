@@ -30,6 +30,7 @@
 		847B37CA2479A5DD00B48535 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B37C92479A5DD00B48535 /* UIColor+Extension.swift */; };
 		847B37CD2479A94A00B48535 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B37CC2479A94A00B48535 /* TabBarController.swift */; };
 		847B37CF2479AA9800B48535 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B37CE2479AA9800B48535 /* IconView.swift */; };
+		847B37D32479D1F500B48535 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B37D22479D1F500B48535 /* Entity.swift */; };
 		8AD80E3EDA0645450C645241 /* Pods_Gorilla_GorillaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F440E1262F9F90997A9A24 /* Pods_Gorilla_GorillaUITests.framework */; };
 		A29B9D43B1A804F6145A1073 /* Pods_GorillaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B68804A246C98CAE881B62C /* Pods_GorillaTests.framework */; };
 /* End PBXBuildFile section */
@@ -84,6 +85,7 @@
 		847B37C92479A5DD00B48535 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		847B37CC2479A94A00B48535 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		847B37CE2479AA9800B48535 /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
+		847B37D22479D1F500B48535 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		B34C68F74EC2D59ED3BA5ED9 /* Pods-Gorilla-GorillaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gorilla-GorillaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Gorilla-GorillaUITests/Pods-Gorilla-GorillaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BC5B729A7696F5FC17692DAA /* Pods-GorillaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GorillaTests.debug.xcconfig"; path = "Target Support Files/Pods-GorillaTests/Pods-GorillaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D88E3F92FF19F1C62D0B465D /* Pods_Gorilla.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gorilla.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +169,7 @@
 		847B3772247980E000B48535 /* Gorilla */ = {
 			isa = PBXGroup;
 			children = (
+				847B37D02479D1B800B48535 /* BusinessLogic */,
 				847B37C32479A27300B48535 /* Library */,
 				847B37B924799D2400B48535 /* Resources */,
 				847B37B2247992BF00B48535 /* Utilities */,
@@ -312,6 +315,22 @@
 				847B37CC2479A94A00B48535 /* TabBarController.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		847B37D02479D1B800B48535 /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+				847B37D12479D1CB00B48535 /* Entities */,
+			);
+			path = BusinessLogic;
+			sourceTree = "<group>";
+		};
+		847B37D12479D1CB00B48535 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				847B37D22479D1F500B48535 /* Entity.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -559,6 +578,7 @@
 			files = (
 				847B3774247980E000B48535 /* AppDelegate.swift in Sources */,
 				847B37AE24798E5C00B48535 /* DevelopingViewController.swift in Sources */,
+				847B37D32479D1F500B48535 /* Entity.swift in Sources */,
 				847B37B82479958C00B48535 /* GlobalFunctions.swift in Sources */,
 				847B37CF2479AA9800B48535 /* IconView.swift in Sources */,
 				847B37CA2479A5DD00B48535 /* UIColor+Extension.swift in Sources */,
