@@ -16,6 +16,7 @@
 		847B3780247980E100B48535 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847B377E247980E100B48535 /* LaunchScreen.storyboard */; };
 		847B378B247980E200B48535 /* GorillaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B378A247980E200B48535 /* GorillaTests.swift */; };
 		847B3796247980E200B48535 /* GorillaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3795247980E200B48535 /* GorillaUITests.swift */; };
+		847B37AE24798E5C00B48535 /* DevelopingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B37AD24798E5C00B48535 /* DevelopingViewController.swift */; };
 		8AD80E3EDA0645450C645241 /* Pods_Gorilla_GorillaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F440E1262F9F90997A9A24 /* Pods_Gorilla_GorillaUITests.framework */; };
 		A29B9D43B1A804F6145A1073 /* Pods_GorillaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B68804A246C98CAE881B62C /* Pods_GorillaTests.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,7 @@
 		847B3791247980E200B48535 /* GorillaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GorillaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		847B3795247980E200B48535 /* GorillaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GorillaUITests.swift; sourceTree = "<group>"; };
 		847B3797247980E200B48535 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		847B37AD24798E5C00B48535 /* DevelopingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopingViewController.swift; sourceTree = "<group>"; };
 		B34C68F74EC2D59ED3BA5ED9 /* Pods-Gorilla-GorillaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gorilla-GorillaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Gorilla-GorillaUITests/Pods-Gorilla-GorillaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BC5B729A7696F5FC17692DAA /* Pods-GorillaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GorillaTests.debug.xcconfig"; path = "Target Support Files/Pods-GorillaTests/Pods-GorillaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D88E3F92FF19F1C62D0B465D /* Pods_Gorilla.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gorilla.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +149,7 @@
 				847B377E247980E100B48535 /* LaunchScreen.storyboard */,
 				847B3781247980E100B48535 /* Info.plist */,
 				847B377B247980E100B48535 /* Preview Content */,
+				847B37AD24798E5C00B48535 /* DevelopingViewController.swift */,
 			);
 			path = Gorilla;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				847B3774247980E000B48535 /* AppDelegate.swift in Sources */,
+				847B37AE24798E5C00B48535 /* DevelopingViewController.swift in Sources */,
 				847B3776247980E000B48535 /* SceneDelegate.swift in Sources */,
 				847B3778247980E000B48535 /* ContentView.swift in Sources */,
 			);
