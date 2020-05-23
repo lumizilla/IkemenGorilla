@@ -1,0 +1,28 @@
+PODS:
+  - ReactorKit (2.0.1):
+    - RxSwift (~> 5.0)
+  - RxSwift (5.1.1)
+  - SnapKit (5.0.1)
+  - Then (2.6.0)
+
+DEPENDENCIES:
+  - ReactorKit
+  - SnapKit (~> 5.0.0)
+  - Then
+
+SPEC REPOS:
+  trunk:
+    - ReactorKit
+    - RxSwift
+    - SnapKit
+    - Then
+
+SPEC CHECKSUMS:
+  ReactorKit: a63c5e11e0fd32d59d672e54178b0ed2876b764b
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
+
+PODFILE CHECKSUM: ffcd5da511e5f46b2892aa1518db7f4c3fab56fe
+
+COCOAPODS: 1.8.4
