@@ -33,6 +33,7 @@
 		847B37D32479D1F500B48535 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B37D22479D1F500B48535 /* Entity.swift */; };
 		847B37D52479D27D00B48535 /* Contest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B37D42479D27D00B48535 /* Contest.swift */; };
 		847B37D72479D32A00B48535 /* Zoo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B37D62479D32A00B48535 /* Zoo.swift */; };
+		847B37DB2479D7FF00B48535 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B37DA2479D7FF00B48535 /* HomeViewController.swift */; };
 		8AD80E3EDA0645450C645241 /* Pods_Gorilla_GorillaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F440E1262F9F90997A9A24 /* Pods_Gorilla_GorillaUITests.framework */; };
 		A29B9D43B1A804F6145A1073 /* Pods_GorillaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B68804A246C98CAE881B62C /* Pods_GorillaTests.framework */; };
 /* End PBXBuildFile section */
@@ -90,6 +91,7 @@
 		847B37D22479D1F500B48535 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		847B37D42479D27D00B48535 /* Contest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contest.swift; sourceTree = "<group>"; };
 		847B37D62479D32A00B48535 /* Zoo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zoo.swift; sourceTree = "<group>"; };
+		847B37DA2479D7FF00B48535 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B34C68F74EC2D59ED3BA5ED9 /* Pods-Gorilla-GorillaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gorilla-GorillaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Gorilla-GorillaUITests/Pods-Gorilla-GorillaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BC5B729A7696F5FC17692DAA /* Pods-GorillaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GorillaTests.debug.xcconfig"; path = "Target Support Files/Pods-GorillaTests/Pods-GorillaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D88E3F92FF19F1C62D0B465D /* Pods_Gorilla.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gorilla.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -231,6 +233,7 @@
 		847B37A924798DC400B48535 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				847B37D82479D7C400B48535 /* HomeTab */,
 				847B37CB2479A93A00B48535 /* TabBar */,
 			);
 			path = Pages;
@@ -337,6 +340,22 @@
 				847B37D62479D32A00B48535 /* Zoo.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		847B37D82479D7C400B48535 /* HomeTab */ = {
+			isa = PBXGroup;
+			children = (
+				847B37D92479D7F100B48535 /* Home */,
+			);
+			path = HomeTab;
+			sourceTree = "<group>";
+		};
+		847B37D92479D7F100B48535 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				847B37DA2479D7FF00B48535 /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -585,6 +604,7 @@
 				847B3774247980E000B48535 /* AppDelegate.swift in Sources */,
 				847B37AE24798E5C00B48535 /* DevelopingViewController.swift in Sources */,
 				847B37D32479D1F500B48535 /* Entity.swift in Sources */,
+				847B37DB2479D7FF00B48535 /* HomeViewController.swift in Sources */,
 				847B37B82479958C00B48535 /* GlobalFunctions.swift in Sources */,
 				847B37CF2479AA9800B48535 /* IconView.swift in Sources */,
 				847B37D52479D27D00B48535 /* Contest.swift in Sources */,
