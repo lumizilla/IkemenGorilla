@@ -12,6 +12,7 @@ enum FontStyle: String {
     case black = "NotoSansCJKjp-Black"
     case bold = "NotoSansCJKjp-Bold"
     case regular = "NotoSansCJKjp-Regular"
+    case medium = "NotoSansCJKjp-Medium"
 }
 
 enum TextStyle: Int {
