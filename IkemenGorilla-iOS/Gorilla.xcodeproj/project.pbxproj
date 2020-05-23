@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -101,7 +101,6 @@
 				BC5B729A7696F5FC17692DAA /* Pods-GorillaTests.debug.xcconfig */,
 				2E1F2DD18530CF1CABC0384F /* Pods-GorillaTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -140,6 +139,7 @@
 		847B3772247980E000B48535 /* Gorilla */ = {
 			isa = PBXGroup;
 			children = (
+				847B37A824798DB100B48535 /* UI */,
 				847B3773247980E000B48535 /* AppDelegate.swift */,
 				847B3775247980E000B48535 /* SceneDelegate.swift */,
 				847B3777247980E000B48535 /* ContentView.swift */,
@@ -175,6 +175,45 @@
 				847B3797247980E200B48535 /* Info.plist */,
 			);
 			path = GorillaUITests;
+			sourceTree = "<group>";
+		};
+		847B37A824798DB100B48535 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				847B37AC24798DE600B48535 /* Atoms */,
+				847B37AB24798DDE00B48535 /* Molecules */,
+				847B37AA24798DD600B48535 /* Organisms */,
+				847B37A924798DC400B48535 /* Pages */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		847B37A924798DC400B48535 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		847B37AA24798DD600B48535 /* Organisms */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Organisms;
+			sourceTree = "<group>";
+		};
+		847B37AB24798DDE00B48535 /* Molecules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Molecules;
+			sourceTree = "<group>";
+		};
+		847B37AC24798DE600B48535 /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Atoms;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
