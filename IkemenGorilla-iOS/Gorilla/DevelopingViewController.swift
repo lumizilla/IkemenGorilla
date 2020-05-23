@@ -20,6 +20,8 @@ final class DevelopingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .white
+        
         view.addSubview(titleLabel)
         titleLabel.snp.makeConstraints {
             $0.center.equalToSuperview()
