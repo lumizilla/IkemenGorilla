@@ -44,6 +44,8 @@ final class HomeViewController: UIViewController, View, ViewConstructor {
         $0.reactor = reactor?.createHomePastContestListReactor()
     }
     
+    private let recommendedZooHeader = HomeRecommendedZooHeader()
+    
     // MARK: - Life Cycles
     
     override func viewDidLoad() {
@@ -64,6 +66,8 @@ final class HomeViewController: UIViewController, View, ViewConstructor {
         stackView.setCustomSpacing(36, after: currentContestListView)
         stackView.addArrangedSubview(pastContestHeader)
         stackView.addArrangedSubview(pastContestListView)
+        stackView.setCustomSpacing(36, after: pastContestListView)
+        stackView.addArrangedSubview(recommendedZooHeader)
     }
     
     func setupViewConstraints() {
