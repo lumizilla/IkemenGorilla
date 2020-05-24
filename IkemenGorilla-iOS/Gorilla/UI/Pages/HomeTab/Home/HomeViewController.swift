@@ -13,7 +13,7 @@ import RxSwift
 final class HomeViewController: UIViewController, View, ViewConstructor {
     
     struct Const {
-        static let scrollViewContentInset = UIEdgeInsets(top: 24, left: 0, bottom: 0, right: 0)
+        static let scrollViewContentInset = UIEdgeInsets(top: 24, left: 0, bottom: 36, right: 0)
     }
     
     // MARK: - Variables
@@ -46,6 +46,10 @@ final class HomeViewController: UIViewController, View, ViewConstructor {
     
     private let recommendedZooHeader = HomeRecommendedZooHeader()
     
+    private lazy var recommendedZooListView = HomeRecommendedZooListView().then {
+        $0.reactor = reactor?.createHomeRecommendedZooListReactor()
+    }
+    
     // MARK: - Life Cycles
     
     override func viewDidLoad() {
@@ -68,6 +72,7 @@ final class HomeViewController: UIViewController, View, ViewConstructor {
         stackView.addArrangedSubview(pastContestListView)
         stackView.setCustomSpacing(36, after: pastContestListView)
         stackView.addArrangedSubview(recommendedZooHeader)
+        stackView.addArrangedSubview(recommendedZooListView)
     }
     
     func setupViewConstraints() {
