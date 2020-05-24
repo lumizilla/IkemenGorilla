@@ -38,7 +38,7 @@ final class HomeCurrentContestListCell: UICollectionViewCell, View, ViewConstruc
     }
     
     private let formatter = DateFormatter().then {
-        $0.dateFormat = "yyyy-MM-dd"
+        $0.dateFormat = "MM-dd"
     }
     
     // MARK: - Initializers
@@ -100,11 +100,11 @@ final class HomeCurrentContestListCell: UICollectionViewCell, View, ViewConstruc
         // State
         reactor.state
             .map {
-                var dateString = ""
-                dateString += self.formatter.string(from: $0.contest.start)
-                dateString += " ~ "
-                dateString += self.formatter.string(from: $0.contest.end)
-                return dateString
+                var durationString = ""
+                durationString += self.formatter.string(from: $0.contest.start)
+                durationString += " ~ "
+                durationString += self.formatter.string(from: $0.contest.end)
+                return durationString
             }
             .distinctUntilChanged()
             .bind(to: durationLabel.rx.text)
