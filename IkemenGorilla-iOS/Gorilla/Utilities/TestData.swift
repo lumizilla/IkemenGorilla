@@ -10,6 +10,7 @@ import Foundation
 
 protocol TestDataType {
     static func testContest() -> Contest
+    static func testContests(count: Int) -> [Contest]
 }
 
 struct TestData: TestDataType {
@@ -25,6 +26,12 @@ struct TestData: TestDataType {
             imageUrl: "https://images.unsplash.com/photo-1581281863883-2469417a1668?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=989&q=80"
         )
     }
+    
+    static func testContests(count: Int) -> [Contest] {
+        return (0 ..< count).map { _ in testContest() }
+    }
+    
+    // MARK: - Private functions
     
     private static func randomString(length: Int) -> String {
 
