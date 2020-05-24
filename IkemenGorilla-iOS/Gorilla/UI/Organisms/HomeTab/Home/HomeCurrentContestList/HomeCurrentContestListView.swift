@@ -13,6 +13,7 @@ import RxSwift
 
 final class HomeCurrentContestListView: UICollectionView, View, ViewConstructor {
     private struct Const {
+        static let collectionViewContentInset: UIEdgeInsets = UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 24)
         static let minimumLineSpacing: CGFloat = 12
         static let cellWidth: CGFloat = DeviceSize.screenWidth - 48
         static let cellHeight: CGFloat = cellWidth * 304 / 327
@@ -25,6 +26,10 @@ final class HomeCurrentContestListView: UICollectionView, View, ViewConstructor 
     
     // MARK: - Variables
     var disposeBag = DisposeBag()
+    
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: DeviceSize.screenWidth, height: Const.cellHeight)
+    }
     
     // MARK: - Views
     private let flowLayout = UICollectionViewFlowLayout().then {
@@ -48,6 +53,8 @@ final class HomeCurrentContestListView: UICollectionView, View, ViewConstructor 
     
     // MARK: - Setup Methods
     func setupViews() {
+        backgroundColor = Color.white
+        contentInset = Const.collectionViewContentInset
         showsHorizontalScrollIndicator = false
         register(Reusable.contestListCell)
     }
