@@ -23,6 +23,7 @@ final class HomeViewController: UIViewController, View, ViewConstructor {
     
     private let scrollView = UIScrollView().then {
         $0.alwaysBounceVertical = true
+        $0.showsVerticalScrollIndicator = false
     }
     
     private let stackView = UIStackView().then {
