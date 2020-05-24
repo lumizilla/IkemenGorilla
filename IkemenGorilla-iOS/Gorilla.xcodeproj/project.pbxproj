@@ -403,6 +403,8 @@
 				847B37E42479E18C00B48535 /* HomeCurrentContestList */,
 				847B37F2247A572D00B48535 /* HomePastContestListCell */,
 				847B37F3247A575B00B48535 /* HomePastContestList */,
+				847B37FE247A679100B48535 /* HomeRecommendedZooListCell */,
+				847B37FF247A67B700B48535 /* HomeRecommendedZooList */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -443,6 +445,20 @@
 				847B37FA247A583B00B48535 /* HomePastContestListReactor.swift */,
 			);
 			path = HomePastContestList;
+			sourceTree = "<group>";
+		};
+		847B37FE247A679100B48535 /* HomeRecommendedZooListCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomeRecommendedZooListCell;
+			sourceTree = "<group>";
+		};
+		847B37FF247A67B700B48535 /* HomeRecommendedZooList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomeRecommendedZooList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
