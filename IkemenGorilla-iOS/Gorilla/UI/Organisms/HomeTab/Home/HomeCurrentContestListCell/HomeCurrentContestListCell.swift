@@ -24,20 +24,17 @@ final class HomeCurrentContestListCell: UICollectionViewCell, View, ViewConstruc
     private let contestNameLabel = UILabel().then {
         $0.apply(fontStyle: .medium, size: 21)
         $0.textColor = Color.textBlack
-        $0.text = "イケメンゴリラコンテスト"
     }
     
     private let catchCopyLabel = UILabel().then {
         $0.apply(fontStyle: .medium, size: 21)
         $0.textColor = Color.gray
-        $0.text = "ワシが一番イケメンやで"
     }
     
     private let imageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
         $0.layer.masksToBounds = true
         $0.layer.cornerRadius = 4
-        $0.backgroundColor = Color.lightGray
     }
     
     private let formatter = DateFormatter().then {
@@ -72,13 +69,15 @@ final class HomeCurrentContestListCell: UICollectionViewCell, View, ViewConstruc
         contestNameLabel.snp.makeConstraints {
             $0.top.equalToSuperview().inset(24)
             $0.right.left.equalToSuperview()
+            $0.height.equalTo(24)
         }
         catchCopyLabel.snp.makeConstraints {
-            $0.top.equalTo(contestNameLabel.snp.bottom).offset(4)
+            $0.top.equalTo(contestNameLabel.snp.bottom).offset(8)
             $0.left.right.equalToSuperview()
+            $0.height.equalTo(24)
         }
         imageView.snp.makeConstraints {
-            $0.top.equalTo(catchCopyLabel.snp.bottom).offset(4)
+            $0.top.equalTo(catchCopyLabel.snp.bottom).offset(8)
             $0.right.left.bottom.equalToSuperview()
         }
     }
