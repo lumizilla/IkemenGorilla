@@ -15,6 +15,10 @@ final class HomeCurrentContestHeader: UIView, ViewConstructor {
         $0.text = "開催中のコンテスト"
     }
     
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: DeviceSize.screenWidth, height: 64)
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setupViews()
@@ -31,7 +35,8 @@ final class HomeCurrentContestHeader: UIView, ViewConstructor {
     
     func setupViewConstraints() {
         label.snp.makeConstraints {
-            $0.top.left.equalToSuperview().inset(24)
+            $0.top.equalToSuperview()
+            $0.left.equalToSuperview().inset(24)
         }
     }
 }
