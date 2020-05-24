@@ -20,4 +20,8 @@ final class HomeReactor: Reactor {
     func createHomeCurrentContestListReactor() -> HomeCurrentContestListReactor {
         return HomeCurrentContestListReactor()
     }
+    
+    func createHomePastContestListReactor() -> HomePastContestListReactor {
+        return HomePastContestListReactor()
+    }
 }
