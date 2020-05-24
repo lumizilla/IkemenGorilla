@@ -31,11 +31,13 @@ final class HomeViewController: UIViewController, View, ViewConstructor {
         $0.distribution = .fill
     }
     
-    private let currentContestsHeader = HomeCurrentContestHeader()
+    private let currentContestHeader = HomeCurrentContestHeader()
     
     private lazy var currentContestListView = HomeCurrentContestListView().then {
         $0.reactor = reactor?.createHomeCurrentContestListReactor()
     }
+    
+    private let pastContestHeader = HomePastContestHeader()
     
     // MARK: - Life Cycles
     
@@ -52,8 +54,10 @@ final class HomeViewController: UIViewController, View, ViewConstructor {
         scrollView.contentInset = Const.scrollViewContentInset
         view.addSubview(scrollView)
         scrollView.addSubview(stackView)
-        stackView.addArrangedSubview(currentContestsHeader)
+        stackView.addArrangedSubview(currentContestHeader)
         stackView.addArrangedSubview(currentContestListView)
+        stackView.setCustomSpacing(36, after: currentContestListView)
+        stackView.addArrangedSubview(pastContestHeader)
     }
     
     func setupViewConstraints() {
