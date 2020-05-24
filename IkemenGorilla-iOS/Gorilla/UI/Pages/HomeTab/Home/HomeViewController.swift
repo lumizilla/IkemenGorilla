@@ -7,8 +7,17 @@
 //
 
 import UIKit
+import ReactorKit
+import RxSwift
 
-final class HomeViewController: UIViewController, ViewConstructor {
+final class HomeViewController: UIViewController, View, ViewConstructor {
+    
+    struct Const {
+        static let scrollViewContentInset = UIEdgeInsets(top: 24, left: 0, bottom: 0, right: 0)
+    }
+    
+    // MARK: - Variables
+    var disposeBag = DisposeBag()
     
     // MARK: - Views
     
@@ -24,6 +33,10 @@ final class HomeViewController: UIViewController, ViewConstructor {
     
     private let currentContestsHeader = HomeCurrentContestHeader()
     
+    private lazy var currentContestListView = HomeCurrentContestListView().then {
+        $0.reactor = reactor?.createHomeCurrentContestListReactor()
+    }
+    
     // MARK: - Life Cycles
     
     override func viewDidLoad() {
@@ -36,9 +49,11 @@ final class HomeViewController: UIViewController, ViewConstructor {
     // MARK: - Setup Methods
     
     func setupViews() {
+        scrollView.contentInset = Const.scrollViewContentInset
         view.addSubview(scrollView)
         scrollView.addSubview(stackView)
         stackView.addArrangedSubview(currentContestsHeader)
+        stackView.addArrangedSubview(currentContestListView)
     }
     
     func setupViewConstraints() {
@@ -48,5 +63,12 @@ final class HomeViewController: UIViewController, ViewConstructor {
         stackView.snp.makeConstraints {
             $0.edges.equalTo(scrollView)
         }
+    }
+    
+    // MARK: - Bind Method
+    func bind(reactor: HomeReactor) {
+        // Action
+        
+        // State
     }
 }
