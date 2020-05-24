@@ -11,6 +11,8 @@ import Foundation
 protocol TestDataType {
     static func testContest() -> Contest
     static func testContests(count: Int) -> [Contest]
+    static func testZoo() -> Zoo
+    static func testZoos(count: Int) -> [Zoo]
 }
 
 struct TestData: TestDataType {
@@ -29,6 +31,21 @@ struct TestData: TestDataType {
     
     static func testContests(count: Int) -> [Contest] {
         return (0 ..< count).map { _ in testContest() }
+    }
+    
+    static func testZoo() -> Zoo {
+        return Zoo(
+            id: testID(),
+            name: "東山動物園",
+            address: "愛知県名古屋市千種区東山元町３丁目７０",
+            latitude: randomLatitude(),
+            longitude: randomLongitude(),
+            imageUrl: "https://images.unsplash.com/reserve/wrev1ljvQ6KlfyljCQG0_lion.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1955&q=80"
+        )
+    }
+    
+    static func testZoos(count: Int) -> [Zoo] {
+        return (0 ..< count).map { _ in testZoo() }
     }
     
     // MARK: - Private functions
@@ -57,5 +74,13 @@ struct TestData: TestDataType {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter.date(from: from) ?? Date()
+    }
+    
+    private static func randomLatitude() -> Double {
+        return 34.5 + Double.random(in: 0 ..< 1)
+    }
+    
+    private static func randomLongitude() -> Double {
+        return 135.6 + Double.random(in: 0 ..< 1)
     }
 }
