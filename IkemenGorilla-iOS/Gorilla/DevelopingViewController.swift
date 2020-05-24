@@ -36,7 +36,6 @@ final class DevelopingViewController: UIViewController, ViewConstructor {
     }
     
     func setupViews() {
-        view.backgroundColor = .white
         view.addSubview(titleLabel)
         view.addSubview(typeLabel)
     }

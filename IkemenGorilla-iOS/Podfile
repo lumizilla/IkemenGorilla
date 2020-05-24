@@ -9,6 +9,8 @@ target 'Gorilla' do
   pod 'SnapKit', '~> 5.0.0'
   pod 'Then'
   pod 'ReactorKit'
+  pod 'ReusableKit/RxSwift'
+  pod 'Kingfisher', '~> 5.0'
 
   target 'GorillaTests' do
     inherit! :search_paths
