@@ -21,6 +21,7 @@ class IconView: UIImageView {
         case searchEmpty = "search_empty"
         case userFilled = "user_filled"
         case userEmpty = "user_empty"
+        case loading = "loading"
         
         func image() -> UIImage {
             return UIImage(named: self.rawValue) ?? undefined("no image name in assets")
