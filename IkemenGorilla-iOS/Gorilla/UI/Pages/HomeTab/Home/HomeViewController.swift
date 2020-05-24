@@ -39,6 +39,10 @@ final class HomeViewController: UIViewController, View, ViewConstructor {
     
     private let pastContestHeader = HomePastContestHeader()
     
+    private lazy var pastContestListView = HomePastContestListView().then {
+        $0.reactor = reactor?.createHomePastContestListReactor()
+    }
+    
     // MARK: - Life Cycles
     
     override func viewDidLoad() {
@@ -58,6 +62,7 @@ final class HomeViewController: UIViewController, View, ViewConstructor {
         stackView.addArrangedSubview(currentContestListView)
         stackView.setCustomSpacing(36, after: currentContestListView)
         stackView.addArrangedSubview(pastContestHeader)
+        stackView.addArrangedSubview(pastContestListView)
     }
     
     func setupViewConstraints() {
