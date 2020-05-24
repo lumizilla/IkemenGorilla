@@ -391,6 +391,8 @@
 			children = (
 				847B37E92479E49800B48535 /* HomeCurrentContestListCell */,
 				847B37E42479E18C00B48535 /* HomeCurrentContestList */,
+				847B37F2247A572D00B48535 /* HomePastContestListCell */,
+				847B37F3247A575B00B48535 /* HomePastContestList */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -412,6 +414,20 @@
 				847B37EC2479E4F400B48535 /* HomeCurrentContestListCellReactor.swift */,
 			);
 			path = HomeCurrentContestListCell;
+			sourceTree = "<group>";
+		};
+		847B37F2247A572D00B48535 /* HomePastContestListCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomePastContestListCell;
+			sourceTree = "<group>";
+		};
+		847B37F3247A575B00B48535 /* HomePastContestList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomePastContestList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
