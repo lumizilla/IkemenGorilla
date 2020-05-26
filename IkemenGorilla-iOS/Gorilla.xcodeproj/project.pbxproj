@@ -52,6 +52,13 @@
 		847B3805247A684B00B48535 /* HomeRecommendedZooHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3804247A684B00B48535 /* HomeRecommendedZooHeader.swift */; };
 		847B3807247A687D00B48535 /* HomeRecommendedZooListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3806247A687D00B48535 /* HomeRecommendedZooListView.swift */; };
 		847B3809247A68A200B48535 /* HomeRecommendedZooListReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3808247A68A200B48535 /* HomeRecommendedZooListReactor.swift */; };
+		847B380C247CB03C00B48535 /* APIStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B380B247CB03C00B48535 /* APIStatus.swift */; };
+		847B380E247CB0A400B48535 /* LoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B380D247CB0A400B48535 /* LoggerPlugin.swift */; };
+		847B3811247CB13800B48535 /* LoggerFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3810247CB13800B48535 /* LoggerFormatter.swift */; };
+		847B3813247CB49700B48535 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3812247CB49700B48535 /* NetworkProvider.swift */; };
+		847B3818247CB7EB00B48535 /* FrontendEchoTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3817247CB7EB00B48535 /* FrontendEchoTarget.swift */; };
+		847B381B247CBA9000B48535 /* FrontendEchoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B381A247CBA9000B48535 /* FrontendEchoViewController.swift */; };
+		847B381D247CBB1800B48535 /* FrontendEchoReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B381C247CBB1800B48535 /* FrontendEchoReactor.swift */; };
 		8AD80E3EDA0645450C645241 /* Pods_Gorilla_GorillaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F440E1262F9F90997A9A24 /* Pods_Gorilla_GorillaUITests.framework */; };
 		A29B9D43B1A804F6145A1073 /* Pods_GorillaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B68804A246C98CAE881B62C /* Pods_GorillaTests.framework */; };
 /* End PBXBuildFile section */
@@ -128,6 +135,13 @@
 		847B3804247A684B00B48535 /* HomeRecommendedZooHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecommendedZooHeader.swift; sourceTree = "<group>"; };
 		847B3806247A687D00B48535 /* HomeRecommendedZooListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecommendedZooListView.swift; sourceTree = "<group>"; };
 		847B3808247A68A200B48535 /* HomeRecommendedZooListReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecommendedZooListReactor.swift; sourceTree = "<group>"; };
+		847B380B247CB03C00B48535 /* APIStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIStatus.swift; sourceTree = "<group>"; };
+		847B380D247CB0A400B48535 /* LoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerPlugin.swift; sourceTree = "<group>"; };
+		847B3810247CB13800B48535 /* LoggerFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerFormatter.swift; sourceTree = "<group>"; };
+		847B3812247CB49700B48535 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		847B3817247CB7EB00B48535 /* FrontendEchoTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontendEchoTarget.swift; sourceTree = "<group>"; };
+		847B381A247CBA9000B48535 /* FrontendEchoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontendEchoViewController.swift; sourceTree = "<group>"; };
+		847B381C247CBB1800B48535 /* FrontendEchoReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontendEchoReactor.swift; sourceTree = "<group>"; };
 		B34C68F74EC2D59ED3BA5ED9 /* Pods-Gorilla-GorillaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gorilla-GorillaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Gorilla-GorillaUITests/Pods-Gorilla-GorillaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BC5B729A7696F5FC17692DAA /* Pods-GorillaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GorillaTests.debug.xcconfig"; path = "Target Support Files/Pods-GorillaTests/Pods-GorillaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D88E3F92FF19F1C62D0B465D /* Pods_Gorilla.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gorilla.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -225,6 +239,8 @@
 				847B3781247980E100B48535 /* Info.plist */,
 				847B377B247980E100B48535 /* Preview Content */,
 				847B37AD24798E5C00B48535 /* DevelopingViewController.swift */,
+				847B381A247CBA9000B48535 /* FrontendEchoViewController.swift */,
+				847B381C247CBB1800B48535 /* FrontendEchoReactor.swift */,
 			);
 			path = Gorilla;
 			sourceTree = "<group>";
@@ -340,6 +356,7 @@
 		847B37C32479A27300B48535 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				847B380F247CB10800B48535 /* Logger */,
 				847B37C42479A28E00B48535 /* Extensions */,
 			);
 			path = Library;
@@ -366,6 +383,8 @@
 		847B37D02479D1B800B48535 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
+				847B3819247CBA3100B48535 /* Repositories */,
+				847B380A247CB00500B48535 /* Networkings */,
 				847B37D12479D1CB00B48535 /* Entities */,
 			);
 			path = BusinessLogic;
@@ -474,6 +493,40 @@
 				847B3808247A68A200B48535 /* HomeRecommendedZooListReactor.swift */,
 			);
 			path = HomeRecommendedZooList;
+			sourceTree = "<group>";
+		};
+		847B380A247CB00500B48535 /* Networkings */ = {
+			isa = PBXGroup;
+			children = (
+				847B3814247CB4DE00B48535 /* Targets */,
+				847B380B247CB03C00B48535 /* APIStatus.swift */,
+				847B380D247CB0A400B48535 /* LoggerPlugin.swift */,
+				847B3812247CB49700B48535 /* NetworkProvider.swift */,
+			);
+			path = Networkings;
+			sourceTree = "<group>";
+		};
+		847B380F247CB10800B48535 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				847B3810247CB13800B48535 /* LoggerFormatter.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		847B3814247CB4DE00B48535 /* Targets */ = {
+			isa = PBXGroup;
+			children = (
+				847B3817247CB7EB00B48535 /* FrontendEchoTarget.swift */,
+			);
+			path = Targets;
+			sourceTree = "<group>";
+		};
+		847B3819247CBA3100B48535 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -721,10 +774,12 @@
 			files = (
 				847B3774247980E000B48535 /* AppDelegate.swift in Sources */,
 				847B37F7247A57E100B48535 /* HomePastContestListCellReactor.swift in Sources */,
+				847B381B247CBA9000B48535 /* FrontendEchoViewController.swift in Sources */,
 				847B37E32479E01000B48535 /* HomeCurrentContestHeader.swift in Sources */,
 				847B37AE24798E5C00B48535 /* DevelopingViewController.swift in Sources */,
 				847B3807247A687D00B48535 /* HomeRecommendedZooListView.swift in Sources */,
 				847B37F9247A580C00B48535 /* HomePastContestListView.swift in Sources */,
+				847B381D247CBB1800B48535 /* FrontendEchoReactor.swift in Sources */,
 				847B37EF247A350800B48535 /* TestData.swift in Sources */,
 				847B37D32479D1F500B48535 /* Entity.swift in Sources */,
 				847B37F5247A57C000B48535 /* HomePastContestListCell.swift in Sources */,
@@ -732,6 +787,8 @@
 				847B37DB2479D7FF00B48535 /* HomeViewController.swift in Sources */,
 				847B37FB247A583B00B48535 /* HomePastContestListReactor.swift in Sources */,
 				847B37B82479958C00B48535 /* GlobalFunctions.swift in Sources */,
+				847B380E247CB0A400B48535 /* LoggerPlugin.swift in Sources */,
+				847B3813247CB49700B48535 /* NetworkProvider.swift in Sources */,
 				847B37DD2479D81B00B48535 /* HomeReactor.swift in Sources */,
 				847B37CF2479AA9800B48535 /* IconView.swift in Sources */,
 				847B37F1247A3F0E00B48535 /* UIImageView+Extension.swift in Sources */,
@@ -744,6 +801,7 @@
 				847B3805247A684B00B48535 /* HomeRecommendedZooHeader.swift in Sources */,
 				847B37C82479A5A200B48535 /* Color.swift in Sources */,
 				847B37B4247992D300B48535 /* DeviceSize.swift in Sources */,
+				847B3811247CB13800B48535 /* LoggerFormatter.swift in Sources */,
 				847B37B62479948C00B48535 /* TextStyle.swift in Sources */,
 				847B3776247980E000B48535 /* SceneDelegate.swift in Sources */,
 				847B37B12479919800B48535 /* ViewConstructor.swift in Sources */,
@@ -751,8 +809,10 @@
 				847B37CD2479A94A00B48535 /* TabBarController.swift in Sources */,
 				847B3778247980E000B48535 /* ContentView.swift in Sources */,
 				847B3801247A67F900B48535 /* HomeRecommendedZooListCell.swift in Sources */,
+				847B380C247CB03C00B48535 /* APIStatus.swift in Sources */,
 				847B37E82479E25E00B48535 /* HomeCurrentContestListReactor.swift in Sources */,
 				847B37C62479A29F00B48535 /* UILabel+Extension.swift in Sources */,
+				847B3818247CB7EB00B48535 /* FrontendEchoTarget.swift in Sources */,
 				847B3809247A68A200B48535 /* HomeRecommendedZooListReactor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

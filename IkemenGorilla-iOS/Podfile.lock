@@ -1,7 +1,14 @@
 PODS:
+  - Alamofire (5.1.0)
   - Kingfisher (5.14.0):
     - Kingfisher/Core (= 5.14.0)
   - Kingfisher/Core (5.14.0)
+  - LoggerKit (0.3.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - Moya/RxSwift (14.0.0):
+    - Moya/Core
+    - RxSwift (~> 5.0)
   - ReactorKit (2.0.1):
     - RxSwift (~> 5.0)
   - ReusableKit/Core (3.0.0)
@@ -20,6 +27,8 @@ PODS:
 
 DEPENDENCIES:
   - Kingfisher (~> 5.0)
+  - LoggerKit
+  - Moya/RxSwift (~> 14.0)
   - ReactorKit
   - ReusableKit/RxSwift
   - SnapKit (~> 5.0.0)
@@ -27,7 +36,10 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - Kingfisher
+    - LoggerKit
+    - Moya
     - ReactorKit
     - ReusableKit
     - RxCocoa
@@ -37,7 +49,10 @@ SPEC REPOS:
     - Then
 
 SPEC CHECKSUMS:
+  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
   Kingfisher: 7b64389a43139c903ec434788344c288217c792d
+  LoggerKit: d209547382484920b676c5f963031c1032f0c83d
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   ReactorKit: a63c5e11e0fd32d59d672e54178b0ed2876b764b
   ReusableKit: e5f853ad4652e411f96b6119b2488afa12929be6
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
@@ -46,6 +61,6 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
 
-PODFILE CHECKSUM: 079535a672f40d297c9bef54d12684cbf8d21e9c
+PODFILE CHECKSUM: e401e614dfa8b656f0e4f1546abe9e8127edeec3
 
 COCOAPODS: 1.8.4
