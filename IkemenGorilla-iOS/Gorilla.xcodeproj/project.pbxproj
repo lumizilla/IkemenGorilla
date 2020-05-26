@@ -53,6 +53,7 @@
 		847B3807247A687D00B48535 /* HomeRecommendedZooListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3806247A687D00B48535 /* HomeRecommendedZooListView.swift */; };
 		847B3809247A68A200B48535 /* HomeRecommendedZooListReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3808247A68A200B48535 /* HomeRecommendedZooListReactor.swift */; };
 		847B380C247CB03C00B48535 /* APIStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B380B247CB03C00B48535 /* APIStatus.swift */; };
+		847B380E247CB0A400B48535 /* LoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B380D247CB0A400B48535 /* LoggerPlugin.swift */; };
 		847B3811247CB13800B48535 /* LoggerFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3810247CB13800B48535 /* LoggerFormatter.swift */; };
 		8AD80E3EDA0645450C645241 /* Pods_Gorilla_GorillaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F440E1262F9F90997A9A24 /* Pods_Gorilla_GorillaUITests.framework */; };
 		A29B9D43B1A804F6145A1073 /* Pods_GorillaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B68804A246C98CAE881B62C /* Pods_GorillaTests.framework */; };
@@ -131,6 +132,7 @@
 		847B3806247A687D00B48535 /* HomeRecommendedZooListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecommendedZooListView.swift; sourceTree = "<group>"; };
 		847B3808247A68A200B48535 /* HomeRecommendedZooListReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecommendedZooListReactor.swift; sourceTree = "<group>"; };
 		847B380B247CB03C00B48535 /* APIStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIStatus.swift; sourceTree = "<group>"; };
+		847B380D247CB0A400B48535 /* LoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerPlugin.swift; sourceTree = "<group>"; };
 		847B3810247CB13800B48535 /* LoggerFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerFormatter.swift; sourceTree = "<group>"; };
 		B34C68F74EC2D59ED3BA5ED9 /* Pods-Gorilla-GorillaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gorilla-GorillaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Gorilla-GorillaUITests/Pods-Gorilla-GorillaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BC5B729A7696F5FC17692DAA /* Pods-GorillaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GorillaTests.debug.xcconfig"; path = "Target Support Files/Pods-GorillaTests/Pods-GorillaTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -486,6 +488,7 @@
 			isa = PBXGroup;
 			children = (
 				847B380B247CB03C00B48535 /* APIStatus.swift */,
+				847B380D247CB0A400B48535 /* LoggerPlugin.swift */,
 			);
 			path = Networkings;
 			sourceTree = "<group>";
@@ -754,6 +757,7 @@
 				847B37DB2479D7FF00B48535 /* HomeViewController.swift in Sources */,
 				847B37FB247A583B00B48535 /* HomePastContestListReactor.swift in Sources */,
 				847B37B82479958C00B48535 /* GlobalFunctions.swift in Sources */,
+				847B380E247CB0A400B48535 /* LoggerPlugin.swift in Sources */,
 				847B37DD2479D81B00B48535 /* HomeReactor.swift in Sources */,
 				847B37CF2479AA9800B48535 /* IconView.swift in Sources */,
 				847B37F1247A3F0E00B48535 /* UIImageView+Extension.swift in Sources */,
