@@ -8,3 +8,11 @@
 
 import Moya
 
+final class NetworkProvider<Target: TargetType>: MoyaProvider<Target> {
+    init() {
+        let plugins: [PluginType] = [
+            LoggerPlugin()
+        ]
+        super.init(plugins: plugins)
+    }
+}
