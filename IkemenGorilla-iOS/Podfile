@@ -11,6 +11,7 @@ target 'Gorilla' do
   pod 'ReactorKit'
   pod 'ReusableKit/RxSwift'
   pod 'Kingfisher', '~> 5.0'
+  pod 'Moya/RxSwift', '~> 14.0'
 
   target 'GorillaTests' do
     inherit! :search_paths
