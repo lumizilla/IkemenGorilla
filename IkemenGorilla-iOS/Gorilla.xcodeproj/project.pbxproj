@@ -52,6 +52,7 @@
 		847B3805247A684B00B48535 /* HomeRecommendedZooHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3804247A684B00B48535 /* HomeRecommendedZooHeader.swift */; };
 		847B3807247A687D00B48535 /* HomeRecommendedZooListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3806247A687D00B48535 /* HomeRecommendedZooListView.swift */; };
 		847B3809247A68A200B48535 /* HomeRecommendedZooListReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3808247A68A200B48535 /* HomeRecommendedZooListReactor.swift */; };
+		847B380C247CB03C00B48535 /* APIStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B380B247CB03C00B48535 /* APIStatus.swift */; };
 		8AD80E3EDA0645450C645241 /* Pods_Gorilla_GorillaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F440E1262F9F90997A9A24 /* Pods_Gorilla_GorillaUITests.framework */; };
 		A29B9D43B1A804F6145A1073 /* Pods_GorillaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B68804A246C98CAE881B62C /* Pods_GorillaTests.framework */; };
 /* End PBXBuildFile section */
@@ -128,6 +129,7 @@
 		847B3804247A684B00B48535 /* HomeRecommendedZooHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecommendedZooHeader.swift; sourceTree = "<group>"; };
 		847B3806247A687D00B48535 /* HomeRecommendedZooListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecommendedZooListView.swift; sourceTree = "<group>"; };
 		847B3808247A68A200B48535 /* HomeRecommendedZooListReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecommendedZooListReactor.swift; sourceTree = "<group>"; };
+		847B380B247CB03C00B48535 /* APIStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIStatus.swift; sourceTree = "<group>"; };
 		B34C68F74EC2D59ED3BA5ED9 /* Pods-Gorilla-GorillaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gorilla-GorillaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Gorilla-GorillaUITests/Pods-Gorilla-GorillaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BC5B729A7696F5FC17692DAA /* Pods-GorillaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GorillaTests.debug.xcconfig"; path = "Target Support Files/Pods-GorillaTests/Pods-GorillaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D88E3F92FF19F1C62D0B465D /* Pods_Gorilla.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gorilla.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -366,6 +368,7 @@
 		847B37D02479D1B800B48535 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
+				847B380A247CB00500B48535 /* Networkings */,
 				847B37D12479D1CB00B48535 /* Entities */,
 			);
 			path = BusinessLogic;
@@ -474,6 +477,14 @@
 				847B3808247A68A200B48535 /* HomeRecommendedZooListReactor.swift */,
 			);
 			path = HomeRecommendedZooList;
+			sourceTree = "<group>";
+		};
+		847B380A247CB00500B48535 /* Networkings */ = {
+			isa = PBXGroup;
+			children = (
+				847B380B247CB03C00B48535 /* APIStatus.swift */,
+			);
+			path = Networkings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -751,6 +762,7 @@
 				847B37CD2479A94A00B48535 /* TabBarController.swift in Sources */,
 				847B3778247980E000B48535 /* ContentView.swift in Sources */,
 				847B3801247A67F900B48535 /* HomeRecommendedZooListCell.swift in Sources */,
+				847B380C247CB03C00B48535 /* APIStatus.swift in Sources */,
 				847B37E82479E25E00B48535 /* HomeCurrentContestListReactor.swift in Sources */,
 				847B37C62479A29F00B48535 /* UILabel+Extension.swift in Sources */,
 				847B3809247A68A200B48535 /* HomeRecommendedZooListReactor.swift in Sources */,
