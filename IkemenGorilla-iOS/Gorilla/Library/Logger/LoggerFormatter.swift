@@ -59,5 +59,6 @@ public let logger: CustomLogger = {
     let logger = CustomLogger()
     let stdout = StandardOut()
     stdout.formatter = LoggerFormatter()
+    logger.register(destination: stdout)
     return logger
 }()
