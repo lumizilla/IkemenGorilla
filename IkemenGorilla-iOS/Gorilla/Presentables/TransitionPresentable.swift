@@ -11,6 +11,7 @@ import UIKit
 protocol TransitionPresentable: class {
     // HOME TAB
     func showHomePastContestPage(homePastContestReactor: HomePastContestReactor)
+    func showHomeRecommendedZooPage(homeRecommendedZooReactor: HomeRecommendedZooReactor)
 }
 
 extension TransitionPresentable where Self: UIViewController {
@@ -20,6 +21,15 @@ extension TransitionPresentable where Self: UIViewController {
             HomePastContestViewController().then {
                 $0.reactor = homePastContestReactor
                 
+            },
+            animated: true
+        )
+    }
+    
+    func showHomeRecommendedZooPage(homeRecommendedZooReactor: HomeRecommendedZooReactor) {
+        navigationController?.pushViewController(
+            HomeRecommendedZooViewController().then {
+                $0.reactor = homeRecommendedZooReactor
             },
             animated: true
         )
