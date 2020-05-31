@@ -37,10 +37,6 @@ final class HomeCurrentContestListCell: UICollectionViewCell, View, ViewConstruc
         $0.layer.cornerRadius = 4
     }
     
-    private let formatter = DateFormatter().then {
-        $0.dateFormat = "MM-dd"
-    }
-    
     // MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -101,9 +97,9 @@ final class HomeCurrentContestListCell: UICollectionViewCell, View, ViewConstruc
         reactor.state
             .map {
                 var durationString = ""
-                durationString += self.formatter.string(from: $0.contest.start)
+                durationString += formatter.string(from: $0.contest.start)
                 durationString += " ~ "
-                durationString += self.formatter.string(from: $0.contest.end)
+                durationString += formatter.string(from: $0.contest.end)
                 return durationString
             }
             .distinctUntilChanged()
