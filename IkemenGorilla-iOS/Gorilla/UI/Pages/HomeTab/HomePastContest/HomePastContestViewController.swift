@@ -23,11 +23,13 @@ final class HomePastContestViewController: UIViewController, View, ViewConstruct
     // MARK: - Views
     private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout().then {
         $0.itemSize = HomePastContestCell.Const.itemSize
-        $0.minimumLineSpacing = 16
-        $0.minimumInteritemSpacing = 24
+        $0.minimumLineSpacing = 24
+        $0.minimumInteritemSpacing = 16
         $0.scrollDirection = .vertical
     }).then {
         $0.register(Reusable.contestCell)
+        $0.contentInset = UIEdgeInsets(top: 24, left: 24, bottom: 24, right: 24)
+        $0.backgroundColor = Color.white
     }
     
     // MARK: - Lify Cycles
@@ -40,6 +42,7 @@ final class HomePastContestViewController: UIViewController, View, ViewConstruct
     
     // MARK: - Setup Methods
     func setupViews() {
+        title = "過去のコンテスト"
         view.addSubview(collectionView)
     }
     
