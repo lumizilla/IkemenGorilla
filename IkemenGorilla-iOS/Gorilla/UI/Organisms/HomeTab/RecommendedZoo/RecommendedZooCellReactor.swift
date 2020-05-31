@@ -9,7 +9,7 @@
 import ReactorKit
 import RxSwift
 
-final class HomeRecommendedZooCellReactor: Reactor {
+final class RecommendedZooCellReactor: Reactor {
     enum Action {}
     enum Mutation {}
     
@@ -21,15 +21,15 @@ final class HomeRecommendedZooCellReactor: Reactor {
         }
     }
     
-    let initialState: HomeRecommendedZooCellReactor.State
+    let initialState: RecommendedZooCellReactor.State
     
     init(zoo: Zoo) {
         initialState = State(zoo: zoo)
     }
 }
 
-extension HomeRecommendedZooCellReactor: Equatable {
-    static func == (lhs: HomeRecommendedZooCellReactor, rhs: HomeRecommendedZooCellReactor) -> Bool {
+extension RecommendedZooCellReactor: Equatable {
+    static func == (lhs: RecommendedZooCellReactor, rhs: RecommendedZooCellReactor) -> Bool {
         return lhs.currentState.zoo.id == rhs.currentState.zoo.id
     }
 }

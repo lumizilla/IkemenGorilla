@@ -86,7 +86,7 @@ final class RecommendedZooCell: UICollectionViewCell, View, ViewConstructor {
     }
     
     // MARK: - Bind Method
-    func bind(reactor: HomeRecommendedZooCellReactor) {
+    func bind(reactor: RecommendedZooCellReactor) {
         // Action
         
         // State

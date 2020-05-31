@@ -20,7 +20,7 @@ final class HomeRecommendedZooReactor: Reactor {
     }
     
     struct State {
-        var zooCellReactors: [HomeRecommendedZooCellReactor] = []
+        var zooCellReactors: [RecommendedZooCellReactor] = []
         var isLoading: Bool = false
     }
     
@@ -46,7 +46,7 @@ final class HomeRecommendedZooReactor: Reactor {
         var state = state
         switch mutation {
         case .setZooCellReactors(let zoos):
-            state.zooCellReactors = zoos.map { HomeRecommendedZooCellReactor(zoo: $0) }
+            state.zooCellReactors = zoos.map { RecommendedZooCellReactor(zoo: $0) }
         case .setIsLoading(let isLoading):
             state.isLoading = isLoading
         }
