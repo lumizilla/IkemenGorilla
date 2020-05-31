@@ -15,6 +15,7 @@ final class HomePastContestCell: UICollectionViewCell, View, ViewConstructor {
     struct Const {
         static let cellWidth: CGFloat = (DeviceSize.screenWidth - 64) / 2
         static let cellHeight: CGFloat = cellWidth + 48
+        static let itemSize: CGSize = CGSize(width: cellWidth, height: cellHeight)
     }
     
     // MARK: - Variables
