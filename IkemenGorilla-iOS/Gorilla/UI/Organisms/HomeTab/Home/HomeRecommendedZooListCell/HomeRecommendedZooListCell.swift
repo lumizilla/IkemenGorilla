@@ -57,6 +57,15 @@ final class HomeRecommendedZooListCell: UICollectionViewCell, View, ViewConstruc
         }
     }
     
+    override func prepareForReuse() {
+        // Variables
+        disposeBag = DisposeBag()
+        
+        // Views
+        imageView.image = #imageLiteral(resourceName: "noimage")
+        zooNameLabel.text = ""
+    }
+    
     // MARK: - Bind Method
     func bind(reactor: HomeRecommendedZooListCellReactor) {
         // Action
