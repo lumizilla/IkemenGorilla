@@ -15,6 +15,7 @@ final class HomeRecommendedZooCell: UICollectionViewCell, View, ViewConstructor 
     struct Const {
         static let cellWidth: CGFloat = DeviceSize.screenWidth
         static let cellHeight: CGFloat = 120
+        static let itemSize: CGSize = CGSize(width: cellWidth, height: cellHeight)
         static let imageViewSize: CGFloat = 104
     }
     
