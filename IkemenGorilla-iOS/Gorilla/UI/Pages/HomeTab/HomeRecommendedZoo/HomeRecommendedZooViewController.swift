@@ -25,7 +25,7 @@ final class HomeRecommendedZooViewController: UIViewController, View, ViewConstr
         $0.scrollDirection = .vertical
     }).then {
         $0.register(Reusable.zooCell)
-        $0.contentInset = UIEdgeInsets(top: 24, left: 0, bottom: 24, right: 0)
+        $0.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 24, right: 0)
         $0.backgroundColor = Color.white
     }
     
