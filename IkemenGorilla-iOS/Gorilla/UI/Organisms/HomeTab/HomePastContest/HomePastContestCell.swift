@@ -90,9 +90,15 @@ final class HomePastContestCell: UICollectionViewCell, View, ViewConstructor {
             .disposed(by: disposeBag)
         
         reactor.state.map { $0.contest }
-        .distinctUntilChanged()
+            .distinctUntilChanged()
             .map { contest in
                 var durationString = ""
-        }
+                durationString += formatter.string(from: contest.start)
+                durationString += " ~ "
+                durationString += formatter.string(from: contest.end)
+                return durationString
+            }
+            .bind(to: durationLabel.rx.text)
+            .disposed(by: disposeBag)
     }
 }
