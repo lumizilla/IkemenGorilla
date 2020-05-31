@@ -77,7 +77,7 @@ final class HomePastContestListCell: UICollectionViewCell, View, ViewConstructor
         disposeBag = DisposeBag()
         
         // Views
-        imageView.image = #imageLiteral(resourceName: "loading")
+        imageView.image = #imageLiteral(resourceName: "noimage")
         contestNameLabel.text = ""
         durationLabel.text = ""
     }

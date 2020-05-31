@@ -90,7 +90,7 @@ final class HomeCurrentContestListCell: UICollectionViewCell, View, ViewConstruc
         durationLabel.text = ""
         contestNameLabel.text = ""
         catchCopyLabel.text = ""
-        imageView.image = #imageLiteral(resourceName: "loading")
+        imageView.image = #imageLiteral(resourceName: "noimage")
     }
     
     // MARK: - Bind Method
