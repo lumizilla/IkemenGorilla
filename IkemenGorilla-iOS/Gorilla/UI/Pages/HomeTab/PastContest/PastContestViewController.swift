@@ -11,7 +11,7 @@ import ReusableKit
 import ReactorKit
 import RxSwift
 
-final class HomePastContestViewController: UIViewController, View, ViewConstructor {
+final class PastContestViewController: UIViewController, View, ViewConstructor {
     
     struct Reusable {
         static let contestCell = ReusableCell<PastContestCell>()

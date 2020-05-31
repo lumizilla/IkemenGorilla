@@ -89,7 +89,7 @@ final class HomeViewController: UIViewController, View, ViewConstructor, Transit
         // Action
         pastContestHeader.showAllButton.rx.tap
             .bind { [weak self] _ in
-                self?.showHomePastContestPage(pastContestReactor: reactor.createPastContestReactor())
+                self?.showPastContestPage(pastContestReactor: reactor.createPastContestReactor())
             }
             .disposed(by: disposeBag)
         
