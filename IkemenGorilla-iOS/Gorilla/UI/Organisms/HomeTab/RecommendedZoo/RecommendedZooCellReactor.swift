@@ -1,5 +1,5 @@
 //
-//  HomeRecommendedZooCellReactor.swift
+//  RecommendedZooCellReactor.swift
 //  Gorilla
 //
 //  Created by admin on 2020/06/01.
