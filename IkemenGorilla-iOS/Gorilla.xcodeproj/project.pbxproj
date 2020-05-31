@@ -200,6 +200,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		844EE13024842731003369F2 /* HomePastContest */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomePastContest;
+			sourceTree = "<group>";
+		};
 		847B3767247980E000B48535 = {
 			isa = PBXGroup;
 			children = (
@@ -403,6 +410,7 @@
 		847B37D82479D7C400B48535 /* HomeTab */ = {
 			isa = PBXGroup;
 			children = (
+				844EE13024842731003369F2 /* HomePastContest */,
 				847B37D92479D7F100B48535 /* Home */,
 			);
 			path = HomeTab;
