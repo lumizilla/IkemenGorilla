@@ -246,13 +246,13 @@
 			path = Presentables;
 			sourceTree = "<group>";
 		};
-		844EE14124843607003369F2 /* HomeRecommendedZoo */ = {
+		844EE14124843607003369F2 /* RecommendedZoo */ = {
 			isa = PBXGroup;
 			children = (
 				844EE147248439E4003369F2 /* HomeRecommendedZooViewController.swift */,
 				844EE149248439FE003369F2 /* HomeRecommendedZooReactor.swift */,
 			);
-			path = HomeRecommendedZoo;
+			path = RecommendedZoo;
 			sourceTree = "<group>";
 		};
 		844EE14224843637003369F2 /* RecommendedZoo */ = {
@@ -469,7 +469,7 @@
 		847B37D82479D7C400B48535 /* HomeTab */ = {
 			isa = PBXGroup;
 			children = (
-				844EE14124843607003369F2 /* HomeRecommendedZoo */,
+				844EE14124843607003369F2 /* RecommendedZoo */,
 				844EE13024842731003369F2 /* HomePastContest */,
 				847B37D92479D7F100B48535 /* Home */,
 			);
