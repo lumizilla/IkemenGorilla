@@ -27,3 +27,9 @@ final class HomePastContestCellReactor: Reactor {
         initialState = State(contest: contest)
     }
 }
+
+extension HomePastContestCellReactor: Equatable {
+    static func == (lhs: HomePastContestCellReactor, rhs: HomePastContestCellReactor) -> Bool {
+        return lhs.currentState.contest.id == rhs.currentState.contest.id
+    }
+}
