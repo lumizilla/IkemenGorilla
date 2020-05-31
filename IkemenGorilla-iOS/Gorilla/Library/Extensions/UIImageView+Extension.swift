@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 
 extension UIImageView {
-    func setImage(imageUrl: String, placeholder: UIImage = #imageLiteral(resourceName: "loading")) {
+    func setImage(imageUrl: String, placeholder: UIImage = #imageLiteral(resourceName: "noimage")) {
         guard let url = URL(string: imageUrl) else {
             self.image = placeholder
             return
