@@ -74,7 +74,7 @@ final class HomePastContestCell: UICollectionViewCell, View, ViewConstructor {
     }
     
     // MARK: - Bind Method
-    func bind(reactor: HomePastContestCellReactor) {
+    func bind(reactor: PastContestCellReactor) {
         // Action
         
         // State

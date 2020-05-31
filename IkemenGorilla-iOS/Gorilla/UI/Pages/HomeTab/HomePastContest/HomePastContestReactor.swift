@@ -19,7 +19,7 @@ final class HomePastContestReactor: Reactor {
     }
     
     struct State {
-        var contestCellReactors: [HomePastContestCellReactor] = []
+        var contestCellReactors: [PastContestCellReactor] = []
         var isLoading: Bool = false
     }
     
@@ -45,7 +45,7 @@ final class HomePastContestReactor: Reactor {
         var state = state
         switch mutation {
         case .setContestCellReactors(let contests):
-            state.contestCellReactors = contests.map { HomePastContestCellReactor(contest: $0) }
+            state.contestCellReactors = contests.map { PastContestCellReactor(contest: $0) }
         case .setIsLoading(let isLoading):
             state.isLoading = isLoading
         }

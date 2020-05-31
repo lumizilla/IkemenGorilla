@@ -9,7 +9,7 @@
 import ReactorKit
 import RxSwift
 
-final class HomePastContestCellReactor: Reactor {
+final class PastContestCellReactor: Reactor {
     enum Action {}
     enum Mutation {}
     
@@ -21,15 +21,15 @@ final class HomePastContestCellReactor: Reactor {
         }
     }
     
-    let initialState: HomePastContestCellReactor.State
+    let initialState: PastContestCellReactor.State
     
     init(contest: Contest) {
         initialState = State(contest: contest)
     }
 }
 
-extension HomePastContestCellReactor: Equatable {
-    static func == (lhs: HomePastContestCellReactor, rhs: HomePastContestCellReactor) -> Bool {
+extension PastContestCellReactor: Equatable {
+    static func == (lhs: PastContestCellReactor, rhs: PastContestCellReactor) -> Bool {
         return lhs.currentState.contest.id == rhs.currentState.contest.id
     }
 }
