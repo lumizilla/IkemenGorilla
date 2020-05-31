@@ -14,7 +14,7 @@ import RxSwift
 final class HomePastContestViewController: UIViewController, View, ViewConstructor {
     
     struct Reusable {
-        static let contestCell = ReusableCell<HomePastContestCell>()
+        static let contestCell = ReusableCell<PastContestCell>()
     }
     
     // MARK: - Variables
@@ -22,7 +22,7 @@ final class HomePastContestViewController: UIViewController, View, ViewConstruct
     
     // MARK: - Views
     private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout().then {
-        $0.itemSize = HomePastContestCell.Const.itemSize
+        $0.itemSize = PastContestCell.Const.itemSize
         $0.minimumLineSpacing = 24
         $0.minimumInteritemSpacing = 16
         $0.scrollDirection = .vertical
