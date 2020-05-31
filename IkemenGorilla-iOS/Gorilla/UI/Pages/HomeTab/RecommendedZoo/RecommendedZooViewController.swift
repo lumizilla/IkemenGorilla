@@ -11,7 +11,7 @@ import ReactorKit
 import RxSwift
 import ReusableKit
 
-final class HomeRecommendedZooViewController: UIViewController, View, ViewConstructor {
+final class RecommendedZooViewController: UIViewController, View, ViewConstructor {
     struct Reusable {
         static let zooCell = ReusableCell<RecommendedZooCell>()
     }
