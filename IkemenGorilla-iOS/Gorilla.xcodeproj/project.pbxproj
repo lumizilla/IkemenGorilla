@@ -12,6 +12,7 @@
 		844EE135248427AF003369F2 /* HomePastContestCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE134248427AF003369F2 /* HomePastContestCellReactor.swift */; };
 		844EE137248427D7003369F2 /* HomePastContestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE136248427D7003369F2 /* HomePastContestViewController.swift */; };
 		844EE13B24842808003369F2 /* HomePastContestReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE13A24842808003369F2 /* HomePastContestReactor.swift */; };
+		844EE13D24842BEC003369F2 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE13C24842BEC003369F2 /* Formatter.swift */; };
 		847B3774247980E000B48535 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3773247980E000B48535 /* AppDelegate.swift */; };
 		847B3776247980E000B48535 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3775247980E000B48535 /* SceneDelegate.swift */; };
 		847B3778247980E000B48535 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3777247980E000B48535 /* ContentView.swift */; };
@@ -93,6 +94,7 @@
 		844EE134248427AF003369F2 /* HomePastContestCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePastContestCellReactor.swift; sourceTree = "<group>"; };
 		844EE136248427D7003369F2 /* HomePastContestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePastContestViewController.swift; sourceTree = "<group>"; };
 		844EE13A24842808003369F2 /* HomePastContestReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePastContestReactor.swift; sourceTree = "<group>"; };
+		844EE13C24842BEC003369F2 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		847B3770247980E000B48535 /* Gorilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gorilla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		847B3773247980E000B48535 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		847B3775247980E000B48535 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 				847B37B3247992D300B48535 /* DeviceSize.swift */,
 				847B37B72479958C00B48535 /* GlobalFunctions.swift */,
 				847B37EE247A350800B48535 /* TestData.swift */,
+				844EE13C24842BEC003369F2 /* Formatter.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -819,6 +822,7 @@
 				844EE13B24842808003369F2 /* HomePastContestReactor.swift in Sources */,
 				844EE137248427D7003369F2 /* HomePastContestViewController.swift in Sources */,
 				847B3813247CB49700B48535 /* NetworkProvider.swift in Sources */,
+				844EE13D24842BEC003369F2 /* Formatter.swift in Sources */,
 				847B37DD2479D81B00B48535 /* HomeReactor.swift in Sources */,
 				847B37CF2479AA9800B48535 /* IconView.swift in Sources */,
 				847B37F1247A3F0E00B48535 /* UIImageView+Extension.swift in Sources */,
