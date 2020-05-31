@@ -52,6 +52,7 @@ final class HomePastContestViewController: UIViewController, View, ViewConstruct
     // MARK: - Bind Method
     func bind(reactor: HomePastContestReactor) {
         // Action
+        reactor.action.onNext(.load)
         
         // State
         reactor.state.map { $0.contestCellReactors }
