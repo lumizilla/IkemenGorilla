@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1237FD5EF935F298D1A9503A /* Pods_Gorilla.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88E3F92FF19F1C62D0B465D /* Pods_Gorilla.framework */; };
 		844EE1332484278F003369F2 /* PastContestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE1322484278F003369F2 /* PastContestCell.swift */; };
-		844EE135248427AF003369F2 /* HomePastContestCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE134248427AF003369F2 /* HomePastContestCellReactor.swift */; };
+		844EE135248427AF003369F2 /* PastContestCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE134248427AF003369F2 /* PastContestCellReactor.swift */; };
 		844EE137248427D7003369F2 /* HomePastContestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE136248427D7003369F2 /* HomePastContestViewController.swift */; };
 		844EE13B24842808003369F2 /* HomePastContestReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE13A24842808003369F2 /* HomePastContestReactor.swift */; };
 		844EE13D24842BEC003369F2 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE13C24842BEC003369F2 /* Formatter.swift */; };
@@ -96,7 +96,7 @@
 		401D33862CFB7B0B9BFF2587 /* Pods-Gorilla.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gorilla.release.xcconfig"; path = "Target Support Files/Pods-Gorilla/Pods-Gorilla.release.xcconfig"; sourceTree = "<group>"; };
 		69F440E1262F9F90997A9A24 /* Pods_Gorilla_GorillaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gorilla_GorillaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		844EE1322484278F003369F2 /* PastContestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestCell.swift; sourceTree = "<group>"; };
-		844EE134248427AF003369F2 /* HomePastContestCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePastContestCellReactor.swift; sourceTree = "<group>"; };
+		844EE134248427AF003369F2 /* PastContestCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestCellReactor.swift; sourceTree = "<group>"; };
 		844EE136248427D7003369F2 /* HomePastContestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePastContestViewController.swift; sourceTree = "<group>"; };
 		844EE13A24842808003369F2 /* HomePastContestReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePastContestReactor.swift; sourceTree = "<group>"; };
 		844EE13C24842BEC003369F2 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
@@ -233,7 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				844EE1322484278F003369F2 /* PastContestCell.swift */,
-				844EE134248427AF003369F2 /* HomePastContestCellReactor.swift */,
+				844EE134248427AF003369F2 /* PastContestCellReactor.swift */,
 			);
 			path = PastContest;
 			sourceTree = "<group>";
@@ -871,7 +871,7 @@
 				844EE1332484278F003369F2 /* PastContestCell.swift in Sources */,
 				847B37E62479E23000B48535 /* HomeCurrentContestListView.swift in Sources */,
 				847B37D52479D27D00B48535 /* Contest.swift in Sources */,
-				844EE135248427AF003369F2 /* HomePastContestCellReactor.swift in Sources */,
+				844EE135248427AF003369F2 /* PastContestCellReactor.swift in Sources */,
 				847B3803247A681D00B48535 /* HomeRecommendedZooListCellReactor.swift in Sources */,
 				847B37FD247A586100B48535 /* HomePastContestHeader.swift in Sources */,
 				847B37CA2479A5DD00B48535 /* UIColor+Extension.swift in Sources */,
