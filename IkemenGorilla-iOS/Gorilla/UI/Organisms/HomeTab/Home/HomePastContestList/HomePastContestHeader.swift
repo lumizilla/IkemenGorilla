@@ -25,7 +25,7 @@ final class HomePastContestHeader: UIView, ViewConstructor {
         $0.text = "過去のコンテスト"
     }
     
-    private let showAllButton = UIButton().then {
+    let showAllButton = UIButton().then {
         $0.titleLabel?.apply(fontStyle: .regular, size: 16)
         $0.setTitle("すべて見る", for: .normal)
         $0.setTitleColor(Color.textBlack, for: .normal)
