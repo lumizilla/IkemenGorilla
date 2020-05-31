@@ -220,13 +220,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		844EE13024842731003369F2 /* HomePastContest */ = {
+		844EE13024842731003369F2 /* PastContest */ = {
 			isa = PBXGroup;
 			children = (
 				844EE136248427D7003369F2 /* HomePastContestViewController.swift */,
 				844EE13A24842808003369F2 /* HomePastContestReactor.swift */,
 			);
-			path = HomePastContest;
+			path = PastContest;
 			sourceTree = "<group>";
 		};
 		844EE13124842759003369F2 /* PastContest */ = {
@@ -470,7 +470,7 @@
 			isa = PBXGroup;
 			children = (
 				844EE14124843607003369F2 /* RecommendedZoo */,
-				844EE13024842731003369F2 /* HomePastContest */,
+				844EE13024842731003369F2 /* PastContest */,
 				847B37D92479D7F100B48535 /* Home */,
 			);
 			path = HomeTab;
