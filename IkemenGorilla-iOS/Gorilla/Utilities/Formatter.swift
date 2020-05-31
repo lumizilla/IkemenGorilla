@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+let formatter = DateFormatter().then {
+    $0.dateFormat = "MM-dd"
+}
