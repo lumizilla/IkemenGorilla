@@ -245,6 +245,13 @@
 			path = HomeRecommendedZoo;
 			sourceTree = "<group>";
 		};
+		844EE14224843637003369F2 /* HomeRecommendedZoo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomeRecommendedZoo;
+			sourceTree = "<group>";
+		};
 		847B3767247980E000B48535 = {
 			isa = PBXGroup;
 			children = (
@@ -469,6 +476,7 @@
 		847B37DE2479DFCA00B48535 /* HomeTab */ = {
 			isa = PBXGroup;
 			children = (
+				844EE14224843637003369F2 /* HomeRecommendedZoo */,
 				844EE13124842759003369F2 /* HomePastContest */,
 				847B37DF2479DFD300B48535 /* Home */,
 			);
