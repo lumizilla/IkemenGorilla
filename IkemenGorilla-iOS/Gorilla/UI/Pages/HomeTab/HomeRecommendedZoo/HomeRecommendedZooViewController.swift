@@ -13,7 +13,7 @@ import ReusableKit
 
 final class HomeRecommendedZooViewController: UIViewController, View, ViewConstructor {
     struct Reusable {
-        static let zooCell = ReusableCell<HomeRecommendedZooCell>()
+        static let zooCell = ReusableCell<RecommendedZooCell>()
     }
     
     // MARK: - Variables
@@ -21,7 +21,7 @@ final class HomeRecommendedZooViewController: UIViewController, View, ViewConstr
     
     // MARK: - Views
     private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout().then {
-        $0.itemSize = HomeRecommendedZooCell.Const.itemSize
+        $0.itemSize = RecommendedZooCell.Const.itemSize
         $0.scrollDirection = .vertical
     }).then {
         $0.register(Reusable.zooCell)

@@ -10,7 +10,7 @@ import UIKit
 import ReactorKit
 import RxSwift
 
-final class HomeRecommendedZooCell: UICollectionViewCell, View, ViewConstructor {
+final class RecommendedZooCell: UICollectionViewCell, View, ViewConstructor {
     
     struct Const {
         static let cellWidth: CGFloat = DeviceSize.screenWidth
