@@ -10,6 +10,7 @@
 		1237FD5EF935F298D1A9503A /* Pods_Gorilla.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88E3F92FF19F1C62D0B465D /* Pods_Gorilla.framework */; };
 		844EE1332484278F003369F2 /* HomePastContestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE1322484278F003369F2 /* HomePastContestCell.swift */; };
 		844EE135248427AF003369F2 /* HomePastContestCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE134248427AF003369F2 /* HomePastContestCellReactor.swift */; };
+		844EE137248427D7003369F2 /* HomePastContestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE136248427D7003369F2 /* HomePastContestViewController.swift */; };
 		847B3774247980E000B48535 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3773247980E000B48535 /* AppDelegate.swift */; };
 		847B3776247980E000B48535 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3775247980E000B48535 /* SceneDelegate.swift */; };
 		847B3778247980E000B48535 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3777247980E000B48535 /* ContentView.swift */; };
@@ -89,6 +90,7 @@
 		69F440E1262F9F90997A9A24 /* Pods_Gorilla_GorillaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gorilla_GorillaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		844EE1322484278F003369F2 /* HomePastContestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePastContestCell.swift; sourceTree = "<group>"; };
 		844EE134248427AF003369F2 /* HomePastContestCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePastContestCellReactor.swift; sourceTree = "<group>"; };
+		844EE136248427D7003369F2 /* HomePastContestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePastContestViewController.swift; sourceTree = "<group>"; };
 		847B3770247980E000B48535 /* Gorilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gorilla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		847B3773247980E000B48535 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		847B3775247980E000B48535 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 		844EE13024842731003369F2 /* HomePastContest */ = {
 			isa = PBXGroup;
 			children = (
+				844EE136248427D7003369F2 /* HomePastContestViewController.swift */,
 			);
 			path = HomePastContest;
 			sourceTree = "<group>";
@@ -810,6 +813,7 @@
 				847B37FB247A583B00B48535 /* HomePastContestListReactor.swift in Sources */,
 				847B37B82479958C00B48535 /* GlobalFunctions.swift in Sources */,
 				847B380E247CB0A400B48535 /* LoggerPlugin.swift in Sources */,
+				844EE137248427D7003369F2 /* HomePastContestViewController.swift in Sources */,
 				847B3813247CB49700B48535 /* NetworkProvider.swift in Sources */,
 				847B37DD2479D81B00B48535 /* HomeReactor.swift in Sources */,
 				847B37CF2479AA9800B48535 /* IconView.swift in Sources */,
