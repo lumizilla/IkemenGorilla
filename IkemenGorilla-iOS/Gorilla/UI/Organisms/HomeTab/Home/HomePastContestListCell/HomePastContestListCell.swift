@@ -32,10 +32,6 @@ final class HomePastContestListCell: UICollectionViewCell, View, ViewConstructor
         $0.textColor = Color.textGray
     }
     
-    private let formatter = DateFormatter().then {
-        $0.dateFormat = "MM-dd"
-    }
-    
     // MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -102,9 +98,9 @@ final class HomePastContestListCell: UICollectionViewCell, View, ViewConstructor
         reactor.state
             .map {
                 var durationString = ""
-                durationString += self.formatter.string(from: $0.contest.start)
+                durationString += formatter.string(from: $0.contest.start)
                 durationString += " ~ "
-                durationString += self.formatter.string(from: $0.contest.end)
+                durationString += formatter.string(from: $0.contest.end)
                 return durationString
             }
             .distinctUntilChanged()
