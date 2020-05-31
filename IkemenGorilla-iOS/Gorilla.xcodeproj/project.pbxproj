@@ -17,7 +17,7 @@
 		844EE14424843690003369F2 /* RecommendedZooCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE14324843690003369F2 /* RecommendedZooCell.swift */; };
 		844EE146248436AD003369F2 /* RecommendedZooCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE145248436AD003369F2 /* RecommendedZooCellReactor.swift */; };
 		844EE148248439E4003369F2 /* RecommendedZooViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE147248439E4003369F2 /* RecommendedZooViewController.swift */; };
-		844EE14A248439FE003369F2 /* HomeRecommendedZooReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE149248439FE003369F2 /* HomeRecommendedZooReactor.swift */; };
+		844EE14A248439FE003369F2 /* RecommendedZooReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE149248439FE003369F2 /* RecommendedZooReactor.swift */; };
 		847B3774247980E000B48535 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3773247980E000B48535 /* AppDelegate.swift */; };
 		847B3776247980E000B48535 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3775247980E000B48535 /* SceneDelegate.swift */; };
 		847B3778247980E000B48535 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3777247980E000B48535 /* ContentView.swift */; };
@@ -104,7 +104,7 @@
 		844EE14324843690003369F2 /* RecommendedZooCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedZooCell.swift; sourceTree = "<group>"; };
 		844EE145248436AD003369F2 /* RecommendedZooCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedZooCellReactor.swift; sourceTree = "<group>"; };
 		844EE147248439E4003369F2 /* RecommendedZooViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedZooViewController.swift; sourceTree = "<group>"; };
-		844EE149248439FE003369F2 /* HomeRecommendedZooReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecommendedZooReactor.swift; sourceTree = "<group>"; };
+		844EE149248439FE003369F2 /* RecommendedZooReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedZooReactor.swift; sourceTree = "<group>"; };
 		847B3770247980E000B48535 /* Gorilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gorilla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		847B3773247980E000B48535 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		847B3775247980E000B48535 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -250,7 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				844EE147248439E4003369F2 /* RecommendedZooViewController.swift */,
-				844EE149248439FE003369F2 /* HomeRecommendedZooReactor.swift */,
+				844EE149248439FE003369F2 /* RecommendedZooReactor.swift */,
 			);
 			path = RecommendedZoo;
 			sourceTree = "<group>";
@@ -888,7 +888,7 @@
 				847B37CD2479A94A00B48535 /* TabBarController.swift in Sources */,
 				847B3778247980E000B48535 /* ContentView.swift in Sources */,
 				847B3801247A67F900B48535 /* HomeRecommendedZooListCell.swift in Sources */,
-				844EE14A248439FE003369F2 /* HomeRecommendedZooReactor.swift in Sources */,
+				844EE14A248439FE003369F2 /* RecommendedZooReactor.swift in Sources */,
 				847B380C247CB03C00B48535 /* APIStatus.swift in Sources */,
 				847B37E82479E25E00B48535 /* HomeCurrentContestListReactor.swift in Sources */,
 				847B37C62479A29F00B48535 /* UILabel+Extension.swift in Sources */,
