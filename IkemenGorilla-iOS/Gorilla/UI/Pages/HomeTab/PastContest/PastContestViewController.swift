@@ -53,7 +53,7 @@ final class HomePastContestViewController: UIViewController, View, ViewConstruct
     }
     
     // MARK: - Bind Method
-    func bind(reactor: HomePastContestReactor) {
+    func bind(reactor: PastContestReactor) {
         // Action
         reactor.action.onNext(.load)
         

@@ -9,7 +9,7 @@
 import ReactorKit
 import RxSwift
 
-final class HomePastContestReactor: Reactor {
+final class PastContestReactor: Reactor {
     enum Action {
         case load
     }
@@ -23,7 +23,7 @@ final class HomePastContestReactor: Reactor {
         var isLoading: Bool = false
     }
     
-    let initialState = HomePastContestReactor.State()
+    let initialState = PastContestReactor.State()
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {

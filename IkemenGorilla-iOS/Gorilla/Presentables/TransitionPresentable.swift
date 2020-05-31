@@ -10,16 +10,16 @@ import UIKit
 
 protocol TransitionPresentable: class {
     // HOME TAB
-    func showHomePastContestPage(homePastContestReactor: HomePastContestReactor)
+    func showHomePastContestPage(pastContestReactor: PastContestReactor)
     func showRecommendedZooPage(recommendedZooReactor: RecommendedZooReactor)
 }
 
 extension TransitionPresentable where Self: UIViewController {
     // HOME TAB
-    func showHomePastContestPage(homePastContestReactor: HomePastContestReactor) {
+    func showHomePastContestPage(pastContestReactor: PastContestReactor) {
         navigationController?.pushViewController(
             HomePastContestViewController().then {
-                $0.reactor = homePastContestReactor
+                $0.reactor = pastContestReactor
                 
             },
             animated: true
