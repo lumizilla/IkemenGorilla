@@ -229,13 +229,13 @@
 			path = HomePastContest;
 			sourceTree = "<group>";
 		};
-		844EE13124842759003369F2 /* HomePastContest */ = {
+		844EE13124842759003369F2 /* PastContest */ = {
 			isa = PBXGroup;
 			children = (
 				844EE1322484278F003369F2 /* HomePastContestCell.swift */,
 				844EE134248427AF003369F2 /* HomePastContestCellReactor.swift */,
 			);
-			path = HomePastContest;
+			path = PastContest;
 			sourceTree = "<group>";
 		};
 		844EE13E24843338003369F2 /* Presentables */ = {
@@ -489,7 +489,7 @@
 			isa = PBXGroup;
 			children = (
 				844EE14224843637003369F2 /* RecommendedZoo */,
-				844EE13124842759003369F2 /* HomePastContest */,
+				844EE13124842759003369F2 /* PastContest */,
 				847B37DF2479DFD300B48535 /* Home */,
 			);
 			path = HomeTab;
