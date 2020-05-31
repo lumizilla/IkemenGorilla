@@ -9,7 +9,7 @@
 import ReactorKit
 import RxSwift
 
-final class HomeRecommendedZooReactor: Reactor {
+final class RecommendedZooReactor: Reactor {
     enum Action {
         case load
     }
@@ -24,7 +24,7 @@ final class HomeRecommendedZooReactor: Reactor {
         var isLoading: Bool = false
     }
     
-    let initialState = HomeRecommendedZooReactor.State()
+    let initialState = RecommendedZooReactor.State()
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {

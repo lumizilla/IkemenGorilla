@@ -50,7 +50,7 @@ final class HomeRecommendedZooViewController: UIViewController, View, ViewConstr
     }
     
     // MARK: - Bind Method
-    func bind(reactor: HomeRecommendedZooReactor) {
+    func bind(reactor: RecommendedZooReactor) {
         // Action
         reactor.action.onNext(.load)
         

@@ -95,7 +95,7 @@ final class HomeViewController: UIViewController, View, ViewConstructor, Transit
         
         recommendedZooHeader.showAllButton.rx.tap
             .bind { [weak self] _ in
-                self?.showHomeRecommendedZooPage(homeRecommendedZooReactor: reactor.createHomeRecommendedZooReactor())
+                self?.showHomeRecommendedZooPage(recommendedZooReactor: reactor.createRecommendedZooReactor())
             }
             .disposed(by: disposeBag)
         
