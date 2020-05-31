@@ -11,7 +11,7 @@
 		844EE1332484278F003369F2 /* PastContestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE1322484278F003369F2 /* PastContestCell.swift */; };
 		844EE135248427AF003369F2 /* PastContestCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE134248427AF003369F2 /* PastContestCellReactor.swift */; };
 		844EE137248427D7003369F2 /* PastContestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE136248427D7003369F2 /* PastContestViewController.swift */; };
-		844EE13B24842808003369F2 /* HomePastContestReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE13A24842808003369F2 /* HomePastContestReactor.swift */; };
+		844EE13B24842808003369F2 /* PastContestReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE13A24842808003369F2 /* PastContestReactor.swift */; };
 		844EE13D24842BEC003369F2 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE13C24842BEC003369F2 /* Formatter.swift */; };
 		844EE1402484335D003369F2 /* TransitionPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE13F2484335D003369F2 /* TransitionPresentable.swift */; };
 		844EE14424843690003369F2 /* RecommendedZooCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE14324843690003369F2 /* RecommendedZooCell.swift */; };
@@ -98,7 +98,7 @@
 		844EE1322484278F003369F2 /* PastContestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestCell.swift; sourceTree = "<group>"; };
 		844EE134248427AF003369F2 /* PastContestCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestCellReactor.swift; sourceTree = "<group>"; };
 		844EE136248427D7003369F2 /* PastContestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestViewController.swift; sourceTree = "<group>"; };
-		844EE13A24842808003369F2 /* HomePastContestReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePastContestReactor.swift; sourceTree = "<group>"; };
+		844EE13A24842808003369F2 /* PastContestReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestReactor.swift; sourceTree = "<group>"; };
 		844EE13C24842BEC003369F2 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		844EE13F2484335D003369F2 /* TransitionPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionPresentable.swift; sourceTree = "<group>"; };
 		844EE14324843690003369F2 /* RecommendedZooCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedZooCell.swift; sourceTree = "<group>"; };
@@ -224,7 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				844EE136248427D7003369F2 /* PastContestViewController.swift */,
-				844EE13A24842808003369F2 /* HomePastContestReactor.swift */,
+				844EE13A24842808003369F2 /* PastContestReactor.swift */,
 			);
 			path = PastContest;
 			sourceTree = "<group>";
@@ -858,7 +858,7 @@
 				847B37FB247A583B00B48535 /* HomePastContestListReactor.swift in Sources */,
 				847B37B82479958C00B48535 /* GlobalFunctions.swift in Sources */,
 				847B380E247CB0A400B48535 /* LoggerPlugin.swift in Sources */,
-				844EE13B24842808003369F2 /* HomePastContestReactor.swift in Sources */,
+				844EE13B24842808003369F2 /* PastContestReactor.swift in Sources */,
 				844EE137248427D7003369F2 /* PastContestViewController.swift in Sources */,
 				847B3813247CB49700B48535 /* NetworkProvider.swift in Sources */,
 				844EE13D24842BEC003369F2 /* Formatter.swift in Sources */,
