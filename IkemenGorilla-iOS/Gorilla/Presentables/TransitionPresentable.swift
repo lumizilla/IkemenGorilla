@@ -6,4 +6,22 @@
 //  Copyright © 2020 admin. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+protocol TransitionPresentable: class {
+    // HOME TAB
+    func showHomePastContestPage(homePastContestReactor: HomePastContestReactor)
+}
+
+extension TransitionPresentable where Self: UIViewController {
+    // HOME TAB
+    func showHomePastContestPage(homePastContestReactor: HomePastContestReactor) {
+        navigationController?.pushViewController(
+            HomePastContestViewController().then {
+                $0.reactor = homePastContestReactor
+                
+            },
+            animated: true
+        )
+    }
+}
