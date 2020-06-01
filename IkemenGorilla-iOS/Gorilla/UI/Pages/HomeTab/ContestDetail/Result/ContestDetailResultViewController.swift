@@ -35,6 +35,19 @@ final class ContestDetailResultViewController: UIViewController, View, ViewConst
         $0.distribution = .fill
     }
     
+    private let awardHeader = UIView().then {
+        let label = UILabel().then {
+            $0.apply(fontStyle: .medium, size: 20)
+            $0.textColor = Color.black
+            $0.text = "Award"
+        }
+        $0.addSubview(label)
+        label.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.left.equalToSuperview().inset(16)
+        }
+    }
+    
     private let awardsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout().then {
         $0.itemSize = ContestDetailResultAwardCell.Const.itemSize
         $0.minimumLineSpacing = 0
@@ -45,6 +58,18 @@ final class ContestDetailResultViewController: UIViewController, View, ViewConst
         $0.showsVerticalScrollIndicator = false
         $0.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         $0.isScrollEnabled = false
+    }
+    
+    private let resultHeader = UIView().then {
+        let label = UILabel().then {
+            $0.apply(fontStyle: .medium, size: 20)
+            $0.textColor = Color.black
+            $0.text = "票数"
+        }
+        $0.addSubview(label)
+        label.snp.makeConstraints {
+            $0.left.bottom.equalToSuperview().inset(16)
+        }
     }
     
     private let resultsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout().then {
@@ -69,7 +94,9 @@ final class ContestDetailResultViewController: UIViewController, View, ViewConst
     func setupViews() {
         view.addSubview(contentScrollView)
         contentScrollView.addSubview(stackView)
+        stackView.addArrangedSubview(awardHeader)
         stackView.addArrangedSubview(awardsCollectionView)
+        stackView.addArrangedSubview(resultHeader)
         stackView.addArrangedSubview(resultsCollectionView)
     }
     
@@ -79,6 +106,12 @@ final class ContestDetailResultViewController: UIViewController, View, ViewConst
         }
         stackView.snp.makeConstraints {
             $0.edges.equalToSuperview()
+        }
+        awardHeader.snp.makeConstraints {
+            $0.height.equalTo(88)
+        }
+        resultHeader.snp.makeConstraints {
+            $0.height.equalTo(80)
         }
     }
     
