@@ -14,16 +14,16 @@ final class ContestDetailEntryAnimalCellReactor: Reactor {
     enum Mutation {}
     
     struct State {
-        let animal: Animal
+        let entry: Entry
         
-        init(animal: Animal) {
-            self.animal = animal
+        init(entry: Entry) {
+            self.entry = entry
         }
     }
     
     let initialState: ContestDetailEntryAnimalCellReactor.State
     
-    init(animal: Animal) {
-        initialState = State(animal: animal)
+    init(entry: Entry) {
+        initialState = State(entry: entry)
     }
 }
