@@ -17,6 +17,8 @@ protocol TestDataType {
     static func sponsors(count: Int) -> [Sponsor]
     static func entry() -> Entry
     static func entries(count: Int) -> [Entry]
+    static func post() -> Post
+    static func posts(count: Int) -> [Post]
 }
 
 struct TestData: TestDataType {
@@ -76,6 +78,28 @@ struct TestData: TestDataType {
     
     static func entries(count: Int) -> [Entry] {
         return (0 ..< count).map { _ in entry() }
+    }
+    
+    static func post() -> Post {
+        return Post(
+            id: testID(),
+            animalId: testID(),
+            animalName: "メリーさんの羊",
+            animalIconUrl: "https://images.unsplash.com/photo-1484557985045-edf25e08da73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjF9&auto=format&fit=crop&w=1934&q=80",
+            zooId: testID(),
+            zooName: "東山動物園",
+            imageUrls: [
+                "https://images.unsplash.com/photo-1533415648777-407b626eb0fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
+                "https://images.unsplash.com/photo-1576626884826-44e68ad6c948?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE1ODB9",
+                "https://images.unsplash.com/photo-1560709446-0e44df609ebc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1300&q=80"
+            ],
+            description: "Mary had a little lamb\nLittle lamb, little lamb,\nMary had a little lamb\nIts fleece was white as snow. ♪♫♬🎶",
+            createdAt: dateFromString(from: "2020-05-24")
+        )
+    }
+    
+    static func posts(count: Int) -> [Post] {
+        return (0 ..< count).map { _ in post() }
     }
     
     // MARK: - Private functions
