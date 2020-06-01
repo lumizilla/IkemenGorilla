@@ -21,7 +21,6 @@ extension TransitionPresentable where Self: UIViewController {
         navigationController?.pushViewController(
             PastContestViewController().then {
                 $0.reactor = pastContestReactor
-                
             },
             animated: true
         )
