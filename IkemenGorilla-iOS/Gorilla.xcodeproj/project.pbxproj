@@ -76,6 +76,7 @@
 		84A99FD82484CA7B0066863B /* ContestDetailInfoReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99FD72484CA7B0066863B /* ContestDetailInfoReactor.swift */; };
 		84A99FDE2484D5FF0066863B /* ContestDetailInfoSponsorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99FDD2484D5FF0066863B /* ContestDetailInfoSponsorCell.swift */; };
 		84A99FE02484D6260066863B /* ContestDetailInfoSponsorCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99FDF2484D6260066863B /* ContestDetailInfoSponsorCellReactor.swift */; };
+		84A99FE22484D6570066863B /* Sponsor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99FE12484D6570066863B /* Sponsor.swift */; };
 		8AD80E3EDA0645450C645241 /* Pods_Gorilla_GorillaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F440E1262F9F90997A9A24 /* Pods_Gorilla_GorillaUITests.framework */; };
 		A29B9D43B1A804F6145A1073 /* Pods_GorillaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B68804A246C98CAE881B62C /* Pods_GorillaTests.framework */; };
 /* End PBXBuildFile section */
@@ -176,6 +177,7 @@
 		84A99FD72484CA7B0066863B /* ContestDetailInfoReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDetailInfoReactor.swift; sourceTree = "<group>"; };
 		84A99FDD2484D5FF0066863B /* ContestDetailInfoSponsorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDetailInfoSponsorCell.swift; sourceTree = "<group>"; };
 		84A99FDF2484D6260066863B /* ContestDetailInfoSponsorCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDetailInfoSponsorCellReactor.swift; sourceTree = "<group>"; };
+		84A99FE12484D6570066863B /* Sponsor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sponsor.swift; sourceTree = "<group>"; };
 		B34C68F74EC2D59ED3BA5ED9 /* Pods-Gorilla-GorillaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gorilla-GorillaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Gorilla-GorillaUITests/Pods-Gorilla-GorillaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BC5B729A7696F5FC17692DAA /* Pods-GorillaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GorillaTests.debug.xcconfig"; path = "Target Support Files/Pods-GorillaTests/Pods-GorillaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D88E3F92FF19F1C62D0B465D /* Pods_Gorilla.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gorilla.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -501,6 +503,7 @@
 				847B37D22479D1F500B48535 /* Entity.swift */,
 				847B37D42479D27D00B48535 /* Contest.swift */,
 				847B37D62479D32A00B48535 /* Zoo.swift */,
+				84A99FE12484D6570066863B /* Sponsor.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -943,6 +946,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84A99FE22484D6570066863B /* Sponsor.swift in Sources */,
 				847B3774247980E000B48535 /* AppDelegate.swift in Sources */,
 				847B37F7247A57E100B48535 /* HomePastContestListCellReactor.swift in Sources */,
 				847B381B247CBA9000B48535 /* FrontendEchoViewController.swift in Sources */,
