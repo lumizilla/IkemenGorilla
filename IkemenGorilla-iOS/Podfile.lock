@@ -22,6 +22,7 @@ PODS:
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
+  - SegementSlide (3.0.0)
   - SnapKit (5.0.1)
   - Then (2.6.0)
 
@@ -31,6 +32,7 @@ DEPENDENCIES:
   - Moya/RxSwift (~> 14.0)
   - ReactorKit
   - ReusableKit/RxSwift
+  - SegementSlide (= 3.0.0)
   - SnapKit (~> 5.0.0)
   - Then
 
@@ -45,6 +47,7 @@ SPEC REPOS:
     - RxCocoa
     - RxRelay
     - RxSwift
+    - SegementSlide
     - SnapKit
     - Then
 
@@ -58,9 +61,10 @@ SPEC CHECKSUMS:
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  SegementSlide: ad0a6de50cbcc071da9ec8b0f403a4e75b20ba9a
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
 
-PODFILE CHECKSUM: e401e614dfa8b656f0e4f1546abe9e8127edeec3
+PODFILE CHECKSUM: 3caee3a6bb83fc51f3e423ebeec64266e1421ccf
 
 COCOAPODS: 1.8.4
