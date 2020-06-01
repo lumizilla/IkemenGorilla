@@ -27,3 +27,9 @@ final class ContestDetailInfoSponsorCellReactor: Reactor {
         initialState = State(sponsor: sponsor)
     }
 }
+
+extension ContestDetailInfoSponsorCellReactor: Equatable {
+    static func == (lhs: ContestDetailInfoSponsorCellReactor, rhs: ContestDetailInfoSponsorCellReactor) -> Bool {
+        return lhs.currentState.sponsor.id == rhs.currentState.sponsor.id
+    }
+}
