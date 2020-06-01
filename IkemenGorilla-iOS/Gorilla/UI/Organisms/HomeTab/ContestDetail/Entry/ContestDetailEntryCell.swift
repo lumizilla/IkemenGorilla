@@ -10,7 +10,7 @@ import UIKit
 import ReactorKit
 import RxSwift
 
-final class ContestDetailEntryAnimalCell: UICollectionViewCell, View, ViewConstructor {
+final class ContestDetailEntryCell: UICollectionViewCell, View, ViewConstructor {
     
     struct Const {
         static let cellWidth: CGFloat = (DeviceSize.screenWidth - 48) / 2
