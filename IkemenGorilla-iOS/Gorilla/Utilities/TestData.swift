@@ -13,6 +13,8 @@ protocol TestDataType {
     static func testContests(count: Int) -> [Contest]
     static func testZoo() -> Zoo
     static func testZoos(count: Int) -> [Zoo]
+    static func sponsor() -> Sponsor
+    static func sponsors(count: Int) -> [Sponsor]
 }
 
 struct TestData: TestDataType {
@@ -46,6 +48,19 @@ struct TestData: TestDataType {
     
     static func testZoos(count: Int) -> [Zoo] {
         return (0 ..< count).map { _ in testZoo() }
+    }
+    
+    static func sponsor() -> Sponsor {
+        return Sponsor(
+            id: testID(),
+            name: "Red Bull",
+            imageUrl: "https://banner2.cleanpng.com/20180509/duw/kisspng-red-bull-energy-drink-logo-capcom-pro-tour-5af2b8cadf25e3.574432571525856458914.jpg",
+            websiteUrl: "https://www.redbull.com/jp-ja/"
+        )
+    }
+    
+    static func sponsors(count: Int) -> [Sponsor] {
+        return (0 ..< count).map { _ in sponsor() }
     }
     
     // MARK: - Private functions
