@@ -290,6 +290,7 @@
 		844EE14C2484A512003369F2 /* ContestDetail */ = {
 			isa = PBXGroup;
 			children = (
+				84A99FD92484D5800066863B /* Info */,
 				844EE1512484A6DF003369F2 /* ContestDetailHeader.swift */,
 			);
 			path = ContestDetail;
@@ -660,6 +661,13 @@
 			children = (
 			);
 			path = Result;
+			sourceTree = "<group>";
+		};
+		84A99FD92484D5800066863B /* Info */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Info;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
