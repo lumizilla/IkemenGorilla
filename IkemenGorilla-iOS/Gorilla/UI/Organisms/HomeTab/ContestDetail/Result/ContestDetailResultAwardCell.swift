@@ -14,6 +14,8 @@ final class ContestDetailResultAwardCell: UICollectionViewCell, View, ViewConstr
     
     struct Const {
         static let cellWidth: CGFloat = (DeviceSize.screenWidth - 48) / 2
+        static let cellHeight: CGFloat = cellWidth + 8 + 16 + 16 + 24 + 24
+        static let itemSize: CGSize = CGSize(width: cellWidth, height: cellHeight)
     }
     
     // MARK: - Variables
