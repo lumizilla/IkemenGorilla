@@ -127,7 +127,7 @@ final class ContestDetailResultVoteCell: UICollectionViewCell, View, ViewConstru
                 self.votesIndicatorFrontView.snp.makeConstraints {
                     $0.left.equalTo(self.iconView.snp.right).offset(16)
                     $0.top.equalTo(self.numberOfVotesLabel.snp.bottom).offset(8)
-                    $0.width.equalTo(Const.indicatorWidth * CGFloat(contestResult.numberOfVotes / contestResult.maxOfVotes))
+                    $0.width.equalTo(Const.indicatorWidth * CGFloat(contestResult.numberOfVotes) / CGFloat(contestResult.maxOfVotes))
                     $0.height.equalTo(8)
                 }
             }
