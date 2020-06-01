@@ -39,7 +39,7 @@ final class RecommendedZooReactor: Reactor {
     }
     
     private func load() -> Observable<[Zoo]> {
-        .just(TestData.testZoos(count: 8))
+        .just(TestData.zoos(count: 8))
     }
     
     func reduce(state: State, mutation: Mutation) -> State {

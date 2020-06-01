@@ -12,7 +12,7 @@ protocol TestDataType {
     static func contest() -> Contest
     static func contests(count: Int) -> [Contest]
     static func zoo() -> Zoo
-    static func testZoos(count: Int) -> [Zoo]
+    static func zoos(count: Int) -> [Zoo]
     static func sponsor() -> Sponsor
     static func sponsors(count: Int) -> [Sponsor]
 }
@@ -46,7 +46,7 @@ struct TestData: TestDataType {
         )
     }
     
-    static func testZoos(count: Int) -> [Zoo] {
+    static func zoos(count: Int) -> [Zoo] {
         return (0 ..< count).map { _ in zoo() }
     }
     
