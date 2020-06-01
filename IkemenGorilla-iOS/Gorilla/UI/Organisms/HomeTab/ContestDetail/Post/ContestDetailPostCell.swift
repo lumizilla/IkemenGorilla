@@ -34,7 +34,7 @@ final class ContestDetailPostCell: UICollectionViewCell, View, ViewConstructor {
     // MARK: - Setup Methods
     func setupViews() {
         layer.masksToBounds = true
-        layer.cornerRadius = 0
+        layer.cornerRadius = 4
         addSubview(imageView)
     }
     
@@ -49,5 +49,13 @@ final class ContestDetailPostCell: UICollectionViewCell, View, ViewConstructor {
         // Action
         
         // State
+        reactor.state.map { $0.post.imageUrls }
+            .distinctUntilChanged()
+            .bind { [weak self] imageUrls in
+                if !imageUrls.isEmpty {
+                    self?.imageView.setImage(imageUrl: imageUrls[0])
+                }
+            }
+            .disposed(by: disposeBag)
     }
 }
