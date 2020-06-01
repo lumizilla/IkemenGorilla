@@ -35,7 +35,10 @@ struct TestData: TestDataType {
             status: "開催中",
             catchCopy: "ワシが一番イケメンやで",
             description: "一番イケメンなゴリラは誰だ！！！人々を一番キュンキュンさせるゴリラは誰なのか！全国から数々のイケメンゴリラが遂に集結．決戦のときがやってきた！",
-            imageUrl: "https://images.unsplash.com/photo-1581281863883-2469417a1668?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=989&q=80"
+            imageUrl: "https://images.unsplash.com/photo-1581281863883-2469417a1668?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=989&q=80",
+            numberOfEntries: 16,
+            numberOfVotedPeople: 121,
+            numberOfVotes: 382
         )
     }
     
