@@ -27,3 +27,9 @@ final class ContestDetailPostCellReactor: Reactor {
         initialState = State(post: post)
     }
 }
+
+extension ContestDetailPostCellReactor: Equatable {
+    static func == (lhs: ContestDetailPostCellReactor, rhs: ContestDetailPostCellReactor) -> Bool {
+        return lhs.currentState.post.id == rhs.currentState.post.id
+    }
+}
