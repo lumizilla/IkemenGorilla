@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+struct Sponsor: Entity {
+    let id: String
+    let name: String
+    let imageUrl: String
+    let websiteUrl: String
+    
+    static func == (lhs: Sponsor, rhs: Sponsor) -> Bool {
+        lhs.id == rhs.id
+    }
+}
