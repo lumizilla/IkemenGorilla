@@ -25,12 +25,17 @@ final class ContestDetailEntryViewController: UIViewController, View, ViewConstr
         return entriesCollectionView
     }
     
-    
     // MARK: - Views
+    private let titleLabel = UILabel().then {
+        $0.apply(fontStyle: .medium, size: 20)
+        $0.textColor = Color.black
+    }
+    
     private let entriesCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout().then {
         $0.itemSize = ContestDetailEntryCell.Const.itemSize
         $0.minimumLineSpacing = 16
         $0.minimumInteritemSpacing = 16
+        $0.headerReferenceSize = CGSize(width: DeviceSize.screenWidth, height: 56)
     }).then {
         $0.register(Reusable.entryCell)
         $0.backgroundColor = Color.white
@@ -49,11 +54,16 @@ final class ContestDetailEntryViewController: UIViewController, View, ViewConstr
     // MARK: - Setup Methods
     func setupViews() {
         view.addSubview(entriesCollectionView)
+        entriesCollectionView.addSubview(titleLabel)
     }
     
     func setupViewConstraints() {
         entriesCollectionView.snp.makeConstraints {
             $0.edges.equalToSuperview()
+        }
+        titleLabel.snp.makeConstraints {
+            $0.top.left.right.equalToSuperview()
+            $0.height.equalTo(56)
         }
     }
     
@@ -68,6 +78,12 @@ final class ContestDetailEntryViewController: UIViewController, View, ViewConstr
             .bind(to: entriesCollectionView.rx.items(Reusable.entryCell)) { _, reactor, cell in
                 cell.reactor = reactor
             }
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.entryCellReactors.count }
+            .distinctUntilChanged()
+            .map { "\($0)匹の動物たち" }
+            .bind(to: titleLabel.rx.text)
             .disposed(by: disposeBag)
     }
 }
