@@ -54,7 +54,7 @@ struct TestData: TestDataType {
         return Sponsor(
             id: testID(),
             name: "Red Bull",
-            imageUrl: "https://banner2.cleanpng.com/20180509/duw/kisspng-red-bull-energy-drink-logo-capcom-pro-tour-5af2b8cadf25e3.574432571525856458914.jpg",
+            imageUrl: "https://www.screenja.com/static/img/thumbs/red-bull-logo-1-normal-636.png",
             websiteUrl: "https://www.redbull.com/jp-ja/"
         )
     }
