@@ -40,7 +40,7 @@ final class ContestDetailViewController: SegementSlideDefaultViewController, Vie
     
     override func segementSlideContentViewController(at index: Int) -> SegementSlideContentScrollViewDelegate? {
         return ContestDetailInfoViewController().then {
-            $0.reactor = ContestDetailInfoReactor(contest: TestData.testContest())
+            $0.reactor = ContestDetailInfoReactor(contest: TestData.contest())
         }
     }
     
