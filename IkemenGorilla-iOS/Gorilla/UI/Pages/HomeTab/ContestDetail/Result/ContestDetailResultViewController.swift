@@ -16,6 +16,7 @@ final class ContestDetailResultViewController: UIViewController, View, ViewConst
     
     struct Reusable {
         static let awardCell = ReusableCell<ContestDetailResultAwardCell>()
+        static let resultCell = ReusableCell<ContestDetailResultVoteCell>()
     }
     
     // MARK: - Variables
@@ -46,6 +47,16 @@ final class ContestDetailResultViewController: UIViewController, View, ViewConst
         $0.isScrollEnabled = false
     }
     
+    private let resultsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout().then {
+        $0.itemSize = ContestDetailResultVoteCell.Const.itemSize
+        $0.minimumLineSpacing = 0
+    }).then {
+        $0.register(Reusable.resultCell)
+        $0.backgroundColor = Color.white
+        $0.showsVerticalScrollIndicator = false
+        $0.isScrollEnabled = false
+    }
+    
     // MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +70,7 @@ final class ContestDetailResultViewController: UIViewController, View, ViewConst
         view.addSubview(contentScrollView)
         contentScrollView.addSubview(stackView)
         stackView.addArrangedSubview(awardsCollectionView)
+        stackView.addArrangedSubview(resultsCollectionView)
     }
     
     func setupViewConstraints() {
@@ -67,10 +79,6 @@ final class ContestDetailResultViewController: UIViewController, View, ViewConst
         }
         stackView.snp.makeConstraints {
             $0.edges.equalToSuperview()
-        }
-        awardsCollectionView.snp.makeConstraints {
-            $0.height.equalTo(ContestDetailResultAwardCell.Const.cellHeight * 4)
-            $0.width.equalTo(DeviceSize.screenWidth)
         }
     }
     
@@ -92,7 +100,25 @@ final class ContestDetailResultViewController: UIViewController, View, ViewConst
             .bind { [weak self] count in
                 self?.stackView.removeConstraints(self?.awardsCollectionView.constraints ?? [])
                 self?.awardsCollectionView.snp.makeConstraints {
-                    $0.height.equalTo(ContestDetailResultAwardCell.Const.cellHeight * 4)
+                    $0.height.equalTo(ContestDetailResultAwardCell.Const.cellHeight * CGFloat((count + 1) / 2))
+                    $0.width.equalTo(DeviceSize.screenWidth)
+                }
+            }
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.resultCellReactors }
+            .distinctUntilChanged()
+            .bind(to: resultsCollectionView.rx.items(Reusable.resultCell)) { _, reactor, cell in
+                cell.reactor = reactor
+            }
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.resultCellReactors.count }
+            .distinctUntilChanged()
+            .bind { [weak self] count in
+                self?.stackView.removeConstraints(self?.resultsCollectionView.constraints ?? [])
+                self?.resultsCollectionView.snp.makeConstraints {
+                    $0.height.equalTo(ContestDetailResultVoteCell.Const.cellHeight * CGFloat(count))
                     $0.width.equalTo(DeviceSize.screenWidth)
                 }
             }
