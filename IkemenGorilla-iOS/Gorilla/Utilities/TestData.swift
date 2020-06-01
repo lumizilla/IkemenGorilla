@@ -21,6 +21,8 @@ protocol TestDataType {
     static func posts(count: Int) -> [Post]
     static func award() -> Award
     static func awards(count: Int) -> [Award]
+    static func contestResult(numberOfVotes: Int, maxOfVotes: Int) -> ContestResult
+    static func contestResults(count: Int) -> [ContestResult]
 }
 
 struct TestData: TestDataType {
@@ -115,6 +117,22 @@ struct TestData: TestDataType {
     
     static func awards(count: Int) -> [Award] {
         return (0 ..< count).map { _ in award() }
+    }
+    
+    static func contestResult(numberOfVotes: Int, maxOfVotes: Int) -> ContestResult {
+        return ContestResult(
+            animalId: testID(),
+            animalName: "シャバーニ",
+            iconUrl: "https://images.unsplash.com/photo-1563485906266-9b9a5ca03f07?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=582&q=80",
+            numberOfVotes: numberOfVotes,
+            maxOfVotes: maxOfVotes
+        )
+    }
+    
+    static func contestResults(count: Int) -> [ContestResult] {
+        let range = 31
+        let max = count * range
+        return (0 ..< count).map { index in contestResult(numberOfVotes: range * (count - index), maxOfVotes: max) }
     }
     
     // MARK: - Private functions
