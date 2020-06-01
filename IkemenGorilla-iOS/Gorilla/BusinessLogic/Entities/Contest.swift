@@ -17,6 +17,9 @@ struct Contest: Entity {
     let catchCopy: String
     let description: String
     let imageUrl: String
+    let numberOfEntries: Int
+    let numberOfVotedPeople: Int
+    let numberOfVotes: Int
     
     static func == (lhs: Contest, rhs: Contest) -> Bool {
         lhs.id == rhs.id
