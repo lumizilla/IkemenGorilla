@@ -15,6 +15,8 @@ protocol TestDataType {
     static func zoos(count: Int) -> [Zoo]
     static func sponsor() -> Sponsor
     static func sponsors(count: Int) -> [Sponsor]
+    static func entry() -> Entry
+    static func entries(count: Int) -> [Entry]
 }
 
 struct TestData: TestDataType {
@@ -61,6 +63,19 @@ struct TestData: TestDataType {
     
     static func sponsors(count: Int) -> [Sponsor] {
         return (0 ..< count).map { _ in sponsor() }
+    }
+    
+    static func entry() -> Entry {
+        return Entry(
+            animalId: testID(),
+            name: "シャバーニ",
+            iconUrl: "https://images.unsplash.com/photo-1563485906266-9b9a5ca03f07?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=582&q=80",
+            zooName: "東山動物園"
+        )
+    }
+    
+    static func entries(count: Int) -> [Entry] {
+        return (0 ..< count).map { _ in entry() }
     }
     
     // MARK: - Private functions
