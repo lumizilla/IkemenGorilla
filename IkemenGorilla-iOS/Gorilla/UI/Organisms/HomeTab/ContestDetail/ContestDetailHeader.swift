@@ -13,7 +13,7 @@ import RxSwift
 final class ContestDetailHeader: UIView, View, ViewConstructor {
     
     struct Const {
-        static let imageViewHeight: CGFloat = 240
+        static let imageViewHeight: CGFloat = 320
     }
     
     // MARK: - Variables
@@ -22,6 +22,7 @@ final class ContestDetailHeader: UIView, View, ViewConstructor {
     // MARK: - Views
     private let imageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
+        $0.layer.masksToBounds = true
     }
     
     private let contestNameLabel = UILabel().then {
