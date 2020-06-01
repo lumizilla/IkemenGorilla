@@ -38,6 +38,7 @@ final class ContestDetailInfoViewController: UIViewController, View, ViewConstru
         $0.backgroundColor = Color.white
         $0.showsVerticalScrollIndicator = false
         $0.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 24, right: 16)
+        $0.alpha = 0
     }
     
     // MARK: - Life Cycles
@@ -56,6 +57,7 @@ final class ContestDetailInfoViewController: UIViewController, View, ViewConstru
         
         UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
             flowLayout.headerReferenceSize = CGSize(width: DeviceSize.screenWidth, height: height)
+            self.sponsorsCollectionView.alpha = 1
         }, completion: nil)
     }
     
