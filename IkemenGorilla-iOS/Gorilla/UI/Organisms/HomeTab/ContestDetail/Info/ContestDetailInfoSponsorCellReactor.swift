@@ -6,4 +6,24 @@
 //  Copyright © 2020 admin. All rights reserved.
 //
 
-import Foundation
+import ReactorKit
+import RxSwift
+
+final class ContestDetailInfoSponsorCellReactor: Reactor {
+    enum Action {}
+    enum Mutation {}
+    
+    struct State {
+        let sponsor: Sponsor
+        
+        init(sponsor: Sponsor) {
+            self.sponsor = sponsor
+        }
+    }
+    
+    let initialState: ContestDetailInfoSponsorCellReactor.State
+    
+    init(sponsor: Sponsor) {
+        initialState = State(sponsor: sponsor)
+    }
+}
