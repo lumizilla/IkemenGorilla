@@ -273,6 +273,7 @@
 		844EE14B2484A4EC003369F2 /* ContestDetail */ = {
 			isa = PBXGroup;
 			children = (
+				84A99FD02484C9EB0066863B /* Entry */,
 				84A99FCF2484C9C70066863B /* Info */,
 				844EE14D2484A595003369F2 /* ContestDetailViewController.swift */,
 				844EE14F2484A5AF003369F2 /* ContestDetailReactor.swift */,
@@ -630,6 +631,13 @@
 			children = (
 			);
 			path = Info;
+			sourceTree = "<group>";
+		};
+		84A99FD02484C9EB0066863B /* Entry */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entry;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
