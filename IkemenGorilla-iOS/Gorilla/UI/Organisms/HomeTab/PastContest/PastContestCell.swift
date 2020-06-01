@@ -1,8 +1,8 @@
 //
-//  HomePastContestListCell.swift
+//  PastContestCell.swift
 //  Gorilla
 //
-//  Created by admin on 2020/05/24.
+//  Created by admin on 2020/06/01.
 //  Copyright © 2020 admin. All rights reserved.
 //
 
@@ -10,7 +10,13 @@ import UIKit
 import ReactorKit
 import RxSwift
 
-final class HomePastContestListCell: UICollectionViewCell, View, ViewConstructor {
+final class PastContestCell: UICollectionViewCell, View, ViewConstructor {
+    
+    struct Const {
+        static let cellWidth: CGFloat = (DeviceSize.screenWidth - 64) / 2
+        static let cellHeight: CGFloat = cellWidth + 48
+        static let itemSize: CGSize = CGSize(width: cellWidth, height: cellHeight)
+    }
     
     // MARK: - Variables
     var disposeBag = DisposeBag()
@@ -24,7 +30,7 @@ final class HomePastContestListCell: UICollectionViewCell, View, ViewConstructor
     
     private let contestNameLabel = UILabel().then {
         $0.apply(fontStyle: .regular, size: 14)
-        $0.textColor = Color.textBlack
+        $0.textColor = Color.black
     }
     
     private let durationLabel = UILabel().then {
@@ -54,32 +60,21 @@ final class HomePastContestListCell: UICollectionViewCell, View, ViewConstructor
     func setupViewConstraints() {
         imageView.snp.makeConstraints {
             $0.top.left.right.equalToSuperview()
+            $0.height.equalTo(Const.cellWidth)
         }
         contestNameLabel.snp.makeConstraints {
             $0.top.equalTo(imageView.snp.bottom).offset(8)
             $0.left.right.equalToSuperview()
-            $0.height.equalTo(16)
+            $0.height.equalTo(8)
         }
         durationLabel.snp.makeConstraints {
             $0.top.equalTo(contestNameLabel.snp.bottom).offset(8)
-            $0.left.right.equalToSuperview()
-            $0.height.equalTo(16)
-            $0.bottom.equalToSuperview()
+            $0.left.right.bottom.equalToSuperview()
         }
     }
     
-    override func prepareForReuse() {
-        // Variables
-        disposeBag = DisposeBag()
-        
-        // Views
-        imageView.image = #imageLiteral(resourceName: "noimage")
-        contestNameLabel.text = ""
-        durationLabel.text = ""
-    }
-    
     // MARK: - Bind Method
-    func bind(reactor: HomePastContestListCellReactor) {
+    func bind(reactor: PastContestCellReactor) {
         // Action
         
         // State
@@ -95,15 +90,15 @@ final class HomePastContestListCell: UICollectionViewCell, View, ViewConstructor
             .bind(to: contestNameLabel.rx.text)
             .disposed(by: disposeBag)
         
-        reactor.state
-            .map {
+        reactor.state.map { $0.contest }
+            .distinctUntilChanged()
+            .map { contest in
                 var durationString = ""
-                durationString += formatter.string(from: $0.contest.start)
+                durationString += formatter.string(from: contest.start)
                 durationString += " ~ "
-                durationString += formatter.string(from: $0.contest.end)
+                durationString += formatter.string(from: contest.end)
                 return durationString
             }
-            .distinctUntilChanged()
             .bind(to: durationLabel.rx.text)
             .disposed(by: disposeBag)
     }

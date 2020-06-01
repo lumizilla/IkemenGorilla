@@ -10,7 +10,7 @@ import UIKit
 import ReactorKit
 import RxSwift
 
-final class HomeViewController: UIViewController, View, ViewConstructor {
+final class HomeViewController: UIViewController, View, ViewConstructor, TransitionPresentable {
     
     struct Const {
         static let scrollViewContentInset = UIEdgeInsets(top: 24, left: 0, bottom: 36, right: 0)
@@ -87,6 +87,17 @@ final class HomeViewController: UIViewController, View, ViewConstructor {
     // MARK: - Bind Method
     func bind(reactor: HomeReactor) {
         // Action
+        pastContestHeader.showAllButton.rx.tap
+            .bind { [weak self] _ in
+                self?.showPastContestPage(pastContestReactor: reactor.createPastContestReactor())
+            }
+            .disposed(by: disposeBag)
+        
+        recommendedZooHeader.showAllButton.rx.tap
+            .bind { [weak self] _ in
+                self?.showRecommendedZooPage(recommendedZooReactor: reactor.createRecommendedZooReactor())
+            }
+            .disposed(by: disposeBag)
         
         // State
     }
