@@ -80,6 +80,7 @@
 		84A99FE42484E5090066863B /* ContestDetailInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99FE32484E5090066863B /* ContestDetailInfoHeader.swift */; };
 		84A99FE62484ED700066863B /* ContestDetailEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99FE52484ED700066863B /* ContestDetailEntryViewController.swift */; };
 		84A99FE82484ED9D0066863B /* ContestDetailEntryReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99FE72484ED9D0066863B /* ContestDetailEntryReactor.swift */; };
+		84A99FEA2484EE390066863B /* ContestDetailEntryAnimalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99FE92484EE390066863B /* ContestDetailEntryAnimalCell.swift */; };
 		8AD80E3EDA0645450C645241 /* Pods_Gorilla_GorillaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F440E1262F9F90997A9A24 /* Pods_Gorilla_GorillaUITests.framework */; };
 		A29B9D43B1A804F6145A1073 /* Pods_GorillaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B68804A246C98CAE881B62C /* Pods_GorillaTests.framework */; };
 /* End PBXBuildFile section */
@@ -184,6 +185,7 @@
 		84A99FE32484E5090066863B /* ContestDetailInfoHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDetailInfoHeader.swift; sourceTree = "<group>"; };
 		84A99FE52484ED700066863B /* ContestDetailEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDetailEntryViewController.swift; sourceTree = "<group>"; };
 		84A99FE72484ED9D0066863B /* ContestDetailEntryReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDetailEntryReactor.swift; sourceTree = "<group>"; };
+		84A99FE92484EE390066863B /* ContestDetailEntryAnimalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDetailEntryAnimalCell.swift; sourceTree = "<group>"; };
 		B34C68F74EC2D59ED3BA5ED9 /* Pods-Gorilla-GorillaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gorilla-GorillaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Gorilla-GorillaUITests/Pods-Gorilla-GorillaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BC5B729A7696F5FC17692DAA /* Pods-GorillaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GorillaTests.debug.xcconfig"; path = "Target Support Files/Pods-GorillaTests/Pods-GorillaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D88E3F92FF19F1C62D0B465D /* Pods_Gorilla.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gorilla.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -694,6 +696,7 @@
 		84A99FDA2484D5910066863B /* Entry */ = {
 			isa = PBXGroup;
 			children = (
+				84A99FE92484EE390066863B /* ContestDetailEntryAnimalCell.swift */,
 			);
 			path = Entry;
 			sourceTree = "<group>";
@@ -991,6 +994,7 @@
 				844EE1332484278F003369F2 /* PastContestCell.swift in Sources */,
 				847B37E62479E23000B48535 /* HomeCurrentContestListView.swift in Sources */,
 				847B37D52479D27D00B48535 /* Contest.swift in Sources */,
+				84A99FEA2484EE390066863B /* ContestDetailEntryAnimalCell.swift in Sources */,
 				844EE135248427AF003369F2 /* PastContestCellReactor.swift in Sources */,
 				844EE1522484A6DF003369F2 /* ContestDetailHeader.swift in Sources */,
 				847B3803247A681D00B48535 /* HomeRecommendedZooListCellReactor.swift in Sources */,
