@@ -27,3 +27,9 @@ final class ContestDetailResultVoteCellReactor: Reactor {
         initialState = State(contestResult: contestResult)
     }
 }
+
+extension ContestDetailResultVoteCellReactor: Equatable {
+    static func == (lhs: ContestDetailResultVoteCellReactor, rhs: ContestDetailResultVoteCellReactor) -> Bool {
+        return lhs.currentState.contestResult.animalId == rhs.currentState.contestResult.animalId
+    }
+}
