@@ -13,7 +13,8 @@ import RxSwift
 final class ContestDetailInfoSponsorCell: UICollectionViewCell, View, ViewConstructor {
     
     struct Const {
-        static let itemSize: CGFloat = (DeviceSize.screenWidth - 48) / 2
+        static let cellWidth: CGFloat = (DeviceSize.screenWidth - 48) / 2
+        static let itemSize: CGSize = CGSize(width: cellWidth, height: cellWidth)
     }
     
     // MARK: - Variables
@@ -21,7 +22,9 @@ final class ContestDetailInfoSponsorCell: UICollectionViewCell, View, ViewConstr
     
     // MARK: - Views
     private let imageView = UIImageView().then {
-        $0.contentMode = .scaleAspectFill
+        $0.contentMode = .scaleAspectFit
+        $0.layer.masksToBounds = true
+        $0.layer.cornerRadius = 4
     }
     
     // MARK: - Initializers
