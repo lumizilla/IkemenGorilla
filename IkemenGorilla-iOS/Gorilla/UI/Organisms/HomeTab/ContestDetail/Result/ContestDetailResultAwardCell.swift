@@ -14,7 +14,7 @@ final class ContestDetailResultAwardCell: UICollectionViewCell, View, ViewConstr
     
     struct Const {
         static let cellWidth: CGFloat = (DeviceSize.screenWidth - 48) / 2
-        static let cellHeight: CGFloat = cellWidth + 8 + 16 + 16 + 24 + 24
+        static let cellHeight: CGFloat = cellWidth + 8 + 16 + 16 + 24 + 56
         static let itemSize: CGSize = CGSize(width: cellWidth, height: cellHeight)
     }
     
@@ -80,7 +80,7 @@ final class ContestDetailResultAwardCell: UICollectionViewCell, View, ViewConstr
             $0.top.equalTo(animalNameLabel.snp.bottom).offset(16)
             $0.left.right.equalToSuperview().inset(8)
             $0.height.equalTo(24)
-            $0.bottom.equalToSuperview().inset(24)
+            $0.bottom.equalToSuperview().inset(56)
         }
         border.snp.makeConstraints {
             $0.top.equalTo(awardNameLabel.snp.bottom).offset(4)
