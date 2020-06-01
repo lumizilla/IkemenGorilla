@@ -6,4 +6,57 @@
 //  Copyright © 2020 admin. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import ReactorKit
+import RxSwift
+
+final class ContestDetailInfoSponsorCell: UICollectionViewCell, View, ViewConstructor {
+    
+    struct Const {
+        static let itemSize: CGFloat = (DeviceSize.screenWidth - 48) / 2
+    }
+    
+    // MARK: - Variables
+    var disposeBag = DisposeBag()
+    
+    // MARK: - Views
+    private let imageView = UIImageView().then {
+        $0.contentMode = .scaleAspectFill
+    }
+    
+    // MARK: - Initializers
+    override init(frame: CGRect) {
+        super.init(frame: .zero)
+        
+        setupViews()
+        setupViewConstraints()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Setup Methods
+    func setupViews() {
+        addSubview(imageView)
+    }
+    
+    func setupViewConstraints() {
+        imageView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+    }
+    
+    // MARK: - Bind Method
+    func bind(reactor: ContestDetailInfoSponsorCellReactor) {
+        // Action
+        
+        // State
+        reactor.state.map { $0.sponsor.imageUrl }
+            .distinctUntilChanged()
+            .bind { [weak self] imageUrl in
+                self?.imageView.setImage(imageUrl: imageUrl)
+            }
+            .disposed(by: disposeBag)
+    }
+}
