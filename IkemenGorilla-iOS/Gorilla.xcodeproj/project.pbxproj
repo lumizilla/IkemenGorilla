@@ -273,6 +273,7 @@
 		844EE14B2484A4EC003369F2 /* ContestDetail */ = {
 			isa = PBXGroup;
 			children = (
+				84A99FD22484CA1D0066863B /* Result */,
 				84A99FD12484CA0B0066863B /* Post */,
 				84A99FD02484C9EB0066863B /* Entry */,
 				84A99FCF2484C9C70066863B /* Info */,
@@ -646,6 +647,13 @@
 			children = (
 			);
 			path = Post;
+			sourceTree = "<group>";
+		};
+		84A99FD22484CA1D0066863B /* Result */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Result;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
