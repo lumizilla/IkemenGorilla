@@ -38,7 +38,7 @@ final class HomeCurrentContestListReactor: Reactor {
     }
     
     private func loadCurrentContests() -> Observable<[Contest]> {
-        .just(TestData.testContests(count: 4))
+        .just(TestData.contests(count: 4))
     }
     
     func reduce(state: State, mutation: Mutation) -> State {

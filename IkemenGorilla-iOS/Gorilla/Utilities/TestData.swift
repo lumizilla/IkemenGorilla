@@ -10,7 +10,7 @@ import Foundation
 
 protocol TestDataType {
     static func contest() -> Contest
-    static func testContests(count: Int) -> [Contest]
+    static func contests(count: Int) -> [Contest]
     static func testZoo() -> Zoo
     static func testZoos(count: Int) -> [Zoo]
     static func sponsor() -> Sponsor
@@ -31,7 +31,7 @@ struct TestData: TestDataType {
         )
     }
     
-    static func testContests(count: Int) -> [Contest] {
+    static func contests(count: Int) -> [Contest] {
         return (0 ..< count).map { _ in contest() }
     }
     
