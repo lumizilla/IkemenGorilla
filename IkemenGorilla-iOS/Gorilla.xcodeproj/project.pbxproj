@@ -19,6 +19,7 @@
 		844EE148248439E4003369F2 /* RecommendedZooViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE147248439E4003369F2 /* RecommendedZooViewController.swift */; };
 		844EE14A248439FE003369F2 /* RecommendedZooReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE149248439FE003369F2 /* RecommendedZooReactor.swift */; };
 		844EE14E2484A595003369F2 /* ContestDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE14D2484A595003369F2 /* ContestDetailViewController.swift */; };
+		844EE1502484A5AF003369F2 /* ContestDetailReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE14F2484A5AF003369F2 /* ContestDetailReactor.swift */; };
 		847B3774247980E000B48535 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3773247980E000B48535 /* AppDelegate.swift */; };
 		847B3776247980E000B48535 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3775247980E000B48535 /* SceneDelegate.swift */; };
 		847B3778247980E000B48535 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3777247980E000B48535 /* ContentView.swift */; };
@@ -107,6 +108,7 @@
 		844EE147248439E4003369F2 /* RecommendedZooViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedZooViewController.swift; sourceTree = "<group>"; };
 		844EE149248439FE003369F2 /* RecommendedZooReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedZooReactor.swift; sourceTree = "<group>"; };
 		844EE14D2484A595003369F2 /* ContestDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDetailViewController.swift; sourceTree = "<group>"; };
+		844EE14F2484A5AF003369F2 /* ContestDetailReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDetailReactor.swift; sourceTree = "<group>"; };
 		847B3770247980E000B48535 /* Gorilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gorilla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		847B3773247980E000B48535 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		847B3775247980E000B48535 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				844EE14D2484A595003369F2 /* ContestDetailViewController.swift */,
+				844EE14F2484A5AF003369F2 /* ContestDetailReactor.swift */,
 			);
 			path = ContestDetail;
 			sourceTree = "<group>";
@@ -871,6 +874,7 @@
 				847B381D247CBB1800B48535 /* FrontendEchoReactor.swift in Sources */,
 				847B37EF247A350800B48535 /* TestData.swift in Sources */,
 				847B37D32479D1F500B48535 /* Entity.swift in Sources */,
+				844EE1502484A5AF003369F2 /* ContestDetailReactor.swift in Sources */,
 				847B37F5247A57C000B48535 /* HomePastContestListCell.swift in Sources */,
 				847B37ED2479E4F400B48535 /* HomeCurrentContestListCellReactor.swift in Sources */,
 				847B37DB2479D7FF00B48535 /* HomeViewController.swift in Sources */,
