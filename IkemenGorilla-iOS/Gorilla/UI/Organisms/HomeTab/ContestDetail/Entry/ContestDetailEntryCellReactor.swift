@@ -9,7 +9,7 @@
 import ReactorKit
 import RxSwift
 
-final class ContestDetailEntryAnimalCellReactor: Reactor {
+final class ContestDetailEntryCellReactor: Reactor {
     enum Action {}
     enum Mutation {}
     
@@ -21,7 +21,7 @@ final class ContestDetailEntryAnimalCellReactor: Reactor {
         }
     }
     
-    let initialState: ContestDetailEntryAnimalCellReactor.State
+    let initialState: ContestDetailEntryCellReactor.State
     
     init(entry: Entry) {
         initialState = State(entry: entry)

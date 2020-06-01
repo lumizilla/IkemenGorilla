@@ -71,7 +71,7 @@ final class ContestDetailEntryCell: UICollectionViewCell, View, ViewConstructor 
     }
     
     // MARK: - Bind Method
-    func bind(reactor: ContestDetailEntryAnimalCellReactor) {
+    func bind(reactor: ContestDetailEntryCellReactor) {
         // Action
         
         // State
