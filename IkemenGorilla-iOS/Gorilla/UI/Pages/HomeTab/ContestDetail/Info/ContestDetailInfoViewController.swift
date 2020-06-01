@@ -10,24 +10,34 @@ import UIKit
 import SegementSlide
 import ReactorKit
 import RxSwift
+import ReusableKit
 
 final class ContestDetailInfoViewController: UIViewController, View, ViewConstructor, SegementSlideContentScrollViewDelegate {
+    
+    struct Reusable {
+        static let sponsorCell = ReusableCell<ContestDetailInfoSponsorCell>()
+    }
+    
     // MARK: - Variables
     var disposeBag = DisposeBag()
     
     @objc var scrollView: UIScrollView {
-        return contentScrollView
+        return sponsorsCollectionView
     }
     
     // MARK: - Views
-    private let contentScrollView = UIScrollView().then {
-        $0.alwaysBounceVertical = true
-    }
+    private let contestDetailInfoHeader = ContestDetailInfoHeader()
     
-    private let catchCopyLabel = UILabel().then {
-        $0.text = "ワイが一番イケメンやで"
-        $0.apply(fontStyle: .medium, size: 20)
-        $0.textColor = Color.black
+    private let sponsorsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout().then {
+        $0.itemSize = ContestDetailInfoSponsorCell.Const.itemSize
+        $0.minimumLineSpacing = 16
+        $0.minimumInteritemSpacing = 16
+        $0.headerReferenceSize = CGSize(width: DeviceSize.screenWidth, height: 160)
+    }).then {
+        $0.register(Reusable.sponsorCell)
+        $0.backgroundColor = Color.white
+        $0.showsVerticalScrollIndicator = false
+        $0.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 24, right: 16)
     }
     
     // MARK: - Life Cycles
@@ -40,24 +50,35 @@ final class ContestDetailInfoViewController: UIViewController, View, ViewConstru
     
     // MARK: - Setup Methods
     func setupViews() {
-        view.addSubview(contentScrollView)
-        contentScrollView.addSubview(catchCopyLabel)
+        view.addSubview(sponsorsCollectionView)
+        sponsorsCollectionView.addSubview(contestDetailInfoHeader)
+        
     }
     
     func setupViewConstraints() {
-        contentScrollView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+        contestDetailInfoHeader.snp.makeConstraints {
+            $0.top.left.right.equalToSuperview()
         }
-        catchCopyLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(24)
-            $0.left.right.equalToSuperview().inset(16)
+        sponsorsCollectionView.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.left.right.bottom.equalToSuperview()
         }
     }
     
     // MARK: - Bind Method
     func bind(reactor: ContestDetailInfoReactor) {
+        contestDetailInfoHeader.reactor = reactor
+        
         // Action
+        reactor.action.onNext(.load)
         
         // State
+        
+        reactor.state.map { $0.sponsorCellReactors }
+            .distinctUntilChanged()
+            .bind(to: sponsorsCollectionView.rx.items(Reusable.sponsorCell)) { _, reactor, cell in
+                cell.reactor = reactor
+            }
+            .disposed(by: disposeBag)
     }
 }
