@@ -24,12 +24,18 @@ final class HomeCurrentContestListView: UICollectionView, View, ViewConstructor 
         static let contestListCell = ReusableCell<HomeCurrentContestListCell>()
     }
     
+    struct Callback {
+        let itemSelected: (_ contest: Contest) -> Void
+    }
+    
     // MARK: - Variables
     var disposeBag = DisposeBag()
     
     override var intrinsicContentSize: CGSize {
         return CGSize(width: DeviceSize.screenWidth, height: Const.cellHeight)
     }
+    
+    private var callback: Callback
     
     // MARK: - Views
     private let flowLayout = UICollectionViewFlowLayout().then {
@@ -39,7 +45,8 @@ final class HomeCurrentContestListView: UICollectionView, View, ViewConstructor 
     }
     
     // MARK: - Initializers
-    init() {
+    init(callback: Callback) {
+        self.callback = callback
         super.init(frame: .zero, collectionViewLayout: flowLayout)
         
         setupViews()
@@ -65,6 +72,13 @@ final class HomeCurrentContestListView: UICollectionView, View, ViewConstructor 
     func bind(reactor: HomeCurrentContestListReactor) {
         // Action
         reactor.action.onNext(.load)
+        
+        rx.itemSelected
+            .bind { [weak self] indexPath in
+                let contest = reactor.currentState.contestListCellReactors[indexPath.row].currentState.contest
+                self?.callback.itemSelected(contest)
+            }
+            .disposed(by: disposeBag)
         
         // State
         reactor.state.map { $0.contestListCellReactors }

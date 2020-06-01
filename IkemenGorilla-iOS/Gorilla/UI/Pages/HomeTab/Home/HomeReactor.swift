@@ -36,4 +36,8 @@ final class HomeReactor: Reactor {
     func createRecommendedZooReactor() -> RecommendedZooReactor {
         return RecommendedZooReactor()
     }
+    
+    func createContestDetailReactor(contest: Contest) -> ContestDetailReactor {
+        return ContestDetailReactor(contest: contest)
+    }
 }

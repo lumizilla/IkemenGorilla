@@ -1,5 +1,5 @@
 //
-//  RecommendedZooReactor.swift
+//  ContestDetailEntryReactor.swift
 //  Gorilla
 //
 //  Created by admin on 2020/06/01.
@@ -9,22 +9,30 @@
 import ReactorKit
 import RxSwift
 
-final class RecommendedZooReactor: Reactor {
+final class ContestDetailEntryReactor: Reactor {
     enum Action {
         case load
     }
-    
     enum Mutation {
-        case setZooCellReactors([Zoo])
+        case setEntryCellReactors([Entry])
         case setIsLoading(Bool)
     }
     
     struct State {
-        var zooCellReactors: [RecommendedZooCellReactor] = []
+        let contest: Contest
+        var entryCellReactors: [ContestDetailEntryCellReactor] = []
         var isLoading: Bool = false
+        
+        init(contest: Contest) {
+            self.contest = contest
+        }
     }
     
-    let initialState = RecommendedZooReactor.State()
+    let initialState: ContestDetailEntryReactor.State
+    
+    init(contest: Contest) {
+        initialState = State(contest: contest)
+    }
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
@@ -32,21 +40,21 @@ final class RecommendedZooReactor: Reactor {
             guard !currentState.isLoading else { return .empty() }
             return .concat(
                 .just(.setIsLoading(true)),
-                load().map(Mutation.setZooCellReactors),
+                load().map(Mutation.setEntryCellReactors),
                 .just(.setIsLoading(false))
             )
         }
     }
     
-    private func load() -> Observable<[Zoo]> {
-        .just(TestData.zoos(count: 8))
+    private func load() -> Observable<[Entry]> {
+        return .just(TestData.entries(count: 8))
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
         var state = state
         switch mutation {
-        case .setZooCellReactors(let zoos):
-            state.zooCellReactors = zoos.map { RecommendedZooCellReactor(zoo: $0) }
+        case .setEntryCellReactors(let entries):
+            state.entryCellReactors = entries.map { ContestDetailEntryCellReactor(entry: $0) }
         case .setIsLoading(let isLoading):
             state.isLoading = isLoading
         }

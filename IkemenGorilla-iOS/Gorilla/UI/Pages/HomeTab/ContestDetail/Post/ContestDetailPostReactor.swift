@@ -1,5 +1,5 @@
 //
-//  RecommendedZooReactor.swift
+//  ContestDetailPostReactor.swift
 //  Gorilla
 //
 //  Created by admin on 2020/06/01.
@@ -9,22 +9,27 @@
 import ReactorKit
 import RxSwift
 
-final class RecommendedZooReactor: Reactor {
+final class ContestDetailPostReactor: Reactor {
     enum Action {
         case load
     }
     
     enum Mutation {
-        case setZooCellReactors([Zoo])
+        case setPostCellReactors([Post])
         case setIsLoading(Bool)
     }
     
     struct State {
-        var zooCellReactors: [RecommendedZooCellReactor] = []
+        let contest: Contest
+        var postCellReactors: [ContestDetailPostCellReactor] = []
         var isLoading: Bool = false
     }
     
-    let initialState = RecommendedZooReactor.State()
+    let initialState: ContestDetailPostReactor.State
+    
+    init(contest: Contest) {
+        initialState = State(contest: contest)
+    }
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
@@ -32,21 +37,21 @@ final class RecommendedZooReactor: Reactor {
             guard !currentState.isLoading else { return .empty() }
             return .concat(
                 .just(.setIsLoading(true)),
-                load().map(Mutation.setZooCellReactors),
+                load().map(Mutation.setPostCellReactors),
                 .just(.setIsLoading(false))
             )
         }
     }
     
-    private func load() -> Observable<[Zoo]> {
-        .just(TestData.zoos(count: 8))
+    private func load() -> Observable<[Post]> {
+        return .just(TestData.posts(count: 12))
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
         var state = state
         switch mutation {
-        case .setZooCellReactors(let zoos):
-            state.zooCellReactors = zoos.map { RecommendedZooCellReactor(zoo: $0) }
+        case .setPostCellReactors(let posts):
+            state.postCellReactors = posts.map { ContestDetailPostCellReactor(post: $0) }
         case .setIsLoading(let isLoading):
             state.isLoading = isLoading
         }

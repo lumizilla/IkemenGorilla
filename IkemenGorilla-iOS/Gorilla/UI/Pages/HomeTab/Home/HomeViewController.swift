@@ -19,6 +19,16 @@ final class HomeViewController: UIViewController, View, ViewConstructor, Transit
     // MARK: - Variables
     var disposeBag = DisposeBag()
     
+    private lazy var currentContestListCallback = HomeCurrentContestListView.Callback(itemSelected: { contest in
+        guard let reactor = self.reactor else { return }
+        self.showContestDetailPage(contestDetailReactor: reactor.createContestDetailReactor(contest: contest))
+    })
+    
+    private lazy var pastContestListCallback = HomePastContestListView.Callback(itemSelected: { contest in
+        guard let reactor = self.reactor else { return }
+        self.showContestDetailPage(contestDetailReactor: reactor.createContestDetailReactor(contest: contest))
+    })
+    
     // MARK: - Views
     
     private let scrollView = UIScrollView().then {
@@ -34,13 +44,13 @@ final class HomeViewController: UIViewController, View, ViewConstructor, Transit
     
     private let currentContestHeader = HomeCurrentContestHeader()
     
-    private lazy var currentContestListView = HomeCurrentContestListView().then {
+    private lazy var currentContestListView = HomeCurrentContestListView(callback: currentContestListCallback).then {
         $0.reactor = reactor?.createHomeCurrentContestListReactor()
     }
     
     private let pastContestHeader = HomePastContestHeader()
     
-    private lazy var pastContestListView = HomePastContestListView().then {
+    private lazy var pastContestListView = HomePastContestListView(callback: pastContestListCallback).then {
         $0.reactor = reactor?.createHomePastContestListReactor()
     }
     
