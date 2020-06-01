@@ -19,6 +19,8 @@ protocol TestDataType {
     static func entries(count: Int) -> [Entry]
     static func post() -> Post
     static func posts(count: Int) -> [Post]
+    static func award() -> Award
+    static func awards(count: Int) -> [Award]
 }
 
 struct TestData: TestDataType {
@@ -100,6 +102,19 @@ struct TestData: TestDataType {
     
     static func posts(count: Int) -> [Post] {
         return (0 ..< count).map { _ in post() }
+    }
+    
+    static func award() -> Award {
+        return Award(
+            animalId: testID(),
+            animalName: "シャバーニ",
+            iconUrl: "https://images.unsplash.com/photo-1563485906266-9b9a5ca03f07?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=582&q=80",
+            awardName: "グランプリ"
+        )
+    }
+    
+    static func awards(count: Int) -> [Award] {
+        return (0 ..< count).map { _ in award() }
     }
     
     // MARK: - Private functions
