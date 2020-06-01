@@ -48,6 +48,17 @@ final class ContestDetailInfoViewController: UIViewController, View, ViewConstru
         setupViewConstraints()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        guard let flowLayout = sponsorsCollectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
+        let height = contestDetailInfoHeader.frame.height
+        
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
+            flowLayout.headerReferenceSize = CGSize(width: DeviceSize.screenWidth, height: height)
+        }, completion: nil)
+    }
+    
     // MARK: - Setup Methods
     func setupViews() {
         view.addSubview(sponsorsCollectionView)
