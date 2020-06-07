@@ -23,6 +23,8 @@ protocol TestDataType {
     static func awards(count: Int) -> [Award]
     static func contestResult(numberOfVotes: Int, maxOfVotes: Int) -> ContestResult
     static func contestResults(count: Int) -> [ContestResult]
+    static func profile() -> Profile
+    static func profiles(count: Int) -> [Profile]
 }
 
 struct TestData: TestDataType {
@@ -136,6 +138,34 @@ struct TestData: TestDataType {
         let range = 31
         let max = count * range
         return (0 ..< count).map { index in contestResult(numberOfVotes: range * (count - index), maxOfVotes: max) }
+    }
+    
+    static func profile() -> Profile {
+        return Profile(
+            id: testID(),
+            name: "Akihiro Kokubo",
+            imageUrl: "https://imgur.com/UHAjkys",
+            numberOfAnimals: 5,
+            animalId: testID(),
+            animalName: "メリーさんの羊",
+            animalIconUrl: "https://images.unsplash.com/photo-1484557985045-edf25e08da73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjF9&auto=format&fit=crop&w=1934&q=80",
+            zooId: testID(),
+            zooName: "東山動物園",
+            numberOfContests: 5,
+            contestId: testID(),
+            contestName: "イケメンゴリラコンテスト",
+            contestStart:dateFromString(from: "2020-05-01"),
+            contestEnd: dateFromString(from: "2020-05-30"),
+            contestIconUrl: "https://images.unsplash.com/photo-1581281863883-2469417a1668?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=989&q=80",
+            likedId: testID(),
+            likedIconUrl: "https://images.unsplash.com/reserve/wrev1ljvQ6KlfyljCQG0_lion.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1955&q=80",
+            likedZooId: testID(),
+            likedZooName: "東山動物園"
+        )
+    }
+    
+    static func profiles(count: Int) -> [Profile] {
+        return (0 ..< count).map { _ in profile() }
     }
     
     // MARK: - Private functions

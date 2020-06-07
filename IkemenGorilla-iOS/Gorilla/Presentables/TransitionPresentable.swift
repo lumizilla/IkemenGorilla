@@ -43,4 +43,13 @@ extension TransitionPresentable where Self: UIViewController {
             animated: true
         )
     }
+    
+    func showProfileInfoPage(profileInfoReactor: ProfileInfoReactor) {
+        navigationController?.pushViewController(
+            ProfileInfoViewController().then {
+                $0.reactor = profileInfoReactor
+            },
+            animated: true
+        )
+    }
 }
