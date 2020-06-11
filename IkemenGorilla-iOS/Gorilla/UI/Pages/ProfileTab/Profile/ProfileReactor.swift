@@ -21,8 +21,20 @@ final class ProfileReactor: Reactor {
         return ProfileInfoReactor()
     }
     
-    func createProfileCurrentContestListReactor() -> ProfileCurrentContestListReactor {
-        return ProfileCurrentContestListReactor()
+    func createProfileVotedContestListReactor() -> ProfileVotedContestListReactor {
+        return ProfileVotedContestListReactor()
+    }
+    
+    func createVotedContestReactor() -> VotedContestReactor {
+        return VotedContestReactor()
+    }
+    
+    func createProfileFanAnimalListReactor() -> ProfileFanAnimalListReactor {
+        return ProfileFanAnimalListReactor()
+    }
+    
+    func createFanAnimalReactor() -> FanAnimalReactor {
+        return FanAnimalReactor()
     }
     
     func createProfileContestDetailReactor(contest: Contest) -> ContestDetailReactor {

@@ -44,6 +44,24 @@ extension TransitionPresentable where Self: UIViewController {
         )
     }
     
+    func showVotedDetailPage(votedContestReactor: VotedContestReactor) {
+        navigationController?.pushViewController(
+            VotedContestViewController().then {
+                $0.reactor = votedContestReactor
+            },
+            animated: true
+        )
+    }
+    
+    func showFanAnimalPage(fanAnimalReactor: FanAnimalReactor) {
+        navigationController?.pushViewController(
+            FanAnimalViewController().then {
+                $0.reactor = fanAnimalReactor
+            },
+            animated: true
+        )
+    }
+    
     func showProfileInfoPage(profileInfoReactor: ProfileInfoReactor) {
         navigationController?.pushViewController(
             ProfileInfoViewController().then {

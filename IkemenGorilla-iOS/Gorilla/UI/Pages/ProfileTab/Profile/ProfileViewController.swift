@@ -19,9 +19,14 @@ final class ProfileViewController: UIViewController, View, ViewConstructor, Tran
     // MARK: - Variables
     var disposeBag = DisposeBag()
     
-    private lazy var profileCurrentContestListCallback = ProfileCurrentContestListView.Callback(itemSelected: { contest in
+    private lazy var profileVotedContestListCallback = ProfileVotedContestListView.Callback(itemSelected: { contest in
         guard let reactor = self.reactor else { return }
-        self.showContestDetailPage(contestDetailReactor: reactor.createProfileContestDetailReactor(contest: contest))
+        self.showVotedDetailPage(votedContestReactor: reactor.createVotedContestReactor())
+    })
+    
+    private lazy var profileFanAnimalListCallback = ProfileFanAnimalListView.Callback(itemSelected: { animal in
+        guard let reactor = self.reactor else { return }
+        self.showFanAnimalPage(fanAnimalReactor: reactor.createFanAnimalReactor())
     })
     
     // MARK: - Views
@@ -43,10 +48,16 @@ final class ProfileViewController: UIViewController, View, ViewConstructor, Tran
         $0.reactor = reactor?.createProfileInfoListReactor()
     }
     
-    private let profileCurrentContestHeader = ProfileCurrentContestHeader()
+    private let profileFanAnimalHeader = ProfileFanAnimalHeader()
     
-    private lazy var profileCurrentContestListView = ProfileCurrentContestListView(callback: profileCurrentContestListCallback).then {
-        $0.reactor = reactor?.createProfileCurrentContestListReactor()
+    private lazy var profileFanAnimalListView = ProfileFanAnimalListView(callback: profileFanAnimalListCallback).then {
+        $0.reactor = reactor?.createProfileFanAnimalListReactor()
+    }
+    
+    private let profileVotedContestHeader = ProfileVotedContestHeader()
+    
+    private lazy var profileVotedContestListView = ProfileVotedContestListView(callback: profileVotedContestListCallback).then {
+        $0.reactor = reactor?.createProfileVotedContestListReactor()
     }
     
     
@@ -68,9 +79,14 @@ final class ProfileViewController: UIViewController, View, ViewConstructor, Tran
         stackView.addArrangedSubview(profileInfoListView)
         view.addSubview(scrollView)
         scrollView.addSubview(stackView)
-        stackView.addArrangedSubview(profileCurrentContestHeader)
-        stackView.addArrangedSubview(profileCurrentContestListView)
-        stackView.setCustomSpacing(36, after: profileCurrentContestListView)
+        stackView.addArrangedSubview(profileFanAnimalHeader)
+        stackView.addArrangedSubview(profileFanAnimalListView)
+        stackView.setCustomSpacing(36, after: profileFanAnimalListView)
+        view.addSubview(scrollView)
+        scrollView.addSubview(stackView)
+        stackView.addArrangedSubview(profileVotedContestHeader)
+        stackView.addArrangedSubview(profileVotedContestListView)
+        stackView.setCustomSpacing(36, after: profileVotedContestListView)
 
     }
     
