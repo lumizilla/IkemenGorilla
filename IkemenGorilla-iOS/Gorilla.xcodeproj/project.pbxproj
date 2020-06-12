@@ -98,6 +98,7 @@
 		84A9A00A2485335E0066863B /* ContestDetailResultVoteCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A9A0092485335E0066863B /* ContestDetailResultVoteCellReactor.swift */; };
 		84A9A00C2485347D0066863B /* ContestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A9A00B2485347D0066863B /* ContestResult.swift */; };
 		84DA960C2493B07800DF6740 /* ContestAnimalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DA960B2493B07800DF6740 /* ContestAnimalDetailViewController.swift */; };
+		84DA960E2493B0D600DF6740 /* ContestAnimalDetailReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DA960D2493B0D600DF6740 /* ContestAnimalDetailReactor.swift */; };
 		8AD80E3EDA0645450C645241 /* Pods_Gorilla_GorillaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F440E1262F9F90997A9A24 /* Pods_Gorilla_GorillaUITests.framework */; };
 		A29B9D43B1A804F6145A1073 /* Pods_GorillaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B68804A246C98CAE881B62C /* Pods_GorillaTests.framework */; };
 /* End PBXBuildFile section */
@@ -220,6 +221,7 @@
 		84A9A0092485335E0066863B /* ContestDetailResultVoteCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDetailResultVoteCellReactor.swift; sourceTree = "<group>"; };
 		84A9A00B2485347D0066863B /* ContestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestResult.swift; sourceTree = "<group>"; };
 		84DA960B2493B07800DF6740 /* ContestAnimalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestAnimalDetailViewController.swift; sourceTree = "<group>"; };
+		84DA960D2493B0D600DF6740 /* ContestAnimalDetailReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestAnimalDetailReactor.swift; sourceTree = "<group>"; };
 		B34C68F74EC2D59ED3BA5ED9 /* Pods-Gorilla-GorillaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gorilla-GorillaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Gorilla-GorillaUITests/Pods-Gorilla-GorillaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BC5B729A7696F5FC17692DAA /* Pods-GorillaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GorillaTests.debug.xcconfig"; path = "Target Support Files/Pods-GorillaTests/Pods-GorillaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D88E3F92FF19F1C62D0B465D /* Pods_Gorilla.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gorilla.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -771,6 +773,7 @@
 			isa = PBXGroup;
 			children = (
 				84DA960B2493B07800DF6740 /* ContestAnimalDetailViewController.swift */,
+				84DA960D2493B0D600DF6740 /* ContestAnimalDetailReactor.swift */,
 			);
 			path = ContestAnimalDetail;
 			sourceTree = "<group>";
@@ -1045,6 +1048,7 @@
 				847B37EF247A350800B48535 /* TestData.swift in Sources */,
 				84A9A00A2485335E0066863B /* ContestDetailResultVoteCellReactor.swift in Sources */,
 				847B37D32479D1F500B48535 /* Entity.swift in Sources */,
+				84DA960E2493B0D600DF6740 /* ContestAnimalDetailReactor.swift in Sources */,
 				84A9A00424851CED0066863B /* ContestDetailResultAwardCellReactor.swift in Sources */,
 				84DA960C2493B07800DF6740 /* ContestAnimalDetailViewController.swift in Sources */,
 				844EE1502484A5AF003369F2 /* ContestDetailReactor.swift in Sources */,
