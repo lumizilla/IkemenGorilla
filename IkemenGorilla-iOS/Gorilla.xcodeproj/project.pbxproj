@@ -543,6 +543,7 @@
 		847B37D02479D1B800B48535 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
+				84DA96172493C7E700DF6740 /* Responses */,
 				847B3819247CBA3100B48535 /* Repositories */,
 				847B380A247CB00500B48535 /* Networkings */,
 				847B37D12479D1CB00B48535 /* Entities */,
@@ -795,6 +796,13 @@
 				84DA96132493B9A700DF6740 /* ContestAnimalDetailHeader.swift */,
 			);
 			path = ContestAnimalDetail;
+			sourceTree = "<group>";
+		};
+		84DA96172493C7E700DF6740 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Responses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
