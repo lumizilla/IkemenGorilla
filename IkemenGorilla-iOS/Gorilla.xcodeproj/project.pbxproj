@@ -577,6 +577,7 @@
 		847B37DE2479DFCA00B48535 /* HomeTab */ = {
 			isa = PBXGroup;
 			children = (
+				84DA960A2493AF2600DF6740 /* ContestAnimalDetail */,
 				844EE14C2484A512003369F2 /* ContestDetail */,
 				844EE14224843637003369F2 /* RecommendedZoo */,
 				844EE13124842759003369F2 /* PastContest */,
@@ -765,6 +766,13 @@
 			sourceTree = "<group>";
 		};
 		84DA96092493AF0100DF6740 /* ContestAnimalDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ContestAnimalDetail;
+			sourceTree = "<group>";
+		};
+		84DA960A2493AF2600DF6740 /* ContestAnimalDetail */ = {
 			isa = PBXGroup;
 			children = (
 			);
