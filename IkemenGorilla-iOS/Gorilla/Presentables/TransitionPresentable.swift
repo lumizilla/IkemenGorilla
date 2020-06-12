@@ -13,6 +13,7 @@ protocol TransitionPresentable: class {
     func showPastContestPage(pastContestReactor: PastContestReactor)
     func showRecommendedZooPage(recommendedZooReactor: RecommendedZooReactor)
     func showContestDetailPage(contestDetailReactor: ContestDetailReactor)
+    func showContestAnimalDetailPage(contestAnimalDetailReactor: ContestAnimalDetailReactor)
 }
 
 extension TransitionPresentable where Self: UIViewController {
@@ -39,6 +40,15 @@ extension TransitionPresentable where Self: UIViewController {
         navigationController?.pushViewController(
             ContestDetailViewController().then {
                 $0.reactor = contestDetailReactor
+            },
+            animated: true
+        )
+    }
+    
+    func showContestAnimalDetailPage(contestAnimalDetailReactor: ContestAnimalDetailReactor) {
+        navigationController?.pushViewController(
+            ContestAnimalDetailViewController().then {
+                $0.reactor = contestAnimalDetailReactor
             },
             animated: true
         )
