@@ -20,15 +20,15 @@ final class ContestAnimalDetailReactor: Reactor {
     }
     
     struct State {
-        let animal: Animal
+        let entry: Entry
         var postCellReactors: [ContestAnimalDetailPostCellReactor] = []
         var isLoading: Bool = false
     }
     
     let initialState: ContestAnimalDetailReactor.State
     
-    init(animal: Animal) {
-        initialState = State(animal: animal)
+    init(entry: Entry) {
+        initialState = State(entry: entry)
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
