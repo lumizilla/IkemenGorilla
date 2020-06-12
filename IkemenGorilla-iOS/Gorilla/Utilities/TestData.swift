@@ -25,6 +25,9 @@ protocol TestDataType {
     static func contestResults(count: Int) -> [ContestResult]
     static func profile() -> Profile
     static func profiles(count: Int) -> [Profile]
+    
+    // Response
+    static func contestAnimalDetailResponse() -> ContestAnimalDetailResponse
 }
 
 struct TestData: TestDataType {
@@ -166,6 +169,19 @@ struct TestData: TestDataType {
     
     static func profiles(count: Int) -> [Profile] {
         return (0 ..< count).map { _ in profile() }
+    }
+    
+    static func contestAnimalDetailResponse() -> ContestAnimalDetailResponse {
+        return ContestAnimalDetailResponse(
+            animalId: testID(),
+            animalName: "シャバーニ",
+            animalIconUrl: "https://images.unsplash.com/photo-1563485906266-9b9a5ca03f07?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=582&q=80",
+            description: "現在ニシゴリラの群れのリーダーを務めているのがシャバーニ氏。グループのメス、ネネとアイの間に1頭ずつ子どもがいる二児のパパです。精悍な顔つきと筋肉隆々のしなやかな肉体、たまに見せるアンニュイな表情は、人間の女性にもズキューンッ！と刺さります。",
+            zooId: testID(),
+            zooName: "東山動物園",
+            zooAddress: "愛知県名古屋市千種区東山元町３丁目７０",
+            isVotedToday: false
+        )
     }
     
     // MARK: - Private functions
