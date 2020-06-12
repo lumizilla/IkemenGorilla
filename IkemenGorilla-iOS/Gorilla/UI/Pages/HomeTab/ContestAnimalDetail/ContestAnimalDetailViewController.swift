@@ -12,6 +12,10 @@ import RxSwift
 import ReusableKit
 
 final class ContestAnimalDetailViewController: UIViewController, View, ViewConstructor {
+    struct Const {
+        static let sectionHeight: CGFloat = ((DeviceSize.screenWidth - 48) / 3 + 8) * 6
+    }
+    
     struct Reusable {
         static let postCell = ReusableCell<ContestAnimalDetailPostCell>()
     }
@@ -20,6 +24,17 @@ final class ContestAnimalDetailViewController: UIViewController, View, ViewConst
     var disposeBag = DisposeBag()
     
     // MARK: - Views
+    private let contentScrollView = UIScrollView().then {
+        $0.showsVerticalScrollIndicator = false
+    }
+    
+    private let stackView = UIStackView().then {
+        $0.axis = .vertical
+        $0.alignment = .fill
+        $0.distribution = .fill
+    }
+    
+    
     private let header = ContestAnimalDetailHeader()
     
     private lazy var postsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout()).then {
@@ -28,7 +43,6 @@ final class ContestAnimalDetailViewController: UIViewController, View, ViewConst
         $0.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         $0.contentInset.bottom = 16
         $0.showsVerticalScrollIndicator = false
-        $0.alpha = 0
     }
     
     // MARK: - Life Cycles
@@ -38,42 +52,25 @@ final class ContestAnimalDetailViewController: UIViewController, View, ViewConst
         setupViews()
         setupViewConstraints()
     }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        let height = header.frame.height
-        logger.debug("header height: \(height)")
-
-        postsCollectionView.contentInset.top = height
-        header.removeFromSuperview()
-        postsCollectionView.addSubview(header)
-        header.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(-height)
-            $0.left.right.equalTo(view)
-        }
-        postsCollectionView.contentOffset.y = -height
-        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
-            self.postsCollectionView.alpha = 1
-        }, completion: nil)
-    }
     
     // MARK: - Setup Methods
     func setupViews() {
         view.backgroundColor = Color.white
-        view.addSubview(postsCollectionView)
-        postsCollectionView.addSubview(header)
+        view.addSubview(contentScrollView)
+        contentScrollView.addSubview(stackView)
+        stackView.addArrangedSubview(header)
+        stackView.addArrangedSubview(postsCollectionView)
     }
     
     func setupViewConstraints() {
-//        let height = header.frame.height
-        postsCollectionView.contentInset.top = ContestAnimalDetailHeader.Const.imageViewHeight
-        header.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(-ContestAnimalDetailHeader.Const.imageViewHeight)
-            $0.left.right.equalTo(view)
-        }
-        postsCollectionView.snp.makeConstraints {
+        contentScrollView.snp.makeConstraints {
             $0.edges.equalToSuperview()
+        }
+        stackView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        header.snp.makeConstraints {
+            $0.width.equalTo(DeviceSize.screenWidth)
         }
     }
     
@@ -177,6 +174,17 @@ final class ContestAnimalDetailViewController: UIViewController, View, ViewConst
             .distinctUntilChanged()
             .bind(to: postsCollectionView.rx.items(Reusable.postCell)) { _, reactor, cell in
                 cell.reactor = reactor
+            }
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.postCellReactors.count / 12 }
+            .distinctUntilChanged()
+            .bind { [weak self] sectionCount in
+                self?.stackView.removeConstraints(self?.postsCollectionView.constraints ?? [])
+                self?.postsCollectionView.snp.makeConstraints {
+                    $0.height.equalTo(16 + Const.sectionHeight * CGFloat(sectionCount))
+                    $0.width.equalTo(DeviceSize.screenWidth)
+                }
             }
             .disposed(by: disposeBag)
     }
