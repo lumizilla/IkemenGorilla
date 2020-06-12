@@ -20,6 +20,8 @@ final class ContestAnimalDetailViewController: UIViewController, View, ViewConst
     var disposeBag = DisposeBag()
     
     // MARK: - Views
+    private let header = ContestAnimalDetailHeader()
+    
     private lazy var postsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout()).then {
         $0.register(Reusable.postCell)
         $0.backgroundColor = Color.white
@@ -38,10 +40,17 @@ final class ContestAnimalDetailViewController: UIViewController, View, ViewConst
     
     // MARK: - Setup Methods
     func setupViews() {
+        postsCollectionView.addSubview(header)
         view.addSubview(postsCollectionView)
     }
     
     func setupViewConstraints() {
+        postsCollectionView.contentInset.top = ContestAnimalDetailHeader.Const.imageViewHeight
+        header.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(-ContestAnimalDetailHeader.Const.imageViewHeight)
+            $0.left.right.equalTo(view)
+            $0.height.equalTo(ContestAnimalDetailHeader.Const.imageViewHeight)
+        }
         postsCollectionView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
@@ -136,6 +145,8 @@ final class ContestAnimalDetailViewController: UIViewController, View, ViewConst
     
     // MARK: - Bind Method
     func bind(reactor: ContestAnimalDetailReactor) {
+        header.reactor = reactor
+        
         // Action
         reactor.action.onNext(.load)
         
