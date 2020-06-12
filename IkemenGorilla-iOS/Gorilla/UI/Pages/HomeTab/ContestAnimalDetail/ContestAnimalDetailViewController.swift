@@ -28,6 +28,7 @@ final class ContestAnimalDetailViewController: UIViewController, View, ViewConst
         $0.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         $0.contentInset.bottom = 16
         $0.showsVerticalScrollIndicator = false
+        $0.alpha = 0
     }
     
     // MARK: - Life Cycles
@@ -37,19 +38,39 @@ final class ContestAnimalDetailViewController: UIViewController, View, ViewConst
         setupViews()
         setupViewConstraints()
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        let height = header.frame.height
+        logger.debug("header height: \(height)")
+
+        postsCollectionView.contentInset.top = height
+        header.removeFromSuperview()
+        postsCollectionView.addSubview(header)
+        header.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(-height)
+            $0.left.right.equalTo(view)
+        }
+        postsCollectionView.contentOffset.y = -height
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
+            self.postsCollectionView.alpha = 1
+        }, completion: nil)
+    }
     
     // MARK: - Setup Methods
     func setupViews() {
-        postsCollectionView.addSubview(header)
+        view.backgroundColor = Color.white
         view.addSubview(postsCollectionView)
+        postsCollectionView.addSubview(header)
     }
     
     func setupViewConstraints() {
+//        let height = header.frame.height
         postsCollectionView.contentInset.top = ContestAnimalDetailHeader.Const.imageViewHeight
         header.snp.makeConstraints {
             $0.top.equalToSuperview().offset(-ContestAnimalDetailHeader.Const.imageViewHeight)
             $0.left.right.equalTo(view)
-            $0.height.equalTo(ContestAnimalDetailHeader.Const.imageViewHeight)
         }
         postsCollectionView.snp.makeConstraints {
             $0.edges.equalToSuperview()
@@ -148,7 +169,8 @@ final class ContestAnimalDetailViewController: UIViewController, View, ViewConst
         header.reactor = reactor
         
         // Action
-        reactor.action.onNext(.load)
+        reactor.action.onNext(.loadAnimal)
+        reactor.action.onNext(.loadPosts)
         
         // State
         reactor.state.map { $0.postCellReactors }
