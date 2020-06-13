@@ -130,6 +130,11 @@ final class ContestAnimalDetailHeader: UIView, View, ViewConstructor {
     // MARK: - Bind Method
     func bind(reactor: ContestAnimalDetailReactor) {
         // Action
+        voteButton.rx.tap
+            .bind { _ in
+                reactor.action.onNext(.tapVoteButton)
+            }
+            .disposed(by: disposeBag)
         
         // State
         reactor.state.map { $0.entry.iconUrl }
@@ -157,6 +162,11 @@ final class ContestAnimalDetailHeader: UIView, View, ViewConstructor {
         reactor.state.map { $0.response?.description }
             .distinctUntilChanged()
             .bind(to: descriptionLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.isVoted }
+            .distinctUntilChanged()
+            .bind(to: voteButton.rx.isVoted)
             .disposed(by: disposeBag)
     }
 }
