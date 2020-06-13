@@ -13,12 +13,14 @@ final class ContestAnimalDetailReactor: Reactor {
     enum Action {
         case loadAnimal
         case loadPosts
+        case tapVoteButton
     }
     
     enum Mutation {
         case setResponse(ContestAnimalDetailResponse)
         case setPostCellReactors([Post])
         case setIsLoading(Bool)
+        case setIsVoted(Bool)
     }
     
     struct State {
@@ -26,6 +28,7 @@ final class ContestAnimalDetailReactor: Reactor {
         var response: ContestAnimalDetailResponse?
         var postCellReactors: [ContestAnimalDetailPostCellReactor] = []
         var isLoading: Bool = false
+        var isVoted: Bool = false
     }
     
     let initialState: ContestAnimalDetailReactor.State
@@ -45,6 +48,8 @@ final class ContestAnimalDetailReactor: Reactor {
                 loadPosts().map(Mutation.setPostCellReactors),
                 .just(.setIsLoading(false))
             )
+        case .tapVoteButton:
+            return .just(.setIsVoted(!currentState.isVoted))
         }
     }
     
@@ -65,6 +70,8 @@ final class ContestAnimalDetailReactor: Reactor {
             state.postCellReactors = posts.map { ContestAnimalDetailPostCellReactor(post: $0) }
         case .setIsLoading(let isLoading):
             state.isLoading = isLoading
+        case .setIsVoted(let isVoted):
+            state.isVoted = isVoted
         }
         return state
     }
