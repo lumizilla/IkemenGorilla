@@ -61,7 +61,7 @@ final class VoteButton: UIButton, ViewConstructor {
     
     func setStyle(isVoted: Bool) {
         if isVoted {
-            setTitle("応募しました", for: .normal)
+            setTitle("応募済み", for: .normal)
             setTitleColor(Color.textBlack, for: .normal)
             backgroundColor = Color.borderGray
         } else {
@@ -87,9 +87,9 @@ final class VoteButton: UIButton, ViewConstructor {
 }
 
 extension Reactive where Base: VoteButton {
-    var isApplied: Binder<Bool> {
-        return Binder(base) { view, isApplied in
-            view.isVoted = isApplied
+    var isVoted: Binder<Bool> {
+        return Binder(base) { view, isVoted in
+            view.isVoted = isVoted
         }
     }
 }
