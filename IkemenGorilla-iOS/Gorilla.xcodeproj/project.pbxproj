@@ -445,6 +445,7 @@
 		847B37A924798DC400B48535 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				84D2167E2499119600AFB1A6 /* MapTab */,
 				847B37D82479D7C400B48535 /* HomeTab */,
 				847B37CB2479A93A00B48535 /* TabBar */,
 			);
@@ -783,6 +784,13 @@
 			sourceTree = "<group>";
 		};
 		84D2167D2499117700AFB1A6 /* MapTab */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MapTab;
+			sourceTree = "<group>";
+		};
+		84D2167E2499119600AFB1A6 /* MapTab */ = {
 			isa = PBXGroup;
 			children = (
 			);
