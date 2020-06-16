@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.1.0)
+  - FloatingPanel (1.7.5)
   - Kingfisher (5.14.0):
     - Kingfisher/Core (= 5.14.0)
   - Kingfisher/Core (5.14.0)
@@ -27,6 +28,7 @@ PODS:
   - Then (2.6.0)
 
 DEPENDENCIES:
+  - FloatingPanel
   - Kingfisher (~> 5.0)
   - LoggerKit
   - Moya/RxSwift (~> 14.0)
@@ -39,6 +41,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - FloatingPanel
     - Kingfisher
     - LoggerKit
     - Moya
@@ -53,6 +56,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  FloatingPanel: bb17fd6fc7ae519f877f7bd30f4f6115a78acf07
   Kingfisher: 7b64389a43139c903ec434788344c288217c792d
   LoggerKit: d209547382484920b676c5f963031c1032f0c83d
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
