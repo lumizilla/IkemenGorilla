@@ -793,8 +793,16 @@
 		84D2167E2499119600AFB1A6 /* MapTab */ = {
 			isa = PBXGroup;
 			children = (
+				84D2167F2499123300AFB1A6 /* Map */,
 			);
 			path = MapTab;
+			sourceTree = "<group>";
+		};
+		84D2167F2499123300AFB1A6 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 		84DA96092493AF0100DF6740 /* ContestAnimalDetail */ = {
