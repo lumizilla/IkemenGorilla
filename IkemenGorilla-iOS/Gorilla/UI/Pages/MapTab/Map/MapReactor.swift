@@ -12,12 +12,15 @@ import RxSwift
 final class MapReactor: Reactor {
     enum Action {
         case loadZoos
+        case tapAnnotations(annotations: [PointZooAnnotation])
     }
     enum Mutation {
         case setZoos([Zoo])
+        case setAnnotations(annotations: [PointZooAnnotation])
     }
     struct State {
         var zoos: [Zoo] = []
+        var selectedAnnotations: [PointZooAnnotation] = []
     }
     
     let initialState = State()
@@ -26,6 +29,8 @@ final class MapReactor: Reactor {
         switch action {
         case .loadZoos:
             return loadZoos().map(Mutation.setZoos)
+        case .tapAnnotations(let annotations):
+            return .just(.setAnnotations(annotations: annotations))
         }
     }
     
@@ -38,6 +43,8 @@ final class MapReactor: Reactor {
         switch mutation {
         case .setZoos(let zoos):
             state.zoos = zoos
+        case .setAnnotations(let annotations):
+            state.selectedAnnotations = annotations
         }
         return state
     }
