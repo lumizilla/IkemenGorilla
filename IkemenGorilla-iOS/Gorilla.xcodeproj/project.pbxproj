@@ -790,6 +790,7 @@
 		84D2167D2499117700AFB1A6 /* MapTab */ = {
 			isa = PBXGroup;
 			children = (
+				84D216862499169600AFB1A6 /* Map */,
 			);
 			path = MapTab;
 			sourceTree = "<group>";
@@ -807,6 +808,13 @@
 			children = (
 				84D216802499124E00AFB1A6 /* MapViewController.swift */,
 				84D216822499126300AFB1A6 /* MapReactor.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		84D216862499169600AFB1A6 /* Map */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = Map;
 			sourceTree = "<group>";
