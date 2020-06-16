@@ -77,4 +77,19 @@ extension MapViewController: MKMapViewDelegate {
         }
         return nil
     }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        print(view.annotation?.title)
+        if let cluster = view.annotation as? MKClusterAnnotation {
+            if let placeAnnotations = cluster.memberAnnotations as? [PointZooAnnotation] {
+//                reactor?.action.onNext(.deleteFocusPlace)
+                reactor?.action.onNext(.tapAnnotations(annotations: placeAnnotations))
+//                reactor?.action.onNext(.tapClusterAnnotation(clusterAnnotation: cluster))
+            }
+        }
+        if let annotation = view.annotation as? PointZooAnnotation {
+            reactor?.action.onNext(.tapAnnotations(annotations: [annotation]))
+//            reactor?.action.onNext(.setFocusPlace(place: annotation.place))
+        }
+    }
 }
