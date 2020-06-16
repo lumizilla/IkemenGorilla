@@ -100,6 +100,7 @@
 		84D216812499124E00AFB1A6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D216802499124E00AFB1A6 /* MapViewController.swift */; };
 		84D216832499126300AFB1A6 /* MapReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D216822499126300AFB1A6 /* MapReactor.swift */; };
 		84D21688249916B600AFB1A6 /* PointZooAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D21687249916B600AFB1A6 /* PointZooAnnotation.swift */; };
+		84D2168A2499218200AFB1A6 /* MapZooListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D216892499218200AFB1A6 /* MapZooListViewController.swift */; };
 		84DA960C2493B07800DF6740 /* ContestAnimalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DA960B2493B07800DF6740 /* ContestAnimalDetailViewController.swift */; };
 		84DA960E2493B0D600DF6740 /* ContestAnimalDetailReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DA960D2493B0D600DF6740 /* ContestAnimalDetailReactor.swift */; };
 		84DA96102493B1DD00DF6740 /* ContestAnimalDetailPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DA960F2493B1DD00DF6740 /* ContestAnimalDetailPostCell.swift */; };
@@ -231,6 +232,7 @@
 		84D216802499124E00AFB1A6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		84D216822499126300AFB1A6 /* MapReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapReactor.swift; sourceTree = "<group>"; };
 		84D21687249916B600AFB1A6 /* PointZooAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointZooAnnotation.swift; sourceTree = "<group>"; };
+		84D216892499218200AFB1A6 /* MapZooListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapZooListViewController.swift; sourceTree = "<group>"; };
 		84DA960B2493B07800DF6740 /* ContestAnimalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestAnimalDetailViewController.swift; sourceTree = "<group>"; };
 		84DA960D2493B0D600DF6740 /* ContestAnimalDetailReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestAnimalDetailReactor.swift; sourceTree = "<group>"; };
 		84DA960F2493B1DD00DF6740 /* ContestAnimalDetailPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestAnimalDetailPostCell.swift; sourceTree = "<group>"; };
@@ -818,6 +820,7 @@
 			isa = PBXGroup;
 			children = (
 				84D21687249916B600AFB1A6 /* PointZooAnnotation.swift */,
+				84D216892499218200AFB1A6 /* MapZooListViewController.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -1141,6 +1144,7 @@
 				84A99FF82484FD020066863B /* ContestDetailPostCell.swift in Sources */,
 				847B37EB2479E4CC00B48535 /* HomeCurrentContestListCell.swift in Sources */,
 				84DA96122493B1FB00DF6740 /* ContestAnimalDetailPostCellReactor.swift in Sources */,
+				84D2168A2499218200AFB1A6 /* MapZooListViewController.swift in Sources */,
 				844EE1332484278F003369F2 /* PastContestCell.swift in Sources */,
 				847B37E62479E23000B48535 /* HomeCurrentContestListView.swift in Sources */,
 				847B37D52479D27D00B48535 /* Contest.swift in Sources */,
