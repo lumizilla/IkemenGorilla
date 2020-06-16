@@ -454,6 +454,7 @@
 		847B37AA24798DD600B48535 /* Organisms */ = {
 			isa = PBXGroup;
 			children = (
+				84D2167D2499117700AFB1A6 /* MapTab */,
 				847B37DE2479DFCA00B48535 /* HomeTab */,
 			);
 			path = Organisms;
@@ -779,6 +780,13 @@
 				84A9A0092485335E0066863B /* ContestDetailResultVoteCellReactor.swift */,
 			);
 			path = Result;
+			sourceTree = "<group>";
+		};
+		84D2167D2499117700AFB1A6 /* MapTab */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MapTab;
 			sourceTree = "<group>";
 		};
 		84DA96092493AF0100DF6740 /* ContestAnimalDetail */ = {
