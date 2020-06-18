@@ -6,4 +6,23 @@
 //  Copyright © 2020 admin. All rights reserved.
 //
 
-import Foundation
+import ReactorKit
+import RxSwift
+
+final class ZooDetailAnimalCellReactor: Reactor {
+    enum Action {}
+    enum Mutation {}
+    struct State {
+        let animal: Animal
+        
+        init(animal: Animal) {
+            self.animal = animal
+        }
+    }
+    
+    let initialState: State
+    
+    init(animal: Animal) {
+        initialState = State(animal: animal)
+    }
+}
