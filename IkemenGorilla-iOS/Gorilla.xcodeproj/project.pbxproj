@@ -727,6 +727,13 @@
 			path = ZooDetail;
 			sourceTree = "<group>";
 		};
+		8494CBD5249B6B6D00E35E00 /* ZooDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ZooDetail;
+			sourceTree = "<group>";
+		};
 		84A99FCF2484C9C70066863B /* Info */ = {
 			isa = PBXGroup;
 			children = (
@@ -805,6 +812,7 @@
 		84D2167D2499117700AFB1A6 /* MapTab */ = {
 			isa = PBXGroup;
 			children = (
+				8494CBD5249B6B6D00E35E00 /* ZooDetail */,
 				84D216862499169600AFB1A6 /* Map */,
 			);
 			path = MapTab;
