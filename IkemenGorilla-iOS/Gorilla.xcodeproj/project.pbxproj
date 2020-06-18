@@ -740,10 +740,18 @@
 		8494CBD5249B6B6D00E35E00 /* ZooDetail */ = {
 			isa = PBXGroup;
 			children = (
+				8494CBDE249B7AF900E35E00 /* Animal */,
 				8494CBDA249B6E7100E35E00 /* ZooDetailHeader.swift */,
 				8494CBDC249B767300E35E00 /* ZooDetailAnimalsHeader.swift */,
 			);
 			path = ZooDetail;
+			sourceTree = "<group>";
+		};
+		8494CBDE249B7AF900E35E00 /* Animal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Animal;
 			sourceTree = "<group>";
 		};
 		84A99FCF2484C9C70066863B /* Info */ = {
