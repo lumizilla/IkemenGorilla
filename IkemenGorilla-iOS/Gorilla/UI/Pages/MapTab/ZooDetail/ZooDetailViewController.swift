@@ -70,6 +70,7 @@ final class ZooDetailViewController: UIViewController, View, ViewConstructor {
     
     // MARK: - Setup Methods
     func setupViews() {
+        view.backgroundColor = Color.white
         view.addSubview(contentScrollView)
         contentScrollView.addSubview(stackView)
         stackView.addArrangedSubview(header)
