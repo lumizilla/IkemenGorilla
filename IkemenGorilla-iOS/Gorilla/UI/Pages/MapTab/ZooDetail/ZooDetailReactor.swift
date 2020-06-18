@@ -26,6 +26,7 @@ final class ZooDetailReactor: Reactor {
         var animalCellReactors: [ZooDetailAnimalCellReactor] = []
         var postCellReactors: [ZooDetailPostCellReactor] = []
         var isFan: Bool = false
+        var numberOfFans: Int = 312
         
         init(zoo: Zoo) {
             self.zoo = zoo
