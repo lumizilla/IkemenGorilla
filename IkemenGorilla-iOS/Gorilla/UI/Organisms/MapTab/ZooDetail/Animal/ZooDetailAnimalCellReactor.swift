@@ -26,3 +26,9 @@ final class ZooDetailAnimalCellReactor: Reactor {
         initialState = State(animal: animal)
     }
 }
+
+extension ZooDetailAnimalCellReactor: Equatable {
+    static func == (lhs: ZooDetailAnimalCellReactor, rhs: ZooDetailAnimalCellReactor) -> Bool {
+        return lhs.currentState.animal.id == rhs.currentState.animal.id
+    }
+}
