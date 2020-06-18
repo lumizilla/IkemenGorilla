@@ -21,7 +21,7 @@ final class ZooDetailAnimalsHeader: UIView, ViewConstructor {
     // MARK: - Views
     private let label = UILabel().then {
         $0.apply(fontStyle: .medium, size: 20)
-        $0.textColor = Color.textBlack
+        $0.textColor = Color.black
         $0.text = "動物たち"
     }
     
@@ -50,7 +50,7 @@ final class ZooDetailAnimalsHeader: UIView, ViewConstructor {
     
     func setupViewConstraints() {
         label.snp.makeConstraints {
-            $0.left.equalToSuperview().inset(24)
+            $0.left.equalToSuperview().inset(16)
             $0.bottom.equalToSuperview().inset(8)
         }
         showAllButton.snp.makeConstraints {
