@@ -82,6 +82,7 @@
 		8494CBE3249B7B5000E35E00 /* ZooDetailAnimalCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494CBE2249B7B5000E35E00 /* ZooDetailAnimalCellReactor.swift */; };
 		8494CBE5249B825600E35E00 /* ZooDetailPostsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494CBE4249B825600E35E00 /* ZooDetailPostsHeader.swift */; };
 		8494CBE7249B83C800E35E00 /* ZooDetailPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494CBE6249B83C800E35E00 /* ZooDetailPostCell.swift */; };
+		8494CBE9249B83DB00E35E00 /* ZooDetailPostCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494CBE8249B83DB00E35E00 /* ZooDetailPostCellReactor.swift */; };
 		84A99FD62484CA530066863B /* ContestDetailInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99FD52484CA530066863B /* ContestDetailInfoViewController.swift */; };
 		84A99FD82484CA7B0066863B /* ContestDetailInfoReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99FD72484CA7B0066863B /* ContestDetailInfoReactor.swift */; };
 		84A99FDE2484D5FF0066863B /* ContestDetailInfoSponsorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99FDD2484D5FF0066863B /* ContestDetailInfoSponsorCell.swift */; };
@@ -224,6 +225,7 @@
 		8494CBE2249B7B5000E35E00 /* ZooDetailAnimalCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooDetailAnimalCellReactor.swift; sourceTree = "<group>"; };
 		8494CBE4249B825600E35E00 /* ZooDetailPostsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooDetailPostsHeader.swift; sourceTree = "<group>"; };
 		8494CBE6249B83C800E35E00 /* ZooDetailPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooDetailPostCell.swift; sourceTree = "<group>"; };
+		8494CBE8249B83DB00E35E00 /* ZooDetailPostCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooDetailPostCellReactor.swift; sourceTree = "<group>"; };
 		84A99FD52484CA530066863B /* ContestDetailInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDetailInfoViewController.swift; sourceTree = "<group>"; };
 		84A99FD72484CA7B0066863B /* ContestDetailInfoReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDetailInfoReactor.swift; sourceTree = "<group>"; };
 		84A99FDD2484D5FF0066863B /* ContestDetailInfoSponsorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDetailInfoSponsorCell.swift; sourceTree = "<group>"; };
@@ -770,6 +772,7 @@
 			isa = PBXGroup;
 			children = (
 				8494CBE6249B83C800E35E00 /* ZooDetailPostCell.swift */,
+				8494CBE8249B83DB00E35E00 /* ZooDetailPostCellReactor.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -1181,6 +1184,7 @@
 				847B37EF247A350800B48535 /* TestData.swift in Sources */,
 				84A9A00A2485335E0066863B /* ContestDetailResultVoteCellReactor.swift in Sources */,
 				847B37D32479D1F500B48535 /* Entity.swift in Sources */,
+				8494CBE9249B83DB00E35E00 /* ZooDetailPostCellReactor.swift in Sources */,
 				84DA960E2493B0D600DF6740 /* ContestAnimalDetailReactor.swift in Sources */,
 				84A9A00424851CED0066863B /* ContestDetailResultAwardCellReactor.swift in Sources */,
 				84DA960C2493B07800DF6740 /* ContestAnimalDetailViewController.swift in Sources */,
