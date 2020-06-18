@@ -75,6 +75,11 @@ final class ZooAnimalCell: UICollectionViewCell, View, ViewConstructor {
     // MARK: - Bind Method
     func bind(reactor: ZooAnimalCellReactor) {
         // Action
+        fanButton.rx.tap
+            .bind { _ in
+                reactor.action.onNext(.tapFanButton)
+            }
+            .disposed(by: disposeBag)
         
         // State
         reactor.state.map { $0.animal.iconUrl }
@@ -87,6 +92,11 @@ final class ZooAnimalCell: UICollectionViewCell, View, ViewConstructor {
         reactor.state.map { $0.animal.name }
             .distinctUntilChanged()
             .bind(to: animalNameLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.animal.isFan }
+            .distinctUntilChanged()
+            .bind(to: fanButton.rx.isFan)
             .disposed(by: disposeBag)
     }
 }
