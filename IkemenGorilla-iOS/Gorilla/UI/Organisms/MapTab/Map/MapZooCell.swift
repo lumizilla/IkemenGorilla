@@ -13,6 +13,9 @@ import RxSwift
 final class MapZooCell: UICollectionViewCell, View, ViewConstructor {
     struct Const {
         static let imageViewHeight: CGFloat = (DeviceSize.screenWidth - 64) * 200 / 311
+        static let itemWidth: CGFloat = DeviceSize.screenWidth - 64
+        static let itemHeight: CGFloat = imageViewHeight + 32
+        static let itemSize: CGSize = CGSize(width: itemWidth, height: itemHeight)
     }
     
     // MARK: - Variables
