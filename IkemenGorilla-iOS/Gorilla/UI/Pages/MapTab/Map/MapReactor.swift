@@ -8,20 +8,23 @@
 
 import ReactorKit
 import RxSwift
+import MapKit
 
 final class MapReactor: Reactor {
     enum Action {
         case loadZoos
-        case tapAnnotations(annotations: [PointZooAnnotation])
+        case tapCluster(MKClusterAnnotation)
         case closeList
     }
     enum Mutation {
         case setZoos([Zoo])
         case setAnnotations(annotations: [PointZooAnnotation])
+        case setCluster(MKClusterAnnotation?)
     }
     struct State {
         var zoos: [Zoo] = []
         var selectedAnnotations: [PointZooAnnotation] = []
+        var clusterAnnotation: MKClusterAnnotation?
     }
     
     let initialState = State()
@@ -30,8 +33,13 @@ final class MapReactor: Reactor {
         switch action {
         case .loadZoos:
             return loadZoos().map(Mutation.setZoos)
-        case .tapAnnotations(let annotations):
-            return .just(.setAnnotations(annotations: annotations))
+        case .tapCluster(let cluster):
+            var observables: [Observable<Mutation>] = []
+            if let annotations = cluster.memberAnnotations as? [PointZooAnnotation] {
+                observables.append(.just(.setAnnotations(annotations: annotations)))
+            }
+            observables.append(.just(.setCluster(cluster)))
+            return .merge(observables)
         case .closeList:
             return .just(.setAnnotations(annotations: []))
         }
@@ -48,6 +56,8 @@ final class MapReactor: Reactor {
             state.zoos = zoos
         case .setAnnotations(let annotations):
             state.selectedAnnotations = annotations
+        case .setCluster(let cluster):
+            state.clusterAnnotation = cluster
         }
         return state
     }
