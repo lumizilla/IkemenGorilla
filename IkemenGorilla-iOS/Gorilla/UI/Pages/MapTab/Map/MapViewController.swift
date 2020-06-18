@@ -56,14 +56,21 @@ final class MapViewController: UIViewController, View, ViewConstructor {
         zooListViewController.reactor = reactor
         zooListFloatingPanelController.delegate = self
         zooListFloatingPanelController.set(contentViewController: zooListViewController)
-//        zooListFloatingPanelController.track(scrollView: zooListViewController.zoosCollectionView)
         zooListFloatingPanelController.addPanel(toParent: self)
+        zooListFloatingPanelController.hide()
     }
     
     // MARK: - Bind Method
     func bind(reactor: MapReactor) {
         // Action
         reactor.action.onNext(.loadZoos)
+        
+        zooListViewController.closeButton.rx.tap
+            .bind { [weak self] _ in
+                self?.zooListFloatingPanelController.move(to: .hidden, animated: true)
+                reactor.action.onNext(.closeList)
+            }
+            .disposed(by: disposeBag)
         
         // State
         reactor.state.map { $0.zoos }
@@ -85,6 +92,7 @@ final class MapViewController: UIViewController, View, ViewConstructor {
             .bind { [weak self] annotations in
                 if annotations != [] {
                     logger.debug("annotations: \(annotations.count)")
+                    self?.zooListFloatingPanelController.move(to: .half, animated: true)
                 }
             }
             .disposed(by: disposeBag)
@@ -108,18 +116,36 @@ extension MapViewController: MKMapViewDelegate {
         print(view.annotation?.title)
         if let cluster = view.annotation as? MKClusterAnnotation {
             if let placeAnnotations = cluster.memberAnnotations as? [PointZooAnnotation] {
-//                reactor?.action.onNext(.deleteFocusPlace)
                 reactor?.action.onNext(.tapAnnotations(annotations: placeAnnotations))
-//                reactor?.action.onNext(.tapClusterAnnotation(clusterAnnotation: cluster))
             }
         }
         if let annotation = view.annotation as? PointZooAnnotation {
             reactor?.action.onNext(.tapAnnotations(annotations: [annotation]))
-//            reactor?.action.onNext(.setFocusPlace(place: annotation.place))
         }
     }
 }
 
 extension MapViewController: FloatingPanelControllerDelegate {
+    func floatingPanel(_ vc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
+        return MapZooListPanelLayout()
+    }
     
+    func floatingPanelShouldBeginDragging(_ vc: FloatingPanelController) -> Bool {
+        return true
+    }
+}
+
+class MapZooListPanelLayout: FloatingPanelLayout {
+    var initialPosition: FloatingPanelPosition {
+        return .half
+    }
+
+    func insetFor(position: FloatingPanelPosition) -> CGFloat? {
+        switch position {
+        case .full: return 32
+        case .half: return MapZooListViewController.Const.height
+        case .tip: return 80
+        default: return nil
+        }
+    }
 }
