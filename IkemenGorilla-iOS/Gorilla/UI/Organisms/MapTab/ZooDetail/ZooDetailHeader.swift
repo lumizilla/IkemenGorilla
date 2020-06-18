@@ -43,6 +43,8 @@ final class ZooDetailHeader: UIView, View, ViewConstructor {
         $0.textColor = Color.textBlack
     }
     
+    private let heartNumberView = HeartNumberView()
+    
     private let mapIconView = UIImageView().then {
         $0.image = #imageLiteral(resourceName: "map_empty").withRenderingMode(.alwaysTemplate)
         $0.tintColor = Color.textBlack
@@ -73,6 +75,7 @@ final class ZooDetailHeader: UIView, View, ViewConstructor {
         addSubview(overlay)
         addSubview(heartButton)
         addSubview(zooNameLabel)
+        addSubview(heartNumberView)
         addSubview(mapIconView)
         addSubview(addressLabel)
     }
@@ -96,6 +99,10 @@ final class ZooDetailHeader: UIView, View, ViewConstructor {
             $0.top.equalTo(imageView.snp.bottom).offset(24)
             $0.left.equalToSuperview().inset(16)
             $0.height.equalTo(24)
+        }
+        heartNumberView.snp.makeConstraints {
+            $0.centerY.equalTo(zooNameLabel)
+            $0.right.equalToSuperview().inset(16)
         }
         mapIconView.snp.makeConstraints {
             $0.top.equalTo(zooNameLabel.snp.bottom).offset(12)
@@ -135,6 +142,12 @@ final class ZooDetailHeader: UIView, View, ViewConstructor {
         reactor.state.map { $0.zoo.name }
             .distinctUntilChanged()
             .bind(to: zooNameLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.numberOfFans }
+            .distinctUntilChanged()
+            .map { numberOfFans in "\(numberOfFans)" }
+            .bind(to: heartNumberView.numberLabel.rx.text)
             .disposed(by: disposeBag)
         
         reactor.state.map { $0.zoo.address }
