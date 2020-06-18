@@ -10,6 +10,7 @@ import UIKit
 import ReactorKit
 import RxSwift
 import MapKit
+import FloatingPanel
 
 final class MapViewController: UIViewController, View, ViewConstructor {
     
@@ -19,6 +20,13 @@ final class MapViewController: UIViewController, View, ViewConstructor {
     // MARK: - Views
     let mapView = MKMapView()
     
+    let zooListFloatingPanelController = FloatingPanelController().then {
+        $0.surfaceView.cornerRadius = 24
+        $0.surfaceView.shadowHidden = true
+    }
+    
+    let zooListViewController = MapZooListViewController()
+    
     // MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +34,7 @@ final class MapViewController: UIViewController, View, ViewConstructor {
         setupViews()
         setupViewConstraints()
         setupMap()
+        setupFloatingController()
     }
     
     // MARK: - Setup Methods
@@ -41,6 +50,12 @@ final class MapViewController: UIViewController, View, ViewConstructor {
     
     func setupMap() {
         mapView.delegate = self
+    }
+    
+    func setupFloatingController() {
+        zooListFloatingPanelController.delegate = self
+        zooListFloatingPanelController.set(contentViewController: zooListViewController)
+        zooListFloatingPanelController.addPanel(toParent: self)
     }
     
     // MARK: - Bind Method
@@ -59,6 +74,15 @@ final class MapViewController: UIViewController, View, ViewConstructor {
                     pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
                     pointAnnotation.title = zoo.name
                     self?.mapView.addAnnotation(pointAnnotation)
+                }
+            }
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.selectedAnnotations }
+            .distinctUntilChanged()
+            .bind { [weak self] annotations in
+                if annotations != [] {
+                    logger.debug("annotations: \(annotations.count)")
                 }
             }
             .disposed(by: disposeBag)
@@ -92,4 +116,8 @@ extension MapViewController: MKMapViewDelegate {
 //            reactor?.action.onNext(.setFocusPlace(place: annotation.place))
         }
     }
+}
+
+extension MapViewController: FloatingPanelControllerDelegate {
+    
 }
