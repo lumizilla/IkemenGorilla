@@ -12,7 +12,7 @@ import RxSwift
 import MapKit
 import FloatingPanel
 
-final class MapViewController: UIViewController, View, ViewConstructor {
+final class MapViewController: UIViewController, View, ViewConstructor, TransitionPresentable {
     
     // MARK: - Variables
     var disposeBag = DisposeBag()
@@ -120,7 +120,8 @@ extension MapViewController: MKMapViewDelegate {
             reactor?.action.onNext(.tapCluster(cluster))
         }
         if let annotation = view.annotation as? PointZooAnnotation {
-            logger.debug("to do: push to detail")
+            guard let zooDetailReactor = reactor?.createZooDetailReactor(zoo: annotation.zoo) else { return }
+            showZooDetailPage(zooDetailReactor: zooDetailReactor)
         }
     }
 }
