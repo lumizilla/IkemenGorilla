@@ -75,6 +75,7 @@
 		84867855249B220700BCF94B /* MapZooCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84867854249B220600BCF94B /* MapZooCell.swift */; };
 		84867857249B221C00BCF94B /* MapZooCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84867856249B221C00BCF94B /* MapZooCellReactor.swift */; };
 		8494CBD7249B6C0400E35E00 /* ZooDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494CBD6249B6C0400E35E00 /* ZooDetailViewController.swift */; };
+		8494CBD9249B6C1D00E35E00 /* ZooDetailReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494CBD8249B6C1D00E35E00 /* ZooDetailReactor.swift */; };
 		84A99FD62484CA530066863B /* ContestDetailInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99FD52484CA530066863B /* ContestDetailInfoViewController.swift */; };
 		84A99FD82484CA7B0066863B /* ContestDetailInfoReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99FD72484CA7B0066863B /* ContestDetailInfoReactor.swift */; };
 		84A99FDE2484D5FF0066863B /* ContestDetailInfoSponsorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99FDD2484D5FF0066863B /* ContestDetailInfoSponsorCell.swift */; };
@@ -210,6 +211,7 @@
 		84867854249B220600BCF94B /* MapZooCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapZooCell.swift; sourceTree = "<group>"; };
 		84867856249B221C00BCF94B /* MapZooCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapZooCellReactor.swift; sourceTree = "<group>"; };
 		8494CBD6249B6C0400E35E00 /* ZooDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooDetailViewController.swift; sourceTree = "<group>"; };
+		8494CBD8249B6C1D00E35E00 /* ZooDetailReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooDetailReactor.swift; sourceTree = "<group>"; };
 		84A99FD52484CA530066863B /* ContestDetailInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDetailInfoViewController.swift; sourceTree = "<group>"; };
 		84A99FD72484CA7B0066863B /* ContestDetailInfoReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDetailInfoReactor.swift; sourceTree = "<group>"; };
 		84A99FDD2484D5FF0066863B /* ContestDetailInfoSponsorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDetailInfoSponsorCell.swift; sourceTree = "<group>"; };
@@ -726,6 +728,7 @@
 			isa = PBXGroup;
 			children = (
 				8494CBD6249B6C0400E35E00 /* ZooDetailViewController.swift */,
+				8494CBD8249B6C1D00E35E00 /* ZooDetailReactor.swift */,
 			);
 			path = ZooDetail;
 			sourceTree = "<group>";
@@ -1194,6 +1197,7 @@
 				847B37B62479948C00B48535 /* TextStyle.swift in Sources */,
 				847B3776247980E000B48535 /* SceneDelegate.swift in Sources */,
 				847B37B12479919800B48535 /* ViewConstructor.swift in Sources */,
+				8494CBD9249B6C1D00E35E00 /* ZooDetailReactor.swift in Sources */,
 				844EE1402484335D003369F2 /* TransitionPresentable.swift in Sources */,
 				84DA96102493B1DD00DF6740 /* ContestAnimalDetailPostCell.swift in Sources */,
 				847B37D72479D32A00B48535 /* Zoo.swift in Sources */,
