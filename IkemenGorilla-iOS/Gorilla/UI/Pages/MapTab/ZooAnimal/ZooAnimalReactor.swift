@@ -10,11 +10,15 @@ import ReactorKit
 import RxSwift
 
 final class ZooAnimalReactor: Reactor {
-    enum Action {}
-    enum Mutation {}
+    enum Action {
+        case loadAnimals
+    }
+    enum Mutation {
+        case setAnimalCellReactors([Animal])
+    }
     struct State {
         let zoo: Zoo
-        var animals: [Animal] = []
+        var animalCellReactors: [ZooAnimalCellReactor] = []
         
         init(zoo: Zoo) {
             self.zoo = zoo
@@ -25,5 +29,25 @@ final class ZooAnimalReactor: Reactor {
 
     init(zoo: Zoo) {
         initialState = State(zoo: zoo)
+    }
+    
+    func mutate(action: Action) -> Observable<Mutation> {
+        switch action {
+        case .loadAnimals:
+            return loadAnimals().map(Mutation.setAnimalCellReactors)
+        }
+    }
+    
+    private func loadAnimals() -> Observable<[Animal]> {
+        return .just(TestData.animals(count: 8))
+    }
+    
+    func reduce(state: State, mutation: Mutation) -> State {
+        var state = state
+        switch mutation {
+        case .setAnimalCellReactors(let animals):
+            state.animalCellReactors = animals.map { ZooAnimalCellReactor(animal: $0) }
+        }
+        return state
     }
 }
