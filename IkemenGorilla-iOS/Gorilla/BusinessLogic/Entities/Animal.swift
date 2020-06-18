@@ -16,7 +16,7 @@ struct Animal: Entity {
     let birthday: Date
     let description: String
     let numberOfFans: Int
-    let isFan: Bool
+    var isFan: Bool
     let isVotedToday: Bool
     
     static func == (lhs: Animal, rhs: Animal) -> Bool {
