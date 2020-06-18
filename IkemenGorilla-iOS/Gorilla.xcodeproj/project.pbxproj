@@ -112,6 +112,7 @@
 		84C433A9249BD3D700172D6A /* HeartNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C433A8249BD3D700172D6A /* HeartNumberView.swift */; };
 		84C433AD249BD7B200172D6A /* ZooAnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C433AC249BD7B200172D6A /* ZooAnimalViewController.swift */; };
 		84C433AF249BD7C800172D6A /* ZooAnimalReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C433AE249BD7C800172D6A /* ZooAnimalReactor.swift */; };
+		84C433B1249BDACD00172D6A /* ZooAnimalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C433B0249BDACD00172D6A /* ZooAnimalCell.swift */; };
 		84D216812499124E00AFB1A6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D216802499124E00AFB1A6 /* MapViewController.swift */; };
 		84D216832499126300AFB1A6 /* MapReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D216822499126300AFB1A6 /* MapReactor.swift */; };
 		84D21688249916B600AFB1A6 /* PointZooAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D21687249916B600AFB1A6 /* PointZooAnnotation.swift */; };
@@ -259,6 +260,7 @@
 		84C433A8249BD3D700172D6A /* HeartNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartNumberView.swift; sourceTree = "<group>"; };
 		84C433AC249BD7B200172D6A /* ZooAnimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooAnimalViewController.swift; sourceTree = "<group>"; };
 		84C433AE249BD7C800172D6A /* ZooAnimalReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooAnimalReactor.swift; sourceTree = "<group>"; };
+		84C433B0249BDACD00172D6A /* ZooAnimalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooAnimalCell.swift; sourceTree = "<group>"; };
 		84D216802499124E00AFB1A6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		84D216822499126300AFB1A6 /* MapReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapReactor.swift; sourceTree = "<group>"; };
 		84D21687249916B600AFB1A6 /* PointZooAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointZooAnnotation.swift; sourceTree = "<group>"; };
@@ -874,6 +876,7 @@
 		84C433AB249BD74000172D6A /* ZooAnimal */ = {
 			isa = PBXGroup;
 			children = (
+				84C433B0249BDACD00172D6A /* ZooAnimalCell.swift */,
 			);
 			path = ZooAnimal;
 			sourceTree = "<group>";
@@ -1288,6 +1291,7 @@
 				847B37E82479E25E00B48535 /* HomeCurrentContestListReactor.swift in Sources */,
 				847B37C62479A29F00B48535 /* UILabel+Extension.swift in Sources */,
 				84A99FFA2484FD150066863B /* ContestDetailPostCellReactor.swift in Sources */,
+				84C433B1249BDACD00172D6A /* ZooAnimalCell.swift in Sources */,
 				847B3818247CB7EB00B48535 /* FrontendEchoTarget.swift in Sources */,
 				8494CBE7249B83C800E35E00 /* ZooDetailPostCell.swift in Sources */,
 				84C433A7249BCE2600172D6A /* HeartButton.swift in Sources */,
