@@ -13,10 +13,15 @@ import RxSwift
 final class ZooDetailHeader: UIView, View, ViewConstructor {
     struct Const {
         static let imageViewHeight: CGFloat = DeviceSize.screenWidth * 312 / 375
+        static let height: CGFloat = imageViewHeight + 24 + 24 + 12 + 20 + 24
     }
     
     // MARK: - Variables
     var disposeBag = DisposeBag()
+    
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: DeviceSize.screenWidth, height: Const.height)
+    }
     
     // MARK: - Views
     private let imageView = UIImageView().then {
@@ -88,6 +93,7 @@ final class ZooDetailHeader: UIView, View, ViewConstructor {
             $0.top.equalTo(zooNameLabel.snp.bottom).offset(12)
             $0.left.equalToSuperview().inset(16)
             $0.size.equalTo(20)
+            $0.bottom.equalToSuperview().inset(24)
         }
         addressLabel.snp.makeConstraints {
             $0.centerY.equalTo(mapIconView)
