@@ -741,6 +741,7 @@
 			isa = PBXGroup;
 			children = (
 				8494CBDE249B7AF900E35E00 /* Animal */,
+				8494CBDF249B7B0E00E35E00 /* Post */,
 				8494CBDA249B6E7100E35E00 /* ZooDetailHeader.swift */,
 				8494CBDC249B767300E35E00 /* ZooDetailAnimalsHeader.swift */,
 			);
@@ -752,6 +753,13 @@
 			children = (
 			);
 			path = Animal;
+			sourceTree = "<group>";
+		};
+		8494CBDF249B7B0E00E35E00 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Post;
 			sourceTree = "<group>";
 		};
 		84A99FCF2484C9C70066863B /* Info */ = {
