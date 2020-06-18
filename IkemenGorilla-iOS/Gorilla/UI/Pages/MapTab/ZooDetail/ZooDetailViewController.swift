@@ -46,6 +46,8 @@ final class ZooDetailViewController: UIViewController, View, ViewConstructor {
         $0.showsHorizontalScrollIndicator = false
     }
     
+    private let postsHeader = ZooDetailPostsHeader()
+    
     // MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +63,7 @@ final class ZooDetailViewController: UIViewController, View, ViewConstructor {
         stackView.addArrangedSubview(header)
         stackView.addArrangedSubview(animalsHeader)
         stackView.addArrangedSubview(animalsCollectionView)
+        stackView.addArrangedSubview(postsHeader)
     }
     
     func setupViewConstraints() {
