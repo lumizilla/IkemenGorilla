@@ -72,6 +72,7 @@
 		847B3818247CB7EB00B48535 /* FrontendEchoTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3817247CB7EB00B48535 /* FrontendEchoTarget.swift */; };
 		847B381B247CBA9000B48535 /* FrontendEchoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B381A247CBA9000B48535 /* FrontendEchoViewController.swift */; };
 		847B381D247CBB1800B48535 /* FrontendEchoReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B381C247CBB1800B48535 /* FrontendEchoReactor.swift */; };
+		84867855249B220700BCF94B /* MapZooCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84867854249B220600BCF94B /* MapZooCell.swift */; };
 		84A99FD62484CA530066863B /* ContestDetailInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99FD52484CA530066863B /* ContestDetailInfoViewController.swift */; };
 		84A99FD82484CA7B0066863B /* ContestDetailInfoReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99FD72484CA7B0066863B /* ContestDetailInfoReactor.swift */; };
 		84A99FDE2484D5FF0066863B /* ContestDetailInfoSponsorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99FDD2484D5FF0066863B /* ContestDetailInfoSponsorCell.swift */; };
@@ -204,6 +205,7 @@
 		847B3817247CB7EB00B48535 /* FrontendEchoTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontendEchoTarget.swift; sourceTree = "<group>"; };
 		847B381A247CBA9000B48535 /* FrontendEchoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontendEchoViewController.swift; sourceTree = "<group>"; };
 		847B381C247CBB1800B48535 /* FrontendEchoReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontendEchoReactor.swift; sourceTree = "<group>"; };
+		84867854249B220600BCF94B /* MapZooCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapZooCell.swift; sourceTree = "<group>"; };
 		84A99FD52484CA530066863B /* ContestDetailInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDetailInfoViewController.swift; sourceTree = "<group>"; };
 		84A99FD72484CA7B0066863B /* ContestDetailInfoReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDetailInfoReactor.swift; sourceTree = "<group>"; };
 		84A99FDD2484D5FF0066863B /* ContestDetailInfoSponsorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDetailInfoSponsorCell.swift; sourceTree = "<group>"; };
@@ -821,6 +823,7 @@
 			children = (
 				84D21687249916B600AFB1A6 /* PointZooAnnotation.swift */,
 				84D216892499218200AFB1A6 /* MapZooListViewController.swift */,
+				84867854249B220600BCF94B /* MapZooCell.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -1160,6 +1163,7 @@
 				847B3805247A684B00B48535 /* HomeRecommendedZooHeader.swift in Sources */,
 				84A99FF42484FBF00066863B /* ContestDetailPostViewController.swift in Sources */,
 				847B37C82479A5A200B48535 /* Color.swift in Sources */,
+				84867855249B220700BCF94B /* MapZooCell.swift in Sources */,
 				84A99FFC2484FD900066863B /* Post.swift in Sources */,
 				847B37B4247992D300B48535 /* DeviceSize.swift in Sources */,
 				84DA96142493B9A700DF6740 /* ContestAnimalDetailHeader.swift in Sources */,
