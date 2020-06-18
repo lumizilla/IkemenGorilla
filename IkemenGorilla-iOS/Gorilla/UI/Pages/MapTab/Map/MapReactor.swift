@@ -13,6 +13,7 @@ final class MapReactor: Reactor {
     enum Action {
         case loadZoos
         case tapAnnotations(annotations: [PointZooAnnotation])
+        case closeList
     }
     enum Mutation {
         case setZoos([Zoo])
@@ -31,6 +32,8 @@ final class MapReactor: Reactor {
             return loadZoos().map(Mutation.setZoos)
         case .tapAnnotations(let annotations):
             return .just(.setAnnotations(annotations: annotations))
+        case .closeList:
+            return .just(.setAnnotations(annotations: []))
         }
     }
     
