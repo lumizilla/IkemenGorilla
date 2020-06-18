@@ -14,6 +14,7 @@ target 'Gorilla' do
   pod 'Moya/RxSwift', '~> 14.0'
   pod 'LoggerKit'
   pod 'SegementSlide', '3.0.0'
+  pod 'FloatingPanel'
 
   target 'GorillaTests' do
     inherit! :search_paths

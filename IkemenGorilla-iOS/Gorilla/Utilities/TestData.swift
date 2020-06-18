@@ -23,6 +23,8 @@ protocol TestDataType {
     static func awards(count: Int) -> [Award]
     static func contestResult(numberOfVotes: Int, maxOfVotes: Int) -> ContestResult
     static func contestResults(count: Int) -> [ContestResult]
+    static func animal() -> Animal
+    static func animals(count: Int) -> [Animal]
     static func profile() -> Profile
     static func profiles(count: Int) -> [Profile]
     
@@ -182,6 +184,24 @@ struct TestData: TestDataType {
             zooAddress: "愛知県名古屋市千種区東山元町３丁目７０",
             isVotedToday: false
         )
+    }
+    
+    static func animal() -> Animal {
+        return Animal(
+            id: testID(),
+            name: "メリーさんの羊",
+            iconUrl: "https://images.unsplash.com/photo-1484557985045-edf25e08da73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
+            sex: "オス",
+            birthday: Date.init(),
+            description: "普段は乾草か牧草かお手紙を食べています．いとこは基本全員イギリス南東部にいます．自分だけ日本にきちゃいました．指の数は前が2本，後ろが2本です．いいでしょ．寝るときはふせて寝ます．仰向けにはなりません．",
+            numberOfFans: 312,
+            isFan: false,
+            isVotedToday: false
+        )
+    }
+    
+    static func animals(count: Int) -> [Animal] {
+        return (0 ..< count).map { _ in animal() }
     }
     
     // MARK: - Private functions

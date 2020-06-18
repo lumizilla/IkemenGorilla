@@ -39,7 +39,9 @@ class TabBarController: UITabBarController {
             UINavigationController(rootViewController: HomeViewController().then {
                 $0.reactor = HomeReactor()
             }),
-            UINavigationController(rootViewController: DevelopingViewController(type: "Map")),
+            UINavigationController(rootViewController: MapViewController().then {
+                $0.reactor = MapReactor()
+            }),
             DevelopingViewController(type: "Vote"),
             UINavigationController(rootViewController: DevelopingViewController(type: "Search")),
             //UINavigationController(rootViewController: FrontendEchoViewController().then {
