@@ -31,6 +31,8 @@ final class ZooAnimalCell: UICollectionViewCell, View, ViewConstructor {
     private let animalNameLabel = UILabel().then {
         $0.apply(fontStyle: .bold, size: 16)
         $0.textColor = Color.textGray
+        $0.textAlignment = .center
+        $0.adjustsFontSizeToFitWidth = true
     }
     
     // MARK: - Initializers
