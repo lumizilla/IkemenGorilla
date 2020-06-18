@@ -28,6 +28,9 @@ final class ZooDetailAnimalCell: UICollectionViewCell, View, ViewConstructor {
     // MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: .zero)
+        
+        setupViews()
+        setupViewConstraints()
     }
     
     required init?(coder: NSCoder) {
