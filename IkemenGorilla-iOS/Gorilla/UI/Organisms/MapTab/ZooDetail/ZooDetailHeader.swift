@@ -36,6 +36,8 @@ final class ZooDetailHeader: UIView, View, ViewConstructor {
         $0.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     }
     
+    private let heartButton = HeartButton()
+    
     private let zooNameLabel = UILabel().then {
         $0.apply(fontStyle: .black, size: 24)
         $0.textColor = Color.textBlack
@@ -69,6 +71,7 @@ final class ZooDetailHeader: UIView, View, ViewConstructor {
     func setupViews() {
         addSubview(imageView)
         addSubview(overlay)
+        addSubview(heartButton)
         addSubview(zooNameLabel)
         addSubview(mapIconView)
         addSubview(addressLabel)
@@ -83,6 +86,11 @@ final class ZooDetailHeader: UIView, View, ViewConstructor {
             $0.left.right.equalToSuperview()
             $0.height.equalTo(64)
             $0.bottom.equalTo(imageView).offset(32)
+        }
+        heartButton.snp.makeConstraints {
+            $0.right.equalToSuperview().inset(32)
+            $0.size.equalTo(64)
+            $0.bottom.equalTo(imageView)
         }
         zooNameLabel.snp.makeConstraints {
             $0.top.equalTo(imageView.snp.bottom).offset(24)
@@ -105,6 +113,11 @@ final class ZooDetailHeader: UIView, View, ViewConstructor {
     // MARK: - Bind Method
     func bind(reactor: ZooDetailReactor) {
         // Action
+        heartButton.rx.tap
+            .bind { _ in
+                reactor.action.onNext(.tapHeartButton)
+            }
+            .disposed(by: disposeBag)
         
         // State
         reactor.state.map { $0.zoo.imageUrl }
@@ -112,6 +125,11 @@ final class ZooDetailHeader: UIView, View, ViewConstructor {
             .bind { [weak self] imageUrl in
                 self?.imageView.setImage(imageUrl: imageUrl)
             }
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.isFan }
+            .distinctUntilChanged()
+            .bind(to: heartButton.rx.isSelected)
             .disposed(by: disposeBag)
         
         reactor.state.map { $0.zoo.name }
