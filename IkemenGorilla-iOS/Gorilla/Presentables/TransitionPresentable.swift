@@ -14,6 +14,9 @@ protocol TransitionPresentable: class {
     func showRecommendedZooPage(recommendedZooReactor: RecommendedZooReactor)
     func showContestDetailPage(contestDetailReactor: ContestDetailReactor)
     func showContestAnimalDetailPage(contestAnimalDetailReactor: ContestAnimalDetailReactor)
+    
+    // MAP TAB
+    func showZooDetailPage(zooDetailReactor: ZooDetailReactor)
 }
 
 extension TransitionPresentable where Self: UIViewController {
@@ -49,6 +52,16 @@ extension TransitionPresentable where Self: UIViewController {
         navigationController?.pushViewController(
             ContestAnimalDetailViewController().then {
                 $0.reactor = contestAnimalDetailReactor
+            },
+            animated: true
+        )
+    }
+    
+    // MAP TAB
+    func showZooDetailPage(zooDetailReactor: ZooDetailReactor) {
+        navigationController?.pushViewController(
+            ZooDetailViewController().then {
+                $0.reactor = zooDetailReactor
             },
             animated: true
         )
