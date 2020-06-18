@@ -13,12 +13,17 @@ final class ZooAnimalReactor: Reactor {
     enum Action {}
     enum Mutation {}
     struct State {
+        let zoo: Zoo
         var animals: [Animal] = []
+        
+        init(zoo: Zoo) {
+            self.zoo = zoo
+        }
     }
     
     let initialState: State
 
-    init() {
-        initialState = State()
+    init(zoo: Zoo) {
+        initialState = State(zoo: zoo)
     }
 }
