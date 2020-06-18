@@ -69,6 +69,9 @@ final class MapViewController: UIViewController, View, ViewConstructor {
             .bind { [weak self] _ in
                 self?.zooListFloatingPanelController.move(to: .hidden, animated: true)
                 reactor.action.onNext(.closeList)
+                if let clusterAnnotation = reactor.currentState.clusterAnnotation {
+                    self?.mapView.deselectAnnotation(clusterAnnotation, animated: true)
+                }
             }
             .disposed(by: disposeBag)
         
@@ -113,14 +116,11 @@ extension MapViewController: MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        print(view.annotation?.title)
         if let cluster = view.annotation as? MKClusterAnnotation {
-            if let placeAnnotations = cluster.memberAnnotations as? [PointZooAnnotation] {
-                reactor?.action.onNext(.tapAnnotations(annotations: placeAnnotations))
-            }
+            reactor?.action.onNext(.tapCluster(cluster))
         }
         if let annotation = view.annotation as? PointZooAnnotation {
-            reactor?.action.onNext(.tapAnnotations(annotations: [annotation]))
+            logger.debug("to do: push to detail")
         }
     }
 }
