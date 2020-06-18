@@ -35,6 +35,8 @@ final class ZooAnimalCell: UICollectionViewCell, View, ViewConstructor {
         $0.adjustsFontSizeToFitWidth = true
     }
     
+    private let fanButton = FanButton()
+    
     // MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -51,6 +53,7 @@ final class ZooAnimalCell: UICollectionViewCell, View, ViewConstructor {
     func setupViews() {
         addSubview(imageView)
         addSubview(animalNameLabel)
+        addSubview(fanButton)
     }
     
     func setupViewConstraints() {
@@ -62,6 +65,10 @@ final class ZooAnimalCell: UICollectionViewCell, View, ViewConstructor {
             $0.top.equalTo(imageView.snp.bottom).offset(16)
             $0.left.right.equalToSuperview()
             $0.height.equalTo(16)
+        }
+        fanButton.snp.makeConstraints {
+            $0.top.equalTo(animalNameLabel.snp.bottom).offset(16)
+            $0.left.right.bottom.equalToSuperview()
         }
     }
     
