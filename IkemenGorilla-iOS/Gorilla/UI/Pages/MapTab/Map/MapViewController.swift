@@ -53,8 +53,10 @@ final class MapViewController: UIViewController, View, ViewConstructor {
     }
     
     func setupFloatingController() {
+        zooListViewController.reactor = reactor
         zooListFloatingPanelController.delegate = self
         zooListFloatingPanelController.set(contentViewController: zooListViewController)
+//        zooListFloatingPanelController.track(scrollView: zooListViewController.zoosCollectionView)
         zooListFloatingPanelController.addPanel(toParent: self)
     }
     
