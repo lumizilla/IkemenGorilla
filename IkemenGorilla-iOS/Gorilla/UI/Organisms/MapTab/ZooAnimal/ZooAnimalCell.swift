@@ -71,7 +71,7 @@ final class ZooAnimalCell: UICollectionViewCell, View, ViewConstructor {
         reactor.state.map { $0.animal.iconUrl }
             .distinctUntilChanged()
             .bind { [weak self] iconUrl in
-                imageView.setImage(imageUrl: iconUrl)
+                self?.imageView.setImage(imageUrl: iconUrl)
             }
             .disposed(by: disposeBag)
         
