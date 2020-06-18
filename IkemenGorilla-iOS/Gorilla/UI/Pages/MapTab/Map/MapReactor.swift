@@ -61,4 +61,8 @@ final class MapReactor: Reactor {
         }
         return state
     }
+    
+    func createZooDetailReactor(zoo: Zoo) -> ZooDetailReactor {
+        return ZooDetailReactor(zoo: zoo)
+    }
 }
