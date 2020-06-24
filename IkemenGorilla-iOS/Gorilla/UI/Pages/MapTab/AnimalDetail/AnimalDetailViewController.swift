@@ -26,15 +26,22 @@ final class AnimalDetailViewController: UIViewController, View, ViewConstructor 
         $0.distribution = .fill
     }
     
+    private let header = AnimalDetailHeader()
+    
     // MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupViews()
+        setupViewConstraints()
     }
     
     // MARK: - Setup Methods
     func setupViews() {
+        view.backgroundColor = Color.white
         view.addSubview(contentScrollView)
         contentScrollView.addSubview(stackView)
+        stackView.addArrangedSubview(header)
     }
     
     func setupViewConstraints() {
@@ -48,6 +55,8 @@ final class AnimalDetailViewController: UIViewController, View, ViewConstructor 
     
     // MARK: - Bind Method
     func bind(reactor: AnimalDetailReactor) {
+        header.reactor = reactor
+        
         // Action
         
         // State
