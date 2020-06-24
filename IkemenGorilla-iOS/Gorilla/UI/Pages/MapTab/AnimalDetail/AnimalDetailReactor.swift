@@ -15,6 +15,7 @@ final class AnimalDetailReactor: Reactor {
     
     struct State {
         let animal: Animal
+        let zooName: String = "東山動物園"
         
         init(animal: Animal) {
             self.animal = animal
