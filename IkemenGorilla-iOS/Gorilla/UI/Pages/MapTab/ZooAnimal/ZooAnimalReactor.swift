@@ -50,4 +50,8 @@ final class ZooAnimalReactor: Reactor {
         }
         return state
     }
+    
+    func createAnimalDetailReactor(indexPath: IndexPath) -> AnimalDetailReactor {
+        return AnimalDetailReactor(animal: currentState.animalCellReactors[indexPath.row].currentState.animal)
+    }
 }
