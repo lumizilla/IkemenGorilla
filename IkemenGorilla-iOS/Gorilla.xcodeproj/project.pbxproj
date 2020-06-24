@@ -128,6 +128,7 @@
 		84DA96192493C81900DF6740 /* ContestAnimalDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DA96182493C81900DF6740 /* ContestAnimalDetailResponse.swift */; };
 		84E39BF624A3B824008E6526 /* AnimalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E39BF524A3B824008E6526 /* AnimalDetailViewController.swift */; };
 		84E39BF824A3B841008E6526 /* AnimalDetailReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E39BF724A3B841008E6526 /* AnimalDetailReactor.swift */; };
+		84E39BFA24A3BA15008E6526 /* AnimalDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E39BF924A3BA15008E6526 /* AnimalDetailHeader.swift */; };
 		8AD80E3EDA0645450C645241 /* Pods_Gorilla_GorillaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F440E1262F9F90997A9A24 /* Pods_Gorilla_GorillaUITests.framework */; };
 		A29B9D43B1A804F6145A1073 /* Pods_GorillaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B68804A246C98CAE881B62C /* Pods_GorillaTests.framework */; };
 /* End PBXBuildFile section */
@@ -280,6 +281,7 @@
 		84DA96182493C81900DF6740 /* ContestAnimalDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestAnimalDetailResponse.swift; sourceTree = "<group>"; };
 		84E39BF524A3B824008E6526 /* AnimalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailViewController.swift; sourceTree = "<group>"; };
 		84E39BF724A3B841008E6526 /* AnimalDetailReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailReactor.swift; sourceTree = "<group>"; };
+		84E39BF924A3BA15008E6526 /* AnimalDetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailHeader.swift; sourceTree = "<group>"; };
 		B34C68F74EC2D59ED3BA5ED9 /* Pods-Gorilla-GorillaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gorilla-GorillaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Gorilla-GorillaUITests/Pods-Gorilla-GorillaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BC5B729A7696F5FC17692DAA /* Pods-GorillaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GorillaTests.debug.xcconfig"; path = "Target Support Files/Pods-GorillaTests/Pods-GorillaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D88E3F92FF19F1C62D0B465D /* Pods_Gorilla.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gorilla.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -972,6 +974,7 @@
 		84E39BF424A3B7F1008E6526 /* AnimalDetail */ = {
 			isa = PBXGroup;
 			children = (
+				84E39BF924A3BA15008E6526 /* AnimalDetailHeader.swift */,
 			);
 			path = AnimalDetail;
 			sourceTree = "<group>";
@@ -1236,6 +1239,7 @@
 				847B37F9247A580C00B48535 /* HomePastContestListView.swift in Sources */,
 				8494CBD7249B6C0400E35E00 /* ZooDetailViewController.swift in Sources */,
 				84C433B5249BE7C400172D6A /* FanButton.swift in Sources */,
+				84E39BFA24A3BA15008E6526 /* AnimalDetailHeader.swift in Sources */,
 				84C433AD249BD7B200172D6A /* ZooAnimalViewController.swift in Sources */,
 				84A99FE02484D6260066863B /* ContestDetailInfoSponsorCellReactor.swift in Sources */,
 				84E39BF824A3B841008E6526 /* AnimalDetailReactor.swift in Sources */,
