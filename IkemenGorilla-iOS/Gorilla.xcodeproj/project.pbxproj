@@ -768,6 +768,13 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
+		848B16E324A514A000150EE7 /* AnimalDetailPastContestCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AnimalDetailPastContestCell;
+			sourceTree = "<group>";
+		};
 		8494CBD4249B6ADC00E35E00 /* ZooDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -981,6 +988,7 @@
 		84E39BF424A3B7F1008E6526 /* AnimalDetail */ = {
 			isa = PBXGroup;
 			children = (
+				848B16E324A514A000150EE7 /* AnimalDetailPastContestCell */,
 				84E39BF924A3BA15008E6526 /* AnimalDetailHeader.swift */,
 				8491402E24A47F7900DFAE20 /* AnimalDetailCurrentContestView.swift */,
 				8491403224A49D9900DFAE20 /* AnimalDetailPastContestView.swift */,
