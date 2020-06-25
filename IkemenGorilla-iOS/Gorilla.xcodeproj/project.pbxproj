@@ -76,6 +76,7 @@
 		84867857249B221C00BCF94B /* MapZooCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84867856249B221C00BCF94B /* MapZooCellReactor.swift */; };
 		8491402F24A47F7A00DFAE20 /* AnimalDetailCurrentContestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491402E24A47F7900DFAE20 /* AnimalDetailCurrentContestView.swift */; };
 		8491403124A4816800DFAE20 /* FloatingContestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491403024A4816800DFAE20 /* FloatingContestView.swift */; };
+		8491403324A49D9900DFAE20 /* AnimalDetailPastContestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491403224A49D9900DFAE20 /* AnimalDetailPastContestView.swift */; };
 		8494CBD7249B6C0400E35E00 /* ZooDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494CBD6249B6C0400E35E00 /* ZooDetailViewController.swift */; };
 		8494CBD9249B6C1D00E35E00 /* ZooDetailReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494CBD8249B6C1D00E35E00 /* ZooDetailReactor.swift */; };
 		8494CBDB249B6E7100E35E00 /* ZooDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494CBDA249B6E7100E35E00 /* ZooDetailHeader.swift */; };
@@ -231,6 +232,7 @@
 		84867856249B221C00BCF94B /* MapZooCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapZooCellReactor.swift; sourceTree = "<group>"; };
 		8491402E24A47F7900DFAE20 /* AnimalDetailCurrentContestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailCurrentContestView.swift; sourceTree = "<group>"; };
 		8491403024A4816800DFAE20 /* FloatingContestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingContestView.swift; sourceTree = "<group>"; };
+		8491403224A49D9900DFAE20 /* AnimalDetailPastContestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailPastContestView.swift; sourceTree = "<group>"; };
 		8494CBD6249B6C0400E35E00 /* ZooDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooDetailViewController.swift; sourceTree = "<group>"; };
 		8494CBD8249B6C1D00E35E00 /* ZooDetailReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooDetailReactor.swift; sourceTree = "<group>"; };
 		8494CBDA249B6E7100E35E00 /* ZooDetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooDetailHeader.swift; sourceTree = "<group>"; };
@@ -981,6 +983,7 @@
 			children = (
 				84E39BF924A3BA15008E6526 /* AnimalDetailHeader.swift */,
 				8491402E24A47F7900DFAE20 /* AnimalDetailCurrentContestView.swift */,
+				8491403224A49D9900DFAE20 /* AnimalDetailPastContestView.swift */,
 			);
 			path = AnimalDetail;
 			sourceTree = "<group>";
@@ -1278,6 +1281,7 @@
 				844EE13D24842BEC003369F2 /* Formatter.swift in Sources */,
 				84A9A00024851BC90066863B /* ContestDetailResultReactor.swift in Sources */,
 				847B37DD2479D81B00B48535 /* HomeReactor.swift in Sources */,
+				8491403324A49D9900DFAE20 /* AnimalDetailPastContestView.swift in Sources */,
 				847B37CF2479AA9800B48535 /* IconView.swift in Sources */,
 				844EE146248436AD003369F2 /* RecommendedZooCellReactor.swift in Sources */,
 				84A9A00624851D340066863B /* Award.swift in Sources */,
