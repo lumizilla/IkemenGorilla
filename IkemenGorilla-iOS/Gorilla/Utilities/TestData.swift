@@ -13,6 +13,8 @@ protocol TestDataType {
     static func contests(count: Int) -> [Contest]
     static func zoo() -> Zoo
     static func zoos(count: Int) -> [Zoo]
+    static func animal() -> Animal
+    static func animals(count: Int) -> [Animal]
     static func sponsor() -> Sponsor
     static func sponsors(count: Int) -> [Sponsor]
     static func entry() -> Entry
@@ -66,6 +68,24 @@ struct TestData: TestDataType {
     
     static func zoos(count: Int) -> [Zoo] {
         return (0 ..< count).map { _ in zoo() }
+    }
+    
+    static func animal() -> Animal {
+        return Animal(
+            id: testID(),
+            name: "メリーさんの羊",
+            iconUrl: "https://images.unsplash.com/photo-1484557985045-edf25e08da73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjF9&auto=format&fit=crop&w=1934&q=80",
+            sex: "♀オス",
+            birthday: dateFromString(from: "2008-03-05"),
+            description: "普段は乾草か牧草かお手紙を食べています．いとこは基本全員イギリス南東部にいます．自分だけ日本にきちゃいました．指の数は前が2本，後ろが2本です．いいでしょ．寝るときはふせて寝ます．仰向けにはなりません．",
+            numberOfFans: 312,
+            isFan: true,
+            isVotedToday: true
+        )
+    }
+    
+    static func animals(count: Int) -> [Animal] {
+        return (0 ..< count).map { _ in animal() }
     }
     
     static func sponsor() -> Sponsor {
