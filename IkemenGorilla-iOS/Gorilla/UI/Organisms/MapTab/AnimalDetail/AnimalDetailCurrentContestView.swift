@@ -50,6 +50,7 @@ final class AnimalDetailCurrentContestView: UIView, View, ViewConstructor {
         floatingContestView.snp.makeConstraints {
             $0.top.equalTo(currentContestLabel.snp.bottom).offset(24)
             $0.left.right.equalToSuperview().inset(16)
+            $0.bottom.equalToSuperview()
         }
     }
     
