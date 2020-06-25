@@ -63,6 +63,7 @@ final class AnimalDetailViewController: UIViewController, View, ViewConstructor 
     // MARK: - Bind Method
     func bind(reactor: AnimalDetailReactor) {
         header.reactor = reactor
+        currentContestView.reactor = reactor
         
         // Action
         
