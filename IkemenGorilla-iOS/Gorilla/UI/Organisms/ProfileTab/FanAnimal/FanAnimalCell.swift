@@ -25,7 +25,8 @@ final class FanAnimalCell: UICollectionViewCell, View, ViewConstructor {
     private let imageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
         $0.layer.masksToBounds = true
-        $0.layer.cornerRadius = 4
+        $0.layer.cornerRadius = 80
+        $0.clipsToBounds = true
     }
     
     private let animalNameLabel = UILabel().then {
@@ -58,7 +59,8 @@ final class FanAnimalCell: UICollectionViewCell, View, ViewConstructor {
         }
         animalNameLabel.snp.makeConstraints {
             $0.top.equalTo(imageView.snp.bottom).offset(8)
-            $0.left.right.equalToSuperview()
+            $0.centerX.equalToSuperview()
+            $0.centerX.equalTo(imageView.snp.centerX)
             $0.height.equalTo(8)
         }
     }
