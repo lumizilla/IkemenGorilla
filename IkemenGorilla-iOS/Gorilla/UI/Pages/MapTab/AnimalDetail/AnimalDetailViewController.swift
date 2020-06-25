@@ -51,6 +51,9 @@ final class AnimalDetailViewController: UIViewController, View, ViewConstructor 
         stackView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
+        header.snp.makeConstraints {
+            $0.width.equalTo(DeviceSize.screenWidth)
+        }
     }
     
     // MARK: - Bind Method
