@@ -74,6 +74,7 @@
 		847B381D247CBB1800B48535 /* FrontendEchoReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B381C247CBB1800B48535 /* FrontendEchoReactor.swift */; };
 		84867855249B220700BCF94B /* MapZooCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84867854249B220600BCF94B /* MapZooCell.swift */; };
 		84867857249B221C00BCF94B /* MapZooCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84867856249B221C00BCF94B /* MapZooCellReactor.swift */; };
+		8491402F24A47F7A00DFAE20 /* AnimalDetailCurrentContestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491402E24A47F7900DFAE20 /* AnimalDetailCurrentContestView.swift */; };
 		8494CBD7249B6C0400E35E00 /* ZooDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494CBD6249B6C0400E35E00 /* ZooDetailViewController.swift */; };
 		8494CBD9249B6C1D00E35E00 /* ZooDetailReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494CBD8249B6C1D00E35E00 /* ZooDetailReactor.swift */; };
 		8494CBDB249B6E7100E35E00 /* ZooDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494CBDA249B6E7100E35E00 /* ZooDetailHeader.swift */; };
@@ -227,6 +228,7 @@
 		847B381C247CBB1800B48535 /* FrontendEchoReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontendEchoReactor.swift; sourceTree = "<group>"; };
 		84867854249B220600BCF94B /* MapZooCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapZooCell.swift; sourceTree = "<group>"; };
 		84867856249B221C00BCF94B /* MapZooCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapZooCellReactor.swift; sourceTree = "<group>"; };
+		8491402E24A47F7900DFAE20 /* AnimalDetailCurrentContestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailCurrentContestView.swift; sourceTree = "<group>"; };
 		8494CBD6249B6C0400E35E00 /* ZooDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooDetailViewController.swift; sourceTree = "<group>"; };
 		8494CBD8249B6C1D00E35E00 /* ZooDetailReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooDetailReactor.swift; sourceTree = "<group>"; };
 		8494CBDA249B6E7100E35E00 /* ZooDetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooDetailHeader.swift; sourceTree = "<group>"; };
@@ -975,6 +977,7 @@
 			isa = PBXGroup;
 			children = (
 				84E39BF924A3BA15008E6526 /* AnimalDetailHeader.swift */,
+				8491402E24A47F7900DFAE20 /* AnimalDetailCurrentContestView.swift */,
 			);
 			path = AnimalDetail;
 			sourceTree = "<group>";
@@ -1236,6 +1239,7 @@
 				847B3807247A687D00B48535 /* HomeRecommendedZooListView.swift in Sources */,
 				84A99FE82484ED9D0066863B /* ContestDetailEntryReactor.swift in Sources */,
 				84A9A008248533340066863B /* ContestDetailResultVoteCell.swift in Sources */,
+				8491402F24A47F7A00DFAE20 /* AnimalDetailCurrentContestView.swift in Sources */,
 				847B37F9247A580C00B48535 /* HomePastContestListView.swift in Sources */,
 				8494CBD7249B6C0400E35E00 /* ZooDetailViewController.swift in Sources */,
 				84C433B5249BE7C400172D6A /* FanButton.swift in Sources */,
