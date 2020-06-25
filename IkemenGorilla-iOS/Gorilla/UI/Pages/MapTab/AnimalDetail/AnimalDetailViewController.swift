@@ -28,6 +28,8 @@ final class AnimalDetailViewController: UIViewController, View, ViewConstructor 
     
     private let header = AnimalDetailHeader()
     
+    private let currentContestView = AnimalDetailCurrentContestView()
+    
     // MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +44,8 @@ final class AnimalDetailViewController: UIViewController, View, ViewConstructor 
         view.addSubview(contentScrollView)
         contentScrollView.addSubview(stackView)
         stackView.addArrangedSubview(header)
+        stackView.setCustomSpacing(40, after: header)
+        stackView.addArrangedSubview(currentContestView)
     }
     
     func setupViewConstraints() {
