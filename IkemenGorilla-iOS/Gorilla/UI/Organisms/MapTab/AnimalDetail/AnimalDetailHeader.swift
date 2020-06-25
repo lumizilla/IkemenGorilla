@@ -48,6 +48,22 @@ final class AnimalDetailHeader: UIView, View, ViewConstructor {
         $0.textColor = Color.textGray
     }
     
+    private let sexLabel = UILabel().then {
+        $0.apply(fontStyle: .bold, size: 13)
+        $0.textColor = Color.textGray
+    }
+    
+    private let birthdayLabel = UILabel().then {
+        $0.apply(fontStyle: .bold, size: 13)
+        $0.textColor = Color.textGray
+    }
+    
+    private let descriptionLabel = UILabel().then {
+        $0.apply(fontStyle: .bold, size: 13)
+        $0.textColor = Color.textGray
+        $0.numberOfLines = 0
+    }
+    
     // MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -67,6 +83,9 @@ final class AnimalDetailHeader: UIView, View, ViewConstructor {
         addSubview(fanNumberLabel)
         addSubview(fanLabel)
         addSubview(zooNameLabel)
+        addSubview(sexLabel)
+        addSubview(birthdayLabel)
+        addSubview(descriptionLabel)
     }
     
     func setupViewConstraints() {
@@ -92,6 +111,19 @@ final class AnimalDetailHeader: UIView, View, ViewConstructor {
             $0.top.equalTo(fanNumberLabel.snp.bottom).offset(8)
             $0.left.equalTo(imageView.snp.right).offset(16)
             $0.right.equalToSuperview().inset(16)
+        }
+        sexLabel.snp.makeConstraints {
+            $0.top.equalTo(imageView.snp.bottom).offset(16)
+            $0.left.equalToSuperview().inset(16)
+        }
+        birthdayLabel.snp.makeConstraints {
+            $0.top.equalTo(sexLabel.snp.bottom).offset(8)
+            $0.left.equalToSuperview().inset(16)
+        }
+        descriptionLabel.snp.makeConstraints {
+            $0.top.equalTo(birthdayLabel.snp.bottom).offset(16)
+            $0.left.right.equalToSuperview().inset(16)
+            $0.bottom.equalToSuperview()
         }
     }
     
@@ -121,6 +153,23 @@ final class AnimalDetailHeader: UIView, View, ViewConstructor {
         reactor.state.map { $0.zooName }
             .distinctUntilChanged()
             .bind(to: zooNameLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.animal.sex }
+            .distinctUntilChanged()
+            .map { "性別 : \($0)" }
+            .bind(to: sexLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.animal.birthday }
+            .distinctUntilChanged()
+            .map { "誕生日 : " + formatter.string(from: $0) }
+            .bind(to: birthdayLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.animal.description }
+            .distinctUntilChanged()
+            .bind(to: descriptionLabel.rx.text)
             .disposed(by: disposeBag)
     }
 }
