@@ -1,5 +1,5 @@
 //
-//  AnimalDetailPostView.swift
+//  AnimalDetailPostHeader.swift
 //  Gorilla
 //
 //  Created by admin on 2020/06/26.
@@ -7,14 +7,8 @@
 //
 
 import UIKit
-import ReactorKit
-import RxSwift
-import ReusableKit
 
-final class AnimalDetailPostView: UIView, View, ViewConstructor {
-    // MARK: - Variables
-    var disposeBag = DisposeBag()
-    
+final class AnimalDetailPostHeader: UIView, ViewConstructor {
     // MARK: - Views
     private let postsHeader = UILabel().then {
         $0.apply(fontStyle: .medium, size: 20)
@@ -44,13 +38,7 @@ final class AnimalDetailPostView: UIView, View, ViewConstructor {
             $0.top.equalToSuperview()
             $0.left.equalToSuperview().inset(16)
             $0.width.equalTo(DeviceSize.screenWidth - 32)
+            $0.bottom.equalToSuperview()
         }
-    }
-    
-    // Bind Method
-    func bind(reactor: AnimalDetailReactor) {
-        // Action
-        
-        // State
     }
 }
