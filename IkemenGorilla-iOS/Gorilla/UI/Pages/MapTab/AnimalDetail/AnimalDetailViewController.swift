@@ -71,6 +71,7 @@ final class AnimalDetailViewController: UIViewController, View, ViewConstructor 
         pastContestView.reactor = reactor
         
         // Action
+        reactor.action.onNext(.loadPastContests)
         
         // State
     }
