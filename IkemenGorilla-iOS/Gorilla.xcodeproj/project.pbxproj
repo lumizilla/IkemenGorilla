@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1237FD5EF935F298D1A9503A /* Pods_Gorilla.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88E3F92FF19F1C62D0B465D /* Pods_Gorilla.framework */; };
-		84376CA224A5DDB700282F3C /* AnimalDetailPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376CA124A5DDB700282F3C /* AnimalDetailPostView.swift */; };
+		84376CA224A5DDB700282F3C /* AnimalDetailPostHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376CA124A5DDB700282F3C /* AnimalDetailPostHeader.swift */; };
 		84376CA524A5F08600282F3C /* PostPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376CA424A5F08600282F3C /* PostPhotoCell.swift */; };
 		84376CA724A5F0A800282F3C /* PostCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376CA624A5F0A800282F3C /* PostCellReactor.swift */; };
 		84376CA924A5F17000282F3C /* PostPhotoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376CA824A5F17000282F3C /* PostPhotoCollectionView.swift */; };
@@ -165,7 +165,7 @@
 		2E1F2DD18530CF1CABC0384F /* Pods-GorillaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GorillaTests.release.xcconfig"; path = "Target Support Files/Pods-GorillaTests/Pods-GorillaTests.release.xcconfig"; sourceTree = "<group>"; };
 		401D33862CFB7B0B9BFF2587 /* Pods-Gorilla.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gorilla.release.xcconfig"; path = "Target Support Files/Pods-Gorilla/Pods-Gorilla.release.xcconfig"; sourceTree = "<group>"; };
 		69F440E1262F9F90997A9A24 /* Pods_Gorilla_GorillaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gorilla_GorillaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		84376CA124A5DDB700282F3C /* AnimalDetailPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailPostView.swift; sourceTree = "<group>"; };
+		84376CA124A5DDB700282F3C /* AnimalDetailPostHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailPostHeader.swift; sourceTree = "<group>"; };
 		84376CA424A5F08600282F3C /* PostPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPhotoCell.swift; sourceTree = "<group>"; };
 		84376CA624A5F0A800282F3C /* PostCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellReactor.swift; sourceTree = "<group>"; };
 		84376CA824A5F17000282F3C /* PostPhotoCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPhotoCollectionView.swift; sourceTree = "<group>"; };
@@ -1020,7 +1020,7 @@
 				84E39BF924A3BA15008E6526 /* AnimalDetailHeader.swift */,
 				8491402E24A47F7900DFAE20 /* AnimalDetailCurrentContestView.swift */,
 				8491403224A49D9900DFAE20 /* AnimalDetailPastContestView.swift */,
-				84376CA124A5DDB700282F3C /* AnimalDetailPostView.swift */,
+				84376CA124A5DDB700282F3C /* AnimalDetailPostHeader.swift */,
 			);
 			path = AnimalDetail;
 			sourceTree = "<group>";
@@ -1291,7 +1291,7 @@
 				84C433AD249BD7B200172D6A /* ZooAnimalViewController.swift in Sources */,
 				84A99FE02484D6260066863B /* ContestDetailInfoSponsorCellReactor.swift in Sources */,
 				84E39BF824A3B841008E6526 /* AnimalDetailReactor.swift in Sources */,
-				84376CA224A5DDB700282F3C /* AnimalDetailPostView.swift in Sources */,
+				84376CA224A5DDB700282F3C /* AnimalDetailPostHeader.swift in Sources */,
 				84A99FF02484EEA40066863B /* Animal.swift in Sources */,
 				84D216832499126300AFB1A6 /* MapReactor.swift in Sources */,
 				84376CA924A5F17000282F3C /* PostPhotoCollectionView.swift in Sources */,
