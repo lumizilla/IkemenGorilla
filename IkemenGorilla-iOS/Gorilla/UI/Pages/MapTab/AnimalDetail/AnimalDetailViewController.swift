@@ -18,6 +18,7 @@ final class AnimalDetailViewController: UIViewController, View, ViewConstructor 
     private let contentScrollView = UIScrollView().then {
         $0.showsVerticalScrollIndicator = false
         $0.alwaysBounceVertical = true
+        $0.contentInset.top = 16
     }
     
     private let stackView = UIStackView().then {
