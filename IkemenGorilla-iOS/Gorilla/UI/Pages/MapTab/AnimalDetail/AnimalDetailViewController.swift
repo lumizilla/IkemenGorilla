@@ -32,7 +32,9 @@ final class AnimalDetailViewController: UIViewController, View, ViewConstructor 
     
     private let pastContestView = AnimalDetailPastContestView()
     
-    private let postView = AnimalDetailPostView()
+    private let postHeader = AnimalDetailPostHeader()
+    
+    private let postCollectionView = PostPhotoCollectionView()
     
     // MARK: - Life Cycles
     override func viewDidLoad() {
@@ -53,7 +55,8 @@ final class AnimalDetailViewController: UIViewController, View, ViewConstructor 
         stackView.setCustomSpacing(56, after: currentContestView)
         stackView.addArrangedSubview(pastContestView)
         stackView.setCustomSpacing(56, after: pastContestView)
-        stackView.addArrangedSubview(postView)
+        stackView.addArrangedSubview(postHeader)
+        stackView.addArrangedSubview(postCollectionView)
     }
     
     func setupViewConstraints() {
@@ -73,10 +76,18 @@ final class AnimalDetailViewController: UIViewController, View, ViewConstructor 
         header.reactor = reactor
         currentContestView.reactor = reactor
         pastContestView.reactor = reactor
+        postCollectionView.reactor = reactor.createPostPhotoCollectionReactor()
         
         // Action
         reactor.action.onNext(.loadPastContests)
+        reactor.action.onNext(.loadPost)
         
         // State
+        reactor.state.map { $0.posts }
+            .distinctUntilChanged()
+            .bind { [weak self] posts in
+                self?.postCollectionView.reactor?.action.onNext(.setPosts(posts))
+            }
+            .disposed(by: disposeBag)
     }
 }
