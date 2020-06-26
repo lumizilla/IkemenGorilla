@@ -352,6 +352,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		84376CA324A5F05E00282F3C /* Post */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
 		844EE13024842731003369F2 /* PastContest */ = {
 			isa = PBXGroup;
 			children = (
@@ -517,6 +524,7 @@
 		847B37AA24798DD600B48535 /* Organisms */ = {
 			isa = PBXGroup;
 			children = (
+				84376CA324A5F05E00282F3C /* Post */,
 				84D2167D2499117700AFB1A6 /* MapTab */,
 				847B37DE2479DFCA00B48535 /* HomeTab */,
 			);
