@@ -12,9 +12,11 @@ import RxSwift
 final class AnimalDetailReactor: Reactor {
     enum Action {
         case loadPastContests
+        case loadPost
     }
     enum Mutation {
         case setPastContestCellReactors([Contest])
+        case setPosts([Post])
     }
     
     struct State {
@@ -23,6 +25,7 @@ final class AnimalDetailReactor: Reactor {
         let currentContest: Contest = TestData.contest()
         let numberOfVoted: Int = 312
         var pastContestCellReactors: [AnimalDetailPastContestCellReactor] = []
+        var posts: [Post] = []
         
         init(animal: Animal) {
             self.animal = animal
@@ -39,6 +42,8 @@ final class AnimalDetailReactor: Reactor {
         switch action {
         case .loadPastContests:
             return loadPastContests().map(Mutation.setPastContestCellReactors)
+        case .loadPost:
+            return loadPosts().map(Mutation.setPosts)
         }
     }
     
@@ -46,12 +51,22 @@ final class AnimalDetailReactor: Reactor {
         return .just(TestData.contests(count: 5))
     }
     
+    private func loadPosts() -> Observable<[Post]> {
+        return .just(TestData.posts(count: 12))
+    }
+    
     func reduce(state: State, mutation: Mutation) -> State {
         var state = state
         switch mutation {
         case .setPastContestCellReactors(let contests):
             state.pastContestCellReactors = contests.map { AnimalDetailPastContestCellReactor(contest: $0) }
+        case .setPosts(let posts):
+            state.posts = posts
         }
         return state
+    }
+    
+    func createPostPhotoCollectionReactor() -> PostPhotoCollectionReactor {
+        return PostPhotoCollectionReactor()
     }
 }
