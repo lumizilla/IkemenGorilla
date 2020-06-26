@@ -27,3 +27,9 @@ final class AnimalDetailPastContestCellReactor: Reactor {
         initialState = State(contest: contest)
     }
 }
+
+extension AnimalDetailPastContestCellReactor: Equatable {
+    static func == (lhs: AnimalDetailPastContestCellReactor, rhs: AnimalDetailPastContestCellReactor) -> Bool {
+        return lhs.currentState.contest.id == rhs.currentState.contest.id
+    }
+}
