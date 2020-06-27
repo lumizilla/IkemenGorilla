@@ -441,6 +441,13 @@
 			path = VoteContestDetail;
 			sourceTree = "<group>";
 		};
+		84376CC224A7CFDC00282F3C /* ExploreTab */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ExploreTab;
+			sourceTree = "<group>";
+		};
 		844EE13024842731003369F2 /* PastContest */ = {
 			isa = PBXGroup;
 			children = (
@@ -596,6 +603,7 @@
 		847B37A924798DC400B48535 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				84376CC224A7CFDC00282F3C /* ExploreTab */,
 				84376CAC24A7885300282F3C /* VoteTab */,
 				84D2167E2499119600AFB1A6 /* MapTab */,
 				847B37D82479D7C400B48535 /* HomeTab */,
