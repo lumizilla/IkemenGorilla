@@ -374,8 +374,16 @@
 		84376CAC24A7885300282F3C /* VoteTab */ = {
 			isa = PBXGroup;
 			children = (
+				84376CAD24A7887900282F3C /* VoteContest */,
 			);
 			path = VoteTab;
+			sourceTree = "<group>";
+		};
+		84376CAD24A7887900282F3C /* VoteContest */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VoteContest;
 			sourceTree = "<group>";
 		};
 		844EE13024842731003369F2 /* PastContest */ = {
