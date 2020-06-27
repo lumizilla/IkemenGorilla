@@ -23,6 +23,9 @@ final class ExplorePostDetailViewController: UIViewController, View, ViewConstru
     // MARK: - Views
     private let postsTableView = UITableView().then {
         $0.register(Reusable.postCell)
+        $0.separatorStyle = .none
+        $0.showsVerticalScrollIndicator = false
+        $0.allowsSelection = false
     }
     
     // MARK: - Life Cycles
