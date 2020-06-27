@@ -9,7 +9,7 @@
 
 import UIKit
 
-class TabBarController: UITabBarController {
+class TabBarController: UITabBarController, TransitionPresentable {
     private struct Const {
         static let tabBarImages: [UIImage] = [#imageLiteral(resourceName: "home_empty"), #imageLiteral(resourceName: "map_empty"), #imageLiteral(resourceName: "plus_empty"), #imageLiteral(resourceName: "search_empty"), #imageLiteral(resourceName: "user_empty")]
         static let tabBarSelectedImages: [UIImage] = [#imageLiteral(resourceName: "home_filled"), #imageLiteral(resourceName: "map_filled"), #imageLiteral(resourceName: "plus_filled"), #imageLiteral(resourceName: "search_filled"), #imageLiteral(resourceName: "user_filled")]
@@ -42,9 +42,7 @@ class TabBarController: UITabBarController {
             UINavigationController(rootViewController: MapViewController().then {
                 $0.reactor = MapReactor()
             }),
-            UINavigationController(rootViewController: VoteContestViewController().then {
-                $0.reactor = VoteContestReactor()
-            }),
+            DummyViewController(),
             UINavigationController(rootViewController: DevelopingViewController(type: "Search")),
             DevelopingViewController(type: "Profile")
             /*
@@ -71,7 +69,7 @@ class TabBarController: UITabBarController {
 extension TabBarController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         if viewController is DummyViewController {
-//            showReportCreatePage(reportCreateReactor: ReportCreateReactor(provider: provider))
+            showVoteContestPage(voteContestReactor: VoteContestReactor())
             return false
         }
         return true
