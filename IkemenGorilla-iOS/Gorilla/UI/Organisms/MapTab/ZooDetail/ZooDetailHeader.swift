@@ -36,10 +36,14 @@ final class ZooDetailHeader: UIView, View, ViewConstructor {
         $0.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     }
     
+    private let heartButton = HeartButton()
+    
     private let zooNameLabel = UILabel().then {
         $0.apply(fontStyle: .black, size: 24)
         $0.textColor = Color.textBlack
     }
+    
+    private let heartNumberView = HeartNumberView()
     
     private let mapIconView = UIImageView().then {
         $0.image = #imageLiteral(resourceName: "map_empty").withRenderingMode(.alwaysTemplate)
@@ -69,7 +73,9 @@ final class ZooDetailHeader: UIView, View, ViewConstructor {
     func setupViews() {
         addSubview(imageView)
         addSubview(overlay)
+        addSubview(heartButton)
         addSubview(zooNameLabel)
+        addSubview(heartNumberView)
         addSubview(mapIconView)
         addSubview(addressLabel)
     }
@@ -84,10 +90,19 @@ final class ZooDetailHeader: UIView, View, ViewConstructor {
             $0.height.equalTo(64)
             $0.bottom.equalTo(imageView).offset(32)
         }
+        heartButton.snp.makeConstraints {
+            $0.right.equalToSuperview().inset(32)
+            $0.size.equalTo(64)
+            $0.bottom.equalTo(imageView)
+        }
         zooNameLabel.snp.makeConstraints {
             $0.top.equalTo(imageView.snp.bottom).offset(24)
             $0.left.equalToSuperview().inset(16)
             $0.height.equalTo(24)
+        }
+        heartNumberView.snp.makeConstraints {
+            $0.centerY.equalTo(zooNameLabel)
+            $0.right.equalToSuperview().inset(16)
         }
         mapIconView.snp.makeConstraints {
             $0.top.equalTo(zooNameLabel.snp.bottom).offset(12)
@@ -105,6 +120,11 @@ final class ZooDetailHeader: UIView, View, ViewConstructor {
     // MARK: - Bind Method
     func bind(reactor: ZooDetailReactor) {
         // Action
+        heartButton.rx.tap
+            .bind { _ in
+                reactor.action.onNext(.tapHeartButton)
+            }
+            .disposed(by: disposeBag)
         
         // State
         reactor.state.map { $0.zoo.imageUrl }
@@ -114,9 +134,20 @@ final class ZooDetailHeader: UIView, View, ViewConstructor {
             }
             .disposed(by: disposeBag)
         
+        reactor.state.map { $0.isFan }
+            .distinctUntilChanged()
+            .bind(to: heartButton.rx.isSelected)
+            .disposed(by: disposeBag)
+        
         reactor.state.map { $0.zoo.name }
             .distinctUntilChanged()
             .bind(to: zooNameLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.numberOfFans }
+            .distinctUntilChanged()
+            .map { numberOfFans in "\(numberOfFans)" }
+            .bind(to: heartNumberView.numberLabel.rx.text)
             .disposed(by: disposeBag)
         
         reactor.state.map { $0.zoo.address }

@@ -75,6 +75,14 @@ final class MapViewController: UIViewController, View, ViewConstructor, Transiti
             }
             .disposed(by: disposeBag)
         
+        zooListViewController.zoosCollectionView.rx.itemSelected
+            .bind { [weak self] indexPath in
+                logger.debug(indexPath)
+                let zoo = reactor.currentState.selectedAnnotations[indexPath.row].zoo
+                self?.showZooDetailPage(zooDetailReactor: reactor.createZooDetailReactor(zoo: zoo))
+            }
+            .disposed(by: disposeBag)
+        
         // State
         reactor.state.map { $0.zoos }
             .distinctUntilChanged()

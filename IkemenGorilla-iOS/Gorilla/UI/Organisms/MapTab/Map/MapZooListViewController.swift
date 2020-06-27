@@ -33,7 +33,7 @@ final class MapZooListViewController: UIViewController, View, ViewConstructor {
         $0.setImage(#imageLiteral(resourceName: "close"), for: .normal)
     }
     
-    private let zoosCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout().then {
+    let zoosCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout().then {
         $0.itemSize = MapZooCell.Const.itemSize
         $0.minimumLineSpacing = 16
         $0.scrollDirection = .horizontal

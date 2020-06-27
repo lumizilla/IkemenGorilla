@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1237FD5EF935F298D1A9503A /* Pods_Gorilla.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88E3F92FF19F1C62D0B465D /* Pods_Gorilla.framework */; };
+		84376CA224A5DDB700282F3C /* AnimalDetailPostHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376CA124A5DDB700282F3C /* AnimalDetailPostHeader.swift */; };
+		84376CA524A5F08600282F3C /* PostPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376CA424A5F08600282F3C /* PostPhotoCell.swift */; };
+		84376CA724A5F0A800282F3C /* PostCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376CA624A5F0A800282F3C /* PostCellReactor.swift */; };
+		84376CA924A5F17000282F3C /* PostPhotoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376CA824A5F17000282F3C /* PostPhotoCollectionView.swift */; };
+		84376CAB24A64FEB00282F3C /* PostPhotoCollectionReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376CAA24A64FEB00282F3C /* PostPhotoCollectionReactor.swift */; };
 		844EE1332484278F003369F2 /* PastContestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE1322484278F003369F2 /* PastContestCell.swift */; };
 		844EE135248427AF003369F2 /* PastContestCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE134248427AF003369F2 /* PastContestCellReactor.swift */; };
 		844EE137248427D7003369F2 /* PastContestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE136248427D7003369F2 /* PastContestViewController.swift */; };
@@ -74,6 +79,11 @@
 		847B381D247CBB1800B48535 /* FrontendEchoReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B381C247CBB1800B48535 /* FrontendEchoReactor.swift */; };
 		84867855249B220700BCF94B /* MapZooCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84867854249B220600BCF94B /* MapZooCell.swift */; };
 		84867857249B221C00BCF94B /* MapZooCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84867856249B221C00BCF94B /* MapZooCellReactor.swift */; };
+		848B16E524A514EC00150EE7 /* AnimalDetailPastContestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B16E424A514EC00150EE7 /* AnimalDetailPastContestCell.swift */; };
+		848B16E724A5150100150EE7 /* AnimalDetailPastContestCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B16E624A5150100150EE7 /* AnimalDetailPastContestCellReactor.swift */; };
+		8491402F24A47F7A00DFAE20 /* AnimalDetailCurrentContestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491402E24A47F7900DFAE20 /* AnimalDetailCurrentContestView.swift */; };
+		8491403124A4816800DFAE20 /* FloatingContestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491403024A4816800DFAE20 /* FloatingContestView.swift */; };
+		8491403324A49D9900DFAE20 /* AnimalDetailPastContestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491403224A49D9900DFAE20 /* AnimalDetailPastContestView.swift */; };
 		8494CBD7249B6C0400E35E00 /* ZooDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494CBD6249B6C0400E35E00 /* ZooDetailViewController.swift */; };
 		8494CBD9249B6C1D00E35E00 /* ZooDetailReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494CBD8249B6C1D00E35E00 /* ZooDetailReactor.swift */; };
 		8494CBDB249B6E7100E35E00 /* ZooDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494CBDA249B6E7100E35E00 /* ZooDetailHeader.swift */; };
@@ -108,6 +118,13 @@
 		84A9A008248533340066863B /* ContestDetailResultVoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A9A007248533340066863B /* ContestDetailResultVoteCell.swift */; };
 		84A9A00A2485335E0066863B /* ContestDetailResultVoteCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A9A0092485335E0066863B /* ContestDetailResultVoteCellReactor.swift */; };
 		84A9A00C2485347D0066863B /* ContestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A9A00B2485347D0066863B /* ContestResult.swift */; };
+		84C433A7249BCE2600172D6A /* HeartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C433A6249BCE2600172D6A /* HeartButton.swift */; };
+		84C433A9249BD3D700172D6A /* HeartNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C433A8249BD3D700172D6A /* HeartNumberView.swift */; };
+		84C433AD249BD7B200172D6A /* ZooAnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C433AC249BD7B200172D6A /* ZooAnimalViewController.swift */; };
+		84C433AF249BD7C800172D6A /* ZooAnimalReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C433AE249BD7C800172D6A /* ZooAnimalReactor.swift */; };
+		84C433B1249BDACD00172D6A /* ZooAnimalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C433B0249BDACD00172D6A /* ZooAnimalCell.swift */; };
+		84C433B3249BDADD00172D6A /* ZooAnimalCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C433B2249BDADD00172D6A /* ZooAnimalCellReactor.swift */; };
+		84C433B5249BE7C400172D6A /* FanButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C433B4249BE7C400172D6A /* FanButton.swift */; };
 		84D216812499124E00AFB1A6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D216802499124E00AFB1A6 /* MapViewController.swift */; };
 		84D216832499126300AFB1A6 /* MapReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D216822499126300AFB1A6 /* MapReactor.swift */; };
 		84D21688249916B600AFB1A6 /* PointZooAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D21687249916B600AFB1A6 /* PointZooAnnotation.swift */; };
@@ -119,6 +136,9 @@
 		84DA96142493B9A700DF6740 /* ContestAnimalDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DA96132493B9A700DF6740 /* ContestAnimalDetailHeader.swift */; };
 		84DA96162493BBDD00DF6740 /* VoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DA96152493BBDD00DF6740 /* VoteButton.swift */; };
 		84DA96192493C81900DF6740 /* ContestAnimalDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DA96182493C81900DF6740 /* ContestAnimalDetailResponse.swift */; };
+		84E39BF624A3B824008E6526 /* AnimalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E39BF524A3B824008E6526 /* AnimalDetailViewController.swift */; };
+		84E39BF824A3B841008E6526 /* AnimalDetailReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E39BF724A3B841008E6526 /* AnimalDetailReactor.swift */; };
+		84E39BFA24A3BA15008E6526 /* AnimalDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E39BF924A3BA15008E6526 /* AnimalDetailHeader.swift */; };
 		8AD80E3EDA0645450C645241 /* Pods_Gorilla_GorillaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F440E1262F9F90997A9A24 /* Pods_Gorilla_GorillaUITests.framework */; };
 		A29B9D43B1A804F6145A1073 /* Pods_GorillaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B68804A246C98CAE881B62C /* Pods_GorillaTests.framework */; };
 /* End PBXBuildFile section */
@@ -145,6 +165,11 @@
 		2E1F2DD18530CF1CABC0384F /* Pods-GorillaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GorillaTests.release.xcconfig"; path = "Target Support Files/Pods-GorillaTests/Pods-GorillaTests.release.xcconfig"; sourceTree = "<group>"; };
 		401D33862CFB7B0B9BFF2587 /* Pods-Gorilla.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gorilla.release.xcconfig"; path = "Target Support Files/Pods-Gorilla/Pods-Gorilla.release.xcconfig"; sourceTree = "<group>"; };
 		69F440E1262F9F90997A9A24 /* Pods_Gorilla_GorillaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gorilla_GorillaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84376CA124A5DDB700282F3C /* AnimalDetailPostHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailPostHeader.swift; sourceTree = "<group>"; };
+		84376CA424A5F08600282F3C /* PostPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPhotoCell.swift; sourceTree = "<group>"; };
+		84376CA624A5F0A800282F3C /* PostCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellReactor.swift; sourceTree = "<group>"; };
+		84376CA824A5F17000282F3C /* PostPhotoCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPhotoCollectionView.swift; sourceTree = "<group>"; };
+		84376CAA24A64FEB00282F3C /* PostPhotoCollectionReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPhotoCollectionReactor.swift; sourceTree = "<group>"; };
 		844EE1322484278F003369F2 /* PastContestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestCell.swift; sourceTree = "<group>"; };
 		844EE134248427AF003369F2 /* PastContestCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestCellReactor.swift; sourceTree = "<group>"; };
 		844EE136248427D7003369F2 /* PastContestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestViewController.swift; sourceTree = "<group>"; };
@@ -217,6 +242,11 @@
 		847B381C247CBB1800B48535 /* FrontendEchoReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontendEchoReactor.swift; sourceTree = "<group>"; };
 		84867854249B220600BCF94B /* MapZooCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapZooCell.swift; sourceTree = "<group>"; };
 		84867856249B221C00BCF94B /* MapZooCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapZooCellReactor.swift; sourceTree = "<group>"; };
+		848B16E424A514EC00150EE7 /* AnimalDetailPastContestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailPastContestCell.swift; sourceTree = "<group>"; };
+		848B16E624A5150100150EE7 /* AnimalDetailPastContestCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailPastContestCellReactor.swift; sourceTree = "<group>"; };
+		8491402E24A47F7900DFAE20 /* AnimalDetailCurrentContestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailCurrentContestView.swift; sourceTree = "<group>"; };
+		8491403024A4816800DFAE20 /* FloatingContestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingContestView.swift; sourceTree = "<group>"; };
+		8491403224A49D9900DFAE20 /* AnimalDetailPastContestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailPastContestView.swift; sourceTree = "<group>"; };
 		8494CBD6249B6C0400E35E00 /* ZooDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooDetailViewController.swift; sourceTree = "<group>"; };
 		8494CBD8249B6C1D00E35E00 /* ZooDetailReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooDetailReactor.swift; sourceTree = "<group>"; };
 		8494CBDA249B6E7100E35E00 /* ZooDetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooDetailHeader.swift; sourceTree = "<group>"; };
@@ -251,6 +281,13 @@
 		84A9A007248533340066863B /* ContestDetailResultVoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDetailResultVoteCell.swift; sourceTree = "<group>"; };
 		84A9A0092485335E0066863B /* ContestDetailResultVoteCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDetailResultVoteCellReactor.swift; sourceTree = "<group>"; };
 		84A9A00B2485347D0066863B /* ContestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestResult.swift; sourceTree = "<group>"; };
+		84C433A6249BCE2600172D6A /* HeartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartButton.swift; sourceTree = "<group>"; };
+		84C433A8249BD3D700172D6A /* HeartNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartNumberView.swift; sourceTree = "<group>"; };
+		84C433AC249BD7B200172D6A /* ZooAnimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooAnimalViewController.swift; sourceTree = "<group>"; };
+		84C433AE249BD7C800172D6A /* ZooAnimalReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooAnimalReactor.swift; sourceTree = "<group>"; };
+		84C433B0249BDACD00172D6A /* ZooAnimalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooAnimalCell.swift; sourceTree = "<group>"; };
+		84C433B2249BDADD00172D6A /* ZooAnimalCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooAnimalCellReactor.swift; sourceTree = "<group>"; };
+		84C433B4249BE7C400172D6A /* FanButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanButton.swift; sourceTree = "<group>"; };
 		84D216802499124E00AFB1A6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		84D216822499126300AFB1A6 /* MapReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapReactor.swift; sourceTree = "<group>"; };
 		84D21687249916B600AFB1A6 /* PointZooAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointZooAnnotation.swift; sourceTree = "<group>"; };
@@ -262,6 +299,9 @@
 		84DA96132493B9A700DF6740 /* ContestAnimalDetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestAnimalDetailHeader.swift; sourceTree = "<group>"; };
 		84DA96152493BBDD00DF6740 /* VoteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteButton.swift; sourceTree = "<group>"; };
 		84DA96182493C81900DF6740 /* ContestAnimalDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestAnimalDetailResponse.swift; sourceTree = "<group>"; };
+		84E39BF524A3B824008E6526 /* AnimalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailViewController.swift; sourceTree = "<group>"; };
+		84E39BF724A3B841008E6526 /* AnimalDetailReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailReactor.swift; sourceTree = "<group>"; };
+		84E39BF924A3BA15008E6526 /* AnimalDetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailHeader.swift; sourceTree = "<group>"; };
 		B34C68F74EC2D59ED3BA5ED9 /* Pods-Gorilla-GorillaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gorilla-GorillaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Gorilla-GorillaUITests/Pods-Gorilla-GorillaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BC5B729A7696F5FC17692DAA /* Pods-GorillaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GorillaTests.debug.xcconfig"; path = "Target Support Files/Pods-GorillaTests/Pods-GorillaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D88E3F92FF19F1C62D0B465D /* Pods_Gorilla.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gorilla.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -318,6 +358,17 @@
 				0B68804A246C98CAE881B62C /* Pods_GorillaTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84376CA324A5F05E00282F3C /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				84376CA424A5F08600282F3C /* PostPhotoCell.swift */,
+				84376CA624A5F0A800282F3C /* PostCellReactor.swift */,
+				84376CA824A5F17000282F3C /* PostPhotoCollectionView.swift */,
+				84376CAA24A64FEB00282F3C /* PostPhotoCollectionReactor.swift */,
+			);
+			path = Post;
 			sourceTree = "<group>";
 		};
 		844EE13024842731003369F2 /* PastContest */ = {
@@ -485,6 +536,7 @@
 		847B37AA24798DD600B48535 /* Organisms */ = {
 			isa = PBXGroup;
 			children = (
+				84376CA324A5F05E00282F3C /* Post */,
 				84D2167D2499117700AFB1A6 /* MapTab */,
 				847B37DE2479DFCA00B48535 /* HomeTab */,
 			);
@@ -495,6 +547,10 @@
 			isa = PBXGroup;
 			children = (
 				84DA96152493BBDD00DF6740 /* VoteButton.swift */,
+				84C433A6249BCE2600172D6A /* HeartButton.swift */,
+				84C433A8249BD3D700172D6A /* HeartNumberView.swift */,
+				84C433B4249BE7C400172D6A /* FanButton.swift */,
+				8491403024A4816800DFAE20 /* FloatingContestView.swift */,
 			);
 			path = Molecules;
 			sourceTree = "<group>";
@@ -738,6 +794,15 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
+		848B16E324A514A000150EE7 /* AnimalDetailPastContestCell */ = {
+			isa = PBXGroup;
+			children = (
+				848B16E424A514EC00150EE7 /* AnimalDetailPastContestCell.swift */,
+				848B16E624A5150100150EE7 /* AnimalDetailPastContestCellReactor.swift */,
+			);
+			path = AnimalDetailPastContestCell;
+			sourceTree = "<group>";
+		};
 		8494CBD4249B6ADC00E35E00 /* ZooDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -852,9 +917,29 @@
 			path = Result;
 			sourceTree = "<group>";
 		};
+		84C433AA249BD72600172D6A /* ZooAnimal */ = {
+			isa = PBXGroup;
+			children = (
+				84C433AC249BD7B200172D6A /* ZooAnimalViewController.swift */,
+				84C433AE249BD7C800172D6A /* ZooAnimalReactor.swift */,
+			);
+			path = ZooAnimal;
+			sourceTree = "<group>";
+		};
+		84C433AB249BD74000172D6A /* ZooAnimal */ = {
+			isa = PBXGroup;
+			children = (
+				84C433B0249BDACD00172D6A /* ZooAnimalCell.swift */,
+				84C433B2249BDADD00172D6A /* ZooAnimalCellReactor.swift */,
+			);
+			path = ZooAnimal;
+			sourceTree = "<group>";
+		};
 		84D2167D2499117700AFB1A6 /* MapTab */ = {
 			isa = PBXGroup;
 			children = (
+				84E39BF424A3B7F1008E6526 /* AnimalDetail */,
+				84C433AB249BD74000172D6A /* ZooAnimal */,
 				8494CBD5249B6B6D00E35E00 /* ZooDetail */,
 				84D216862499169600AFB1A6 /* Map */,
 			);
@@ -864,6 +949,8 @@
 		84D2167E2499119600AFB1A6 /* MapTab */ = {
 			isa = PBXGroup;
 			children = (
+				84E39BF324A3B7D4008E6526 /* AnimalDetail */,
+				84C433AA249BD72600172D6A /* ZooAnimal */,
 				8494CBD4249B6ADC00E35E00 /* ZooDetail */,
 				84D2167F2499123300AFB1A6 /* Map */,
 			);
@@ -915,6 +1002,27 @@
 				84DA96182493C81900DF6740 /* ContestAnimalDetailResponse.swift */,
 			);
 			path = Responses;
+			sourceTree = "<group>";
+		};
+		84E39BF324A3B7D4008E6526 /* AnimalDetail */ = {
+			isa = PBXGroup;
+			children = (
+				84E39BF524A3B824008E6526 /* AnimalDetailViewController.swift */,
+				84E39BF724A3B841008E6526 /* AnimalDetailReactor.swift */,
+			);
+			path = AnimalDetail;
+			sourceTree = "<group>";
+		};
+		84E39BF424A3B7F1008E6526 /* AnimalDetail */ = {
+			isa = PBXGroup;
+			children = (
+				848B16E324A514A000150EE7 /* AnimalDetailPastContestCell */,
+				84E39BF924A3BA15008E6526 /* AnimalDetailHeader.swift */,
+				8491402E24A47F7900DFAE20 /* AnimalDetailCurrentContestView.swift */,
+				8491403224A49D9900DFAE20 /* AnimalDetailPastContestView.swift */,
+				84376CA124A5DDB700282F3C /* AnimalDetailPostHeader.swift */,
+			);
+			path = AnimalDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1167,6 +1275,7 @@
 				847B3774247980E000B48535 /* AppDelegate.swift in Sources */,
 				847B37F7247A57E100B48535 /* HomePastContestListCellReactor.swift in Sources */,
 				84A99FE62484ED700066863B /* ContestDetailEntryViewController.swift in Sources */,
+				848B16E524A514EC00150EE7 /* AnimalDetailPastContestCell.swift in Sources */,
 				847B381B247CBA9000B48535 /* FrontendEchoViewController.swift in Sources */,
 				84A9A00C2485347D0066863B /* ContestResult.swift in Sources */,
 				847B37E32479E01000B48535 /* HomeCurrentContestHeader.swift in Sources */,
@@ -1174,11 +1283,18 @@
 				847B3807247A687D00B48535 /* HomeRecommendedZooListView.swift in Sources */,
 				84A99FE82484ED9D0066863B /* ContestDetailEntryReactor.swift in Sources */,
 				84A9A008248533340066863B /* ContestDetailResultVoteCell.swift in Sources */,
+				8491402F24A47F7A00DFAE20 /* AnimalDetailCurrentContestView.swift in Sources */,
 				847B37F9247A580C00B48535 /* HomePastContestListView.swift in Sources */,
 				8494CBD7249B6C0400E35E00 /* ZooDetailViewController.swift in Sources */,
+				84C433B5249BE7C400172D6A /* FanButton.swift in Sources */,
+				84E39BFA24A3BA15008E6526 /* AnimalDetailHeader.swift in Sources */,
+				84C433AD249BD7B200172D6A /* ZooAnimalViewController.swift in Sources */,
 				84A99FE02484D6260066863B /* ContestDetailInfoSponsorCellReactor.swift in Sources */,
+				84E39BF824A3B841008E6526 /* AnimalDetailReactor.swift in Sources */,
+				84376CA224A5DDB700282F3C /* AnimalDetailPostHeader.swift in Sources */,
 				84A99FF02484EEA40066863B /* Animal.swift in Sources */,
 				84D216832499126300AFB1A6 /* MapReactor.swift in Sources */,
+				84376CA924A5F17000282F3C /* PostPhotoCollectionView.swift in Sources */,
 				847B381D247CBB1800B48535 /* FrontendEchoReactor.swift in Sources */,
 				84A99FEC2484EE500066863B /* ContestDetailEntryCellReactor.swift in Sources */,
 				847B37EF247A350800B48535 /* TestData.swift in Sources */,
@@ -1193,18 +1309,21 @@
 				847B37ED2479E4F400B48535 /* HomeCurrentContestListCellReactor.swift in Sources */,
 				8494CBE3249B7B5000E35E00 /* ZooDetailAnimalCellReactor.swift in Sources */,
 				847B37DB2479D7FF00B48535 /* HomeViewController.swift in Sources */,
+				848B16E724A5150100150EE7 /* AnimalDetailPastContestCellReactor.swift in Sources */,
 				84A99FDE2484D5FF0066863B /* ContestDetailInfoSponsorCell.swift in Sources */,
 				84A99FD62484CA530066863B /* ContestDetailInfoViewController.swift in Sources */,
 				847B37FB247A583B00B48535 /* HomePastContestListReactor.swift in Sources */,
 				84A9A00224851CD50066863B /* ContestDetailResultAwardCell.swift in Sources */,
 				847B37B82479958C00B48535 /* GlobalFunctions.swift in Sources */,
 				847B380E247CB0A400B48535 /* LoggerPlugin.swift in Sources */,
+				84376CAB24A64FEB00282F3C /* PostPhotoCollectionReactor.swift in Sources */,
 				844EE13B24842808003369F2 /* PastContestReactor.swift in Sources */,
 				844EE137248427D7003369F2 /* PastContestViewController.swift in Sources */,
 				847B3813247CB49700B48535 /* NetworkProvider.swift in Sources */,
 				844EE13D24842BEC003369F2 /* Formatter.swift in Sources */,
 				84A9A00024851BC90066863B /* ContestDetailResultReactor.swift in Sources */,
 				847B37DD2479D81B00B48535 /* HomeReactor.swift in Sources */,
+				8491403324A49D9900DFAE20 /* AnimalDetailPastContestView.swift in Sources */,
 				847B37CF2479AA9800B48535 /* IconView.swift in Sources */,
 				844EE146248436AD003369F2 /* RecommendedZooCellReactor.swift in Sources */,
 				84A9A00624851D340066863B /* Award.swift in Sources */,
@@ -1214,6 +1333,7 @@
 				847B37EB2479E4CC00B48535 /* HomeCurrentContestListCell.swift in Sources */,
 				84DA96122493B1FB00DF6740 /* ContestAnimalDetailPostCellReactor.swift in Sources */,
 				84D2168A2499218200AFB1A6 /* MapZooListViewController.swift in Sources */,
+				84C433B3249BDADD00172D6A /* ZooAnimalCellReactor.swift in Sources */,
 				844EE1332484278F003369F2 /* PastContestCell.swift in Sources */,
 				847B37E62479E23000B48535 /* HomeCurrentContestListView.swift in Sources */,
 				8494CBDD249B767300E35E00 /* ZooDetailAnimalsHeader.swift in Sources */,
@@ -1224,6 +1344,8 @@
 				847B3803247A681D00B48535 /* HomeRecommendedZooListCellReactor.swift in Sources */,
 				84D216812499124E00AFB1A6 /* MapViewController.swift in Sources */,
 				847B37FD247A586100B48535 /* HomePastContestHeader.swift in Sources */,
+				84C433AF249BD7C800172D6A /* ZooAnimalReactor.swift in Sources */,
+				84C433A9249BD3D700172D6A /* HeartNumberView.swift in Sources */,
 				847B37CA2479A5DD00B48535 /* UIColor+Extension.swift in Sources */,
 				844EE14424843690003369F2 /* RecommendedZooCell.swift in Sources */,
 				84A99FE42484E5090066863B /* ContestDetailInfoHeader.swift in Sources */,
@@ -1235,17 +1357,21 @@
 				8494CBDB249B6E7100E35E00 /* ZooDetailHeader.swift in Sources */,
 				847B37B4247992D300B48535 /* DeviceSize.swift in Sources */,
 				84DA96142493B9A700DF6740 /* ContestAnimalDetailHeader.swift in Sources */,
+				84E39BF624A3B824008E6526 /* AnimalDetailViewController.swift in Sources */,
 				847B3811247CB13800B48535 /* LoggerFormatter.swift in Sources */,
 				847B37B62479948C00B48535 /* TextStyle.swift in Sources */,
 				847B3776247980E000B48535 /* SceneDelegate.swift in Sources */,
 				847B37B12479919800B48535 /* ViewConstructor.swift in Sources */,
 				8494CBD9249B6C1D00E35E00 /* ZooDetailReactor.swift in Sources */,
 				844EE1402484335D003369F2 /* TransitionPresentable.swift in Sources */,
+				84376CA724A5F0A800282F3C /* PostCellReactor.swift in Sources */,
 				84DA96102493B1DD00DF6740 /* ContestAnimalDetailPostCell.swift in Sources */,
+				84376CA524A5F08600282F3C /* PostPhotoCell.swift in Sources */,
 				847B37D72479D32A00B48535 /* Zoo.swift in Sources */,
 				847B37CD2479A94A00B48535 /* TabBarController.swift in Sources */,
 				847B3778247980E000B48535 /* ContentView.swift in Sources */,
 				84D21688249916B600AFB1A6 /* PointZooAnnotation.swift in Sources */,
+				8491403124A4816800DFAE20 /* FloatingContestView.swift in Sources */,
 				847B3801247A67F900B48535 /* HomeRecommendedZooListCell.swift in Sources */,
 				844EE14A248439FE003369F2 /* RecommendedZooReactor.swift in Sources */,
 				84DA96162493BBDD00DF6740 /* VoteButton.swift in Sources */,
@@ -1257,8 +1383,10 @@
 				847B37E82479E25E00B48535 /* HomeCurrentContestListReactor.swift in Sources */,
 				847B37C62479A29F00B48535 /* UILabel+Extension.swift in Sources */,
 				84A99FFA2484FD150066863B /* ContestDetailPostCellReactor.swift in Sources */,
+				84C433B1249BDACD00172D6A /* ZooAnimalCell.swift in Sources */,
 				847B3818247CB7EB00B48535 /* FrontendEchoTarget.swift in Sources */,
 				8494CBE7249B83C800E35E00 /* ZooDetailPostCell.swift in Sources */,
+				84C433A7249BCE2600172D6A /* HeartButton.swift in Sources */,
 				84A99FFE24851BA20066863B /* ContestDetailResultViewController.swift in Sources */,
 				847B3809247A68A200B48535 /* HomeRecommendedZooListReactor.swift in Sources */,
 				84A99FF62484FC150066863B /* ContestDetailPostReactor.swift in Sources */,

@@ -13,16 +13,20 @@ final class ZooDetailReactor: Reactor {
     enum Action {
         case loadAnimals
         case loadPosts
+        case tapHeartButton
     }
     enum Mutation {
         case setAnimalCellReactors([Animal])
         case setPostCellReactors([Post])
+        case setIsFan(Bool)
     }
     
     struct State {
         let zoo: Zoo
         var animalCellReactors: [ZooDetailAnimalCellReactor] = []
         var postCellReactors: [ZooDetailPostCellReactor] = []
+        var isFan: Bool = false
+        var numberOfFans: Int = 312
         
         init(zoo: Zoo) {
             self.zoo = zoo
@@ -41,6 +45,8 @@ final class ZooDetailReactor: Reactor {
             return loadAnimals().map(Mutation.setAnimalCellReactors)
         case .loadPosts:
             return loadPosts().map(Mutation.setPostCellReactors)
+        case .tapHeartButton:
+            return .just(.setIsFan(!currentState.isFan))
         }
     }
     
@@ -59,7 +65,13 @@ final class ZooDetailReactor: Reactor {
             state.animalCellReactors = animals.map { ZooDetailAnimalCellReactor(animal: $0) }
         case .setPostCellReactors(let posts):
             state.postCellReactors = posts.map { ZooDetailPostCellReactor(post: $0) }
+        case .setIsFan(let isFan):
+            state.isFan = isFan
         }
         return state
+    }
+    
+    func createZooAnimalReactor() -> ZooAnimalReactor {
+        return ZooAnimalReactor(zoo: currentState.zoo)
     }
 }

@@ -1,102 +1,51 @@
 //
-//  ZooDetailViewController.swift
+//  PostPhotoCollectionView.swift
 //  Gorilla
 //
-//  Created by admin on 2020/06/18.
+//  Created by admin on 2020/06/26.
 //  Copyright © 2020 admin. All rights reserved.
 //
 
+import UIKit
 import ReactorKit
 import RxSwift
 import ReusableKit
 
-final class ZooDetailViewController: UIViewController, View, ViewConstructor {
+class PostPhotoCollectionView: UICollectionView, View, ViewConstructor {
     struct Const {
         static let sectionHeight: CGFloat = ((DeviceSize.screenWidth - 48) / 3 + 8) * 6
-    }
-    
-    struct Reusable {
-        static let animalCell = ReusableCell<ZooDetailAnimalCell>()
-        static let postCell = ReusableCell<ZooDetailPostCell>()
     }
     
     // MARK: - Variables
     var disposeBag = DisposeBag()
     
-    // MARK: - Views
-    private let contentScrollView = UIScrollView().then {
-        $0.showsVerticalScrollIndicator = false
-        $0.alwaysBounceVertical = true
+    struct Reusable {
+        static let postCell = ReusableCell<PostPhotoCell>()
     }
     
-    private let stackView = UIStackView().then {
-        $0.axis = .vertical
-        $0.alignment = .fill
-        $0.distribution = .fill
-    }
-    
-    private let header = ZooDetailHeader()
-    
-    private let animalsHeader = ZooDetailAnimalsHeader()
-    
-    private let animalsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout().then {
-        $0.itemSize = ZooDetailAnimalCell.Const.itemSize
-        $0.minimumLineSpacing = 16
-        $0.scrollDirection = .horizontal
-    }).then {
-        $0.register(Reusable.animalCell)
-        $0.backgroundColor = Color.white
-        $0.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-        $0.showsHorizontalScrollIndicator = false
-    }
-    
-    private let postsHeader = ZooDetailPostsHeader()
-    
-    private lazy var postsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout()).then {
-        $0.register(Reusable.postCell)
-        $0.backgroundColor = Color.white
-        $0.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        $0.contentInset.bottom = 16
-        $0.showsVerticalScrollIndicator = false
-    }
-    
-    // MARK: - Life Cycles
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    // MARK: - Initializers
+    override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
+        super.init(frame: .zero, collectionViewLayout: PostPhotoCollectionView.createLayout())
         
         setupViews()
-        setupViewConstraints()
     }
     
-    // MARK: - Setup Methods
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    //  MARK: - Setup Methods
     func setupViews() {
-        view.backgroundColor = Color.white
-        view.addSubview(contentScrollView)
-        contentScrollView.addSubview(stackView)
-        stackView.addArrangedSubview(header)
-        stackView.addArrangedSubview(animalsHeader)
-        stackView.addArrangedSubview(animalsCollectionView)
-        stackView.addArrangedSubview(postsHeader)
-        stackView.addArrangedSubview(postsCollectionView)
+        register(Reusable.postCell)
+        backgroundColor = Color.white
+        autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        contentInset.bottom = 16
+        showsVerticalScrollIndicator = false
     }
     
-    func setupViewConstraints() {
-        contentScrollView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
-        stackView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
-        header.snp.makeConstraints {
-            $0.width.equalTo(DeviceSize.screenWidth)
-        }
-        animalsCollectionView.snp.makeConstraints {
-            $0.width.equalTo(DeviceSize.screenWidth)
-            $0.height.equalTo(96)
-        }
-    }
+    func setupViewConstraints() {}
     
-    private func createLayout() -> UICollectionViewLayout {
+    static func createLayout() -> UICollectionViewLayout {
         let sideInset: CGFloat = 16
         let insideInset: CGFloat = 8
         let topInset: CGFloat = 8
@@ -184,46 +133,25 @@ final class ZooDetailViewController: UIViewController, View, ViewConstructor {
     }
     
     // MARK: - Bind Method
-    func bind(reactor: ZooDetailReactor) {
-        header.reactor = reactor
+    func bind(reactor: PostPhotoCollectionReactor) {
         // Action
-        reactor.action.onNext(.loadAnimals)
-        reactor.action.onNext(.loadPosts)
-        
-        animalsHeader.showAllButton.rx.tap
-            .bind { [weak self] _ in
-                logger.debug("tap show all button")
-                let vc = ZooAnimalViewController().then {
-                    $0.reactor = reactor.createZooAnimalReactor()
-                }
-                self?.navigationController?.pushViewController(vc, animated: true)
-            }
-            .disposed(by: disposeBag)
         
         // State
-        reactor.state.map { $0.animalCellReactors }
-            .distinctUntilChanged()
-            .bind(to: animalsCollectionView.rx.items(Reusable.animalCell)) { _, reactor, cell in
-                cell.reactor = reactor
-            }
-            .disposed(by: disposeBag)
-        
         reactor.state.map { $0.postCellReactors }
             .distinctUntilChanged()
-            .bind(to: postsCollectionView.rx.items(Reusable.postCell)) { _, reactor, cell in
+            .bind(to: rx.items(Reusable.postCell)) { _, reactor, cell in
                 cell.reactor = reactor
             }
             .disposed(by: disposeBag)
         
         reactor.state.map { $0.postCellReactors.count / 12 }
-            .distinctUntilChanged()
+        .distinctUntilChanged()
             .bind { [weak self] sectionCount in
-                self?.stackView.removeConstraints(self?.postsCollectionView.constraints ?? [])
-                self?.postsCollectionView.snp.makeConstraints {
+                self?.removeConstraints(self?.constraints ?? [])
+                self?.snp.makeConstraints {
                     $0.height.equalTo(16 + Const.sectionHeight * CGFloat(sectionCount))
                     $0.width.equalTo(DeviceSize.screenWidth)
                 }
-            }
-            .disposed(by: disposeBag)
+        }
     }
 }
