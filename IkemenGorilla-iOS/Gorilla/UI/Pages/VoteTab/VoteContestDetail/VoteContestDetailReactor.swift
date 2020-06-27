@@ -20,6 +20,7 @@ final class VoteContestDetailReactor: Reactor {
     struct State {
         let contest: Contest
         var entryCellReactors: [ContestDetailEntryCellReactor] = []
+        var voteEntry: Entry?
         
         init(contest: Contest) {
             self.contest = contest
