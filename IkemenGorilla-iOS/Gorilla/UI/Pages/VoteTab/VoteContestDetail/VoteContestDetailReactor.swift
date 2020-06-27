@@ -11,10 +11,12 @@ import RxSwift
 
 final class VoteContestDetailReactor: Reactor {
     enum Action {
-        case loadContests
+        case loadEntries
+        case selectEntry(IndexPath)
     }
     enum Mutation {
         case setEntryCellReactors([Entry])
+        case setVoteEntry(Entry?)
     }
     
     struct State {
@@ -35,12 +37,14 @@ final class VoteContestDetailReactor: Reactor {
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
-        case .loadContests:
-            return loadContests().map(Mutation.setEntryCellReactors)
+        case .loadEntries:
+            return loadEntries().map(Mutation.setEntryCellReactors)
+        case .selectEntry(let indexPath):
+            return .just(.setVoteEntry(currentState.entryCellReactors[indexPath.row].currentState.entry))
         }
     }
     
-    private func loadContests() -> Observable<[Entry]> {
+    private func loadEntries() -> Observable<[Entry]> {
         return .just(TestData.entries(count: 8))
     }
     
@@ -49,6 +53,8 @@ final class VoteContestDetailReactor: Reactor {
         switch mutation {
         case .setEntryCellReactors(let entries):
             state.entryCellReactors = entries.map { ContestDetailEntryCellReactor(entry: $0) }
+        case .setVoteEntry(let entry):
+            state.voteEntry = entry
         }
         return state
     }
