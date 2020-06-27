@@ -15,6 +15,7 @@
 		84376CAB24A64FEB00282F3C /* PostPhotoCollectionReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376CAA24A64FEB00282F3C /* PostPhotoCollectionReactor.swift */; };
 		84376CB124A788FD00282F3C /* VoteContestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376CB024A788FD00282F3C /* VoteContestViewController.swift */; };
 		84376CB324A7891500282F3C /* VoteContestReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376CB224A7891500282F3C /* VoteContestReactor.swift */; };
+		84376CB524A7899A00282F3C /* VoteContestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376CB424A7899A00282F3C /* VoteContestCell.swift */; };
 		844EE1332484278F003369F2 /* PastContestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE1322484278F003369F2 /* PastContestCell.swift */; };
 		844EE135248427AF003369F2 /* PastContestCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE134248427AF003369F2 /* PastContestCellReactor.swift */; };
 		844EE137248427D7003369F2 /* PastContestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE136248427D7003369F2 /* PastContestViewController.swift */; };
@@ -174,6 +175,7 @@
 		84376CAA24A64FEB00282F3C /* PostPhotoCollectionReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPhotoCollectionReactor.swift; sourceTree = "<group>"; };
 		84376CB024A788FD00282F3C /* VoteContestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteContestViewController.swift; sourceTree = "<group>"; };
 		84376CB224A7891500282F3C /* VoteContestReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteContestReactor.swift; sourceTree = "<group>"; };
+		84376CB424A7899A00282F3C /* VoteContestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteContestCell.swift; sourceTree = "<group>"; };
 		844EE1322484278F003369F2 /* PastContestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestCell.swift; sourceTree = "<group>"; };
 		844EE134248427AF003369F2 /* PastContestCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestCellReactor.swift; sourceTree = "<group>"; };
 		844EE136248427D7003369F2 /* PastContestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestViewController.swift; sourceTree = "<group>"; };
@@ -403,6 +405,7 @@
 		84376CAF24A788B700282F3C /* VoteContest */ = {
 			isa = PBXGroup;
 			children = (
+				84376CB424A7899A00282F3C /* VoteContestCell.swift */,
 			);
 			path = VoteContest;
 			sourceTree = "<group>";
@@ -1416,6 +1419,7 @@
 				844EE14A248439FE003369F2 /* RecommendedZooReactor.swift in Sources */,
 				84DA96162493BBDD00DF6740 /* VoteButton.swift in Sources */,
 				84A99FD82484CA7B0066863B /* ContestDetailInfoReactor.swift in Sources */,
+				84376CB524A7899A00282F3C /* VoteContestCell.swift in Sources */,
 				84867857249B221C00BCF94B /* MapZooCellReactor.swift in Sources */,
 				8494CBE5249B825600E35E00 /* ZooDetailPostsHeader.swift in Sources */,
 				847B380C247CB03C00B48535 /* APIStatus.swift in Sources */,
