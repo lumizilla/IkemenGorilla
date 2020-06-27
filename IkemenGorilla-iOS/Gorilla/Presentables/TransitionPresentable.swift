@@ -19,6 +19,7 @@ protocol TransitionPresentable: class {
     func showZooDetailPage(zooDetailReactor: ZooDetailReactor)
     
     // VOTE TAB
+    func showVoteContestPage(voteContestReactor: VoteContestReactor)
     func showVoteContestDetailPage(voteContestDetailReactor: VoteContestDetailReactor)
 }
 
@@ -71,6 +72,20 @@ extension TransitionPresentable where Self: UIViewController {
     }
     
     // VOTE TAB
+    func showVoteContestPage(voteContestReactor: VoteContestReactor) {
+        present(
+            UINavigationController(
+                rootViewController: VoteContestViewController().then {
+                    $0.reactor = voteContestReactor
+                }
+            ).then {
+                $0.modalPresentationStyle = .fullScreen
+            },
+            animated: true,
+            completion: nil
+        )
+    }
+    
     func showVoteContestDetailPage(voteContestDetailReactor: VoteContestDetailReactor) {
         navigationController?.pushViewController(
             VoteContestDetailViewController().then {
