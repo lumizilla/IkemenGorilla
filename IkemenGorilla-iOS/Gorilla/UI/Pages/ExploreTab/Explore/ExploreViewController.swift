@@ -46,6 +46,16 @@ final class ExploreViewController: UIViewController, View, ViewConstructor {
         // Action
         reactor.action.onNext(.loadPosts)
         
+        postsCollectionView.rx.itemSelected
+            .bind { [weak self] indexPath in
+                logger.debug(indexPath)
+                let vc = ExplorePostDetailViewController().then {
+                    $0.reactor = reactor.createExplorePostDetailReactor()
+                }
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }
+            .disposed(by: disposeBag)
+        
         // State
         reactor.state.map { $0.posts }
             .distinctUntilChanged()
