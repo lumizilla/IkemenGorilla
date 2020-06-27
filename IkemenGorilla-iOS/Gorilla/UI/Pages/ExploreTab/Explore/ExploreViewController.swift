@@ -17,7 +17,7 @@ final class ExploreViewController: UIViewController, View, ViewConstructor {
     var disposeBag = DisposeBag()
     
     // MARK: - Views
-    private let postsCollectionView = PostPhotoCollectionView().then {
+    private let postsCollectionView = PostPhotoCollectionView(isCalculateHeight: false).then {
         $0.contentInset.top = 8
     }
     
