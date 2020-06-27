@@ -389,8 +389,16 @@
 		84376CAE24A7889D00282F3C /* VoteTab */ = {
 			isa = PBXGroup;
 			children = (
+				84376CAF24A788B700282F3C /* VoteContest */,
 			);
 			path = VoteTab;
+			sourceTree = "<group>";
+		};
+		84376CAF24A788B700282F3C /* VoteContest */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VoteContest;
 			sourceTree = "<group>";
 		};
 		844EE13024842731003369F2 /* PastContest */ = {
