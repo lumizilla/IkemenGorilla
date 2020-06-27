@@ -43,7 +43,10 @@ class TabBarController: UITabBarController, TransitionPresentable {
                 $0.reactor = MapReactor()
             }),
             DummyViewController(),
-            UINavigationController(rootViewController: DevelopingViewController(type: "Search")),
+            UINavigationController(rootViewController:
+                ExploreViewController().then {
+                $0.reactor = ExploreReactor()
+            }),
             DevelopingViewController(type: "Profile")
             /*
             UINavigationController(rootViewController: ProfileViewController().then {
