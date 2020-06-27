@@ -11,7 +11,7 @@ import ReactorKit
 import RxSwift
 import ReusableKit
 
-final class VoteContestViewController: UIViewController, View, ViewConstructor {
+final class VoteContestViewController: UIViewController, View, ViewConstructor, TransitionPresentable {
     
     struct Reusable {
         static let contestCell = ReusableCell<VoteContestCell>()
@@ -69,6 +69,12 @@ final class VoteContestViewController: UIViewController, View, ViewConstructor {
     func bind(reactor: VoteContestReactor) {
         // Action
         reactor.action.onNext(.loadContest)
+        
+        contestsCollectionView.rx.itemSelected
+            .bind { [weak self] indexPath in
+                self?.showVoteContestDetailPage(voteContestDetailReactor: reactor.createVoteContestDetailReactor(indexPath: indexPath))
+            }
+            .disposed(by: disposeBag)
         
         // State
         reactor.state.map { $0.contestCellReactors }
