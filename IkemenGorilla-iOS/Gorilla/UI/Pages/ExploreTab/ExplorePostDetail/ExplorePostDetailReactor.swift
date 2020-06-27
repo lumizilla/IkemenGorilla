@@ -16,14 +16,14 @@ final class ExplorePostDetailReactor: Reactor {
     struct State {
         var postCellReactors: [PostCellReactor]
         
-        init(postCellReactors: [PostCellReactor]) {
-            self.postCellReactors = postCellReactors
+        init(posts: [Post]) {
+            self.postCellReactors = posts.map { PostCellReactor(post: $0) }
         }
     }
     
     let initialState: State
     
-    init(postCellReactors: [PostCellReactor]) {
-        initialState = State(postCellReactors: postCellReactors)
+    init(posts: [Post]) {
+        initialState = State(posts: posts)
     }
 }
