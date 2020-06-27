@@ -44,12 +44,12 @@ class TabBarController: UITabBarController {
             }),
             DevelopingViewController(type: "Vote"),
             UINavigationController(rootViewController: DevelopingViewController(type: "Search")),
-            //UINavigationController(rootViewController: FrontendEchoViewController().then {
-            //    $0.reactor = FrontendEchoReactor()
-            //}),
+            DevelopingViewController(type: "Profile")
+            /*
             UINavigationController(rootViewController: ProfileViewController().then {
                 $0.reactor = ProfileReactor()
             }),
+            */
         ]
 
         tabBar.do {

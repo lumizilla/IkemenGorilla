@@ -25,8 +25,10 @@ protocol TestDataType {
     static func contestResults(count: Int) -> [ContestResult]
     static func animal() -> Animal
     static func animals(count: Int) -> [Animal]
+    /*
     static func profile() -> Profile
     static func profiles(count: Int) -> [Profile]
+    */
     
     // Response
     static func contestAnimalDetailResponse() -> ContestAnimalDetailResponse
@@ -145,6 +147,7 @@ struct TestData: TestDataType {
         return (0 ..< count).map { index in contestResult(numberOfVotes: range * (count - index), maxOfVotes: max) }
     }
     
+    /*
     static func profile() -> Profile {
         return Profile(
             id: testID(),
@@ -172,6 +175,7 @@ struct TestData: TestDataType {
     static func profiles(count: Int) -> [Profile] {
         return (0 ..< count).map { _ in profile() }
     }
+    */
     
     static func contestAnimalDetailResponse() -> ContestAnimalDetailResponse {
         return ContestAnimalDetailResponse(
