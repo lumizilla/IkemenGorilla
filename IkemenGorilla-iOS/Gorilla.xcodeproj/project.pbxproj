@@ -382,6 +382,7 @@
 		84376CAC24A7885300282F3C /* VoteTab */ = {
 			isa = PBXGroup;
 			children = (
+				84376CB824A7A4E800282F3C /* VoteContestDetail */,
 				84376CAD24A7887900282F3C /* VoteContest */,
 			);
 			path = VoteTab;
@@ -411,6 +412,13 @@
 				84376CB624A789B500282F3C /* VoteContestCellReactor.swift */,
 			);
 			path = VoteContest;
+			sourceTree = "<group>";
+		};
+		84376CB824A7A4E800282F3C /* VoteContestDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VoteContestDetail;
 			sourceTree = "<group>";
 		};
 		844EE13024842731003369F2 /* PastContest */ = {
