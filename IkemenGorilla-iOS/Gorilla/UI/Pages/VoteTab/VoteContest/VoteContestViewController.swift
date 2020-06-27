@@ -21,6 +21,8 @@ final class VoteContestViewController: UIViewController, View, ViewConstructor, 
     var disposeBag = DisposeBag()
     
     // MARK: - Views
+    let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: nil, action: nil)
+    
     private let titleLabel = UILabel().then {
         $0.apply(fontStyle: .medium, size: 20)
         $0.textColor = Color.black
@@ -50,6 +52,8 @@ final class VoteContestViewController: UIViewController, View, ViewConstructor, 
     
     // MARK: - Setup Methods
     func setupViews() {
+        navigationItem.leftBarButtonItem = cancelButton
+        
         contestsCollectionView.addSubview(titleLabel)
         view.addSubview(contestsCollectionView)
     }
@@ -68,6 +72,12 @@ final class VoteContestViewController: UIViewController, View, ViewConstructor, 
     // MARK: - Bind Method
     func bind(reactor: VoteContestReactor) {
         // Action
+        cancelButton.rx.tap
+            .bind { [weak self] _ in
+                self?.dismiss(animated: true, completion: nil)
+            }
+            .disposed(by: disposeBag)
+        
         reactor.action.onNext(.loadContest)
         
         contestsCollectionView.rx.itemSelected
