@@ -10,8 +10,12 @@ import ReactorKit
 import RxSwift
 
 final class VoteContestReactor: Reactor {
-    enum Action {}
-    enum Mutation {}
+    enum Action {
+        case loadContest
+    }
+    enum Mutation {
+        case setContestCellReactors([Contest])
+    }
     
     struct State {
         var contestCellReactors: [VoteContestCellReactor] = []
@@ -19,4 +23,23 @@ final class VoteContestReactor: Reactor {
     
     let initialState: State = State()
     
+    func mutate(action: Action) -> Observable<Mutation> {
+        switch action {
+        case .loadContest:
+            return loadContest().map(Mutation.setContestCellReactors)
+        }
+    }
+    
+    private func loadContest() -> Observable<[Contest]> {
+        return .just(TestData.contests(count: 8))
+    }
+    
+    func reduce(state: State, mutation: Mutation) -> State {
+        var state = state
+        switch mutation {
+        case .setContestCellReactors(let contests):
+            state.contestCellReactors = contests.map { VoteContestCellReactor(contest: $0) }
+        }
+        return state
+    }
 }
