@@ -10,6 +10,7 @@ import UIKit
 import ReactorKit
 import RxSwift
 import ReusableKit
+import FloatingPanel
 
 final class VoteContestDetailViewController: UIViewController, View, ViewConstructor {
     
@@ -50,12 +51,19 @@ final class VoteContestDetailViewController: UIViewController, View, ViewConstru
         $0.alwaysBounceVertical = true
     }
     
+    private let floatingPanelController = FloatingPanelController().then {
+        $0.surfaceView.cornerRadius = 32
+    }
+    
+    private let createVoteViewController = CreateVoteViewController()
+    
     // MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
         setupViewConstraints()
+        setupFloatingController()
     }
     
     // MARK: - Setup Methods
@@ -79,12 +87,24 @@ final class VoteContestDetailViewController: UIViewController, View, ViewConstru
         }
     }
     
+    func setupFloatingController() {
+        floatingPanelController.set(contentViewController: createVoteViewController)
+        floatingPanelController.addPanel(toParent: self)
+    }
+    
     // MARK: - Bind Method
     func bind(reactor: VoteContestDetailReactor) {
         header.reactor = reactor
+        createVoteViewController.reactor = reactor
         
         // Action
         reactor.action.onNext(.loadContests)
+        
+        entriesCollectionView.rx.itemSelected
+            .bind { [weak self] indexPath in
+                logger.debug(indexPath)
+            }
+            .disposed(by: disposeBag)
         
         // State
         reactor.state.map { $0.entryCellReactors }
