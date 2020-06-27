@@ -42,7 +42,7 @@ final class CreateVoteViewController: UIViewController, View, ViewConstructor {
         $0.numberOfLines = 0
     }
     
-    private let cancelButton = UIButton().then {
+    let cancelButton = UIButton().then {
         $0.setTitle("キャンセル", for: .normal)
         $0.titleLabel?.apply(fontStyle: .bold, size: 15)
         $0.setTitleColor(Color.textBlack, for: .normal)
