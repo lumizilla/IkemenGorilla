@@ -42,7 +42,9 @@ class TabBarController: UITabBarController {
             UINavigationController(rootViewController: MapViewController().then {
                 $0.reactor = MapReactor()
             }),
-            DevelopingViewController(type: "Vote"),
+            UINavigationController(rootViewController: VoteContestViewController().then {
+                $0.reactor = VoteContestReactor()
+            }),
             UINavigationController(rootViewController: DevelopingViewController(type: "Search")),
             DevelopingViewController(type: "Profile")
             /*
