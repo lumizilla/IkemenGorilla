@@ -98,11 +98,12 @@ final class VoteContestDetailViewController: UIViewController, View, ViewConstru
         createVoteViewController.reactor = reactor
         
         // Action
-        reactor.action.onNext(.loadContests)
+        reactor.action.onNext(.loadEntries)
         
         entriesCollectionView.rx.itemSelected
             .bind { [weak self] indexPath in
                 logger.debug(indexPath)
+                reactor.action.onNext(.selectEntry(indexPath))
             }
             .disposed(by: disposeBag)
         
