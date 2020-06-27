@@ -444,8 +444,16 @@
 		84376CC224A7CFDC00282F3C /* ExploreTab */ = {
 			isa = PBXGroup;
 			children = (
+				84376CC324A7D04E00282F3C /* Explore */,
 			);
 			path = ExploreTab;
+			sourceTree = "<group>";
+		};
+		84376CC324A7D04E00282F3C /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Explore;
 			sourceTree = "<group>";
 		};
 		844EE13024842731003369F2 /* PastContest */ = {
