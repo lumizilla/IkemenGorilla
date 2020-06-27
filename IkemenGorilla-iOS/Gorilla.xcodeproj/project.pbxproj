@@ -451,6 +451,7 @@
 		84376CC224A7CFDC00282F3C /* ExploreTab */ = {
 			isa = PBXGroup;
 			children = (
+				84376CCB24A7DEB000282F3C /* ExplorePostDetail */,
 				84376CC324A7D04E00282F3C /* Explore */,
 			);
 			path = ExploreTab;
@@ -463,6 +464,13 @@
 				84376CC624A7D08200282F3C /* ExploreReactor.swift */,
 			);
 			path = Explore;
+			sourceTree = "<group>";
+		};
+		84376CCB24A7DEB000282F3C /* ExplorePostDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ExplorePostDetail;
 			sourceTree = "<group>";
 		};
 		844EE13024842731003369F2 /* PastContest */ = {
