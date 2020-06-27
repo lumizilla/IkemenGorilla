@@ -109,6 +109,18 @@ final class VoteContestDetailViewController: UIViewController, View, ViewConstru
             }
             .disposed(by: disposeBag)
         
+        createVoteViewController.closeButton.rx.tap
+            .bind { [weak self] _ in
+                self?.floatingPanelController.move(to: .hidden, animated: true)
+            }
+            .disposed(by: disposeBag)
+        
+        createVoteViewController.cancelButton.rx.tap
+            .bind { [weak self] _ in
+                self?.floatingPanelController.move(to: .hidden, animated: true)
+            }
+            .disposed(by: disposeBag)
+        
         // State
         reactor.state.map { $0.entryCellReactors }
             .distinctUntilChanged()
