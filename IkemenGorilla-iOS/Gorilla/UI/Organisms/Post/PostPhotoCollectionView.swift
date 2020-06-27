@@ -23,8 +23,11 @@ class PostPhotoCollectionView: UICollectionView, View, ViewConstructor {
         static let postCell = ReusableCell<PostPhotoCell>()
     }
     
+    private let isCalculateHeight: Bool
+    
     // MARK: - Initializers
-    override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
+    init(isCalculateHeight: Bool) {
+        self.isCalculateHeight = isCalculateHeight
         super.init(frame: .zero, collectionViewLayout: PostPhotoCollectionView.createLayout())
         
         setupViews()
@@ -145,13 +148,17 @@ class PostPhotoCollectionView: UICollectionView, View, ViewConstructor {
             .disposed(by: disposeBag)
         
         reactor.state.map { $0.postCellReactors.count / 12 }
-        .distinctUntilChanged()
+            .distinctUntilChanged()
             .bind { [weak self] sectionCount in
-                self?.removeConstraints(self?.constraints ?? [])
-                self?.snp.makeConstraints {
-                    $0.height.equalTo(16 + Const.sectionHeight * CGFloat(sectionCount))
-                    $0.width.equalTo(DeviceSize.screenWidth)
+                if self?.isCalculateHeight ?? false {
+                    self?.removeConstraints(self?.constraints ?? [])
+                    self?.snp.makeConstraints {
+                        $0.height.equalTo(16 + Const.sectionHeight * CGFloat(sectionCount))
+                        $0.width.equalTo(DeviceSize.screenWidth)
+                    }
+                } else {
+                    self?.contentSize.height = 16 + Const.sectionHeight * CGFloat(sectionCount)
                 }
-        }
+            }
     }
 }
