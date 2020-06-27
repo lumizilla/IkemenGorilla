@@ -90,6 +90,7 @@ final class VoteContestDetailViewController: UIViewController, View, ViewConstru
     func setupFloatingController() {
         floatingPanelController.set(contentViewController: createVoteViewController)
         floatingPanelController.addPanel(toParent: self)
+        floatingPanelController.delegate = self
     }
     
     // MARK: - Bind Method
@@ -104,6 +105,7 @@ final class VoteContestDetailViewController: UIViewController, View, ViewConstru
             .bind { [weak self] indexPath in
                 logger.debug(indexPath)
                 reactor.action.onNext(.selectEntry(indexPath))
+                self?.floatingPanelController.move(to: .full, animated: true)
             }
             .disposed(by: disposeBag)
         
@@ -123,6 +125,34 @@ final class VoteContestDetailViewController: UIViewController, View, ViewConstru
                 self?.entriesCollectionView.snp.makeConstraints {
                     $0.height.equalTo(CGFloat(rowCount) * Const.rowHeight)
                 }
+        }
+    }
+}
+
+extension VoteContestDetailViewController: FloatingPanelControllerDelegate {
+    func floatingPanel(_ vc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
+        VoteContestDetailPanelLayout.fullPosition = DeviceSize.screenHeight - (DeviceSize.navBarHeight(self.navigationController) + CreateVoteViewController.Const.height + DeviceSize.tabBarHeight(self.tabBarController))
+        return VoteContestDetailPanelLayout()
+    }
+    
+    func floatingPanelShouldBeginDragging(_ vc: FloatingPanelController) -> Bool {
+        return true
+    }
+}
+
+class VoteContestDetailPanelLayout: FloatingPanelLayout {
+    static var fullPosition: CGFloat = 0
+    
+    var initialPosition: FloatingPanelPosition {
+        return .hidden
+    }
+
+    func insetFor(position: FloatingPanelPosition) -> CGFloat? {
+        switch position {
+        case .full: return VoteContestDetailPanelLayout.fullPosition
+        case .half: return 0
+        case .tip: return 0
+        default: return nil
         }
     }
 }
