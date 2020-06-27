@@ -404,6 +404,7 @@
 		84376CAE24A7889D00282F3C /* VoteTab */ = {
 			isa = PBXGroup;
 			children = (
+				84376CBD24A7A92F00282F3C /* VoteContestDetail */,
 				84376CAF24A788B700282F3C /* VoteContest */,
 			);
 			path = VoteTab;
@@ -423,6 +424,13 @@
 			children = (
 				84376CB924A7A54E00282F3C /* VoteContestDetailViewController.swift */,
 				84376CBB24A7A56500282F3C /* VoteContestDetailReactor.swift */,
+			);
+			path = VoteContestDetail;
+			sourceTree = "<group>";
+		};
+		84376CBD24A7A92F00282F3C /* VoteContestDetail */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = VoteContestDetail;
 			sourceTree = "<group>";
