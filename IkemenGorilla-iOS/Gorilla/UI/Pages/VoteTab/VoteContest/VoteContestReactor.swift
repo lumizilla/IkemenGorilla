@@ -6,4 +6,17 @@
 //  Copyright © 2020 admin. All rights reserved.
 //
 
-import Foundation
+import ReactorKit
+import RxSwift
+
+final class VoteContestReactor: Reactor {
+    enum Action {}
+    enum Mutation {}
+    
+    struct State {
+        var contestCellReactors: [VoteContestCellReactor] = []
+    }
+    
+    let initialState: State = State()
+    
+}
