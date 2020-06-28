@@ -44,7 +44,7 @@ final class ExploreReactor: Reactor {
         return state
     }
     
-    func createExplorePostDetailReactor() -> ExplorePostDetailReactor {
-        return ExplorePostDetailReactor(posts: currentState.posts)
+    func createExplorePostDetailReactor(indexPath: IndexPath) -> ExplorePostDetailReactor {
+        return ExplorePostDetailReactor(startAt: indexPath.row, posts: currentState.posts)
     }
 }
