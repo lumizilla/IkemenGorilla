@@ -35,7 +35,7 @@ final class AnimalDetailViewController: UIViewController, View, ViewConstructor 
     
     private let postHeader = AnimalDetailPostHeader()
     
-    private let postCollectionView = PostPhotoCollectionView()
+    private let postCollectionView = PostPhotoCollectionView(isCalculateHeight: true)
     
     // MARK: - Life Cycles
     override func viewDidLoad() {
