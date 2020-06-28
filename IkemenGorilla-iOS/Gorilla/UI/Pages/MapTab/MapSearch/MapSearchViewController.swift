@@ -9,8 +9,13 @@
 import UIKit
 import ReactorKit
 import RxSwift
+import ReusableKit
 
 final class MapSearchViewController: UIViewController, View, ViewConstructor {
+    
+    struct Reusable {
+        static let resultCell = ReusableCell<MapSearchResultCell>()
+    }
     
     // MARK: - Variables
     var disposeBag = DisposeBag()
@@ -21,6 +26,21 @@ final class MapSearchViewController: UIViewController, View, ViewConstructor {
         $0.backgroundImage = UIImage()
         $0.tintColor = Color.black
         $0.showsCancelButton = true
+    }
+    
+    private let resultCountLabel = UILabel().then {
+        $0.apply(fontStyle: .bold, size: 24)
+        $0.textColor = Color.textBlack
+    }
+    
+    private let searchResultCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout().then {
+        $0.itemSize = MapSearchResultCell.Const.itemSize
+        $0.scrollDirection = .vertical
+        $0.minimumLineSpacing = 0
+    }).then {
+        $0.register(Reusable.resultCell)
+        $0.contentInset = UIEdgeInsets(top: 56, left: 0, bottom: 24, right: 0)
+        $0.backgroundColor = Color.white
     }
     
     // MARK: - Life Cycles
@@ -36,10 +56,18 @@ final class MapSearchViewController: UIViewController, View, ViewConstructor {
         view.backgroundColor = Color.white
         navigationItem.titleView = searchBar
         searchBar.becomeFirstResponder()
+        view.addSubview(searchResultCollectionView)
+        searchResultCollectionView.addSubview(resultCountLabel)
     }
     
     func setupViewConstraints() {
-        
+        searchResultCollectionView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        resultCountLabel.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(-56 + 16)
+            $0.left.equalTo(view).inset(16)
+        }
     }
     
     // MARK: - Bind Method
@@ -51,6 +79,26 @@ final class MapSearchViewController: UIViewController, View, ViewConstructor {
             }
             .disposed(by: disposeBag)
         
+        searchBar.rx.text
+            .distinctUntilChanged()
+            .bind { keyword in
+                logger.debug(keyword)
+                reactor.action.onNext(.updateKeyword(keyword ?? ""))
+            }
+            .disposed(by: disposeBag)
+        
         // State
+        reactor.state.map { $0.searchResultCellReactors }
+            .distinctUntilChanged()
+            .bind(to: searchResultCollectionView.rx.items(Reusable.resultCell)) { _, reactor, cell in
+                cell.reactor = reactor
+            }
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.searchResultCellReactors.count }
+            .distinctUntilChanged()
+            .map { "\($0)件の動物園" }
+            .bind(to: resultCountLabel.rx.text)
+            .disposed(by: disposeBag)
     }
 }
