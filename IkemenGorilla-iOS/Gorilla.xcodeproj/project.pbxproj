@@ -488,6 +488,13 @@
 			path = MapSearch;
 			sourceTree = "<group>";
 		};
+		84376CD324A84B8F00282F3C /* MapSearch */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MapSearch;
+			sourceTree = "<group>";
+		};
 		844EE13024842731003369F2 /* PastContest */ = {
 			isa = PBXGroup;
 			children = (
@@ -1059,6 +1066,7 @@
 		84D2167D2499117700AFB1A6 /* MapTab */ = {
 			isa = PBXGroup;
 			children = (
+				84376CD324A84B8F00282F3C /* MapSearch */,
 				84E39BF424A3B7F1008E6526 /* AnimalDetail */,
 				84C433AB249BD74000172D6A /* ZooAnimal */,
 				8494CBD5249B6B6D00E35E00 /* ZooDetail */,
