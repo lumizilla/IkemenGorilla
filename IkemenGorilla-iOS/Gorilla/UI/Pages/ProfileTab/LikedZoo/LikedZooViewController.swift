@@ -1,8 +1,8 @@
 //
-//  FanAnimalViewController.swift
+//  LikedZooViewController.swift
 //  Gorilla
 //
-//  Created by admin on 2020/06/11.
+//  Created by admin on 2020/06/28.
 //  Copyright © 2020 admin. All rights reserved.
 //
 
@@ -11,9 +11,9 @@ import ReactorKit
 import RxSwift
 import ReusableKit
 
-final class FanAnimalViewController: UIViewController, View, ViewConstructor {
+final class LikedZooViewController: UIViewController, View, ViewConstructor {
     struct Reusable {
-        static let animalCell = ReusableCell<FanAnimalCell>()
+        static let zooCell = ReusableCell<LikedZooCell>()
     }
     
     // MARK: - Variables
@@ -21,13 +21,12 @@ final class FanAnimalViewController: UIViewController, View, ViewConstructor {
     
     // MARK: - Views
     private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout().then {
-        $0.itemSize = FanAnimalCell.Const.itemSize
+        $0.itemSize = LikedZooCell.Const.itemSize
         $0.scrollDirection = .vertical
-        $0.minimumLineSpacing = 36
-        $0.minimumInteritemSpacing = 16
+        $0.minimumLineSpacing = 0
     }).then {
-        $0.register(Reusable.animalCell)
-        $0.contentInset = UIEdgeInsets(top: 16, left: 24, bottom: 24, right: 24)
+        $0.register(Reusable.zooCell)
+        $0.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 24, right: 0)
         $0.backgroundColor = Color.white
     }
     
@@ -41,7 +40,7 @@ final class FanAnimalViewController: UIViewController, View, ViewConstructor {
     
     // MARK: - Setup Methods
     func setupViews() {
-        title = "ファンの動物"
+        title = "いいねした動物園"
         view.addSubview(collectionView)
     }
     
@@ -52,14 +51,14 @@ final class FanAnimalViewController: UIViewController, View, ViewConstructor {
     }
     
     // MARK: - Bind Method
-    func bind(reactor: FanAnimalReactor) {
+    func bind(reactor: LikedZooReactor) {
         // Action
         reactor.action.onNext(.load)
         
         // State
-        reactor.state.map { $0.animalCellReactors }
+        reactor.state.map { $0.zooCellReactors }
             .distinctUntilChanged()
-            .bind(to: collectionView.rx.items(Reusable.animalCell)) { _, reactor, cell in
+            .bind(to: collectionView.rx.items(Reusable.zooCell)) { _, reactor, cell in
                 cell.reactor = reactor
             }
             .disposed(by: disposeBag)

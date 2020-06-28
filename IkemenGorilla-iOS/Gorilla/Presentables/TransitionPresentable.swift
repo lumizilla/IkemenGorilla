@@ -114,7 +114,7 @@ extension TransitionPresentable where Self: UIViewController {
         )
     }
     
-    /*
+    // PROFILE TAB
     func showProfileInfoPage(profileInfoReactor: ProfileInfoReactor) {
         navigationController?.pushViewController(
             ProfileInfoViewController().then {
@@ -123,5 +123,13 @@ extension TransitionPresentable where Self: UIViewController {
             animated: true
         )
     }
-    */
+    
+    func showLikedZooPage(likedZooReactor: LikedZooReactor) {
+        navigationController?.pushViewController(
+            LikedZooViewController().then {
+                $0.reactor = likedZooReactor
+            },
+            animated: true
+        )
+    }
 }

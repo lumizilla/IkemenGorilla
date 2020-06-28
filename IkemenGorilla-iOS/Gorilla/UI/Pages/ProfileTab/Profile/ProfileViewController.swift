@@ -60,6 +60,12 @@ final class ProfileViewController: UIViewController, View, ViewConstructor, Tran
         $0.reactor = reactor?.createProfileVotedContestListReactor()
     }
     
+    private let likedZooHeader = ProfileLikedZooHeader()
+    
+    private lazy var likedZooListView = ProfileLikedZooListView().then {
+        $0.reactor = reactor?.createProfileLikedZooListReactor()
+    }
+
     
     // MARK: - Life Cycles
     
@@ -87,7 +93,11 @@ final class ProfileViewController: UIViewController, View, ViewConstructor, Tran
         stackView.addArrangedSubview(profileVotedContestHeader)
         stackView.addArrangedSubview(profileVotedContestListView)
         stackView.setCustomSpacing(36, after: profileVotedContestListView)
-
+        view.addSubview(scrollView)
+        scrollView.addSubview(stackView)
+        stackView.addArrangedSubview(likedZooHeader)
+        stackView.addArrangedSubview(likedZooListView)
+        stackView.setCustomSpacing(36, after: likedZooListView)
     }
     
     func setupViewConstraints() {
@@ -102,7 +112,11 @@ final class ProfileViewController: UIViewController, View, ViewConstructor, Tran
     // MARK: - Bind Method
    func bind(reactor: ProfileReactor) {
        // Action
-       
+       likedZooHeader.showAllButton.rx.tap
+           .bind { [weak self] _ in
+               self?.showLikedZooPage(likedZooReactor: reactor.createLikedZooReactor())
+           }
+           .disposed(by: disposeBag)
        // State
    }
 }

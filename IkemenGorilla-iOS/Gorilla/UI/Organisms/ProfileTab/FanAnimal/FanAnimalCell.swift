@@ -14,7 +14,7 @@ final class FanAnimalCell: UICollectionViewCell, View, ViewConstructor {
     
     struct Const {
         static let cellWidth: CGFloat = (DeviceSize.screenWidth - 64) / 2
-        static let cellHeight: CGFloat = cellWidth + 48
+        static let cellHeight: CGFloat = cellWidth + 16 + 16 + 16 + 36
         static let itemSize: CGSize = CGSize(width: cellWidth, height: cellHeight)
     }
     
@@ -25,14 +25,18 @@ final class FanAnimalCell: UICollectionViewCell, View, ViewConstructor {
     private let imageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
         $0.layer.masksToBounds = true
-        $0.layer.cornerRadius = 80
+        $0.layer.cornerRadius = Const.cellWidth / 2
         $0.clipsToBounds = true
     }
     
     private let animalNameLabel = UILabel().then {
-        $0.apply(fontStyle: .regular, size: 14)
+        $0.apply(fontStyle: .regular, size: 16)
         $0.textColor = Color.black
+        $0.textAlignment = .center
+        $0.adjustsFontSizeToFitWidth = true
     }
+    
+    private let fanButton = FanButton()
     
     // MARK: - Initializers
     override init(frame: CGRect) {
@@ -50,24 +54,34 @@ final class FanAnimalCell: UICollectionViewCell, View, ViewConstructor {
     func setupViews() {
         addSubview(imageView)
         addSubview(animalNameLabel)
+        addSubview(fanButton)
     }
     
     func setupViewConstraints() {
         imageView.snp.makeConstraints {
             $0.top.left.right.equalToSuperview()
-            $0.height.equalTo(Const.cellWidth)
+            $0.size.equalTo(Const.cellWidth)
         }
         animalNameLabel.snp.makeConstraints {
-            $0.top.equalTo(imageView.snp.bottom).offset(8)
+            $0.top.equalTo(imageView.snp.bottom).offset(16)
             $0.centerX.equalToSuperview()
             $0.centerX.equalTo(imageView.snp.centerX)
-            $0.height.equalTo(8)
+            $0.height.equalTo(16)
+        }
+        fanButton.snp.makeConstraints {
+            $0.top.equalTo(animalNameLabel.snp.bottom).offset(16)
+            $0.left.right.bottom.equalToSuperview()
         }
     }
     
     // MARK: - Bind Method
     func bind(reactor: FanAnimalCellReactor) {
         // Action
+        fanButton.rx.tap
+            .bind { _ in
+                reactor.action.onNext(.tapFanButton)
+            }
+            .disposed(by: disposeBag)
         
         // State
         reactor.state.map { $0.animal.iconUrl }
@@ -80,6 +94,11 @@ final class FanAnimalCell: UICollectionViewCell, View, ViewConstructor {
         reactor.state.map { $0.animal.name }
             .distinctUntilChanged()
             .bind(to: animalNameLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.animal.isFan }
+            .distinctUntilChanged()
+            .bind(to: fanButton.rx.isFan)
             .disposed(by: disposeBag)
     }
 }

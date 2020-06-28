@@ -10,21 +10,42 @@ import ReactorKit
 import RxSwift
 
 final class FanAnimalCellReactor: Reactor {
-    enum Action {}
-    enum Mutation {}
+    enum Action {
+        case tapFanButton
+    }
+    
+    enum Mutation {
+        case setIsFan(Bool)
+    }
     
     struct State {
-        let animal: Animal
+        var animal: Animal
         
         init(animal: Animal) {
             self.animal = animal
         }
     }
     
-    let initialState: FanAnimalCellReactor.State
+    let initialState: State
     
     init(animal: Animal) {
         initialState = State(animal: animal)
+    }
+    
+    func mutate(action: Action) -> Observable<Mutation> {
+        switch action {
+        case .tapFanButton:
+            return .just(.setIsFan(!currentState.animal.isFan))
+        }
+    }
+    
+    func reduce(state: State, mutation: Mutation) -> State {
+        var state = state
+        switch mutation {
+        case .setIsFan(let isFan):
+            state.animal.isFan = isFan
+        }
+        return state
     }
 }
 

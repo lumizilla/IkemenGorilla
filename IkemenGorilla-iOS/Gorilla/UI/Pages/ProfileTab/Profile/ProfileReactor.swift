@@ -37,6 +37,14 @@ final class ProfileReactor: Reactor {
         return FanAnimalReactor()
     }
     
+    func createProfileLikedZooListReactor() -> ProfileLikedZooListReactor {
+        return ProfileLikedZooListReactor()
+    }
+    
+    func createLikedZooReactor() -> LikedZooReactor {
+        return LikedZooReactor()
+    }
+    
     func createProfileContestDetailReactor(contest: Contest) -> ContestDetailReactor {
         return ContestDetailReactor(contest: contest)
     }

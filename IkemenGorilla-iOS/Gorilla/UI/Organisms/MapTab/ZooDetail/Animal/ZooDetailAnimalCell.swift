@@ -30,7 +30,7 @@ final class ZooDetailAnimalCell: UICollectionViewCell, View, ViewConstructor {
         super.init(frame: .zero)
         
         setupViews()
-        setupViewConstraints()
+        setupViewConstraints()	
     }
     
     required init?(coder: NSCoder) {
