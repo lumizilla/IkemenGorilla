@@ -12,6 +12,13 @@ import RxSwift
 
 final class MapSearchResultCell: UICollectionViewCell, View, ViewConstructor {
     
+    struct Const {
+        static let cellWidth: CGFloat = DeviceSize.screenWidth
+        static let cellHeight: CGFloat = 120
+        static let itemSize: CGSize = CGSize(width: cellWidth, height: cellHeight)
+        static let imageViewSize: CGFloat = 104
+    }
+    
     // MARK: - Variables
     var disposeBag = DisposeBag()
     
@@ -21,10 +28,18 @@ final class MapSearchResultCell: UICollectionViewCell, View, ViewConstructor {
         $0.layer.masksToBounds = true
         $0.layer.cornerRadius = 4
     }
-    
     private let zooNameLabel = UILabel().then {
+        $0.apply(fontStyle: .regular, size: 16)
+        $0.textColor = Color.black
+        $0.numberOfLines = 0
+    }
+    private let recommendLabel = UILabel().then {
+        $0.text = "おすすめ"
         $0.apply(fontStyle: .regular, size: 15)
-        $0.textColor = Color.textBlack
+        $0.textColor = Color.textGray
+    }
+    private let border = UIView().then {
+        $0.backgroundColor = Color.borderGray
     }
     
     // MARK: - Initializers
@@ -43,27 +58,31 @@ final class MapSearchResultCell: UICollectionViewCell, View, ViewConstructor {
     func setupViews() {
         addSubview(imageView)
         addSubview(zooNameLabel)
+        addSubview(recommendLabel)
+        addSubview(border)
     }
     
     func setupViewConstraints() {
         imageView.snp.makeConstraints {
-            $0.top.left.right.equalToSuperview()
+            $0.top.bottom.equalToSuperview().inset(8)
+            $0.left.equalToSuperview().inset(16)
+            $0.size.equalTo(Const.imageViewSize)
         }
         zooNameLabel.snp.makeConstraints {
-            $0.top.equalTo(imageView.snp.bottom).offset(8)
-            $0.height.equalTo(16)
-            $0.left.right.equalToSuperview()
-            $0.bottom.equalToSuperview().inset(16)
+            $0.left.equalTo(imageView.snp.right).offset(16)
+            $0.right.equalToSuperview().inset(16)
+            $0.bottom.equalTo(self.snp.centerY)
         }
-    }
-    
-    override func prepareForReuse() {
-        // Variables
-        disposeBag = DisposeBag()
-        
-        // Views
-        imageView.image = #imageLiteral(resourceName: "noimage")
-        zooNameLabel.text = ""
+        recommendLabel.snp.makeConstraints {
+            $0.top.equalTo(self.snp.centerY)
+            $0.left.equalTo(imageView.snp.right).offset(16)
+            $0.right.equalToSuperview().inset(16)
+        }
+        border.snp.makeConstraints {
+            $0.left.equalTo(imageView.snp.right).offset(16)
+            $0.right.bottom.equalToSuperview()
+            $0.height.equalTo(1)
+        }
     }
     
     // MARK: - Bind Method
