@@ -27,6 +27,7 @@
 		84376CCD24A7DED700282F3C /* ExplorePostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376CCC24A7DED700282F3C /* ExplorePostDetailViewController.swift */; };
 		84376CCF24A7DEEB00282F3C /* ExplorePostDetailReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376CCE24A7DEEB00282F3C /* ExplorePostDetailReactor.swift */; };
 		84376CD124A8463500282F3C /* MapSearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376CD024A8463500282F3C /* MapSearchButton.swift */; };
+		84376CD524A84BC800282F3C /* MapSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376CD424A84BC800282F3C /* MapSearchViewController.swift */; };
 		844EE1332484278F003369F2 /* PastContestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE1322484278F003369F2 /* PastContestCell.swift */; };
 		844EE135248427AF003369F2 /* PastContestCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE134248427AF003369F2 /* PastContestCellReactor.swift */; };
 		844EE137248427D7003369F2 /* PastContestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE136248427D7003369F2 /* PastContestViewController.swift */; };
@@ -198,6 +199,7 @@
 		84376CCC24A7DED700282F3C /* ExplorePostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorePostDetailViewController.swift; sourceTree = "<group>"; };
 		84376CCE24A7DEEB00282F3C /* ExplorePostDetailReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorePostDetailReactor.swift; sourceTree = "<group>"; };
 		84376CD024A8463500282F3C /* MapSearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchButton.swift; sourceTree = "<group>"; };
+		84376CD424A84BC800282F3C /* MapSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchViewController.swift; sourceTree = "<group>"; };
 		844EE1322484278F003369F2 /* PastContestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestCell.swift; sourceTree = "<group>"; };
 		844EE134248427AF003369F2 /* PastContestCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestCellReactor.swift; sourceTree = "<group>"; };
 		844EE136248427D7003369F2 /* PastContestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestViewController.swift; sourceTree = "<group>"; };
@@ -484,6 +486,7 @@
 		84376CD224A84B6F00282F3C /* MapSearch */ = {
 			isa = PBXGroup;
 			children = (
+				84376CD424A84BC800282F3C /* MapSearchViewController.swift */,
 			);
 			path = MapSearch;
 			sourceTree = "<group>";
@@ -1410,6 +1413,7 @@
 				84A9A00C2485347D0066863B /* ContestResult.swift in Sources */,
 				847B37E32479E01000B48535 /* HomeCurrentContestHeader.swift in Sources */,
 				847B37AE24798E5C00B48535 /* DevelopingViewController.swift in Sources */,
+				84376CD524A84BC800282F3C /* MapSearchViewController.swift in Sources */,
 				847B3807247A687D00B48535 /* HomeRecommendedZooListView.swift in Sources */,
 				84A99FE82484ED9D0066863B /* ContestDetailEntryReactor.swift in Sources */,
 				84A9A008248533340066863B /* ContestDetailResultVoteCell.swift in Sources */,
