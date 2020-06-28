@@ -29,6 +29,7 @@
 		84376CD124A8463500282F3C /* MapSearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376CD024A8463500282F3C /* MapSearchButton.swift */; };
 		84376CD524A84BC800282F3C /* MapSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376CD424A84BC800282F3C /* MapSearchViewController.swift */; };
 		84376CD724A84BE000282F3C /* MapSearchReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376CD624A84BE000282F3C /* MapSearchReactor.swift */; };
+		84376CD924A8529800282F3C /* MapSearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376CD824A8529800282F3C /* MapSearchResultCell.swift */; };
 		844EE1332484278F003369F2 /* PastContestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE1322484278F003369F2 /* PastContestCell.swift */; };
 		844EE135248427AF003369F2 /* PastContestCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE134248427AF003369F2 /* PastContestCellReactor.swift */; };
 		844EE137248427D7003369F2 /* PastContestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE136248427D7003369F2 /* PastContestViewController.swift */; };
@@ -202,6 +203,7 @@
 		84376CD024A8463500282F3C /* MapSearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchButton.swift; sourceTree = "<group>"; };
 		84376CD424A84BC800282F3C /* MapSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchViewController.swift; sourceTree = "<group>"; };
 		84376CD624A84BE000282F3C /* MapSearchReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchReactor.swift; sourceTree = "<group>"; };
+		84376CD824A8529800282F3C /* MapSearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchResultCell.swift; sourceTree = "<group>"; };
 		844EE1322484278F003369F2 /* PastContestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestCell.swift; sourceTree = "<group>"; };
 		844EE134248427AF003369F2 /* PastContestCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestCellReactor.swift; sourceTree = "<group>"; };
 		844EE136248427D7003369F2 /* PastContestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestViewController.swift; sourceTree = "<group>"; };
@@ -497,6 +499,7 @@
 		84376CD324A84B8F00282F3C /* MapSearch */ = {
 			isa = PBXGroup;
 			children = (
+				84376CD824A8529800282F3C /* MapSearchResultCell.swift */,
 			);
 			path = MapSearch;
 			sourceTree = "<group>";
@@ -1463,6 +1466,7 @@
 				844EE13B24842808003369F2 /* PastContestReactor.swift in Sources */,
 				844EE137248427D7003369F2 /* PastContestViewController.swift in Sources */,
 				847B3813247CB49700B48535 /* NetworkProvider.swift in Sources */,
+				84376CD924A8529800282F3C /* MapSearchResultCell.swift in Sources */,
 				844EE13D24842BEC003369F2 /* Formatter.swift in Sources */,
 				84A9A00024851BC90066863B /* ContestDetailResultReactor.swift in Sources */,
 				847B37DD2479D81B00B48535 /* HomeReactor.swift in Sources */,
