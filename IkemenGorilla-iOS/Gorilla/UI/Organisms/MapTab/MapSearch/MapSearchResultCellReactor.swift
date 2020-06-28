@@ -27,3 +27,9 @@ final class MapSearchResultCellReactor: Reactor {
         initialState = State(zoo: zoo)
     }
 }
+
+extension MapSearchResultCellReactor: Equatable {
+    static func == (lhs: MapSearchResultCellReactor, rhs: MapSearchResultCellReactor) -> Bool {
+        return lhs.currentState.zoo.id == rhs.currentState.zoo.id
+    }
+}
