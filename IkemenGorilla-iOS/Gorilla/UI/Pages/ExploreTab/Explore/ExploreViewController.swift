@@ -50,7 +50,7 @@ final class ExploreViewController: UIViewController, View, ViewConstructor {
             .bind { [weak self] indexPath in
                 logger.debug(indexPath)
                 let vc = ExplorePostDetailViewController().then {
-                    $0.reactor = reactor.createExplorePostDetailReactor()
+                    $0.reactor = reactor.createExplorePostDetailReactor(indexPath: indexPath)
                 }
                 self?.navigationController?.pushViewController(vc, animated: true)
             }
