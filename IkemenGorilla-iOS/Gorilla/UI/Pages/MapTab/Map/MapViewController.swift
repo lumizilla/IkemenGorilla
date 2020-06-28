@@ -37,6 +37,14 @@ final class MapViewController: UIViewController, View, ViewConstructor, Transiti
         setupFloatingController()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
+    }
+    
     // MARK: - Setup Methods
     func setupViews() {
         view.addSubview(mapView)
