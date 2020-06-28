@@ -61,11 +61,11 @@ final class VoteButton: UIButton, ViewConstructor {
     
     func setStyle(isVoted: Bool) {
         if isVoted {
-            setTitle("応募済み", for: .normal)
+            setTitle("投票済み", for: .normal)
             setTitleColor(Color.textBlack, for: .normal)
             backgroundColor = Color.borderGray
         } else {
-            setTitle("応募する", for: .normal)
+            setTitle("投票する", for: .normal)
             setTitleColor(Color.white, for: .normal)
         }
         gradientLayer.isHidden = isVoted

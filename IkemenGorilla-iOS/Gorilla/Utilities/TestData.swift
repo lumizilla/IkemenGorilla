@@ -120,11 +120,7 @@ struct TestData: TestDataType {
             animalIconUrl: "https://images.unsplash.com/photo-1484557985045-edf25e08da73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjF9&auto=format&fit=crop&w=1934&q=80",
             zooId: testID(),
             zooName: "東山動物園",
-            imageUrls: [
-                "https://images.unsplash.com/photo-1533415648777-407b626eb0fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
-                "https://images.unsplash.com/photo-1576626884826-44e68ad6c948?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE1ODB9",
-                "https://images.unsplash.com/photo-1560709446-0e44df609ebc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1300&q=80"
-            ],
+            imageUrl: TestData.postImageUrl(),
             description: "Mary had a little lamb\nLittle lamb, little lamb,\nMary had a little lamb\nIts fleece was white as snow. ♪♫♬🎶",
             createdAt: dateFromString(from: "2020-05-24")
         )
@@ -224,6 +220,15 @@ struct TestData: TestDataType {
     
     private static func testID() -> String {
         return randomString(length: 32)
+    }
+    
+    private static func postImageUrl() -> String {
+        let urls = [
+            "https://images.unsplash.com/photo-1533415648777-407b626eb0fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
+            "https://images.unsplash.com/photo-1576626884826-44e68ad6c948?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE1ODB9",
+            "https://images.unsplash.com/photo-1560709446-0e44df609ebc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1300&q=80"
+        ]
+        return urls[Int.random(in: 0 ..< 3)]
     }
     
     private static func dateFromString(from: String) -> Date {

@@ -42,4 +42,8 @@ struct Color {
     static var teal: UIColor {
         return UIColor(hex: "1F9198")
     }
+    
+    static var red: UIColor {
+        return UIColor(hex: "EB5757")
+    }
 }

@@ -190,6 +190,16 @@ final class ZooDetailViewController: UIViewController, View, ViewConstructor {
         reactor.action.onNext(.loadAnimals)
         reactor.action.onNext(.loadPosts)
         
+        animalsHeader.showAllButton.rx.tap
+            .bind { [weak self] _ in
+                logger.debug("tap show all button")
+                let vc = ZooAnimalViewController().then {
+                    $0.reactor = reactor.createZooAnimalReactor()
+                }
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }
+            .disposed(by: disposeBag)
+        
         // State
         reactor.state.map { $0.animalCellReactors }
             .distinctUntilChanged()

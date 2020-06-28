@@ -17,6 +17,10 @@ protocol TransitionPresentable: class {
     
     // MAP TAB
     func showZooDetailPage(zooDetailReactor: ZooDetailReactor)
+    
+    // VOTE TAB
+    func showVoteContestPage(voteContestReactor: VoteContestReactor)
+    func showVoteContestDetailPage(voteContestDetailReactor: VoteContestDetailReactor)
 }
 
 extension TransitionPresentable where Self: UIViewController {
@@ -86,6 +90,31 @@ extension TransitionPresentable where Self: UIViewController {
         )
     }
     
+    // VOTE TAB
+    func showVoteContestPage(voteContestReactor: VoteContestReactor) {
+        present(
+            UINavigationController(
+                rootViewController: VoteContestViewController().then {
+                    $0.reactor = voteContestReactor
+                }
+            ).then {
+                $0.modalPresentationStyle = .fullScreen
+            },
+            animated: true,
+            completion: nil
+        )
+    }
+    
+    func showVoteContestDetailPage(voteContestDetailReactor: VoteContestDetailReactor) {
+        navigationController?.pushViewController(
+            VoteContestDetailViewController().then {
+                $0.reactor = voteContestDetailReactor
+            },
+            animated: true
+        )
+    }
+    
+    /*
     func showProfileInfoPage(profileInfoReactor: ProfileInfoReactor) {
         navigationController?.pushViewController(
             ProfileInfoViewController().then {
@@ -94,4 +123,5 @@ extension TransitionPresentable where Self: UIViewController {
             animated: true
         )
     }
+    */
 }

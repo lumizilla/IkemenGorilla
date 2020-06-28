@@ -15,7 +15,7 @@ struct Post: Entity {
     let animalIconUrl: String
     let zooId: String
     let zooName: String
-    let imageUrls: [String]
+    let imageUrl: String
     let description: String
     let createdAt: Date
     

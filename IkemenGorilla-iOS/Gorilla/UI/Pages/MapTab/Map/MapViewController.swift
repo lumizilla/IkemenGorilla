@@ -20,10 +20,14 @@ final class MapViewController: UIViewController, View, ViewConstructor, Transiti
     // MARK: - Views
     let mapView = MKMapView()
     
+    private let searchButton = MapSearchButton()
+    
     let zooListFloatingPanelController = FloatingPanelController().then {
         $0.surfaceView.cornerRadius = 24
         $0.surfaceView.shadowHidden = true
     }
+    
+    private var isNavBarAppearWhenViewWillDisappear: Bool = false
     
     let zooListViewController = MapZooListViewController()
     
@@ -37,12 +41,33 @@ final class MapViewController: UIViewController, View, ViewConstructor, Transiti
         setupFloatingController()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if isNavBarAppearWhenViewWillDisappear {
+            navigationController?.navigationBar.isHidden = false
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        if !isNavBarAppearWhenViewWillDisappear {
+            navigationController?.navigationBar.isHidden = false
+        }
+    }
+    
     // MARK: - Setup Methods
     func setupViews() {
+        mapView.addSubview(searchButton)
         view.addSubview(mapView)
     }
     
     func setupViewConstraints() {
+        searchButton.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(36)
+            $0.centerX.equalToSuperview()
+        }
         mapView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
@@ -65,6 +90,18 @@ final class MapViewController: UIViewController, View, ViewConstructor, Transiti
         // Action
         reactor.action.onNext(.loadZoos)
         
+        searchButton.rx.tap
+            .bind { [weak self] _ in
+                self?.isNavBarAppearWhenViewWillDisappear = false
+                let vc = UINavigationController(rootViewController: MapSearchViewController().then {
+                    $0.reactor = reactor.createMapSearchReactor()
+                }).then {
+                    $0.modalPresentationStyle = .fullScreen
+                }
+                self?.present(vc, animated: true, completion: nil)
+            }
+            .disposed(by: disposeBag)
+        
         zooListViewController.closeButton.rx.tap
             .bind { [weak self] _ in
                 self?.zooListFloatingPanelController.move(to: .hidden, animated: true)
@@ -72,6 +109,15 @@ final class MapViewController: UIViewController, View, ViewConstructor, Transiti
                 if let clusterAnnotation = reactor.currentState.clusterAnnotation {
                     self?.mapView.deselectAnnotation(clusterAnnotation, animated: true)
                 }
+            }
+            .disposed(by: disposeBag)
+        
+        zooListViewController.zoosCollectionView.rx.itemSelected
+            .bind { [weak self] indexPath in
+                logger.debug(indexPath)
+                self?.isNavBarAppearWhenViewWillDisappear = true
+                let zoo = reactor.currentState.selectedAnnotations[indexPath.row].zoo
+                self?.showZooDetailPage(zooDetailReactor: reactor.createZooDetailReactor(zoo: zoo))
             }
             .disposed(by: disposeBag)
         

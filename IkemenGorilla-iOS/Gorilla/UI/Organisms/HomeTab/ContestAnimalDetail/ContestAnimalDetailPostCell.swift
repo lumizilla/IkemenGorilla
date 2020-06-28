@@ -49,12 +49,10 @@ final class ContestAnimalDetailPostCell: UICollectionViewCell, View, ViewConstru
         // Action
         
         // State
-        reactor.state.map { $0.post.imageUrls }
+        reactor.state.map { $0.post.imageUrl }
             .distinctUntilChanged()
-            .bind { [weak self] imageUrls in
-                if !imageUrls.isEmpty {
-                    self?.imageView.setImage(imageUrl: imageUrls[0])
-                }
+            .bind { [weak self] imageUrl in
+                self?.imageView.setImage(imageUrl: imageUrl)
             }
             .disposed(by: disposeBag)
     }
