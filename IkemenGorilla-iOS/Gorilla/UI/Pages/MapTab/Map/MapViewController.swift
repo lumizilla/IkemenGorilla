@@ -27,6 +27,8 @@ final class MapViewController: UIViewController, View, ViewConstructor, Transiti
         $0.surfaceView.shadowHidden = true
     }
     
+    private var isNavBarAppearWhenViewWillDisappear: Bool = false
+    
     let zooListViewController = MapZooListViewController()
     
     // MARK: - Life Cycles
@@ -44,7 +46,15 @@ final class MapViewController: UIViewController, View, ViewConstructor, Transiti
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = false
+        if isNavBarAppearWhenViewWillDisappear {
+            navigationController?.navigationBar.isHidden = false
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        if !isNavBarAppearWhenViewWillDisappear {
+            navigationController?.navigationBar.isHidden = false
+        }
     }
     
     // MARK: - Setup Methods
@@ -80,6 +90,18 @@ final class MapViewController: UIViewController, View, ViewConstructor, Transiti
         // Action
         reactor.action.onNext(.loadZoos)
         
+        searchButton.rx.tap
+            .bind { [weak self] _ in
+                self?.isNavBarAppearWhenViewWillDisappear = false
+                let vc = UINavigationController(rootViewController: MapSearchViewController().then {
+                    $0.reactor = reactor.createMapSearchReactor()
+                }).then {
+                    $0.modalPresentationStyle = .fullScreen
+                }
+                self?.present(vc, animated: true, completion: nil)
+            }
+            .disposed(by: disposeBag)
+        
         zooListViewController.closeButton.rx.tap
             .bind { [weak self] _ in
                 self?.zooListFloatingPanelController.move(to: .hidden, animated: true)
@@ -93,6 +115,7 @@ final class MapViewController: UIViewController, View, ViewConstructor, Transiti
         zooListViewController.zoosCollectionView.rx.itemSelected
             .bind { [weak self] indexPath in
                 logger.debug(indexPath)
+                self?.isNavBarAppearWhenViewWillDisappear = true
                 let zoo = reactor.currentState.selectedAnnotations[indexPath.row].zoo
                 self?.showZooDetailPage(zooDetailReactor: reactor.createZooDetailReactor(zoo: zoo))
             }
