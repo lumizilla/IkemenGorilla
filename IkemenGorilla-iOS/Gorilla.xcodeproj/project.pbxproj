@@ -26,6 +26,7 @@
 		84376CCA24A7DCFE00282F3C /* PostDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376CC924A7DCFE00282F3C /* PostDetailCell.swift */; };
 		84376CCD24A7DED700282F3C /* ExplorePostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376CCC24A7DED700282F3C /* ExplorePostDetailViewController.swift */; };
 		84376CCF24A7DEEB00282F3C /* ExplorePostDetailReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376CCE24A7DEEB00282F3C /* ExplorePostDetailReactor.swift */; };
+		84376CD124A8463500282F3C /* MapSearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376CD024A8463500282F3C /* MapSearchButton.swift */; };
 		844EE1332484278F003369F2 /* PastContestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE1322484278F003369F2 /* PastContestCell.swift */; };
 		844EE135248427AF003369F2 /* PastContestCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE134248427AF003369F2 /* PastContestCellReactor.swift */; };
 		844EE137248427D7003369F2 /* PastContestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE136248427D7003369F2 /* PastContestViewController.swift */; };
@@ -196,6 +197,7 @@
 		84376CC924A7DCFE00282F3C /* PostDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailCell.swift; sourceTree = "<group>"; };
 		84376CCC24A7DED700282F3C /* ExplorePostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorePostDetailViewController.swift; sourceTree = "<group>"; };
 		84376CCE24A7DEEB00282F3C /* ExplorePostDetailReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorePostDetailReactor.swift; sourceTree = "<group>"; };
+		84376CD024A8463500282F3C /* MapSearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchButton.swift; sourceTree = "<group>"; };
 		844EE1322484278F003369F2 /* PastContestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestCell.swift; sourceTree = "<group>"; };
 		844EE134248427AF003369F2 /* PastContestCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestCellReactor.swift; sourceTree = "<group>"; };
 		844EE136248427D7003369F2 /* PastContestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestViewController.swift; sourceTree = "<group>"; };
@@ -662,6 +664,7 @@
 				84C433A8249BD3D700172D6A /* HeartNumberView.swift */,
 				84C433B4249BE7C400172D6A /* FanButton.swift */,
 				8491403024A4816800DFAE20 /* FloatingContestView.swift */,
+				84376CD024A8463500282F3C /* MapSearchButton.swift */,
 			);
 			path = Molecules;
 			sourceTree = "<group>";
@@ -1443,6 +1446,7 @@
 				8491403324A49D9900DFAE20 /* AnimalDetailPastContestView.swift in Sources */,
 				847B37CF2479AA9800B48535 /* IconView.swift in Sources */,
 				844EE146248436AD003369F2 /* RecommendedZooCellReactor.swift in Sources */,
+				84376CD124A8463500282F3C /* MapSearchButton.swift in Sources */,
 				84A9A00624851D340066863B /* Award.swift in Sources */,
 				847B37F1247A3F0E00B48535 /* UIImageView+Extension.swift in Sources */,
 				844EE148248439E4003369F2 /* RecommendedZooViewController.swift in Sources */,
