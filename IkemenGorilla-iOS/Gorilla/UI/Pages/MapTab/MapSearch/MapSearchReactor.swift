@@ -10,14 +10,19 @@ import ReactorKit
 import RxSwift
 
 final class MapSearchReactor: Reactor {
-    enum Action {}
-    enum Mutation {}
+    enum Action {
+        case updateKeyword(String)
+    }
+    enum Mutation {
+        case setSearchResult([MapSearchResultCellReactor])
+    }
     
     struct State {
-        let zoos: [Zoo]
+        let allCellReactors: [MapSearchResultCellReactor]
+        var searchResultCellReactors: [MapSearchResultCellReactor] = []
         
         init(zoos: [Zoo]) {
-            self.zoos = zoos
+            self.allCellReactors = zoos.map { MapSearchResultCellReactor(zoo: $0) }
         }
     }
     
@@ -25,5 +30,25 @@ final class MapSearchReactor: Reactor {
     
     init(zoos: [Zoo]) {
         initialState = State(zoos: zoos)
+    }
+    
+    func mutate(action: Action) -> Observable<Mutation> {
+        switch action {
+        case .updateKeyword(let keyword):
+            if keyword.isEmpty {
+                return .just(.setSearchResult(currentState.allCellReactors))
+            }
+            let results = currentState.allCellReactors.filter { $0.currentState.zoo.name.contains(keyword) }
+            return .just(.setSearchResult(results))
+        }
+    }
+    
+    func reduce(state: State, mutation: Mutation) -> State {
+        var state = state
+        switch mutation {
+        case .setSearchResult(let results):
+            state.searchResultCellReactors = results
+        }
+        return state
     }
 }
