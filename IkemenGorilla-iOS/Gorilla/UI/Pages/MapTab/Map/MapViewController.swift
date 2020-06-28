@@ -20,6 +20,8 @@ final class MapViewController: UIViewController, View, ViewConstructor, Transiti
     // MARK: - Views
     let mapView = MKMapView()
     
+    private let searchButton = MapSearchButton()
+    
     let zooListFloatingPanelController = FloatingPanelController().then {
         $0.surfaceView.cornerRadius = 24
         $0.surfaceView.shadowHidden = true
@@ -47,10 +49,15 @@ final class MapViewController: UIViewController, View, ViewConstructor, Transiti
     
     // MARK: - Setup Methods
     func setupViews() {
+        mapView.addSubview(searchButton)
         view.addSubview(mapView)
     }
     
     func setupViewConstraints() {
+        searchButton.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(36)
+            $0.centerX.equalToSuperview()
+        }
         mapView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
