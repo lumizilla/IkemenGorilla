@@ -87,6 +87,12 @@ final class MapSearchViewController: UIViewController, View, ViewConstructor {
             }
             .disposed(by: disposeBag)
         
+        searchBar.rx.searchButtonClicked
+            .bind { [weak self] _ in
+                self?.searchBar.resignFirstResponder()
+            }
+            .disposed(by: disposeBag)
+        
         // State
         reactor.state.map { $0.searchResultCellReactors }
             .distinctUntilChanged()
