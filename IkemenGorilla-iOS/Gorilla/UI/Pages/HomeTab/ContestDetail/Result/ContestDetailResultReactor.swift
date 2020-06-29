@@ -53,7 +53,7 @@ final class ContestDetailResultReactor: Reactor {
     }
     
     private func loadAwards() -> Observable<[Award]> {
-        return .just(TestData.awards(count: 8))
+        return provider.contestService.getAwards(contestId: currentState.contest.id).asObservable()
     }
     
     private func loadContestResults() -> Observable<[ContestResult]> {
