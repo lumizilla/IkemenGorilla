@@ -14,7 +14,7 @@ protocol ContestRepositoryType {
 
 final class ContestRepository: ContestRepositoryType {
     private let networkProvider: NetworkProvider<ContestTarget>
-    private let decoder = JSONDecoder()
+    private let decoder = GorillaDecoder.default
     
     init(networkProvider: NetworkProvider<ContestTarget>) {
         self.networkProvider = networkProvider
