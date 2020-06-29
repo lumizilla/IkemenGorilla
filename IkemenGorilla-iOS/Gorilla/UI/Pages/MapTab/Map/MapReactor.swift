@@ -27,7 +27,13 @@ final class MapReactor: Reactor {
         var clusterAnnotation: MKClusterAnnotation?
     }
     
-    let initialState = State()
+    let initialState: State
+    private let provider: ServiceProviderType
+    
+    init(provider: ServiceProviderType) {
+        self.provider = provider
+        initialState = State()
+    }
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {

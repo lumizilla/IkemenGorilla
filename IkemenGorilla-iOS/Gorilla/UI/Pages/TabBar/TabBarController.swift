@@ -40,7 +40,7 @@ class TabBarController: UITabBarController, TransitionPresentable {
                 $0.reactor = HomeReactor(provider: provider)
             }),
             UINavigationController(rootViewController: MapViewController().then {
-                $0.reactor = MapReactor()
+                $0.reactor = MapReactor(provider: provider)
             }),
             DummyViewController(),
             UINavigationController(rootViewController:
