@@ -11,6 +11,7 @@ import RxSwift
 protocol ContestRepositoryType {
     func getContests(status: ContestStatus, page: Int) -> Single<[Contest]>
     func getContest(contestId: String) -> Single<ContestDetail>
+    func getSponsors(contestId: String) -> Single<[Sponsor]>
 }
 
 final class ContestRepository: ContestRepositoryType {
@@ -34,6 +35,15 @@ final class ContestRepository: ContestRepositoryType {
         networkProvider.rx.request(.getContest(contestId: contestId))
             .filterSuccessfulStatusCodes()
             .map(ContestDetail.self, using: decoder)
+            .do(onError: { error in
+                logger.error(error)
+            })
+    }
+    
+    func getSponsors(contestId: String) -> Single<[Sponsor]> {
+        networkProvider.rx.request(.getSponsors(contestId: contestId))
+            .filterSuccessfulStatusCodes()
+            .map([Sponsor].self, using: decoder)
             .do(onError: { error in
                 logger.error(error)
             })
