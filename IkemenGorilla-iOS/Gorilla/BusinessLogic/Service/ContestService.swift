@@ -10,6 +10,7 @@ import RxSwift
 
 protocol ContestServiceType {
     func getContests(status: ContestStatus, page: Int) -> Single<[Contest]>
+    func getContest(contestId: String) -> Single<ContestDetail>
 }
 
 final class ContestService: BaseService, ContestServiceType {
@@ -22,5 +23,9 @@ final class ContestService: BaseService, ContestServiceType {
     
     func getContests(status: ContestStatus, page: Int) -> Single<[Contest]> {
         contestRepository.getContests(status: status, page: page)
+    }
+    
+    func getContest(contestId: String) -> Single<ContestDetail> {
+        contestRepository.getContest(contestId: contestId)
     }
 }
