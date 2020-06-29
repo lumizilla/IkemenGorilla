@@ -67,7 +67,7 @@ final class ZooDetailReactor: Reactor {
     }
     
     private func loadPosts() -> Observable<[Post]> {
-        return .just(TestData.posts(count: 12))
+        return provider.zooService.getPosts(zooId: currentState.zoo.id, page: 0).asObservable()
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
