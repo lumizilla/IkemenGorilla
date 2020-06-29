@@ -11,7 +11,7 @@ import RxSwift
 
 final class ContestDetailInfoReactor: Reactor {
     enum Action {
-        case load
+        case loadSponsors
     }
     enum Mutation {
         case setSponsorCellReactors([Sponsor])
@@ -36,7 +36,7 @@ final class ContestDetailInfoReactor: Reactor {
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
-        case .load:
+        case .loadSponsors:
             guard !currentState.isLoading else { return .empty() }
             return .concat(
                 .just(.setIsLoading(true)),
