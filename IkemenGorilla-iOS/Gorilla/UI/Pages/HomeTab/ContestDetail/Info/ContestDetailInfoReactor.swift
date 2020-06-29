@@ -58,7 +58,7 @@ final class ContestDetailInfoReactor: Reactor {
     }
     
     private func loadSponsors() -> Observable<[Sponsor]> {
-        return .just(TestData.sponsors(count: 8))
+        return provider.contestService.getSponsors(contestId: currentState.contest.id).asObservable()
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
