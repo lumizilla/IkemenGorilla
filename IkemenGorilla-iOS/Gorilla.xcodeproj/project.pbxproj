@@ -34,6 +34,7 @@
 		84452A7624AA08580092F949 /* ContestTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452A7524AA08580092F949 /* ContestTarget.swift */; };
 		84452A7824AA0C0B0092F949 /* ContestRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452A7724AA0C0B0092F949 /* ContestRepository.swift */; };
 		84452A7B24AA0E250092F949 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452A7A24AA0E250092F949 /* ServiceProvider.swift */; };
+		84452A7F24AA0EA00092F949 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452A7E24AA0EA00092F949 /* BaseService.swift */; };
 		844EE1332484278F003369F2 /* PastContestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE1322484278F003369F2 /* PastContestCell.swift */; };
 		844EE135248427AF003369F2 /* PastContestCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE134248427AF003369F2 /* PastContestCellReactor.swift */; };
 		844EE137248427D7003369F2 /* PastContestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE136248427D7003369F2 /* PastContestViewController.swift */; };
@@ -212,6 +213,7 @@
 		84452A7524AA08580092F949 /* ContestTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestTarget.swift; sourceTree = "<group>"; };
 		84452A7724AA0C0B0092F949 /* ContestRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestRepository.swift; sourceTree = "<group>"; };
 		84452A7A24AA0E250092F949 /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
+		84452A7E24AA0EA00092F949 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		844EE1322484278F003369F2 /* PastContestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestCell.swift; sourceTree = "<group>"; };
 		844EE134248427AF003369F2 /* PastContestCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestCellReactor.swift; sourceTree = "<group>"; };
 		844EE136248427D7003369F2 /* PastContestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestViewController.swift; sourceTree = "<group>"; };
@@ -517,6 +519,7 @@
 			isa = PBXGroup;
 			children = (
 				84452A7A24AA0E250092F949 /* ServiceProvider.swift */,
+				84452A7E24AA0EA00092F949 /* BaseService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1435,6 +1438,7 @@
 				847B37F7247A57E100B48535 /* HomePastContestListCellReactor.swift in Sources */,
 				84A99FE62484ED700066863B /* ContestDetailEntryViewController.swift in Sources */,
 				848B16E524A514EC00150EE7 /* AnimalDetailPastContestCell.swift in Sources */,
+				84452A7F24AA0EA00092F949 /* BaseService.swift in Sources */,
 				847B381B247CBA9000B48535 /* FrontendEchoViewController.swift in Sources */,
 				84A9A00C2485347D0066863B /* ContestResult.swift in Sources */,
 				847B37E32479E01000B48535 /* HomeCurrentContestHeader.swift in Sources */,
