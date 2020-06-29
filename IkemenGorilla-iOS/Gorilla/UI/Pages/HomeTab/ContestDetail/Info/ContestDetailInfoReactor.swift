@@ -11,15 +11,18 @@ import RxSwift
 
 final class ContestDetailInfoReactor: Reactor {
     enum Action {
+        case loadContestDetail
         case loadSponsors
     }
     enum Mutation {
+        case setContestDetail(ContestDetail)
         case setSponsorCellReactors([Sponsor])
         case setIsLoading(Bool)
     }
     
     struct State {
         let contest: Contest
+        var contestDetail: ContestDetail?
         var sponsorCellReactors: [ContestDetailInfoSponsorCellReactor] = []
         var isLoading: Bool = false
         
@@ -36,23 +39,31 @@ final class ContestDetailInfoReactor: Reactor {
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
+        case .loadContestDetail:
+            return loadContestDetail().map(Mutation.setContestDetail)
         case .loadSponsors:
             guard !currentState.isLoading else { return .empty() }
             return .concat(
                 .just(.setIsLoading(true)),
-                load().map(Mutation.setSponsorCellReactors),
+                loadSponsors().map(Mutation.setSponsorCellReactors),
                 .just(.setIsLoading(false))
             )
         }
     }
     
-    private func load() -> Observable<[Sponsor]> {
+    private func loadContestDetail() -> Observable<ContestDetail> {
+        return .just(TestData.contestDetail())
+    }
+    
+    private func loadSponsors() -> Observable<[Sponsor]> {
         return .just(TestData.sponsors(count: 8))
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
         var state = state
         switch mutation {
+        case .setContestDetail(let contestDetail):
+            state.contestDetail = contestDetail
         case .setSponsorCellReactors(let sponsors):
             state.sponsorCellReactors = sponsors.map { ContestDetailInfoSponsorCellReactor(sponsor: $0) }
         case .setIsLoading(let isLoading):
