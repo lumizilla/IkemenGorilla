@@ -10,6 +10,7 @@ import RxSwift
 
 protocol ContestRepositoryType {
     func getContests(status: ContestStatus, page: Int) -> Single<[Contest]>
+    func getContest(contestId: String) -> Single<ContestDetail>
 }
 
 final class ContestRepository: ContestRepositoryType {
@@ -24,6 +25,15 @@ final class ContestRepository: ContestRepositoryType {
         networkProvider.rx.request(.getContests(status: status, page: page))
             .filterSuccessfulStatusCodes()
             .map([Contest].self, using: decoder)
+            .do(onError: { error in
+                logger.error(error)
+            })
+    }
+    
+    func getContest(contestId: String) -> Single<ContestDetail> {
+        networkProvider.rx.request(.getContest(contestId: contestId))
+            .filterSuccessfulStatusCodes()
+            .map(ContestDetail.self, using: decoder)
             .do(onError: { error in
                 logger.error(error)
             })
