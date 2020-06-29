@@ -187,6 +187,7 @@ final class ZooDetailViewController: UIViewController, View, ViewConstructor {
     func bind(reactor: ZooDetailReactor) {
         header.reactor = reactor
         // Action
+        reactor.action.onNext(.loadZooDetail)
         reactor.action.onNext(.loadAnimals)
         reactor.action.onNext(.loadPosts)
         
