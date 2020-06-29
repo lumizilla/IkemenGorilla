@@ -36,4 +36,8 @@ final class ContestDetailReactor: Reactor {
     func createContestDetailEntryReactor() -> ContestDetailEntryReactor {
         return ContestDetailEntryReactor(provider: provider, contest: currentState.contest)
     }
+    
+    func createContestDetailPostReactor() -> ContestDetailPostReactor {
+        return ContestDetailPostReactor(provider: provider, contest: currentState.contest)
+    }
 }

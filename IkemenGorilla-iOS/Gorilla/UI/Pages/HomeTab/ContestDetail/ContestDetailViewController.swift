@@ -50,7 +50,7 @@ final class ContestDetailViewController: SegementSlideDefaultViewController, Vie
             }
         case 2:
             return ContestDetailPostViewController().then {
-                $0.reactor = ContestDetailPostReactor(contest: TestData.contest())
+                $0.reactor = reactor?.createContestDetailPostReactor()
             }
         default:
             return ContestDetailResultViewController().then {
