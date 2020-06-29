@@ -44,6 +44,6 @@ final class HomeReactor: Reactor {
     }
     
     func createContestDetailReactor(contest: Contest) -> ContestDetailReactor {
-        return ContestDetailReactor(contest: contest)
+        return ContestDetailReactor(provider: provider, contest: contest)
     }
 }
