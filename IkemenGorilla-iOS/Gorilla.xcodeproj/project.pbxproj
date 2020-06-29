@@ -39,6 +39,7 @@
 		84452A8324AA18610092F949 /* GorillaDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452A8224AA18610092F949 /* GorillaDecoder.swift */; };
 		84452A8524AA1A6B0092F949 /* ContestDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452A8424AA1A6B0092F949 /* ContestDetailResponse.swift */; };
 		84452A8724AA43980092F949 /* AnimalTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452A8624AA43980092F949 /* AnimalTarget.swift */; };
+		84452A8924AA45AB0092F949 /* AnimalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452A8824AA45AB0092F949 /* AnimalRepository.swift */; };
 		844EE1332484278F003369F2 /* PastContestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE1322484278F003369F2 /* PastContestCell.swift */; };
 		844EE135248427AF003369F2 /* PastContestCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE134248427AF003369F2 /* PastContestCellReactor.swift */; };
 		844EE137248427D7003369F2 /* PastContestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE136248427D7003369F2 /* PastContestViewController.swift */; };
@@ -222,6 +223,7 @@
 		84452A8224AA18610092F949 /* GorillaDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GorillaDecoder.swift; sourceTree = "<group>"; };
 		84452A8424AA1A6B0092F949 /* ContestDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDetailResponse.swift; sourceTree = "<group>"; };
 		84452A8624AA43980092F949 /* AnimalTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTarget.swift; sourceTree = "<group>"; };
+		84452A8824AA45AB0092F949 /* AnimalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalRepository.swift; sourceTree = "<group>"; };
 		844EE1322484278F003369F2 /* PastContestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestCell.swift; sourceTree = "<group>"; };
 		844EE134248427AF003369F2 /* PastContestCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestCellReactor.swift; sourceTree = "<group>"; };
 		844EE136248427D7003369F2 /* PastContestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestViewController.swift; sourceTree = "<group>"; };
@@ -961,6 +963,7 @@
 			isa = PBXGroup;
 			children = (
 				84452A7724AA0C0B0092F949 /* ContestRepository.swift */,
+				84452A8824AA45AB0092F949 /* AnimalRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -1478,6 +1481,7 @@
 				84376CA924A5F17000282F3C /* PostPhotoCollectionView.swift in Sources */,
 				847B381D247CBB1800B48535 /* FrontendEchoReactor.swift in Sources */,
 				84A99FEC2484EE500066863B /* ContestDetailEntryCellReactor.swift in Sources */,
+				84452A8924AA45AB0092F949 /* AnimalRepository.swift in Sources */,
 				847B37EF247A350800B48535 /* TestData.swift in Sources */,
 				84A9A00A2485335E0066863B /* ContestDetailResultVoteCellReactor.swift in Sources */,
 				847B37D32479D1F500B48535 /* Entity.swift in Sources */,
