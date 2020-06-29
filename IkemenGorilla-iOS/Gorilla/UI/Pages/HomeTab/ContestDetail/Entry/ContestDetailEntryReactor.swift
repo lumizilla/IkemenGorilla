@@ -29,8 +29,10 @@ final class ContestDetailEntryReactor: Reactor {
     }
     
     let initialState: ContestDetailEntryReactor.State
+    private let provider: ServiceProviderType
     
-    init(contest: Contest) {
+    init(provider: ServiceProviderType, contest: Contest) {
+        self.provider = provider
         initialState = State(contest: contest)
     }
     
