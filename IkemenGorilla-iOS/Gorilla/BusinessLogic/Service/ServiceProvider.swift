@@ -7,5 +7,12 @@
 //
 
 protocol ServiceProviderType: AnyObject {
+    var contestService: ContestServiceType { get set }
+}
+
+final class ServiceProvider: ServiceProviderType {
     
+    private lazy var contestRepository = ContestRepository(networkProvider: NetworkProvider<ContestTarget>())
+    
+    lazy var contestService: ContestServiceType = ContestService(provider: self, contestRepository: contestRepository)
 }
