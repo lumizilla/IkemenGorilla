@@ -40,4 +40,8 @@ final class ContestDetailReactor: Reactor {
     func createContestDetailPostReactor() -> ContestDetailPostReactor {
         return ContestDetailPostReactor(provider: provider, contest: currentState.contest)
     }
+    
+    func createContestDetailResultReactor() -> ContestDetailResultReactor {
+        return ContestDetailResultReactor(provider: provider, contest: currentState.contest)
+    }
 }
