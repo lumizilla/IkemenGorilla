@@ -10,6 +10,7 @@ import Moya
 
 enum ZooTarget {
     case getZoos
+    case getZoo(zooId: String, userId: String)
 }
 
 extension ZooTarget: TargetType {
@@ -17,18 +18,25 @@ extension ZooTarget: TargetType {
         switch self {
         case .getZoos:
             return "/zoos"
+        case .getZoo(let zooId, _):
+            return "/zoos/\(zooId)"
         }
     }
     
     var method: Method {
         switch self {
-        case .getZoos:
+        case .getZoos, .getZoo:
             return .get
         }
     }
     
     var task: Task {
         switch self {
+        case .getZoo(_, let userId):
+            let parameters = [
+                "user_id": userId
+            ]
+            return .requestParameters(parameters: parameters, encoding: parameterEncoding)
         case .getZoos:
             return .requestPlain
         }
@@ -36,8 +44,10 @@ extension ZooTarget: TargetType {
     
     var parameterEncoding: ParameterEncoding {
         switch self {
-            case .getZoos:
-                return URLEncoding.default
+        case .getZoo:
+            return URLEncoding.queryString
+        case .getZoos:
+            return URLEncoding.default
         }
     }
     

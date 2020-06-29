@@ -10,6 +10,7 @@ import RxSwift
 
 protocol ZooServiceType {
     func getZoos() -> Single<[Zoo]>
+    func getZoo(zooId: String, userId: String) -> Single<ZooDetail>
 }
 
 final class ZooService: BaseService, ZooServiceType {
@@ -22,5 +23,9 @@ final class ZooService: BaseService, ZooServiceType {
     
     func getZoos() -> Single<[Zoo]> {
         zooRepository.getZoos()
+    }
+    
+    func getZoo(zooId: String, userId: String) -> Single<ZooDetail> {
+        zooRepository.getZoo(zooId: zooId, userId: userId)
     }
 }
