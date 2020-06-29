@@ -15,6 +15,7 @@ enum ContestStatus {
 
 enum ContestTarget {
     case getContests(status: ContestStatus, page: Int)
+    case getContest(contestId: String)
 }
 
 extension ContestTarget: TargetType {
@@ -22,12 +23,14 @@ extension ContestTarget: TargetType {
         switch self {
         case .getContests(_, _):
             return "/contests"
+        case .getContest(let contestId):
+            return "/contests/\(contestId)"
         }
     }
     
     var method: Method {
         switch self {
-        case .getContests(_, _):
+        case .getContests, .getContest:
             return .get
         }
     }
@@ -40,13 +43,17 @@ extension ContestTarget: TargetType {
                 "page": page
                 ] as [String : Any]
             return .requestParameters(parameters: parameters, encoding: parameterEncoding)
+        case .getContest(let contestId):
+            return .requestPlain
         }
     }
     
     var parameterEncoding: ParameterEncoding {
         switch self {
         case .getContests(_, _):
-                return URLEncoding.queryString
+            return URLEncoding.queryString
+        case .getContest(_):
+            return URLEncoding.default
         }
     }
     
