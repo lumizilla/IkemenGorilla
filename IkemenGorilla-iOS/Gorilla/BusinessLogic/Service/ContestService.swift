@@ -12,6 +12,7 @@ protocol ContestServiceType {
     func getContests(status: ContestStatus, page: Int) -> Single<[Contest]>
     func getContest(contestId: String) -> Single<ContestDetail>
     func getSponsors(contestId: String) -> Single<[Sponsor]>
+    func getAnimals(contestId: String, page: Int) -> Single<[Animal]>
 }
 
 final class ContestService: BaseService, ContestServiceType {
@@ -32,5 +33,9 @@ final class ContestService: BaseService, ContestServiceType {
     
     func getSponsors(contestId: String) -> Single<[Sponsor]> {
         contestRepository.getSponsors(contestId: contestId)
+    }
+    
+    func getAnimals(contestId: String, page: Int) -> Single<[Animal]> {
+        contestRepository.getAnimals(contestId: contestId, page: page)
     }
 }
