@@ -11,6 +11,7 @@ import RxSwift
 protocol ContestServiceType {
     func getContests(status: ContestStatus, page: Int) -> Single<[Contest]>
     func getContest(contestId: String) -> Single<ContestDetail>
+    func getSponsors(contestId: String) -> Single<[Sponsor]>
 }
 
 final class ContestService: BaseService, ContestServiceType {
@@ -27,5 +28,9 @@ final class ContestService: BaseService, ContestServiceType {
     
     func getContest(contestId: String) -> Single<ContestDetail> {
         contestRepository.getContest(contestId: contestId)
+    }
+    
+    func getSponsors(contestId: String) -> Single<[Sponsor]> {
+        contestRepository.getSponsors(contestId: contestId)
     }
 }
