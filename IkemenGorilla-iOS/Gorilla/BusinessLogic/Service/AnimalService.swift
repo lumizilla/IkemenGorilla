@@ -6,4 +6,21 @@
 //  Copyright © 2020 admin. All rights reserved.
 //
 
-import Foundation
+import RxSwift
+
+protocol AnimalServiceType {
+    func getPosts(animalId: String, page: Int) -> Single<[Post]>
+}
+
+final class AnimalService: BaseService, AnimalServiceType {
+    private let animalRepository: AnimalRepositoryType
+    
+    init(provider: ServiceProviderType, animalRepository: AnimalRepositoryType) {
+        self.animalRepository = animalRepository
+        super.init(provider: provider)
+    }
+    
+    func getPosts(animalId: String, page: Int) -> Single<[Post]> {
+        animalRepository.getPosts(animalId: animalId, page: page)
+    }
+}
