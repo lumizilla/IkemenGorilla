@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+final class GorillaDecoder: JSONDecoder {
+    static let `default` = GorillaDecoder()
+    
+    override init() {
+        super.init()
+        dateDecodingStrategy = .formatted(DateFormatter().then {
+            $0.locale = Locale(identifier: "en_US_POSIX")
+            $0.dateFormat = "yyyy-MM-dd"
+        })
+    }
+}
