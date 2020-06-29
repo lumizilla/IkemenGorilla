@@ -11,11 +11,13 @@ import RxSwift
 
 final class ZooDetailReactor: Reactor {
     enum Action {
+        case loadZooDetail
         case loadAnimals
         case loadPosts
         case tapHeartButton
     }
     enum Mutation {
+        case setZooDetail(ZooDetail)
         case setAnimalCellReactors([Animal])
         case setPostCellReactors([Post])
         case setIsFan(Bool)
@@ -23,10 +25,9 @@ final class ZooDetailReactor: Reactor {
     
     struct State {
         let zoo: Zoo
+        var zooDetail: ZooDetail?
         var animalCellReactors: [ZooDetailAnimalCellReactor] = []
         var postCellReactors: [ZooDetailPostCellReactor] = []
-        var isFan: Bool = false
-        var numberOfFans: Int = 312
         
         init(zoo: Zoo) {
             self.zoo = zoo
@@ -43,13 +44,21 @@ final class ZooDetailReactor: Reactor {
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
+        case .loadZooDetail:
+            return loadZooDetail().map(Mutation.setZooDetail)
         case .loadAnimals:
             return loadAnimals().map(Mutation.setAnimalCellReactors)
         case .loadPosts:
             return loadPosts().map(Mutation.setPostCellReactors)
         case .tapHeartButton:
-            return .just(.setIsFan(!currentState.isFan))
+            guard let isFavorite = currentState.zooDetail?.isFavorite else { return .empty() }
+            return .just(.setIsFan(!isFavorite))
         }
+    }
+    
+    private func loadZooDetail() -> Observable<ZooDetail> {
+        logger.warning("no user id")
+        return provider.zooService.getZoo(zooId: currentState.zoo.id, userId: "user01").asObservable()
     }
     
     private func loadAnimals() -> Observable<[Animal]> {
@@ -63,12 +72,14 @@ final class ZooDetailReactor: Reactor {
     func reduce(state: State, mutation: Mutation) -> State {
         var state = state
         switch mutation {
+        case .setZooDetail(let zooDetail):
+            state.zooDetail = zooDetail
         case .setAnimalCellReactors(let animals):
             state.animalCellReactors = animals.map { ZooDetailAnimalCellReactor(animal: $0) }
         case .setPostCellReactors(let posts):
             state.postCellReactors = posts.map { ZooDetailPostCellReactor(post: $0) }
         case .setIsFan(let isFan):
-            state.isFan = isFan
+            state.zooDetail?.isFavorite = isFan
         }
         return state
     }
