@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+struct ZooAnimal: Codable {
+    let id: String
+    let name: String
+    let iconUrl: String
+    let isFan: Bool
+    
+    enum CodingKeys: String, CodingKey {
+        case id, name
+        case iconUrl = "icon_url"
+        case isFan = "is_fan"
+    }
+}
