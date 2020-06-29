@@ -52,7 +52,7 @@ final class MapReactor: Reactor {
     }
     
     private func loadZoos() -> Observable<[Zoo]> {
-        return .just(TestData.zoos(count: 20))
+        return provider.zooService.getZoos().asObservable()
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
