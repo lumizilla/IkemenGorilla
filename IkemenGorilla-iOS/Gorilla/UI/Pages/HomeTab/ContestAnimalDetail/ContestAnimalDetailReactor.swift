@@ -32,8 +32,10 @@ final class ContestAnimalDetailReactor: Reactor {
     }
     
     let initialState: ContestAnimalDetailReactor.State
+    private let provider: ServiceProviderType
     
-    init(entry: Entry) {
+    init(provider: ServiceProviderType, entry: Entry) {
+        self.provider = provider
         initialState = State(entry: entry)
     }
     
