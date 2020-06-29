@@ -24,7 +24,7 @@ final class HomeReactor: Reactor {
     }
     
     func createHomeCurrentContestListReactor() -> HomeCurrentContestListReactor {
-        return HomeCurrentContestListReactor()
+        return HomeCurrentContestListReactor(provider: provider)
     }
     
     func createHomePastContestListReactor() -> HomePastContestListReactor {
