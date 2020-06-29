@@ -12,6 +12,7 @@ enum ZooTarget {
     case getZoos
     case getZoo(zooId: String, userId: String)
     case getAnimals(zooId: String, page: Int, userId: String)
+    case getPosts(zooId: String, page: Int)
 }
 
 extension ZooTarget: TargetType {
@@ -23,12 +24,14 @@ extension ZooTarget: TargetType {
             return "/zoos/\(zooId)"
         case .getAnimals(let zooId, _, _):
             return "/zoos/\(zooId)/animals"
+        case .getPosts(let zooId, _):
+            return "/zoos/\(zooId)/posts"
         }
     }
     
     var method: Method {
         switch self {
-        case .getZoos, .getZoo, .getAnimals:
+        case .getZoos, .getZoo, .getAnimals, .getPosts:
             return .get
         }
     }
@@ -46,6 +49,11 @@ extension ZooTarget: TargetType {
                 "user_id": userId
                 ] as [String : Any]
             return .requestParameters(parameters: parameters, encoding: parameterEncoding)
+        case .getPosts(_, let page):
+            let parameters = [
+                "page": page
+            ]
+            return .requestParameters(parameters: parameters, encoding: parameterEncoding)
         case .getZoos:
             return .requestPlain
         }
@@ -53,7 +61,7 @@ extension ZooTarget: TargetType {
     
     var parameterEncoding: ParameterEncoding {
         switch self {
-        case .getZoo, .getAnimals:
+        case .getZoo, .getAnimals, .getPosts:
             return URLEncoding.queryString
         case .getZoos:
             return URLEncoding.default
