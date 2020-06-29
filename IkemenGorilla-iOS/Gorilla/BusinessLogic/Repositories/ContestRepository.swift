@@ -16,7 +16,7 @@ protocol ContestRepositoryType {
     func getPosts(contestId: String, page: Int) -> Single<[Post]>
     func getAwards(contestId: String) -> Single<[Award]>
     func getResults(contestId: String) -> Single<[ContestResult]>
-    func getAnimal(contestId: String, animalId: String, userId: String) -> Single<Animal>
+    func getAnimal(contestId: String, animalId: String, userId: String) -> Single<ContestAnimalDetailResponse>
 }
 
 final class ContestRepository: ContestRepositoryType {
@@ -90,10 +90,10 @@ final class ContestRepository: ContestRepositoryType {
             })
     }
     
-    func getAnimal(contestId: String, animalId: String, userId: String) -> Single<Animal> {
+    func getAnimal(contestId: String, animalId: String, userId: String) -> Single<ContestAnimalDetailResponse> {
         networkProvider.rx.request(.getAnimal(contestId: contestId, animalId: animalId, userId: userId))
             .filterSuccessfulStatusCodes()
-            .map(Animal.self, using: decoder)
+            .map(ContestAnimalDetailResponse.self, using: decoder)
             .do(onError: { error in
                 logger.error(error)
             })
