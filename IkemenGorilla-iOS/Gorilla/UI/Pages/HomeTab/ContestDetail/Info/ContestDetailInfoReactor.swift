@@ -54,7 +54,7 @@ final class ContestDetailInfoReactor: Reactor {
     }
     
     private func loadContestDetail() -> Observable<ContestDetail> {
-        return .just(TestData.contestDetail())
+        return provider.contestService.getContest(contestId: currentState.contest.id).asObservable()
     }
     
     private func loadSponsors() -> Observable<[Sponsor]> {
