@@ -11,7 +11,7 @@ import RxSwift
 protocol ZooRepositoryType {
     func getZoos() -> Single<[Zoo]>
     func getZoo(zooId: String, userId: String) -> Single<ZooDetail>
-    func getAnimals(zooId: String, page: Int, userId: String) -> Single<[Animal]>
+    func getAnimals(zooId: String, page: Int, userId: String) -> Single<[ZooAnimal]>
 }
 
 final class ZooRepository: ZooRepositoryType {
@@ -40,10 +40,10 @@ final class ZooRepository: ZooRepositoryType {
             })
     }
     
-    func getAnimals(zooId: String, page: Int, userId: String) -> Single<[Animal]> {
+    func getAnimals(zooId: String, page: Int, userId: String) -> Single<[ZooAnimal]> {
         networkProvider.rx.request(.getAnimals(zooId: zooId, page: page, userId: userId))
             .filterSuccessfulStatusCodes()
-            .map([Animal].self, using: decoder)
+            .map([ZooAnimal].self, using: decoder)
             .do(onError: { error in
                 logger.error(error)
             })

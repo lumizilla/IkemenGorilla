@@ -18,7 +18,7 @@ final class ZooDetailReactor: Reactor {
     }
     enum Mutation {
         case setZooDetail(ZooDetail)
-        case setAnimalCellReactors([Animal])
+        case setAnimalCellReactors([ZooAnimal])
         case setPostCellReactors([Post])
         case setIsFan(Bool)
     }
@@ -61,8 +61,9 @@ final class ZooDetailReactor: Reactor {
         return provider.zooService.getZoo(zooId: currentState.zoo.id, userId: "user01").asObservable()
     }
     
-    private func loadAnimals() -> Observable<[Animal]> {
-        return .just(TestData.animals(count: 8))
+    private func loadAnimals() -> Observable<[ZooAnimal]> {
+        logger.warning("no user id")
+        return provider.zooService.getAnimals(zooId: currentState.zoo.id, page: 0, userId: "user01").asObservable()
     }
     
     private func loadPosts() -> Observable<[Post]> {
@@ -74,8 +75,8 @@ final class ZooDetailReactor: Reactor {
         switch mutation {
         case .setZooDetail(let zooDetail):
             state.zooDetail = zooDetail
-        case .setAnimalCellReactors(let animals):
-            state.animalCellReactors = animals.map { ZooDetailAnimalCellReactor(animal: $0) }
+        case .setAnimalCellReactors(let zooAnimals):
+            state.animalCellReactors = zooAnimals.map { ZooDetailAnimalCellReactor(zooAnimal: $0) }
         case .setPostCellReactors(let posts):
             state.postCellReactors = posts.map { ZooDetailPostCellReactor(post: $0) }
         case .setIsFan(let isFan):
