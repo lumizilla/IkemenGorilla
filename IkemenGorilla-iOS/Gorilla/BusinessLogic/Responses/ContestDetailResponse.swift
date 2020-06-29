@@ -26,7 +26,7 @@ struct ContestDetail: Codable {
         case catchCopy = "catch_copy"
         case imageUrl = "image_url"
         case numberOfEntries = "number_of_entries"
-        case numberOfVotedPeople = "number_of_voted_people"
+        case numberOfVotedPeople = "number_people_that_voted"
         case numberOfVotes = "number_of_votes"
     }
 }
