@@ -20,6 +20,7 @@ enum ContestTarget {
     case getAnimals(contestId: String, page: Int)
     case getPosts(contestId: String, page: Int)
     case getAwards(contestId: String)
+    case getResults(contestId: String)
 }
 
 extension ContestTarget: TargetType {
@@ -37,12 +38,14 @@ extension ContestTarget: TargetType {
             return "/contests/\(contestId)/posts"
         case .getAwards(let contestId):
             return "/contests/\(contestId)/awards"
+        case .getResults(let contestId):
+            return "/contests/\(contestId)/results"
         }
     }
     
     var method: Method {
         switch self {
-        case .getContests, .getContest, .getSponsors, .getAnimals, .getPosts, .getAwards:
+        case .getContests, .getContest, .getSponsors, .getAnimals, .getPosts, .getAwards, .getResults:
             return .get
         }
     }
@@ -65,7 +68,7 @@ extension ContestTarget: TargetType {
                 "page": page
             ]
             return .requestParameters(parameters: parameters, encoding: parameterEncoding)
-        case .getContest, .getSponsors, .getAwards:
+        case .getContest, .getSponsors, .getAwards, .getResults:
             return .requestPlain
         }
     }
@@ -74,7 +77,7 @@ extension ContestTarget: TargetType {
         switch self {
         case .getContests, .getAnimals, .getPosts:
             return URLEncoding.queryString
-        case .getContest, .getSponsors, .getAwards:
+        case .getContest, .getSponsors, .getAwards, .getResults:
             return URLEncoding.default
         }
     }
