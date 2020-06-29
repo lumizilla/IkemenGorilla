@@ -57,7 +57,7 @@ final class ContestDetailResultReactor: Reactor {
     }
     
     private func loadContestResults() -> Observable<[ContestResult]> {
-        return .just(TestData.contestResults(count: 12))
+        return provider.contestService.getResults(contestId: currentState.contest.id).asObservable()
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
