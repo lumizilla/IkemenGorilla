@@ -15,16 +15,16 @@ class TabBarController: UITabBarController, TransitionPresentable {
         static let tabBarSelectedImages: [UIImage] = [#imageLiteral(resourceName: "home_filled"), #imageLiteral(resourceName: "map_filled"), #imageLiteral(resourceName: "plus_filled"), #imageLiteral(resourceName: "search_filled"), #imageLiteral(resourceName: "user_filled")]
     }
     
-//    private let provider: ServiceProviderType
+    private let provider: ServiceProviderType
     
-//    init(provider: ServiceProviderType) {
-//        self.provider = provider
-//        super.init(nibName: nil, bundle: nil)
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
+    init(provider: ServiceProviderType) {
+        self.provider = provider
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
