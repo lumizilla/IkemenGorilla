@@ -6,4 +6,21 @@
 //  Copyright © 2020 admin. All rights reserved.
 //
 
-import Foundation
+import RxSwift
+
+protocol ZooServiceType {
+    func getZoos() -> Single<[Zoo]>
+}
+
+final class ZooService: BaseService, ZooServiceType {
+    private let zooRepository: ZooRepositoryType
+    
+    init(provider: ServiceProviderType, zooRepository: ZooRepositoryType) {
+        self.zooRepository = zooRepository
+        super.init(provider: provider)
+    }
+    
+    func getZoos() -> Single<[Zoo]> {
+        zooRepository.getZoos()
+    }
+}
