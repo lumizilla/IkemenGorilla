@@ -62,7 +62,7 @@ final class ContestAnimalDetailReactor: Reactor {
     }
     
     private func loadPosts() -> Observable<[Post]> {
-        return .just(TestData.posts(count: 12))
+        return provider.animalService.getPosts(animalId: currentState.entry.animalId, page: 0).asObservable()
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
