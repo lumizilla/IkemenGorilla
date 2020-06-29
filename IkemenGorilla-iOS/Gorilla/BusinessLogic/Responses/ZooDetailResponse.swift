@@ -16,7 +16,7 @@ struct ZooDetail: Codable {
     let longitude: Double
     let imageUrl: String
     let description: String
-    let isFavorite: Bool
+    var isFavorite: Bool
     let numberOfFavorites: Int
     
     enum CodingKeys: String, CodingKey {
