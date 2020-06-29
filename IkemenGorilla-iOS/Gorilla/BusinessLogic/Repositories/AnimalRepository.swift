@@ -9,7 +9,7 @@
 import RxSwift
 
 protocol AnimalRepositoryType {
-    func getPosts(animalId: String, page: Int)
+    func getPosts(animalId: String, page: Int) -> Single<[Post]>
 }
 
 final class AnimalRepository: AnimalRepositoryType {
@@ -20,7 +20,7 @@ final class AnimalRepository: AnimalRepositoryType {
         self.networkProvider = networkProvider
     }
     
-    func getPosts(animalId: String, page: Int) {
+    func getPosts(animalId: String, page: Int) -> Single<[Post]> {
         networkProvider.rx.request(.getPosts(animalId: animalId, page: page))
             .filterSuccessfulStatusCodes()
             .map([Post].self, using: decoder)
