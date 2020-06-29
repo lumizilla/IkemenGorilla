@@ -13,6 +13,7 @@ protocol ContestRepositoryType {
     func getContest(contestId: String) -> Single<ContestDetail>
     func getSponsors(contestId: String) -> Single<[Sponsor]>
     func getAnimals(contestId: String, page: Int) -> Single<[Entry]>
+    func getPosts(contestId: String, page: Int) -> Single<[Post]>
 }
 
 final class ContestRepository: ContestRepositoryType {
@@ -54,6 +55,15 @@ final class ContestRepository: ContestRepositoryType {
         networkProvider.rx.request(.getAnimals(contestId: contestId, page: page))
             .filterSuccessfulStatusCodes()
             .map([Entry].self, using: decoder)
+            .do(onError: { error in
+                logger.error(error)
+            })
+    }
+    
+    func getPosts(contestId: String, page: Int) -> Single<[Post]> {
+        networkProvider.rx.request(.getPosts(contestId: contestId, page: page))
+            .filterSuccessfulStatusCodes()
+            .map([Post].self, using: decoder)
             .do(onError: { error in
                 logger.error(error)
             })
