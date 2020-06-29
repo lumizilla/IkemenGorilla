@@ -15,7 +15,13 @@ final class HomeReactor: Reactor {
     
     struct State {}
     
-    let initialState = HomeReactor.State()
+    let initialState: State
+    private let provider: ServiceProviderType
+    
+    init(provider: ServiceProviderType) {
+        self.provider = provider
+        initialState = State()
+    }
     
     func createHomeCurrentContestListReactor() -> HomeCurrentContestListReactor {
         return HomeCurrentContestListReactor()

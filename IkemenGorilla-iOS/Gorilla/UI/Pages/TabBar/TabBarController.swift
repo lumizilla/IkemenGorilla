@@ -37,7 +37,7 @@ class TabBarController: UITabBarController, TransitionPresentable {
     private func setupViewControllers() {
         viewControllers = [
             UINavigationController(rootViewController: HomeViewController().then {
-                $0.reactor = HomeReactor()
+                $0.reactor = HomeReactor(provider: provider)
             }),
             UINavigationController(rootViewController: MapViewController().then {
                 $0.reactor = MapReactor()
