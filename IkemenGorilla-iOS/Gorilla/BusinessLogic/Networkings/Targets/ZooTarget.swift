@@ -11,6 +11,7 @@ import Moya
 enum ZooTarget {
     case getZoos
     case getZoo(zooId: String, userId: String)
+    case getAnimals(zooId: String, page: Int, userId: String)
 }
 
 extension ZooTarget: TargetType {
@@ -20,12 +21,14 @@ extension ZooTarget: TargetType {
             return "/zoos"
         case .getZoo(let zooId, _):
             return "/zoos/\(zooId)"
+        case .getAnimals(let zooId, _, _):
+            return "/zoos/\(zooId)/animals"
         }
     }
     
     var method: Method {
         switch self {
-        case .getZoos, .getZoo:
+        case .getZoos, .getZoo, .getAnimals:
             return .get
         }
     }
@@ -37,6 +40,12 @@ extension ZooTarget: TargetType {
                 "user_id": userId
             ]
             return .requestParameters(parameters: parameters, encoding: parameterEncoding)
+        case .getAnimals(_ , let page, let userId):
+            let parameters = [
+                "page": page,
+                "user_id": userId
+                ] as [String : Any]
+            return .requestParameters(parameters: parameters, encoding: parameterEncoding)
         case .getZoos:
             return .requestPlain
         }
@@ -44,7 +53,7 @@ extension ZooTarget: TargetType {
     
     var parameterEncoding: ParameterEncoding {
         switch self {
-        case .getZoo:
+        case .getZoo, .getAnimals:
             return URLEncoding.queryString
         case .getZoos:
             return URLEncoding.default

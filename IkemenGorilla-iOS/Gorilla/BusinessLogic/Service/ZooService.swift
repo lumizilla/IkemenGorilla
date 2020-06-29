@@ -11,6 +11,7 @@ import RxSwift
 protocol ZooServiceType {
     func getZoos() -> Single<[Zoo]>
     func getZoo(zooId: String, userId: String) -> Single<ZooDetail>
+    func getAnimals(zooId: String, page: Int, userId: String) -> Single<[Animal]>
 }
 
 final class ZooService: BaseService, ZooServiceType {
@@ -27,5 +28,9 @@ final class ZooService: BaseService, ZooServiceType {
     
     func getZoo(zooId: String, userId: String) -> Single<ZooDetail> {
         zooRepository.getZoo(zooId: zooId, userId: userId)
+    }
+    
+    func getAnimals(zooId: String, page: Int, userId: String) -> Single<[Animal]> {
+        zooRepository.getAnimals(zooId: zooId, page: page, userId: userId)
     }
 }
