@@ -12,11 +12,13 @@ import RxSwift
 final class AnimalDetailReactor: Reactor {
     enum Action {
         case loadAnimal
+        case loadCurrentContest
         case loadPastContests
         case loadPost
     }
     enum Mutation {
         case setAnimal(Animal)
+        case setCurrentContest(Contest)
         case setPastContestCellReactors([Contest])
         case setPosts([Post])
     }
@@ -25,7 +27,7 @@ final class AnimalDetailReactor: Reactor {
         let zooAnimal: ZooAnimal
         var animal: Animal?
         let zooName: String = "東山動物園"
-        let currentContest: Contest = TestData.contest()
+        var currentContest: Contest?
         let numberOfVoted: Int = 312
         var pastContestCellReactors: [AnimalDetailPastContestCellReactor] = []
         var posts: [Post] = []
@@ -47,6 +49,8 @@ final class AnimalDetailReactor: Reactor {
         switch action {
         case .loadAnimal:
             return loadAnimal().map(Mutation.setAnimal)
+        case .loadCurrentContest:
+            return loadCurrentContest().map(Mutation.setCurrentContest)
         case .loadPastContests:
             return loadPastContests().map(Mutation.setPastContestCellReactors)
         case .loadPost:
@@ -57,6 +61,10 @@ final class AnimalDetailReactor: Reactor {
     private func loadAnimal() -> Observable<Animal> {
         logger.warning("no user id from AnimalDetailReactor")
         return provider.animalService.getAnimal(animalId: currentState.zooAnimal.id, userId: "user01").asObservable()
+    }
+    
+    private func loadCurrentContest() -> Observable<Contest> {
+        return .just(TestData.contest())
     }
     
     private func loadPastContests() -> Observable<[Contest]> {
@@ -72,6 +80,8 @@ final class AnimalDetailReactor: Reactor {
         switch mutation {
         case .setAnimal(let animal):
             state.animal = animal
+        case .setCurrentContest(let contest):
+            state.currentContest = contest
         case .setPastContestCellReactors(let contests):
             state.pastContestCellReactors = contests.map { AnimalDetailPastContestCellReactor(contest: $0) }
         case .setPosts(let posts):
