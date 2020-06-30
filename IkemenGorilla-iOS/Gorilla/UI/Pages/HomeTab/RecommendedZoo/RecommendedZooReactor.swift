@@ -24,7 +24,13 @@ final class RecommendedZooReactor: Reactor {
         var isLoading: Bool = false
     }
     
-    let initialState = RecommendedZooReactor.State()
+    let initialState: State
+    private let provider: ServiceProviderType
+    
+    init(provider: ServiceProviderType) {
+        self.provider = provider
+        initialState = State()
+    }
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {

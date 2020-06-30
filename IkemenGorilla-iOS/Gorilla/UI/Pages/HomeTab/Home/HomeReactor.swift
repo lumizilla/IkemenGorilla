@@ -40,7 +40,7 @@ final class HomeReactor: Reactor {
     }
     
     func createRecommendedZooReactor() -> RecommendedZooReactor {
-        return RecommendedZooReactor()
+        return RecommendedZooReactor(provider: provider)
     }
     
     func createContestDetailReactor(contest: Contest) -> ContestDetailReactor {
