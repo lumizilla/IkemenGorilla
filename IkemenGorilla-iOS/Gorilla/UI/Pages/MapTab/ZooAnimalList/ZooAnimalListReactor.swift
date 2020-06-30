@@ -1,5 +1,5 @@
 //
-//  ZooAnimalReactor.swift
+//  ZooAnimalListReactor.swift
 //  Gorilla
 //
 //  Created by admin on 2020/06/19.
