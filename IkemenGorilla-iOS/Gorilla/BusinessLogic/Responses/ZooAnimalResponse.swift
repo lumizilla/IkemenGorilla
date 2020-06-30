@@ -12,7 +12,7 @@ struct ZooAnimal: Codable {
     let id: String
     let name: String
     let iconUrl: String
-    let isFan: Bool
+    var isFan: Bool
     
     enum CodingKeys: String, CodingKey {
         case id, name
