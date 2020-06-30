@@ -18,7 +18,7 @@ final class AnimalDetailReactor: Reactor {
     }
     enum Mutation {
         case setAnimal(Animal)
-        case setCurrentContest(Contest)
+        case setCurrentContest(Contest?)
         case setPastContestCellReactors([Contest])
         case setPosts([Post])
     }
@@ -63,8 +63,8 @@ final class AnimalDetailReactor: Reactor {
         return provider.animalService.getAnimal(animalId: currentState.zooAnimal.id, userId: "user01").asObservable()
     }
     
-    private func loadCurrentContest() -> Observable<Contest> {
-        return .just(TestData.contest())
+    private func loadCurrentContest() -> Observable<Contest?> {
+        return provider.animalService.getContests(animalId: currentState.zooAnimal.id, status: .current).asObservable().map { $0.first }
     }
     
     private func loadPastContests() -> Observable<[Contest]> {
