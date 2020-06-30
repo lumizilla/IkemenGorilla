@@ -26,8 +26,10 @@ final class ZooAnimalListReactor: Reactor {
     }
     
     let initialState: State
+    private let provider: ServiceProviderType
 
-    init(zoo: Zoo) {
+    init(provider: ServiceProviderType, zoo: Zoo) {
+        self.provider = provider
         initialState = State(zoo: zoo)
     }
     
