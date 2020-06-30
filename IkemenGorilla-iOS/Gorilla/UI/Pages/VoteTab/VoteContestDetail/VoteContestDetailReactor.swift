@@ -47,7 +47,8 @@ final class VoteContestDetailReactor: Reactor {
     }
     
     private func loadEntries() -> Observable<[Entry]> {
-        return .just(TestData.entries(count: 8))
+        logger.warning("todo: paging from VoteContestDetailReactor")
+        return provider.contestService.getAnimals(contestId: currentState.contest.id, page: 0).asObservable()
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
