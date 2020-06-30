@@ -41,8 +41,7 @@ final class ZooAnimalListReactor: Reactor {
     }
     
     private func loadAnimals() -> Observable<[ZooAnimal]> {
-//        return .just(TestData.animals(count: 8))
-        return .empty()
+        return .just(TestData.zooAnimals(count: 8))
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
