@@ -14,7 +14,7 @@ final class ZooAnimalListReactor: Reactor {
         case loadAnimals
     }
     enum Mutation {
-        case setAnimalCellReactors([Animal])
+        case setAnimalCellReactors([ZooAnimal])
     }
     struct State {
         let zoo: Zoo
@@ -40,20 +40,21 @@ final class ZooAnimalListReactor: Reactor {
         }
     }
     
-    private func loadAnimals() -> Observable<[Animal]> {
-        return .just(TestData.animals(count: 8))
+    private func loadAnimals() -> Observable<[ZooAnimal]> {
+//        return .just(TestData.animals(count: 8))
+        return .empty()
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
         var state = state
         switch mutation {
-        case .setAnimalCellReactors(let animals):
-            state.animalCellReactors = animals.map { ZooAnimalCellReactor(animal: $0) }
+        case .setAnimalCellReactors(let zooAnimals):
+            state.animalCellReactors = zooAnimals.map { ZooAnimalCellReactor(zooAnimal: $0) }
         }
         return state
     }
     
     func createAnimalDetailReactor(indexPath: IndexPath) -> AnimalDetailReactor {
-        return AnimalDetailReactor(provider: provider, animal: currentState.animalCellReactors[indexPath.row].currentState.animal)
+        return AnimalDetailReactor(provider: provider, zooAnimal: currentState.animalCellReactors[indexPath.row].currentState.zooAnimal)
     }
 }
