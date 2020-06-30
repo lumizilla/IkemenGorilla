@@ -72,7 +72,8 @@ final class AnimalDetailReactor: Reactor {
     }
     
     private func loadPosts() -> Observable<[Post]> {
-        return .just(TestData.posts(count: 12))
+        logger.warning("todo: pagin")
+        return provider.animalService.getPosts(animalId: currentState.zooAnimal.id, page: 0).asObservable()
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
