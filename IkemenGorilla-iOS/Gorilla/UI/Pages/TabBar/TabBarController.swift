@@ -72,7 +72,7 @@ class TabBarController: UITabBarController, TransitionPresentable {
 extension TabBarController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         if viewController is DummyViewController {
-            showVoteContestPage(voteContestReactor: VoteContestReactor())
+            showVoteContestPage(voteContestReactor: VoteContestReactor(provider: provider))
             return false
         }
         return true
