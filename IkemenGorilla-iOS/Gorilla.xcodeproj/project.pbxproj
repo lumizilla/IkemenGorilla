@@ -50,6 +50,7 @@
 		84452A9924AB27220092F949 /* PostTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452A9824AB27220092F949 /* PostTarget.swift */; };
 		84452A9B24AB288F0092F949 /* PostRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452A9A24AB288F0092F949 /* PostRepository.swift */; };
 		84452A9D24AB297C0092F949 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452A9C24AB297C0092F949 /* PostService.swift */; };
+		84452A9F24AB2E7A0092F949 /* UserTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452A9E24AB2E7A0092F949 /* UserTarget.swift */; };
 		844EE1332484278F003369F2 /* PastContestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE1322484278F003369F2 /* PastContestCell.swift */; };
 		844EE135248427AF003369F2 /* PastContestCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE134248427AF003369F2 /* PastContestCellReactor.swift */; };
 		844EE137248427D7003369F2 /* PastContestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE136248427D7003369F2 /* PastContestViewController.swift */; };
@@ -244,6 +245,7 @@
 		84452A9824AB27220092F949 /* PostTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTarget.swift; sourceTree = "<group>"; };
 		84452A9A24AB288F0092F949 /* PostRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepository.swift; sourceTree = "<group>"; };
 		84452A9C24AB297C0092F949 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		84452A9E24AB2E7A0092F949 /* UserTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTarget.swift; sourceTree = "<group>"; };
 		844EE1322484278F003369F2 /* PastContestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestCell.swift; sourceTree = "<group>"; };
 		844EE134248427AF003369F2 /* PastContestCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestCellReactor.swift; sourceTree = "<group>"; };
 		844EE136248427D7003369F2 /* PastContestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestViewController.swift; sourceTree = "<group>"; };
@@ -980,6 +982,7 @@
 				84452A8624AA43980092F949 /* AnimalTarget.swift */,
 				84452A8C24AA4C1F0092F949 /* ZooTarget.swift */,
 				84452A9824AB27220092F949 /* PostTarget.swift */,
+				84452A9E24AB2E7A0092F949 /* UserTarget.swift */,
 			);
 			path = Targets;
 			sourceTree = "<group>";
@@ -1588,6 +1591,7 @@
 				84867855249B220700BCF94B /* MapZooCell.swift in Sources */,
 				84A99FFC2484FD900066863B /* Post.swift in Sources */,
 				84376CCA24A7DCFE00282F3C /* PostDetailCell.swift in Sources */,
+				84452A9F24AB2E7A0092F949 /* UserTarget.swift in Sources */,
 				84376CD724A84BE000282F3C /* MapSearchReactor.swift in Sources */,
 				8494CBDB249B6E7100E35E00 /* ZooDetailHeader.swift in Sources */,
 				847B37B4247992D300B48535 /* DeviceSize.swift in Sources */,
