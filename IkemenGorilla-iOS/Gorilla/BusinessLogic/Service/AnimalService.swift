@@ -11,6 +11,7 @@ import RxSwift
 protocol AnimalServiceType {
     func getPosts(animalId: String, page: Int) -> Single<[Post]>
     func getAnimal(animalId: String, userId: String) -> Single<Animal>
+    func getContests(animalId: String, status: ContestStatus) -> Single<[Contest]>
 }
 
 final class AnimalService: BaseService, AnimalServiceType {
@@ -27,5 +28,9 @@ final class AnimalService: BaseService, AnimalServiceType {
     
     func getAnimal(animalId: String, userId: String) -> Single<Animal> {
         animalRepository.getAnimal(animalId: animalId, userId: userId)
+    }
+    
+    func getContests(animalId: String, status: ContestStatus) -> Single<[Contest]> {
+        animalRepository.getContests(animalId: animalId, status: status)
     }
 }

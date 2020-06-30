@@ -11,6 +11,7 @@ import Moya
 enum AnimalTarget {
     case getPosts(animalId: String, page: Int)
     case getAnimal(animalId: String, userId: String)
+    case getContests(animalId: String, status: ContestStatus)
 }
 
 extension AnimalTarget: TargetType {
@@ -20,12 +21,14 @@ extension AnimalTarget: TargetType {
             return "/animals/\(animalId)/posts"
         case .getAnimal(let animalId, _):
             return "/animals/\(animalId)"
+        case .getContests(let animalId, _):
+            return "/animals/\(animalId)/contests"
         }
     }
     
     var method: Method {
         switch self {
-        case .getPosts, .getAnimal:
+        case .getPosts, .getAnimal, .getContests:
             return .get
         }
     }
@@ -42,12 +45,17 @@ extension AnimalTarget: TargetType {
                 "user_id": userId
             ]
             return .requestParameters(parameters: parameters, encoding: parameterEncoding)
+        case .getContests(_, let status):
+            let parameters = [
+                "status": status
+            ]
+            return .requestParameters(parameters: parameters, encoding: parameterEncoding)
         }
     }
     
     var parameterEncoding: ParameterEncoding {
         switch self {
-        case .getPosts, .getAnimal:
+        case .getPosts, .getAnimal, .getContests:
             return URLEncoding.queryString
         }
     }

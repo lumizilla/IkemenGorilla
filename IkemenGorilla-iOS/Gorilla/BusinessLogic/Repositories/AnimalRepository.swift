@@ -11,6 +11,7 @@ import RxSwift
 protocol AnimalRepositoryType {
     func getPosts(animalId: String, page: Int) -> Single<[Post]>
     func getAnimal(animalId: String, userId: String) -> Single<Animal>
+    func getContests(animalId: String, status: ContestStatus) -> Single<[Contest]>
 }
 
 final class AnimalRepository: AnimalRepositoryType {
@@ -34,6 +35,15 @@ final class AnimalRepository: AnimalRepositoryType {
         networkProvider.rx.request(.getAnimal(animalId: animalId, userId: userId))
             .filterSuccessfulStatusCodes()
             .map(Animal.self, using: decoder)
+            .do(onError: { error in
+                logger.error(error)
+            })
+    }
+    
+    func getContests(animalId: String, status: ContestStatus) -> Single<[Contest]> {
+        networkProvider.rx.request(.getContests(animalId: animalId, status: status))
+            .filterSuccessfulStatusCodes()
+            .map([Contest].self, using: decoder)
             .do(onError: { error in
                 logger.error(error)
             })
