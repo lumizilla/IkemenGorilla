@@ -10,6 +10,7 @@ import RxSwift
 
 protocol PostRepositoryType {
     func getPosts(page: Int) -> Single<[Post]>
+    func searchPosts(keyword: String) -> Single<[Post]>
 }
 
 final class PostRepository: PostRepositoryType {
@@ -22,6 +23,15 @@ final class PostRepository: PostRepositoryType {
     
     func getPosts(page: Int) -> Single<[Post]> {
         networkProvider.rx.request(.getPosts(page: page))
+            .filterSuccessfulStatusCodes()
+            .map([Post].self, using: decoder)
+            .do(onError: { error in
+                logger.error(error)
+            })
+    }
+    
+    func searchPosts(keyword: String) -> Single<[Post]> {
+        networkProvider.rx.request(.searchPosts(keyword: keyword))
             .filterSuccessfulStatusCodes()
             .map([Post].self, using: decoder)
             .do(onError: { error in

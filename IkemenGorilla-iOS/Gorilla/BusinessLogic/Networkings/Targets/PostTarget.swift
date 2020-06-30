@@ -10,6 +10,7 @@ import Moya
 
 enum PostTarget {
     case getPosts(page: Int)
+    case searchPosts(keyword: String)
 }
 
 extension PostTarget: TargetType {
@@ -17,12 +18,14 @@ extension PostTarget: TargetType {
         switch self {
         case .getPosts(_):
             return "/posts"
+        case .searchPosts(_):
+            return "/search"
         }
     }
     
     var method: Method {
         switch self {
-        case .getPosts:
+        case .getPosts, .searchPosts:
             return .get
         }
     }
@@ -34,12 +37,17 @@ extension PostTarget: TargetType {
                 "page": page
             ]
             return .requestParameters(parameters: parameters, encoding: parameterEncoding)
+        case .searchPosts(let keyword):
+            let parameters = [
+                "query": keyword
+            ]
+            return .requestParameters(parameters: parameters, encoding: parameterEncoding)
         }
     }
     
     var parameterEncoding: ParameterEncoding {
         switch self {
-        case .getPosts:
+        case .getPosts, .searchPosts:
             return URLEncoding.queryString
         }
     }

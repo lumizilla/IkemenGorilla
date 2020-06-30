@@ -10,6 +10,7 @@ import RxSwift
 
 protocol PostServiceType {
     func getPosts(page: Int) -> Single<[Post]>
+    func searchPosts(keyword: String) -> Single<[Post]>
 }
 
 final class PostService: BaseService, PostServiceType {
@@ -22,5 +23,9 @@ final class PostService: BaseService, PostServiceType {
     
     func getPosts(page: Int) -> Single<[Post]> {
         postRepository.getPosts(page: page)
+    }
+    
+    func searchPosts(keyword: String) -> Single<[Post]> {
+        postRepository.searchPosts(keyword: keyword)
     }
 }
