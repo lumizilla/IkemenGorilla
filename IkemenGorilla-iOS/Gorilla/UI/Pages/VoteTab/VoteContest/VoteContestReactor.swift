@@ -51,6 +51,6 @@ final class VoteContestReactor: Reactor {
     }
     
     func createVoteContestDetailReactor(indexPath: IndexPath) -> VoteContestDetailReactor {
-        return VoteContestDetailReactor(contest: currentState.contestCellReactors[indexPath.row].currentState.contest)
+        return VoteContestDetailReactor(provider: provider, contest: currentState.contestCellReactors[indexPath.row].currentState.contest)
     }
 }

@@ -30,8 +30,10 @@ final class VoteContestDetailReactor: Reactor {
     }
     
     let initialState: State
+    private let provider: ServiceProviderType
     
-    init(contest: Contest) {
+    init(provider: ServiceProviderType, contest: Contest) {
+        self.provider = provider
         initialState = State(contest: contest)
     }
     
