@@ -211,7 +211,6 @@ struct TestData: TestDataType {
             description: "普段は乾草か牧草かお手紙を食べています．いとこは基本全員イギリス南東部にいます．自分だけ日本にきちゃいました．指の数は前が2本，後ろが2本です．いいでしょ．寝るときはふせて寝ます．仰向けにはなりません．",
             numberOfFans: 312,
             isFan: false,
-            isVotedToday: false,
             zooName: "東山動物園"
         )
     }
