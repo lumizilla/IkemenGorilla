@@ -13,6 +13,7 @@ protocol ZooServiceType {
     func getZoo(zooId: String, userId: String) -> Single<ZooDetail>
     func getAnimals(zooId: String, page: Int, userId: String) -> Single<[ZooAnimal]>
     func getPosts(zooId: String, page: Int) -> Single<[Post]>
+    func getRecommendedZoos() -> Single<[Zoo]>
 }
 
 final class ZooService: BaseService, ZooServiceType {
@@ -37,5 +38,9 @@ final class ZooService: BaseService, ZooServiceType {
     
     func getPosts(zooId: String, page: Int) -> Single<[Post]> {
         zooRepository.getPosts(zooId: zooId, page: page)
+    }
+    
+    func getRecommendedZoos() -> Single<[Zoo]> {
+        zooRepository.getRecommendedZoos()
     }
 }

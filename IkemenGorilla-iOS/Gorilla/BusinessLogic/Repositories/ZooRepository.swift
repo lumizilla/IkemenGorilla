@@ -13,6 +13,7 @@ protocol ZooRepositoryType {
     func getZoo(zooId: String, userId: String) -> Single<ZooDetail>
     func getAnimals(zooId: String, page: Int, userId: String) -> Single<[ZooAnimal]>
     func getPosts(zooId: String, page: Int) -> Single<[Post]>
+    func getRecommendedZoos() -> Single<[Zoo]>
 }
 
 final class ZooRepository: ZooRepositoryType {
@@ -54,6 +55,15 @@ final class ZooRepository: ZooRepositoryType {
         networkProvider.rx.request(.getPosts(zooId: zooId, page: page))
             .filterSuccessfulStatusCodes()
             .map([Post].self, using: decoder)
+            .do(onError: { error in
+                logger.error(error)
+            })
+    }
+    
+    func getRecommendedZoos() -> Single<[Zoo]> {
+        networkProvider.rx.request(.getRecommendedZoos)
+            .filterSuccessfulStatusCodes()
+            .map([Zoo].self, using: decoder)
             .do(onError: { error in
                 logger.error(error)
             })
