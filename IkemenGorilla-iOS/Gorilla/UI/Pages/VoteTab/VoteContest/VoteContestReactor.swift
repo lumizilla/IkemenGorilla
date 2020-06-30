@@ -21,7 +21,13 @@ final class VoteContestReactor: Reactor {
         var contestCellReactors: [VoteContestCellReactor] = []
     }
     
-    let initialState: State = State()
+    let initialState: State
+    private let provider: ServiceProviderType
+    
+    init(provider: ServiceProviderType) {
+        self.provider = provider
+        initialState = State()
+    }
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
@@ -31,7 +37,8 @@ final class VoteContestReactor: Reactor {
     }
     
     private func loadContest() -> Observable<[Contest]> {
-        return .just(TestData.contests(count: 8))
+        logger.warning("todo: paging from VoteContestReactor")
+        return provider.contestService.getContests(status: .current, page: 0).asObservable()
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
@@ -44,6 +51,6 @@ final class VoteContestReactor: Reactor {
     }
     
     func createVoteContestDetailReactor(indexPath: IndexPath) -> VoteContestDetailReactor {
-        return VoteContestDetailReactor(contest: currentState.contestCellReactors[indexPath.row].currentState.contest)
+        return VoteContestDetailReactor(provider: provider, contest: currentState.contestCellReactors[indexPath.row].currentState.contest)
     }
 }

@@ -29,8 +29,10 @@ final class ContestDetailEntryReactor: Reactor {
     }
     
     let initialState: ContestDetailEntryReactor.State
+    private let provider: ServiceProviderType
     
-    init(contest: Contest) {
+    init(provider: ServiceProviderType, contest: Contest) {
+        self.provider = provider
         initialState = State(contest: contest)
     }
     
@@ -47,7 +49,7 @@ final class ContestDetailEntryReactor: Reactor {
     }
     
     private func load() -> Observable<[Entry]> {
-        return .just(TestData.entries(count: 8))
+        return provider.contestService.getAnimals(contestId: currentState.contest.id, page: 0).asObservable()
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
@@ -62,6 +64,6 @@ final class ContestDetailEntryReactor: Reactor {
     }
     
     func createContestAnimalDetailReactor(indexPath: IndexPath) -> ContestAnimalDetailReactor {
-        return ContestAnimalDetailReactor(entry: currentState.entryCellReactors[indexPath.row].currentState.entry)
+        return ContestAnimalDetailReactor(provider: provider, entry: currentState.entryCellReactors[indexPath.row].currentState.entry, contestId: currentState.contest.id)
     }
 }

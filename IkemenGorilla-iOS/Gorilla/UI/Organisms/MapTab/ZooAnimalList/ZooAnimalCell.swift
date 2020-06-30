@@ -82,19 +82,19 @@ final class ZooAnimalCell: UICollectionViewCell, View, ViewConstructor {
             .disposed(by: disposeBag)
         
         // State
-        reactor.state.map { $0.animal.iconUrl }
+        reactor.state.map { $0.zooAnimal.iconUrl }
             .distinctUntilChanged()
             .bind { [weak self] iconUrl in
                 self?.imageView.setImage(imageUrl: iconUrl)
             }
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.animal.name }
+        reactor.state.map { $0.zooAnimal.name }
             .distinctUntilChanged()
             .bind(to: animalNameLabel.rx.text)
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.animal.isFan }
+        reactor.state.map { $0.zooAnimal.isFan }
             .distinctUntilChanged()
             .bind(to: fanButton.rx.isFan)
             .disposed(by: disposeBag)

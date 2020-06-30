@@ -11,6 +11,7 @@ import Foundation
 protocol TestDataType {
     static func contest() -> Contest
     static func contests(count: Int) -> [Contest]
+    static func contestDetail() -> ContestDetail
     static func zoo() -> Zoo
     static func zoos(count: Int) -> [Zoo]
     static func sponsor() -> Sponsor
@@ -25,6 +26,8 @@ protocol TestDataType {
     static func contestResults(count: Int) -> [ContestResult]
     static func animal() -> Animal
     static func animals(count: Int) -> [Animal]
+    static func zooAnimal() -> ZooAnimal
+    static func zooAnimals(count: Int) -> [ZooAnimal]
     /*
     static func profile() -> Profile
     static func profiles(count: Int) -> [Profile]
@@ -43,16 +46,28 @@ struct TestData: TestDataType {
             end: dateFromString(from: "2020-05-30"),
             status: "開催中",
             catchCopy: "ワシが一番イケメンやで",
+            imageUrl: "https://images.unsplash.com/photo-1581281863883-2469417a1668?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=989&q=80"
+        )
+    }
+    
+    static func contests(count: Int) -> [Contest] {
+        return (0 ..< count).map { _ in contest() }
+    }
+    
+    static func contestDetail() -> ContestDetail {
+        return ContestDetail(
+            id: testID(),
+            name: "イケメンゴリラコンテスト",
+            start: dateFromString(from: "2020-05-01"),
+            end: dateFromString(from: "2020-05-30"),
+            status: "開催中",
+            catchCopy: "ワシが一番イケメンやで",
             description: "一番イケメンなゴリラは誰だ！！！人々を一番キュンキュンさせるゴリラは誰なのか！全国から数々のイケメンゴリラが遂に集結．決戦のときがやってきた！",
             imageUrl: "https://images.unsplash.com/photo-1581281863883-2469417a1668?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=989&q=80",
             numberOfEntries: 16,
             numberOfVotedPeople: 121,
             numberOfVotes: 382
         )
-    }
-    
-    static func contests(count: Int) -> [Contest] {
-        return (0 ..< count).map { _ in contest() }
     }
     
     static func zoo() -> Zoo {
@@ -196,12 +211,25 @@ struct TestData: TestDataType {
             description: "普段は乾草か牧草かお手紙を食べています．いとこは基本全員イギリス南東部にいます．自分だけ日本にきちゃいました．指の数は前が2本，後ろが2本です．いいでしょ．寝るときはふせて寝ます．仰向けにはなりません．",
             numberOfFans: 312,
             isFan: false,
-            isVotedToday: false
+            zooName: "東山動物園"
         )
     }
     
     static func animals(count: Int) -> [Animal] {
         return (0 ..< count).map { _ in animal() }
+    }
+    
+    static func zooAnimal() -> ZooAnimal {
+        return ZooAnimal(
+            id: testID(),
+            name: "ボム",
+            iconUrl: "https://images.unsplash.com/photo-1484557985045-edf25e08da73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
+            isFan: false
+        )
+    }
+    
+    static func zooAnimals(count: Int) -> [ZooAnimal] {
+        return (0 ..< count).map { _ in zooAnimal() }
     }
     
     // MARK: - Private functions

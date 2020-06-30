@@ -134,7 +134,7 @@ final class ZooDetailHeader: UIView, View, ViewConstructor {
             }
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.isFan }
+        reactor.state.map { $0.zooDetail?.isFavorite ?? true }
             .distinctUntilChanged()
             .bind(to: heartButton.rx.isSelected)
             .disposed(by: disposeBag)
@@ -144,7 +144,7 @@ final class ZooDetailHeader: UIView, View, ViewConstructor {
             .bind(to: zooNameLabel.rx.text)
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.numberOfFans }
+        reactor.state.map { $0.zooDetail?.numberOfFavorites ?? 0 }
             .distinctUntilChanged()
             .map { numberOfFans in "\(numberOfFans)" }
             .bind(to: heartNumberView.numberLabel.rx.text)

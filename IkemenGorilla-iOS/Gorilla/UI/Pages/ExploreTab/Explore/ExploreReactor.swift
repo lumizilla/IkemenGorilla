@@ -22,7 +22,13 @@ final class ExploreReactor: Reactor {
         var posts: [Post] = []
     }
     
-    var initialState: State = State()
+    var initialState: State
+    private let provider: ServiceProviderType
+    
+    init(provider: ServiceProviderType) {
+        self.provider = provider
+        initialState = State()
+    }
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
@@ -32,7 +38,8 @@ final class ExploreReactor: Reactor {
     }
     
     private func loadPosts() -> Observable<[Post]> {
-        return .just(TestData.posts(count: 12))
+        logger.warning("todo: paging from ExploreReactor")
+        return provider.postService.getPosts(page: 0).asObservable()
     }
     
     func reduce(state: State, mutation: Mutation) -> State {

@@ -27,7 +27,13 @@ final class MapReactor: Reactor {
         var clusterAnnotation: MKClusterAnnotation?
     }
     
-    let initialState = State()
+    let initialState: State
+    private let provider: ServiceProviderType
+    
+    init(provider: ServiceProviderType) {
+        self.provider = provider
+        initialState = State()
+    }
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
@@ -46,7 +52,7 @@ final class MapReactor: Reactor {
     }
     
     private func loadZoos() -> Observable<[Zoo]> {
-        return .just(TestData.zoos(count: 20))
+        return provider.zooService.getZoos().asObservable()
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
@@ -67,6 +73,6 @@ final class MapReactor: Reactor {
     }
     
     func createZooDetailReactor(zoo: Zoo) -> ZooDetailReactor {
-        return ZooDetailReactor(zoo: zoo)
+        return ZooDetailReactor(provider: provider, zoo: zoo)
     }
 }
