@@ -22,7 +22,13 @@ final class ExploreReactor: Reactor {
         var posts: [Post] = []
     }
     
-    var initialState: State = State()
+    var initialState: State
+    private let provider: ServiceProviderType
+    
+    init(provider: ServiceProviderType) {
+        self.provider = provider
+        initialState = State()
+    }
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
