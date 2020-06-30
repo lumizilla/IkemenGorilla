@@ -6,4 +6,21 @@
 //  Copyright © 2020 admin. All rights reserved.
 //
 
-import Foundation
+import RxSwift
+
+protocol UserServiceType {
+    func getUser(userId: String) -> Single<Bool>
+}
+
+final class UserService: BaseService, UserServiceType {
+    private let userRepository: UserRepositoryType
+    
+    init(provider: ServiceProviderType, userRepository: UserRepositoryType) {
+        self.userRepository = userRepository
+        super.init(provider: provider)
+    }
+    
+    func getUser(userId: String) -> Single<Bool> {
+        userRepository.getUser(userId: userId)
+    }
+}
