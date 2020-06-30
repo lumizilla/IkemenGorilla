@@ -26,6 +26,8 @@ protocol TestDataType {
     static func contestResults(count: Int) -> [ContestResult]
     static func animal() -> Animal
     static func animals(count: Int) -> [Animal]
+    static func zooAnimal() -> ZooAnimal
+    static func zooAnimals(count: Int) -> [ZooAnimal]
     /*
     static func profile() -> Profile
     static func profiles(count: Int) -> [Profile]
@@ -216,6 +218,19 @@ struct TestData: TestDataType {
     
     static func animals(count: Int) -> [Animal] {
         return (0 ..< count).map { _ in animal() }
+    }
+    
+    static func zooAnimal() -> ZooAnimal {
+        return ZooAnimal(
+            id: testID(),
+            name: "ボム",
+            iconUrl: "https://images.unsplash.com/photo-1484557985045-edf25e08da73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
+            isFan: false
+        )
+    }
+    
+    static func zooAnimals(count: Int) -> [ZooAnimal] {
+        return (0 ..< count).map { _ in zooAnimal() }
     }
     
     // MARK: - Private functions
