@@ -18,19 +18,20 @@ final class ZooAnimalListReactor: Reactor {
     }
     struct State {
         let zoo: Zoo
-        var animalCellReactors: [ZooAnimalCellReactor] = []
+        var animalCellReactors: [ZooAnimalCellReactor]
         
-        init(zoo: Zoo) {
+        init(zoo: Zoo, zooAnimals: [ZooAnimal]) {
             self.zoo = zoo
+            self.animalCellReactors = zooAnimals.map { ZooAnimalCellReactor(zooAnimal: $0) }
         }
     }
     
     let initialState: State
     private let provider: ServiceProviderType
 
-    init(provider: ServiceProviderType, zoo: Zoo) {
+    init(provider: ServiceProviderType, zoo: Zoo, zooAnimals: [ZooAnimal]) {
         self.provider = provider
-        initialState = State(zoo: zoo)
+        initialState = State(zoo: zoo, zooAnimals: zooAnimals)
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
@@ -48,7 +49,7 @@ final class ZooAnimalListReactor: Reactor {
         var state = state
         switch mutation {
         case .setAnimalCellReactors(let zooAnimals):
-            state.animalCellReactors = zooAnimals.map { ZooAnimalCellReactor(zooAnimal: $0) }
+            state.animalCellReactors += zooAnimals.map { ZooAnimalCellReactor(zooAnimal: $0) }
         }
         return state
     }

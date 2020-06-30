@@ -86,6 +86,7 @@ final class ZooDetailReactor: Reactor {
     }
     
     func createZooAnimalListReactor() -> ZooAnimalListReactor {
-        return ZooAnimalListReactor(provider: provider, zoo: currentState.zoo)
+        let zooAnimals = currentState.animalCellReactors.compactMap { $0.currentState.zooAnimal }
+        return ZooAnimalListReactor(provider: provider, zoo: currentState.zoo, zooAnimals: zooAnimals)
     }
 }
