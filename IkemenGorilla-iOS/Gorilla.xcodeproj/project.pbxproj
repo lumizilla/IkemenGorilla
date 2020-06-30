@@ -1107,22 +1107,22 @@
 			path = Result;
 			sourceTree = "<group>";
 		};
-		84C433AA249BD72600172D6A /* ZooAnimal */ = {
+		84C433AA249BD72600172D6A /* ZooAnimalList */ = {
 			isa = PBXGroup;
 			children = (
 				84C433AC249BD7B200172D6A /* ZooAnimalViewController.swift */,
 				84C433AE249BD7C800172D6A /* ZooAnimalReactor.swift */,
 			);
-			path = ZooAnimal;
+			path = ZooAnimalList;
 			sourceTree = "<group>";
 		};
-		84C433AB249BD74000172D6A /* ZooAnimal */ = {
+		84C433AB249BD74000172D6A /* ZooAnimalList */ = {
 			isa = PBXGroup;
 			children = (
 				84C433B0249BDACD00172D6A /* ZooAnimalCell.swift */,
 				84C433B2249BDADD00172D6A /* ZooAnimalCellReactor.swift */,
 			);
-			path = ZooAnimal;
+			path = ZooAnimalList;
 			sourceTree = "<group>";
 		};
 		84D2167D2499117700AFB1A6 /* MapTab */ = {
@@ -1130,7 +1130,7 @@
 			children = (
 				84376CD324A84B8F00282F3C /* MapSearch */,
 				84E39BF424A3B7F1008E6526 /* AnimalDetail */,
-				84C433AB249BD74000172D6A /* ZooAnimal */,
+				84C433AB249BD74000172D6A /* ZooAnimalList */,
 				8494CBD5249B6B6D00E35E00 /* ZooDetail */,
 				84D216862499169600AFB1A6 /* Map */,
 			);
@@ -1142,7 +1142,7 @@
 			children = (
 				84376CD224A84B6F00282F3C /* MapSearch */,
 				84E39BF324A3B7D4008E6526 /* AnimalDetail */,
-				84C433AA249BD72600172D6A /* ZooAnimal */,
+				84C433AA249BD72600172D6A /* ZooAnimalList */,
 				8494CBD4249B6ADC00E35E00 /* ZooDetail */,
 				84D2167F2499123300AFB1A6 /* Map */,
 			);
