@@ -68,7 +68,7 @@ final class AnimalDetailReactor: Reactor {
     }
     
     private func loadPastContests() -> Observable<[Contest]> {
-        return .just(TestData.contests(count: 5))
+        return provider.animalService.getContests(animalId: currentState.zooAnimal.id, status: .past).asObservable()
     }
     
     private func loadPosts() -> Observable<[Post]> {
