@@ -9,7 +9,7 @@
 import ReactorKit
 import RxSwift
 
-final class ZooAnimalReactor: Reactor {
+final class ZooAnimalListReactor: Reactor {
     enum Action {
         case loadAnimals
     }

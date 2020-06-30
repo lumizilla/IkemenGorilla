@@ -194,8 +194,8 @@ final class ZooDetailViewController: UIViewController, View, ViewConstructor {
         animalsHeader.showAllButton.rx.tap
             .bind { [weak self] _ in
                 logger.debug("tap show all button")
-                let vc = ZooAnimalViewController().then {
-                    $0.reactor = reactor.createZooAnimalReactor()
+                let vc = ZooAnimalListViewController().then {
+                    $0.reactor = reactor.createZooAnimalListReactor()
                 }
                 self?.navigationController?.pushViewController(vc, animated: true)
             }

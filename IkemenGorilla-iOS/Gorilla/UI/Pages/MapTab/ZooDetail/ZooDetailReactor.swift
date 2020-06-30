@@ -85,7 +85,7 @@ final class ZooDetailReactor: Reactor {
         return state
     }
     
-    func createZooAnimalReactor() -> ZooAnimalReactor {
-        return ZooAnimalReactor(zoo: currentState.zoo)
+    func createZooAnimalListReactor() -> ZooAnimalListReactor {
+        return ZooAnimalListReactor(zoo: currentState.zoo)
     }
 }
