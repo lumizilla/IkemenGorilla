@@ -33,8 +33,10 @@ final class AnimalDetailReactor: Reactor {
     }
     
     let initialState: State
+    private let provider: ServiceProviderType
     
-    init(animal: Animal) {
+    init(provider: ServiceProviderType, animal: Animal) {
+        self.provider = provider
         initialState = State(animal: animal)
     }
     
