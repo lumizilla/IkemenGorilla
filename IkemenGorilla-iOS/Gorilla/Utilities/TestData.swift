@@ -24,14 +24,16 @@ protocol TestDataType {
     static func awards(count: Int) -> [Award]
     static func contestResult(numberOfVotes: Int, maxOfVotes: Int) -> ContestResult
     static func contestResults(count: Int) -> [ContestResult]
+
+    
     static func animal() -> Animal
     static func animals(count: Int) -> [Animal]
     static func zooAnimal() -> ZooAnimal
     static func zooAnimals(count: Int) -> [ZooAnimal]
-    /*
+    
+    
     static func profile() -> Profile
     static func profiles(count: Int) -> [Profile]
-    */
     
     // Response
     static func contestAnimalDetailResponse() -> ContestAnimalDetailResponse
@@ -158,7 +160,6 @@ struct TestData: TestDataType {
         return (0 ..< count).map { index in contestResult(numberOfVotes: range * (count - index), maxOfVotes: max) }
     }
     
-    /*
     static func profile() -> Profile {
         return Profile(
             id: testID(),
@@ -186,7 +187,6 @@ struct TestData: TestDataType {
     static func profiles(count: Int) -> [Profile] {
         return (0 ..< count).map { _ in profile() }
     }
-    */
     
     static func contestAnimalDetailResponse() -> ContestAnimalDetailResponse {
         return ContestAnimalDetailResponse(
@@ -214,7 +214,7 @@ struct TestData: TestDataType {
             zooName: "東山動物園"
         )
     }
-    
+
     static func animals(count: Int) -> [Animal] {
         return (0 ..< count).map { _ in animal() }
     }

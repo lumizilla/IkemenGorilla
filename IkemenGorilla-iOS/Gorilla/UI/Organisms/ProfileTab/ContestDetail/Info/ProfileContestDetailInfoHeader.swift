@@ -119,28 +119,31 @@ final class ProfileContestDetailInfoHeader: UIView, View, ViewConstructor {
             .bind(to: catchCopyLabel.rx.text)
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.contest.description }
-            .distinctUntilChanged()
-            .bind(to: descriptionLabel.rx.text)
-            .disposed(by: disposeBag)
+        // todo
+        // bind data from contestDetail
         
-        reactor.state.map { $0.contest.numberOfEntries }
-            .distinctUntilChanged()
-            .map { "エントリー数：\($0)" }
-            .bind(to: numberOfEntriesLabel.rx.text)
-            .disposed(by: disposeBag)
-        
-        reactor.state.map { $0.contest.numberOfVotedPeople }
-            .distinctUntilChanged()
-            .map { "これまでの参加人数：\($0)" }
-            .bind(to: numberOfVotedPeopleLabel.rx.text)
-            .disposed(by: disposeBag)
-        
-        reactor.state.map { $0.contest.numberOfVotes }
-            .distinctUntilChanged()
-            .map { "これまでの投票数：\($0)" }
-            .bind(to: numberOfVotesLabel.rx.text)
-            .disposed(by: disposeBag)
+//        reactor.state.map { $0.contest.description }
+//            .distinctUntilChanged()
+//            .bind(to: descriptionLabel.rx.text)
+//            .disposed(by: disposeBag)
+//
+//        reactor.state.map { $0.contest.numberOfEntries }
+//            .distinctUntilChanged()
+//            .map { "エントリー数：\($0)" }
+//            .bind(to: numberOfEntriesLabel.rx.text)
+//            .disposed(by: disposeBag)
+//
+//        reactor.state.map { $0.contest.numberOfVotedPeople }
+//            .distinctUntilChanged()
+//            .map { "これまでの参加人数：\($0)" }
+//            .bind(to: numberOfVotedPeopleLabel.rx.text)
+//            .disposed(by: disposeBag)
+//
+//        reactor.state.map { $0.contest.numberOfVotes }
+//            .distinctUntilChanged()
+//            .map { "これまでの投票数：\($0)" }
+//            .bind(to: numberOfVotesLabel.rx.text)
+//            .disposed(by: disposeBag)
     }
 }
 

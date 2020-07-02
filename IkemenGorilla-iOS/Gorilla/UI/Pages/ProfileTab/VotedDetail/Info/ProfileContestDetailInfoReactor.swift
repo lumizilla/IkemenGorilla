@@ -20,6 +20,7 @@ final class ProfileContestDetailInfoReactor: Reactor {
     
     struct State {
         let contest: Contest
+        // todo: ContestDetail
         var sponsorCellReactors: [ProfileContestDetailInfoSponsorCellReactor] = []
         var isLoading: Bool = false
         
