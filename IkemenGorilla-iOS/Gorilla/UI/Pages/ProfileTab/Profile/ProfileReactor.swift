@@ -15,7 +15,13 @@ final class ProfileReactor: Reactor {
     
     struct State {}
     
-    let initialState = ProfileReactor.State()
+    let initialState: State
+    private let provider: ServiceProviderType
+    
+    init(provider: ServiceProviderType) {
+        self.provider = provider
+        initialState = State()
+    }
     
     func createProfileInfoListReactor() -> ProfileInfoReactor {
         return ProfileInfoReactor()
@@ -46,6 +52,6 @@ final class ProfileReactor: Reactor {
     }
     
     func createProfileContestDetailReactor(contest: Contest) -> ContestDetailReactor {
-        return ContestDetailReactor(contest: contest)
+        return ContestDetailReactor(provider: provider, contest: contest)
     }
 }

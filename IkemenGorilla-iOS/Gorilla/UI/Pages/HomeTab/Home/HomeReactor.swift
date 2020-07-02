@@ -15,10 +15,16 @@ final class HomeReactor: Reactor {
     
     struct State {}
     
-    let initialState = HomeReactor.State()
+    let initialState: State
+    private let provider: ServiceProviderType
+    
+    init(provider: ServiceProviderType) {
+        self.provider = provider
+        initialState = State()
+    }
     
     func createHomeCurrentContestListReactor() -> HomeCurrentContestListReactor {
-        return HomeCurrentContestListReactor()
+        return HomeCurrentContestListReactor(provider: provider)
     }
     
     func createHomePastContestListReactor() -> HomePastContestListReactor {
@@ -26,7 +32,7 @@ final class HomeReactor: Reactor {
     }
     
     func createHomeRecommendedZooListReactor() -> HomeRecommendedZooListReactor {
-        return HomeRecommendedZooListReactor()
+        return HomeRecommendedZooListReactor(provider: provider)
     }
     
     func createPastContestReactor() -> PastContestReactor {
@@ -34,10 +40,10 @@ final class HomeReactor: Reactor {
     }
     
     func createRecommendedZooReactor() -> RecommendedZooReactor {
-        return RecommendedZooReactor()
+        return RecommendedZooReactor(provider: provider)
     }
     
     func createContestDetailReactor(contest: Contest) -> ContestDetailReactor {
-        return ContestDetailReactor(contest: contest)
+        return ContestDetailReactor(provider: provider, contest: contest)
     }
 }

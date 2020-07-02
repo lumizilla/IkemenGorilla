@@ -42,19 +42,19 @@ final class ContestDetailViewController: SegementSlideDefaultViewController, Vie
         switch index {
         case 0:
             return ContestDetailInfoViewController().then {
-                $0.reactor = ContestDetailInfoReactor(contest: TestData.contest())
+                $0.reactor = reactor?.createContestDetailInfoReactor()
             }
         case 1:
             return ContestDetailEntryViewController().then {
-                $0.reactor = ContestDetailEntryReactor(contest: TestData.contest())
+                $0.reactor = reactor?.createContestDetailEntryReactor()
             }
         case 2:
             return ContestDetailPostViewController().then {
-                $0.reactor = ContestDetailPostReactor(contest: TestData.contest())
+                $0.reactor = reactor?.createContestDetailPostReactor()
             }
         default:
             return ContestDetailResultViewController().then {
-                $0.reactor = ContestDetailResultReactor(contest: TestData.contest())
+                $0.reactor = reactor?.createContestDetailResultReactor()
             }
         }
     }

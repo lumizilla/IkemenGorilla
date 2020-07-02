@@ -59,24 +59,25 @@ final class AnimalDetailCurrentContestView: UIView, View, ViewConstructor {
         // Action
         
         // State
-        reactor.state.map { $0.currentContest.imageUrl }
+        reactor.state.map { $0.currentContest?.imageUrl ?? "" }
             .distinctUntilChanged()
             .bind { [weak self] imageUrl in
                 self?.floatingContestView.imageView.setImage(imageUrl: imageUrl)
             }
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.currentContest.name }
+        reactor.state.map { $0.currentContest?.name }
             .distinctUntilChanged()
             .bind(to: floatingContestView.contestNameLabel.rx.text)
             .disposed(by: disposeBag)
         
         reactor.state
             .map {
+                guard let contest = $0.currentContest else { return "" }
                 var durationString = "開催期間"
-                durationString += formatter.string(from: $0.currentContest.start)
+                durationString += formatter.string(from: contest.start)
                 durationString += " ~ "
-                durationString += formatter.string(from: $0.currentContest.end)
+                durationString += formatter.string(from: contest.end)
                 return durationString
             }
             .distinctUntilChanged()

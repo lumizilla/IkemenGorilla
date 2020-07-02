@@ -22,8 +22,26 @@ final class ContestDetailReactor: Reactor {
     }
     
     let initialState: ContestDetailReactor.State
+    private let provider: ServiceProviderType
     
-    init(contest: Contest) {
+    init(provider: ServiceProviderType, contest: Contest) {
+        self.provider = provider
         initialState = State(contest: contest)
+    }
+    
+    func createContestDetailInfoReactor() -> ContestDetailInfoReactor {
+        return ContestDetailInfoReactor(provider: provider, contest: currentState.contest)
+    }
+    
+    func createContestDetailEntryReactor() -> ContestDetailEntryReactor {
+        return ContestDetailEntryReactor(provider: provider, contest: currentState.contest)
+    }
+    
+    func createContestDetailPostReactor() -> ContestDetailPostReactor {
+        return ContestDetailPostReactor(provider: provider, contest: currentState.contest)
+    }
+    
+    func createContestDetailResultReactor() -> ContestDetailResultReactor {
+        return ContestDetailResultReactor(provider: provider, contest: currentState.contest)
     }
 }

@@ -43,6 +43,7 @@ final class AnimalDetailPastContestView: UIView, View, ViewConstructor {
         $0.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         $0.showsHorizontalScrollIndicator = false
         $0.register(Reusable.contestCell)
+        $0.alwaysBounceHorizontal = true
     }
     
     // MARK: - Initializers
