@@ -71,14 +71,14 @@ final class HomeRecommendedZooListCell: UICollectionViewCell, View, ViewConstruc
         // Action
         
         // State
-        reactor.state.map { $0.zoo.imageUrl }
+        reactor.state.map { $0.recommendedZoo.imageUrl }
             .distinctUntilChanged()
             .bind { [weak self] imageUrl in
                 self?.imageView.setImage(imageUrl: imageUrl)
             }
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.zoo.name }
+        reactor.state.map { $0.recommendedZoo.name }
             .distinctUntilChanged()
             .bind(to: zooNameLabel.rx.text)
             .disposed(by: disposeBag)

@@ -132,42 +132,42 @@ final class AnimalDetailHeader: UIView, View, ViewConstructor {
         // Action
         
         // State
-        reactor.state.map { $0.animal.iconUrl }
+        reactor.state.map { $0.zooAnimal.iconUrl }
             .distinctUntilChanged()
             .bind { [weak self] iconUrl in
                 self?.imageView.setImage(imageUrl: iconUrl)
             }
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.animal.name }
+        reactor.state.map { $0.zooAnimal.name }
             .distinctUntilChanged()
             .bind(to: animalNameLabel.rx.text)
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.animal.numberOfFans }
+        reactor.state.map { $0.animal?.numberOfFans ?? 0 }
             .distinctUntilChanged()
             .map { "\($0)" }
             .bind(to: fanNumberLabel.rx.text)
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.zooName }
+        reactor.state.map { $0.animal?.zooName }
             .distinctUntilChanged()
             .bind(to: zooNameLabel.rx.text)
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.animal.sex }
+        reactor.state.map { $0.animal?.sex ?? "" }
             .distinctUntilChanged()
             .map { "性別 : \($0)" }
             .bind(to: sexLabel.rx.text)
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.animal.birthday }
+        reactor.state.map { $0.animal?.birthday ?? Date.init() }
             .distinctUntilChanged()
             .map { "誕生日 : " + formatter.string(from: $0) }
             .bind(to: birthdayLabel.rx.text)
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.animal.description }
+        reactor.state.map { $0.animal?.description }
             .distinctUntilChanged()
             .bind(to: descriptionLabel.rx.text)
             .disposed(by: disposeBag)

@@ -83,7 +83,8 @@ final class ContestDetailInfoViewController: UIViewController, View, ViewConstru
         contestDetailInfoHeader.reactor = reactor
         
         // Action
-        reactor.action.onNext(.load)
+        reactor.action.onNext(.loadContestDetail)
+        reactor.action.onNext(.loadSponsors)
         
         // State
         

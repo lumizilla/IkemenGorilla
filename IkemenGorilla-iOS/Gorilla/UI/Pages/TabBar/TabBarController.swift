@@ -15,16 +15,16 @@ class TabBarController: UITabBarController, TransitionPresentable {
         static let tabBarSelectedImages: [UIImage] = [#imageLiteral(resourceName: "home_filled"), #imageLiteral(resourceName: "map_filled"), #imageLiteral(resourceName: "plus_filled"), #imageLiteral(resourceName: "search_filled"), #imageLiteral(resourceName: "user_filled")]
     }
     
-//    private let provider: ServiceProviderType
+    private let provider: ServiceProviderType
     
-//    init(provider: ServiceProviderType) {
-//        self.provider = provider
-//        super.init(nibName: nil, bundle: nil)
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
+    init(provider: ServiceProviderType) {
+        self.provider = provider
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -37,15 +37,15 @@ class TabBarController: UITabBarController, TransitionPresentable {
     private func setupViewControllers() {
         viewControllers = [
             UINavigationController(rootViewController: HomeViewController().then {
-                $0.reactor = HomeReactor()
+                $0.reactor = HomeReactor(provider: provider)
             }),
             UINavigationController(rootViewController: MapViewController().then {
-                $0.reactor = MapReactor()
+                $0.reactor = MapReactor(provider: provider)
             }),
             DummyViewController(),
             UINavigationController(rootViewController:
                 ExploreViewController().then {
-                $0.reactor = ExploreReactor()
+                    $0.reactor = ExploreReactor(provider: provider)
             }),
             UINavigationController(rootViewController: ProfileViewController().then {
                 $0.reactor = ProfileReactor()
@@ -69,7 +69,7 @@ class TabBarController: UITabBarController, TransitionPresentable {
 extension TabBarController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         if viewController is DummyViewController {
-            showVoteContestPage(voteContestReactor: VoteContestReactor())
+            showVoteContestPage(voteContestReactor: VoteContestReactor(provider: provider))
             return false
         }
         return true

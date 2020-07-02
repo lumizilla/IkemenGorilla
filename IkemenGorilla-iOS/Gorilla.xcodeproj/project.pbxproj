@@ -8,51 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1237FD5EF935F298D1A9503A /* Pods_Gorilla.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88E3F92FF19F1C62D0B465D /* Pods_Gorilla.framework */; };
-		8426BB2524A8A8850031AEA2 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB2424A8A8850031AEA2 /* Profile.swift */; };
-		8426BB4E24A8A9080031AEA2 /* FanAnimalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB2824A8A9080031AEA2 /* FanAnimalCell.swift */; };
-		8426BB4F24A8A9080031AEA2 /* FanAnimalCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB2924A8A9080031AEA2 /* FanAnimalCellReactor.swift */; };
-		8426BB5024A8A9080031AEA2 /* ProfileVotedContestListCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB2C24A8A9080031AEA2 /* ProfileVotedContestListCellReactor.swift */; };
-		8426BB5124A8A9080031AEA2 /* ProfileVotedContestListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB2D24A8A9080031AEA2 /* ProfileVotedContestListCell.swift */; };
-		8426BB5224A8A9080031AEA2 /* ProfileFanAnimalHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB2F24A8A9080031AEA2 /* ProfileFanAnimalHeader.swift */; };
-		8426BB5324A8A9080031AEA2 /* ProfileFanAnimalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB3024A8A9080031AEA2 /* ProfileFanAnimalListView.swift */; };
-		8426BB5424A8A9080031AEA2 /* ProfileFanAnimalListReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB3124A8A9080031AEA2 /* ProfileFanAnimalListReactor.swift */; };
-		8426BB5524A8A9080031AEA2 /* ProfileInfoListReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB3324A8A9080031AEA2 /* ProfileInfoListReactor.swift */; };
-		8426BB5624A8A9080031AEA2 /* ProfileInfoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB3424A8A9080031AEA2 /* ProfileInfoListView.swift */; };
-		8426BB5824A8A9080031AEA2 /* ProfileInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB3624A8A9080031AEA2 /* ProfileInfoHeader.swift */; };
-		8426BB5924A8A9080031AEA2 /* ProfileInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB3824A8A9080031AEA2 /* ProfileInfoCell.swift */; };
-		8426BB5A24A8A9080031AEA2 /* ProfileInfoCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB3924A8A9080031AEA2 /* ProfileInfoCellReactor.swift */; };
-		8426BB5C24A8A9080031AEA2 /* ProfileVotedContestHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB3C24A8A9080031AEA2 /* ProfileVotedContestHeader.swift */; };
-		8426BB5D24A8A9080031AEA2 /* ProfileVotedContestListReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB3D24A8A9080031AEA2 /* ProfileVotedContestListReactor.swift */; };
-		8426BB5E24A8A9080031AEA2 /* ProfileVotedContestListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB3E24A8A9080031AEA2 /* ProfileVotedContestListView.swift */; };
-		8426BB6124A8A9080031AEA2 /* ProfileFanAnimalListCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB4224A8A9080031AEA2 /* ProfileFanAnimalListCellReactor.swift */; };
-		8426BB6224A8A9080031AEA2 /* ProfileFanAnimalListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB4324A8A9080031AEA2 /* ProfileFanAnimalListCell.swift */; };
-		8426BB6424A8A9080031AEA2 /* ProfileContestDetailInfoSponsorCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB4724A8A9080031AEA2 /* ProfileContestDetailInfoSponsorCellReactor.swift */; };
-		8426BB6524A8A9080031AEA2 /* ProfileContestDetailInfoSponsorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB4824A8A9080031AEA2 /* ProfileContestDetailInfoSponsorCell.swift */; };
-		8426BB6624A8A9080031AEA2 /* ProfileContestDetailInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB4924A8A9080031AEA2 /* ProfileContestDetailInfoHeader.swift */; };
-		8426BB6724A8A9080031AEA2 /* ProfileContestDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB4A24A8A9080031AEA2 /* ProfileContestDetailHeader.swift */; };
-		8426BB6824A8A9080031AEA2 /* VotedContestCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB4C24A8A9080031AEA2 /* VotedContestCellReactor.swift */; };
-		8426BB6924A8A9080031AEA2 /* VotedContestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB4D24A8A9080031AEA2 /* VotedContestCell.swift */; };
-		8426BB7D24A8A9EE0031AEA2 /* FanAnimalReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB6C24A8A9EE0031AEA2 /* FanAnimalReactor.swift */; };
-		8426BB7E24A8A9EE0031AEA2 /* FanAnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB6D24A8A9EE0031AEA2 /* FanAnimalViewController.swift */; };
-		8426BB7F24A8A9EE0031AEA2 /* ProfileContestDetailInfoReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB7024A8A9EE0031AEA2 /* ProfileContestDetailInfoReactor.swift */; };
-		8426BB8024A8A9EE0031AEA2 /* ProfileContestDetailInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB7124A8A9EE0031AEA2 /* ProfileContestDetailInfoViewController.swift */; };
-		8426BB8124A8A9EE0031AEA2 /* ProfileContestDetailReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB7224A8A9EE0031AEA2 /* ProfileContestDetailReactor.swift */; };
-		8426BB8224A8A9EE0031AEA2 /* ProfileContestDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB7324A8A9EE0031AEA2 /* ProfileContestDetailViewController.swift */; };
-		8426BB8324A8A9EE0031AEA2 /* ProfileInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB7524A8A9EE0031AEA2 /* ProfileInfoViewController.swift */; };
-		8426BB8424A8A9EE0031AEA2 /* ProfileInfoReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB7624A8A9EE0031AEA2 /* ProfileInfoReactor.swift */; };
-		8426BB8524A8A9EE0031AEA2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB7824A8A9EE0031AEA2 /* ProfileViewController.swift */; };
-		8426BB8624A8A9EE0031AEA2 /* ProfileReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB7924A8A9EE0031AEA2 /* ProfileReactor.swift */; };
-		8426BB8724A8A9EE0031AEA2 /* VotedContestReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB7B24A8A9EE0031AEA2 /* VotedContestReactor.swift */; };
-		8426BB8824A8A9EE0031AEA2 /* VotedContestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB7C24A8A9EE0031AEA2 /* VotedContestViewController.swift */; };
-		8426BB8B24A8D0EE0031AEA2 /* LikedZooCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB8A24A8D0EE0031AEA2 /* LikedZooCell.swift */; };
-		8426BB8D24A8D2520031AEA2 /* LikedZooCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB8C24A8D2520031AEA2 /* LikedZooCellReactor.swift */; };
-		8426BB9024A8D3DF0031AEA2 /* ProfileLikedZooListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB8F24A8D3DF0031AEA2 /* ProfileLikedZooListCell.swift */; };
-		8426BB9224A8D7950031AEA2 /* ProfileLikedZooListCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB9124A8D7950031AEA2 /* ProfileLikedZooListCellReactor.swift */; };
-		8426BB9524A8D9910031AEA2 /* ProfileLikedZooListReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB9424A8D9910031AEA2 /* ProfileLikedZooListReactor.swift */; };
-		8426BB9724A8DA8F0031AEA2 /* ProfileLikedZooListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB9624A8DA8F0031AEA2 /* ProfileLikedZooListView.swift */; };
-		8426BB9924A8DB880031AEA2 /* ProfileLikedZooHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB9824A8DB880031AEA2 /* ProfileLikedZooHeader.swift */; };
-		8426BB9C24A8DF000031AEA2 /* LikedZooViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB9B24A8DF000031AEA2 /* LikedZooViewController.swift */; };
-		8426BB9E24A8DF5C0031AEA2 /* LikedZooReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB9D24A8DF5C0031AEA2 /* LikedZooReactor.swift */; };
 		84376CA224A5DDB700282F3C /* AnimalDetailPostHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376CA124A5DDB700282F3C /* AnimalDetailPostHeader.swift */; };
 		84376CA524A5F08600282F3C /* PostPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376CA424A5F08600282F3C /* PostPhotoCell.swift */; };
 		84376CA724A5F0A800282F3C /* PostCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376CA624A5F0A800282F3C /* PostCellReactor.swift */; };
@@ -76,6 +31,28 @@
 		84376CD724A84BE000282F3C /* MapSearchReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376CD624A84BE000282F3C /* MapSearchReactor.swift */; };
 		84376CD924A8529800282F3C /* MapSearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376CD824A8529800282F3C /* MapSearchResultCell.swift */; };
 		84376CDB24A852D400282F3C /* MapSearchResultCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376CDA24A852D400282F3C /* MapSearchResultCellReactor.swift */; };
+		84452A7624AA08580092F949 /* ContestTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452A7524AA08580092F949 /* ContestTarget.swift */; };
+		84452A7824AA0C0B0092F949 /* ContestRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452A7724AA0C0B0092F949 /* ContestRepository.swift */; };
+		84452A7B24AA0E250092F949 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452A7A24AA0E250092F949 /* ServiceProvider.swift */; };
+		84452A7F24AA0EA00092F949 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452A7E24AA0EA00092F949 /* BaseService.swift */; };
+		84452A8124AA0F040092F949 /* ContestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452A8024AA0F040092F949 /* ContestService.swift */; };
+		84452A8324AA18610092F949 /* GorillaDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452A8224AA18610092F949 /* GorillaDecoder.swift */; };
+		84452A8524AA1A6B0092F949 /* ContestDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452A8424AA1A6B0092F949 /* ContestDetailResponse.swift */; };
+		84452A8724AA43980092F949 /* AnimalTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452A8624AA43980092F949 /* AnimalTarget.swift */; };
+		84452A8924AA45AB0092F949 /* AnimalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452A8824AA45AB0092F949 /* AnimalRepository.swift */; };
+		84452A8B24AA46B10092F949 /* AnimalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452A8A24AA46B10092F949 /* AnimalService.swift */; };
+		84452A8D24AA4C1F0092F949 /* ZooTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452A8C24AA4C1F0092F949 /* ZooTarget.swift */; };
+		84452A8F24AA4CBA0092F949 /* ZooRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452A8E24AA4CBA0092F949 /* ZooRepository.swift */; };
+		84452A9124AA4E8B0092F949 /* ZooService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452A9024AA4E8B0092F949 /* ZooService.swift */; };
+		84452A9324AA52AD0092F949 /* ZooDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452A9224AA52AD0092F949 /* ZooDetailResponse.swift */; };
+		84452A9524AA5BE80092F949 /* ZooAnimalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452A9424AA5BE80092F949 /* ZooAnimalResponse.swift */; };
+		84452A9724AB21740092F949 /* RecommendedZoo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452A9624AB21740092F949 /* RecommendedZoo.swift */; };
+		84452A9924AB27220092F949 /* PostTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452A9824AB27220092F949 /* PostTarget.swift */; };
+		84452A9B24AB288F0092F949 /* PostRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452A9A24AB288F0092F949 /* PostRepository.swift */; };
+		84452A9D24AB297C0092F949 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452A9C24AB297C0092F949 /* PostService.swift */; };
+		84452A9F24AB2E7A0092F949 /* UserTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452A9E24AB2E7A0092F949 /* UserTarget.swift */; };
+		84452AA124AB2FAA0092F949 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452AA024AB2FAA0092F949 /* UserRepository.swift */; };
+		84452AA324AB328F0092F949 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84452AA224AB328F0092F949 /* UserService.swift */; };
 		844EE1332484278F003369F2 /* PastContestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE1322484278F003369F2 /* PastContestCell.swift */; };
 		844EE135248427AF003369F2 /* PastContestCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE134248427AF003369F2 /* PastContestCellReactor.swift */; };
 		844EE137248427D7003369F2 /* PastContestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE136248427D7003369F2 /* PastContestViewController.swift */; };
@@ -183,8 +160,8 @@
 		84A9A00C2485347D0066863B /* ContestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A9A00B2485347D0066863B /* ContestResult.swift */; };
 		84C433A7249BCE2600172D6A /* HeartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C433A6249BCE2600172D6A /* HeartButton.swift */; };
 		84C433A9249BD3D700172D6A /* HeartNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C433A8249BD3D700172D6A /* HeartNumberView.swift */; };
-		84C433AD249BD7B200172D6A /* ZooAnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C433AC249BD7B200172D6A /* ZooAnimalViewController.swift */; };
-		84C433AF249BD7C800172D6A /* ZooAnimalReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C433AE249BD7C800172D6A /* ZooAnimalReactor.swift */; };
+		84C433AD249BD7B200172D6A /* ZooAnimalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C433AC249BD7B200172D6A /* ZooAnimalListViewController.swift */; };
+		84C433AF249BD7C800172D6A /* ZooAnimalListReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C433AE249BD7C800172D6A /* ZooAnimalListReactor.swift */; };
 		84C433B1249BDACD00172D6A /* ZooAnimalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C433B0249BDACD00172D6A /* ZooAnimalCell.swift */; };
 		84C433B3249BDADD00172D6A /* ZooAnimalCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C433B2249BDADD00172D6A /* ZooAnimalCellReactor.swift */; };
 		84C433B5249BE7C400172D6A /* FanButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C433B4249BE7C400172D6A /* FanButton.swift */; };
@@ -228,51 +205,6 @@
 		2E1F2DD18530CF1CABC0384F /* Pods-GorillaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GorillaTests.release.xcconfig"; path = "Target Support Files/Pods-GorillaTests/Pods-GorillaTests.release.xcconfig"; sourceTree = "<group>"; };
 		401D33862CFB7B0B9BFF2587 /* Pods-Gorilla.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gorilla.release.xcconfig"; path = "Target Support Files/Pods-Gorilla/Pods-Gorilla.release.xcconfig"; sourceTree = "<group>"; };
 		69F440E1262F9F90997A9A24 /* Pods_Gorilla_GorillaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gorilla_GorillaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8426BB2424A8A8850031AEA2 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
-		8426BB2824A8A9080031AEA2 /* FanAnimalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FanAnimalCell.swift; sourceTree = "<group>"; };
-		8426BB2924A8A9080031AEA2 /* FanAnimalCellReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FanAnimalCellReactor.swift; sourceTree = "<group>"; };
-		8426BB2C24A8A9080031AEA2 /* ProfileVotedContestListCellReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVotedContestListCellReactor.swift; sourceTree = "<group>"; };
-		8426BB2D24A8A9080031AEA2 /* ProfileVotedContestListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVotedContestListCell.swift; sourceTree = "<group>"; };
-		8426BB2F24A8A9080031AEA2 /* ProfileFanAnimalHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileFanAnimalHeader.swift; sourceTree = "<group>"; };
-		8426BB3024A8A9080031AEA2 /* ProfileFanAnimalListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileFanAnimalListView.swift; sourceTree = "<group>"; };
-		8426BB3124A8A9080031AEA2 /* ProfileFanAnimalListReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileFanAnimalListReactor.swift; sourceTree = "<group>"; };
-		8426BB3324A8A9080031AEA2 /* ProfileInfoListReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoListReactor.swift; sourceTree = "<group>"; };
-		8426BB3424A8A9080031AEA2 /* ProfileInfoListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoListView.swift; sourceTree = "<group>"; };
-		8426BB3624A8A9080031AEA2 /* ProfileInfoHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoHeader.swift; sourceTree = "<group>"; };
-		8426BB3824A8A9080031AEA2 /* ProfileInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoCell.swift; sourceTree = "<group>"; };
-		8426BB3924A8A9080031AEA2 /* ProfileInfoCellReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoCellReactor.swift; sourceTree = "<group>"; };
-		8426BB3C24A8A9080031AEA2 /* ProfileVotedContestHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVotedContestHeader.swift; sourceTree = "<group>"; };
-		8426BB3D24A8A9080031AEA2 /* ProfileVotedContestListReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVotedContestListReactor.swift; sourceTree = "<group>"; };
-		8426BB3E24A8A9080031AEA2 /* ProfileVotedContestListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVotedContestListView.swift; sourceTree = "<group>"; };
-		8426BB4224A8A9080031AEA2 /* ProfileFanAnimalListCellReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileFanAnimalListCellReactor.swift; sourceTree = "<group>"; };
-		8426BB4324A8A9080031AEA2 /* ProfileFanAnimalListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileFanAnimalListCell.swift; sourceTree = "<group>"; };
-		8426BB4724A8A9080031AEA2 /* ProfileContestDetailInfoSponsorCellReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileContestDetailInfoSponsorCellReactor.swift; sourceTree = "<group>"; };
-		8426BB4824A8A9080031AEA2 /* ProfileContestDetailInfoSponsorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileContestDetailInfoSponsorCell.swift; sourceTree = "<group>"; };
-		8426BB4924A8A9080031AEA2 /* ProfileContestDetailInfoHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileContestDetailInfoHeader.swift; sourceTree = "<group>"; };
-		8426BB4A24A8A9080031AEA2 /* ProfileContestDetailHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileContestDetailHeader.swift; sourceTree = "<group>"; };
-		8426BB4C24A8A9080031AEA2 /* VotedContestCellReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VotedContestCellReactor.swift; sourceTree = "<group>"; };
-		8426BB4D24A8A9080031AEA2 /* VotedContestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VotedContestCell.swift; sourceTree = "<group>"; };
-		8426BB6C24A8A9EE0031AEA2 /* FanAnimalReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FanAnimalReactor.swift; sourceTree = "<group>"; };
-		8426BB6D24A8A9EE0031AEA2 /* FanAnimalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FanAnimalViewController.swift; sourceTree = "<group>"; };
-		8426BB7024A8A9EE0031AEA2 /* ProfileContestDetailInfoReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileContestDetailInfoReactor.swift; sourceTree = "<group>"; };
-		8426BB7124A8A9EE0031AEA2 /* ProfileContestDetailInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileContestDetailInfoViewController.swift; sourceTree = "<group>"; };
-		8426BB7224A8A9EE0031AEA2 /* ProfileContestDetailReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileContestDetailReactor.swift; sourceTree = "<group>"; };
-		8426BB7324A8A9EE0031AEA2 /* ProfileContestDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileContestDetailViewController.swift; sourceTree = "<group>"; };
-		8426BB7524A8A9EE0031AEA2 /* ProfileInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoViewController.swift; sourceTree = "<group>"; };
-		8426BB7624A8A9EE0031AEA2 /* ProfileInfoReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoReactor.swift; sourceTree = "<group>"; };
-		8426BB7824A8A9EE0031AEA2 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		8426BB7924A8A9EE0031AEA2 /* ProfileReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileReactor.swift; sourceTree = "<group>"; };
-		8426BB7B24A8A9EE0031AEA2 /* VotedContestReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VotedContestReactor.swift; sourceTree = "<group>"; };
-		8426BB7C24A8A9EE0031AEA2 /* VotedContestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VotedContestViewController.swift; sourceTree = "<group>"; };
-		8426BB8A24A8D0EE0031AEA2 /* LikedZooCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedZooCell.swift; sourceTree = "<group>"; };
-		8426BB8C24A8D2520031AEA2 /* LikedZooCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedZooCellReactor.swift; sourceTree = "<group>"; };
-		8426BB8F24A8D3DF0031AEA2 /* ProfileLikedZooListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLikedZooListCell.swift; sourceTree = "<group>"; };
-		8426BB9124A8D7950031AEA2 /* ProfileLikedZooListCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLikedZooListCellReactor.swift; sourceTree = "<group>"; };
-		8426BB9424A8D9910031AEA2 /* ProfileLikedZooListReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLikedZooListReactor.swift; sourceTree = "<group>"; };
-		8426BB9624A8DA8F0031AEA2 /* ProfileLikedZooListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLikedZooListView.swift; sourceTree = "<group>"; };
-		8426BB9824A8DB880031AEA2 /* ProfileLikedZooHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLikedZooHeader.swift; sourceTree = "<group>"; };
-		8426BB9B24A8DF000031AEA2 /* LikedZooViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedZooViewController.swift; sourceTree = "<group>"; };
-		8426BB9D24A8DF5C0031AEA2 /* LikedZooReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedZooReactor.swift; sourceTree = "<group>"; };
 		84376CA124A5DDB700282F3C /* AnimalDetailPostHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailPostHeader.swift; sourceTree = "<group>"; };
 		84376CA424A5F08600282F3C /* PostPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPhotoCell.swift; sourceTree = "<group>"; };
 		84376CA624A5F0A800282F3C /* PostCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellReactor.swift; sourceTree = "<group>"; };
@@ -296,6 +228,28 @@
 		84376CD624A84BE000282F3C /* MapSearchReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchReactor.swift; sourceTree = "<group>"; };
 		84376CD824A8529800282F3C /* MapSearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchResultCell.swift; sourceTree = "<group>"; };
 		84376CDA24A852D400282F3C /* MapSearchResultCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchResultCellReactor.swift; sourceTree = "<group>"; };
+		84452A7524AA08580092F949 /* ContestTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestTarget.swift; sourceTree = "<group>"; };
+		84452A7724AA0C0B0092F949 /* ContestRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestRepository.swift; sourceTree = "<group>"; };
+		84452A7A24AA0E250092F949 /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
+		84452A7E24AA0EA00092F949 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		84452A8024AA0F040092F949 /* ContestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestService.swift; sourceTree = "<group>"; };
+		84452A8224AA18610092F949 /* GorillaDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GorillaDecoder.swift; sourceTree = "<group>"; };
+		84452A8424AA1A6B0092F949 /* ContestDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDetailResponse.swift; sourceTree = "<group>"; };
+		84452A8624AA43980092F949 /* AnimalTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTarget.swift; sourceTree = "<group>"; };
+		84452A8824AA45AB0092F949 /* AnimalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalRepository.swift; sourceTree = "<group>"; };
+		84452A8A24AA46B10092F949 /* AnimalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalService.swift; sourceTree = "<group>"; };
+		84452A8C24AA4C1F0092F949 /* ZooTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooTarget.swift; sourceTree = "<group>"; };
+		84452A8E24AA4CBA0092F949 /* ZooRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooRepository.swift; sourceTree = "<group>"; };
+		84452A9024AA4E8B0092F949 /* ZooService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooService.swift; sourceTree = "<group>"; };
+		84452A9224AA52AD0092F949 /* ZooDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooDetailResponse.swift; sourceTree = "<group>"; };
+		84452A9424AA5BE80092F949 /* ZooAnimalResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooAnimalResponse.swift; sourceTree = "<group>"; };
+		84452A9624AB21740092F949 /* RecommendedZoo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedZoo.swift; sourceTree = "<group>"; };
+		84452A9824AB27220092F949 /* PostTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTarget.swift; sourceTree = "<group>"; };
+		84452A9A24AB288F0092F949 /* PostRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepository.swift; sourceTree = "<group>"; };
+		84452A9C24AB297C0092F949 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		84452A9E24AB2E7A0092F949 /* UserTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTarget.swift; sourceTree = "<group>"; };
+		84452AA024AB2FAA0092F949 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		84452AA224AB328F0092F949 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		844EE1322484278F003369F2 /* PastContestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestCell.swift; sourceTree = "<group>"; };
 		844EE134248427AF003369F2 /* PastContestCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestCellReactor.swift; sourceTree = "<group>"; };
 		844EE136248427D7003369F2 /* PastContestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastContestViewController.swift; sourceTree = "<group>"; };
@@ -409,8 +363,8 @@
 		84A9A00B2485347D0066863B /* ContestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestResult.swift; sourceTree = "<group>"; };
 		84C433A6249BCE2600172D6A /* HeartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartButton.swift; sourceTree = "<group>"; };
 		84C433A8249BD3D700172D6A /* HeartNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartNumberView.swift; sourceTree = "<group>"; };
-		84C433AC249BD7B200172D6A /* ZooAnimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooAnimalViewController.swift; sourceTree = "<group>"; };
-		84C433AE249BD7C800172D6A /* ZooAnimalReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooAnimalReactor.swift; sourceTree = "<group>"; };
+		84C433AC249BD7B200172D6A /* ZooAnimalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooAnimalListViewController.swift; sourceTree = "<group>"; };
+		84C433AE249BD7C800172D6A /* ZooAnimalListReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooAnimalListReactor.swift; sourceTree = "<group>"; };
 		84C433B0249BDACD00172D6A /* ZooAnimalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooAnimalCell.swift; sourceTree = "<group>"; };
 		84C433B2249BDADD00172D6A /* ZooAnimalCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooAnimalCellReactor.swift; sourceTree = "<group>"; };
 		84C433B4249BE7C400172D6A /* FanButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanButton.swift; sourceTree = "<group>"; };
@@ -484,232 +438,6 @@
 				0B68804A246C98CAE881B62C /* Pods_GorillaTests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		8426BB2624A8A9080031AEA2 /* ProfileTab */ = {
-			isa = PBXGroup;
-			children = (
-				8426BB8924A8D0D60031AEA2 /* LikedZoo */,
-				8426BB2724A8A9080031AEA2 /* FanAnimal */,
-				8426BB2A24A8A9080031AEA2 /* Profile */,
-				8426BB4524A8A9080031AEA2 /* ContestDetail */,
-				8426BB4B24A8A9080031AEA2 /* VotedContest */,
-			);
-			path = ProfileTab;
-			sourceTree = "<group>";
-		};
-		8426BB2724A8A9080031AEA2 /* FanAnimal */ = {
-			isa = PBXGroup;
-			children = (
-				8426BB2824A8A9080031AEA2 /* FanAnimalCell.swift */,
-				8426BB2924A8A9080031AEA2 /* FanAnimalCellReactor.swift */,
-			);
-			path = FanAnimal;
-			sourceTree = "<group>";
-		};
-		8426BB2A24A8A9080031AEA2 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				8426BB9324A8D81A0031AEA2 /* ProfileLikedZooList */,
-				8426BB8E24A8D3390031AEA2 /* ProfileLikedZooListCell */,
-				8426BB3224A8A9080031AEA2 /* ProfileInfoList */,
-				8426BB3724A8A9080031AEA2 /* ProfileInfoListCell */,
-				8426BB3B24A8A9080031AEA2 /* ProfileVotedContestList */,
-				8426BB2B24A8A9080031AEA2 /* ProfileVotedContestListCell */,
-				8426BB2E24A8A9080031AEA2 /* ProfileFanAnimalList */,
-				8426BB4124A8A9080031AEA2 /* ProfileFanAnimalListCell */,
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
-		8426BB2B24A8A9080031AEA2 /* ProfileVotedContestListCell */ = {
-			isa = PBXGroup;
-			children = (
-				8426BB2C24A8A9080031AEA2 /* ProfileVotedContestListCellReactor.swift */,
-				8426BB2D24A8A9080031AEA2 /* ProfileVotedContestListCell.swift */,
-			);
-			path = ProfileVotedContestListCell;
-			sourceTree = "<group>";
-		};
-		8426BB2E24A8A9080031AEA2 /* ProfileFanAnimalList */ = {
-			isa = PBXGroup;
-			children = (
-				8426BB2F24A8A9080031AEA2 /* ProfileFanAnimalHeader.swift */,
-				8426BB3024A8A9080031AEA2 /* ProfileFanAnimalListView.swift */,
-				8426BB3124A8A9080031AEA2 /* ProfileFanAnimalListReactor.swift */,
-			);
-			path = ProfileFanAnimalList;
-			sourceTree = "<group>";
-		};
-		8426BB3224A8A9080031AEA2 /* ProfileInfoList */ = {
-			isa = PBXGroup;
-			children = (
-				8426BB3324A8A9080031AEA2 /* ProfileInfoListReactor.swift */,
-				8426BB3424A8A9080031AEA2 /* ProfileInfoListView.swift */,
-				8426BB3624A8A9080031AEA2 /* ProfileInfoHeader.swift */,
-			);
-			path = ProfileInfoList;
-			sourceTree = "<group>";
-		};
-		8426BB3724A8A9080031AEA2 /* ProfileInfoListCell */ = {
-			isa = PBXGroup;
-			children = (
-				8426BB3824A8A9080031AEA2 /* ProfileInfoCell.swift */,
-				8426BB3924A8A9080031AEA2 /* ProfileInfoCellReactor.swift */,
-			);
-			path = ProfileInfoListCell;
-			sourceTree = "<group>";
-		};
-		8426BB3B24A8A9080031AEA2 /* ProfileVotedContestList */ = {
-			isa = PBXGroup;
-			children = (
-				8426BB3C24A8A9080031AEA2 /* ProfileVotedContestHeader.swift */,
-				8426BB3D24A8A9080031AEA2 /* ProfileVotedContestListReactor.swift */,
-				8426BB3E24A8A9080031AEA2 /* ProfileVotedContestListView.swift */,
-			);
-			path = ProfileVotedContestList;
-			sourceTree = "<group>";
-		};
-		8426BB4124A8A9080031AEA2 /* ProfileFanAnimalListCell */ = {
-			isa = PBXGroup;
-			children = (
-				8426BB4224A8A9080031AEA2 /* ProfileFanAnimalListCellReactor.swift */,
-				8426BB4324A8A9080031AEA2 /* ProfileFanAnimalListCell.swift */,
-			);
-			path = ProfileFanAnimalListCell;
-			sourceTree = "<group>";
-		};
-		8426BB4524A8A9080031AEA2 /* ContestDetail */ = {
-			isa = PBXGroup;
-			children = (
-				8426BB4624A8A9080031AEA2 /* Info */,
-				8426BB4A24A8A9080031AEA2 /* ProfileContestDetailHeader.swift */,
-			);
-			path = ContestDetail;
-			sourceTree = "<group>";
-		};
-		8426BB4624A8A9080031AEA2 /* Info */ = {
-			isa = PBXGroup;
-			children = (
-				8426BB4724A8A9080031AEA2 /* ProfileContestDetailInfoSponsorCellReactor.swift */,
-				8426BB4824A8A9080031AEA2 /* ProfileContestDetailInfoSponsorCell.swift */,
-				8426BB4924A8A9080031AEA2 /* ProfileContestDetailInfoHeader.swift */,
-			);
-			path = Info;
-			sourceTree = "<group>";
-		};
-		8426BB4B24A8A9080031AEA2 /* VotedContest */ = {
-			isa = PBXGroup;
-			children = (
-				8426BB4C24A8A9080031AEA2 /* VotedContestCellReactor.swift */,
-				8426BB4D24A8A9080031AEA2 /* VotedContestCell.swift */,
-			);
-			path = VotedContest;
-			sourceTree = "<group>";
-		};
-		8426BB6A24A8A9EE0031AEA2 /* ProfileTab */ = {
-			isa = PBXGroup;
-			children = (
-				8426BB9A24A8DEDC0031AEA2 /* LikedZoo */,
-				8426BB6B24A8A9EE0031AEA2 /* FanAnimal */,
-				8426BB6E24A8A9EE0031AEA2 /* VotedDetail */,
-				8426BB7424A8A9EE0031AEA2 /* ProfileInfo */,
-				8426BB7724A8A9EE0031AEA2 /* Profile */,
-				8426BB7A24A8A9EE0031AEA2 /* VotedContest */,
-			);
-			path = ProfileTab;
-			sourceTree = "<group>";
-		};
-		8426BB6B24A8A9EE0031AEA2 /* FanAnimal */ = {
-			isa = PBXGroup;
-			children = (
-				8426BB6C24A8A9EE0031AEA2 /* FanAnimalReactor.swift */,
-				8426BB6D24A8A9EE0031AEA2 /* FanAnimalViewController.swift */,
-			);
-			path = FanAnimal;
-			sourceTree = "<group>";
-		};
-		8426BB6E24A8A9EE0031AEA2 /* VotedDetail */ = {
-			isa = PBXGroup;
-			children = (
-				8426BB6F24A8A9EE0031AEA2 /* Info */,
-				8426BB7224A8A9EE0031AEA2 /* ProfileContestDetailReactor.swift */,
-				8426BB7324A8A9EE0031AEA2 /* ProfileContestDetailViewController.swift */,
-			);
-			path = VotedDetail;
-			sourceTree = "<group>";
-		};
-		8426BB6F24A8A9EE0031AEA2 /* Info */ = {
-			isa = PBXGroup;
-			children = (
-				8426BB7024A8A9EE0031AEA2 /* ProfileContestDetailInfoReactor.swift */,
-				8426BB7124A8A9EE0031AEA2 /* ProfileContestDetailInfoViewController.swift */,
-			);
-			path = Info;
-			sourceTree = "<group>";
-		};
-		8426BB7424A8A9EE0031AEA2 /* ProfileInfo */ = {
-			isa = PBXGroup;
-			children = (
-				8426BB7524A8A9EE0031AEA2 /* ProfileInfoViewController.swift */,
-				8426BB7624A8A9EE0031AEA2 /* ProfileInfoReactor.swift */,
-			);
-			path = ProfileInfo;
-			sourceTree = "<group>";
-		};
-		8426BB7724A8A9EE0031AEA2 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				8426BB7824A8A9EE0031AEA2 /* ProfileViewController.swift */,
-				8426BB7924A8A9EE0031AEA2 /* ProfileReactor.swift */,
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
-		8426BB7A24A8A9EE0031AEA2 /* VotedContest */ = {
-			isa = PBXGroup;
-			children = (
-				8426BB7B24A8A9EE0031AEA2 /* VotedContestReactor.swift */,
-				8426BB7C24A8A9EE0031AEA2 /* VotedContestViewController.swift */,
-			);
-			path = VotedContest;
-			sourceTree = "<group>";
-		};
-		8426BB8924A8D0D60031AEA2 /* LikedZoo */ = {
-			isa = PBXGroup;
-			children = (
-				8426BB8A24A8D0EE0031AEA2 /* LikedZooCell.swift */,
-				8426BB8C24A8D2520031AEA2 /* LikedZooCellReactor.swift */,
-			);
-			path = LikedZoo;
-			sourceTree = "<group>";
-		};
-		8426BB8E24A8D3390031AEA2 /* ProfileLikedZooListCell */ = {
-			isa = PBXGroup;
-			children = (
-				8426BB8F24A8D3DF0031AEA2 /* ProfileLikedZooListCell.swift */,
-				8426BB9124A8D7950031AEA2 /* ProfileLikedZooListCellReactor.swift */,
-			);
-			path = ProfileLikedZooListCell;
-			sourceTree = "<group>";
-		};
-		8426BB9324A8D81A0031AEA2 /* ProfileLikedZooList */ = {
-			isa = PBXGroup;
-			children = (
-				8426BB9424A8D9910031AEA2 /* ProfileLikedZooListReactor.swift */,
-				8426BB9624A8DA8F0031AEA2 /* ProfileLikedZooListView.swift */,
-				8426BB9824A8DB880031AEA2 /* ProfileLikedZooHeader.swift */,
-			);
-			path = ProfileLikedZooList;
-			sourceTree = "<group>";
-		};
-		8426BB9A24A8DEDC0031AEA2 /* LikedZoo */ = {
-			isa = PBXGroup;
-			children = (
-				8426BB9B24A8DF000031AEA2 /* LikedZooViewController.swift */,
-				8426BB9D24A8DF5C0031AEA2 /* LikedZooReactor.swift */,
-			);
-			path = LikedZoo;
 			sourceTree = "<group>";
 		};
 		84376CA324A5F05E00282F3C /* Post */ = {
@@ -821,6 +549,20 @@
 				84376CDA24A852D400282F3C /* MapSearchResultCellReactor.swift */,
 			);
 			path = MapSearch;
+			sourceTree = "<group>";
+		};
+		84452A7924AA0DDF0092F949 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				84452A7A24AA0E250092F949 /* ServiceProvider.swift */,
+				84452A7E24AA0EA00092F949 /* BaseService.swift */,
+				84452A8024AA0F040092F949 /* ContestService.swift */,
+				84452A8A24AA46B10092F949 /* AnimalService.swift */,
+				84452A9024AA4E8B0092F949 /* ZooService.swift */,
+				84452A9C24AB297C0092F949 /* PostService.swift */,
+				84452AA224AB328F0092F949 /* UserService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		844EE13024842731003369F2 /* PastContest */ = {
@@ -978,7 +720,6 @@
 		847B37A924798DC400B48535 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				8426BB6A24A8A9EE0031AEA2 /* ProfileTab */,
 				84376CC224A7CFDC00282F3C /* ExploreTab */,
 				84376CAC24A7885300282F3C /* VoteTab */,
 				84D2167E2499119600AFB1A6 /* MapTab */,
@@ -991,7 +732,6 @@
 		847B37AA24798DD600B48535 /* Organisms */ = {
 			isa = PBXGroup;
 			children = (
-				8426BB2624A8A9080031AEA2 /* ProfileTab */,
 				84376CAE24A7889D00282F3C /* VoteTab */,
 				84376CA324A5F05E00282F3C /* Post */,
 				84D2167D2499117700AFB1A6 /* MapTab */,
@@ -1091,10 +831,12 @@
 		847B37D02479D1B800B48535 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
+				84452A7924AA0DDF0092F949 /* Service */,
 				84DA96172493C7E700DF6740 /* Responses */,
 				847B3819247CBA3100B48535 /* Repositories */,
 				847B380A247CB00500B48535 /* Networkings */,
 				847B37D12479D1CB00B48535 /* Entities */,
+				84452A8224AA18610092F949 /* GorillaDecoder.swift */,
 			);
 			path = BusinessLogic;
 			sourceTree = "<group>";
@@ -1102,7 +844,6 @@
 		847B37D12479D1CB00B48535 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				8426BB2424A8A8850031AEA2 /* Profile.swift */,
 				847B37D22479D1F500B48535 /* Entity.swift */,
 				847B37D42479D27D00B48535 /* Contest.swift */,
 				847B37D62479D32A00B48535 /* Zoo.swift */,
@@ -1242,6 +983,11 @@
 			isa = PBXGroup;
 			children = (
 				847B3817247CB7EB00B48535 /* FrontendEchoTarget.swift */,
+				84452A7524AA08580092F949 /* ContestTarget.swift */,
+				84452A8624AA43980092F949 /* AnimalTarget.swift */,
+				84452A8C24AA4C1F0092F949 /* ZooTarget.swift */,
+				84452A9824AB27220092F949 /* PostTarget.swift */,
+				84452A9E24AB2E7A0092F949 /* UserTarget.swift */,
 			);
 			path = Targets;
 			sourceTree = "<group>";
@@ -1249,6 +995,11 @@
 		847B3819247CBA3100B48535 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				84452A7724AA0C0B0092F949 /* ContestRepository.swift */,
+				84452A8824AA45AB0092F949 /* AnimalRepository.swift */,
+				84452A8E24AA4CBA0092F949 /* ZooRepository.swift */,
+				84452A9A24AB288F0092F949 /* PostRepository.swift */,
+				84452AA024AB2FAA0092F949 /* UserRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -1376,22 +1127,22 @@
 			path = Result;
 			sourceTree = "<group>";
 		};
-		84C433AA249BD72600172D6A /* ZooAnimal */ = {
+		84C433AA249BD72600172D6A /* ZooAnimalList */ = {
 			isa = PBXGroup;
 			children = (
-				84C433AC249BD7B200172D6A /* ZooAnimalViewController.swift */,
-				84C433AE249BD7C800172D6A /* ZooAnimalReactor.swift */,
+				84C433AC249BD7B200172D6A /* ZooAnimalListViewController.swift */,
+				84C433AE249BD7C800172D6A /* ZooAnimalListReactor.swift */,
 			);
-			path = ZooAnimal;
+			path = ZooAnimalList;
 			sourceTree = "<group>";
 		};
-		84C433AB249BD74000172D6A /* ZooAnimal */ = {
+		84C433AB249BD74000172D6A /* ZooAnimalList */ = {
 			isa = PBXGroup;
 			children = (
 				84C433B0249BDACD00172D6A /* ZooAnimalCell.swift */,
 				84C433B2249BDADD00172D6A /* ZooAnimalCellReactor.swift */,
 			);
-			path = ZooAnimal;
+			path = ZooAnimalList;
 			sourceTree = "<group>";
 		};
 		84D2167D2499117700AFB1A6 /* MapTab */ = {
@@ -1399,7 +1150,7 @@
 			children = (
 				84376CD324A84B8F00282F3C /* MapSearch */,
 				84E39BF424A3B7F1008E6526 /* AnimalDetail */,
-				84C433AB249BD74000172D6A /* ZooAnimal */,
+				84C433AB249BD74000172D6A /* ZooAnimalList */,
 				8494CBD5249B6B6D00E35E00 /* ZooDetail */,
 				84D216862499169600AFB1A6 /* Map */,
 			);
@@ -1411,7 +1162,7 @@
 			children = (
 				84376CD224A84B6F00282F3C /* MapSearch */,
 				84E39BF324A3B7D4008E6526 /* AnimalDetail */,
-				84C433AA249BD72600172D6A /* ZooAnimal */,
+				84C433AA249BD72600172D6A /* ZooAnimalList */,
 				8494CBD4249B6ADC00E35E00 /* ZooDetail */,
 				84D2167F2499123300AFB1A6 /* Map */,
 			);
@@ -1461,6 +1212,10 @@
 			isa = PBXGroup;
 			children = (
 				84DA96182493C81900DF6740 /* ContestAnimalDetailResponse.swift */,
+				84452A8424AA1A6B0092F949 /* ContestDetailResponse.swift */,
+				84452A9224AA52AD0092F949 /* ZooDetailResponse.swift */,
+				84452A9424AA5BE80092F949 /* ZooAnimalResponse.swift */,
+				84452A9624AB21740092F949 /* RecommendedZoo.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -1735,16 +1490,16 @@
 				84DA96192493C81900DF6740 /* ContestAnimalDetailResponse.swift in Sources */,
 				847B3774247980E000B48535 /* AppDelegate.swift in Sources */,
 				847B37F7247A57E100B48535 /* HomePastContestListCellReactor.swift in Sources */,
-				8426BB8424A8A9EE0031AEA2 /* ProfileInfoReactor.swift in Sources */,
+				84452A9124AA4E8B0092F949 /* ZooService.swift in Sources */,
 				84A99FE62484ED700066863B /* ContestDetailEntryViewController.swift in Sources */,
 				848B16E524A514EC00150EE7 /* AnimalDetailPastContestCell.swift in Sources */,
+				84452A7F24AA0EA00092F949 /* BaseService.swift in Sources */,
 				847B381B247CBA9000B48535 /* FrontendEchoViewController.swift in Sources */,
 				84A9A00C2485347D0066863B /* ContestResult.swift in Sources */,
 				847B37E32479E01000B48535 /* HomeCurrentContestHeader.swift in Sources */,
-				8426BB4F24A8A9080031AEA2 /* FanAnimalCellReactor.swift in Sources */,
 				847B37AE24798E5C00B48535 /* DevelopingViewController.swift in Sources */,
-				8426BB8024A8A9EE0031AEA2 /* ProfileContestDetailInfoViewController.swift in Sources */,
 				84376CD524A84BC800282F3C /* MapSearchViewController.swift in Sources */,
+				84452A8F24AA4CBA0092F949 /* ZooRepository.swift in Sources */,
 				847B3807247A687D00B48535 /* HomeRecommendedZooListView.swift in Sources */,
 				84A99FE82484ED9D0066863B /* ContestDetailEntryReactor.swift in Sources */,
 				84A9A008248533340066863B /* ContestDetailResultVoteCell.swift in Sources */,
@@ -1752,69 +1507,59 @@
 				847B37F9247A580C00B48535 /* HomePastContestListView.swift in Sources */,
 				84376CB324A7891500282F3C /* VoteContestReactor.swift in Sources */,
 				84376CC524A7D06A00282F3C /* ExploreViewController.swift in Sources */,
-				8426BB5A24A8A9080031AEA2 /* ProfileInfoCellReactor.swift in Sources */,
+				84452A8324AA18610092F949 /* GorillaDecoder.swift in Sources */,
 				8494CBD7249B6C0400E35E00 /* ZooDetailViewController.swift in Sources */,
-				8426BB5D24A8A9080031AEA2 /* ProfileVotedContestListReactor.swift in Sources */,
 				84C433B5249BE7C400172D6A /* FanButton.swift in Sources */,
-				8426BB5824A8A9080031AEA2 /* ProfileInfoHeader.swift in Sources */,
 				84E39BFA24A3BA15008E6526 /* AnimalDetailHeader.swift in Sources */,
-				84C433AD249BD7B200172D6A /* ZooAnimalViewController.swift in Sources */,
+				84C433AD249BD7B200172D6A /* ZooAnimalListViewController.swift in Sources */,
 				84A99FE02484D6260066863B /* ContestDetailInfoSponsorCellReactor.swift in Sources */,
 				84E39BF824A3B841008E6526 /* AnimalDetailReactor.swift in Sources */,
-				8426BB8224A8A9EE0031AEA2 /* ProfileContestDetailViewController.swift in Sources */,
+				84452A9924AB27220092F949 /* PostTarget.swift in Sources */,
 				84376CA224A5DDB700282F3C /* AnimalDetailPostHeader.swift in Sources */,
 				84A99FF02484EEA40066863B /* Animal.swift in Sources */,
+				84452A9B24AB288F0092F949 /* PostRepository.swift in Sources */,
 				84376CC124A7BE3E00282F3C /* CreateVoteViewController.swift in Sources */,
 				84376CBC24A7A56500282F3C /* VoteContestDetailReactor.swift in Sources */,
 				84D216832499126300AFB1A6 /* MapReactor.swift in Sources */,
 				84376CA924A5F17000282F3C /* PostPhotoCollectionView.swift in Sources */,
 				847B381D247CBB1800B48535 /* FrontendEchoReactor.swift in Sources */,
 				84A99FEC2484EE500066863B /* ContestDetailEntryCellReactor.swift in Sources */,
+				84452A9D24AB297C0092F949 /* PostService.swift in Sources */,
+				84452A8924AA45AB0092F949 /* AnimalRepository.swift in Sources */,
 				847B37EF247A350800B48535 /* TestData.swift in Sources */,
-				8426BB8524A8A9EE0031AEA2 /* ProfileViewController.swift in Sources */,
 				84A9A00A2485335E0066863B /* ContestDetailResultVoteCellReactor.swift in Sources */,
 				847B37D32479D1F500B48535 /* Entity.swift in Sources */,
 				8494CBE9249B83DB00E35E00 /* ZooDetailPostCellReactor.swift in Sources */,
 				84DA960E2493B0D600DF6740 /* ContestAnimalDetailReactor.swift in Sources */,
-				8426BB8124A8A9EE0031AEA2 /* ProfileContestDetailReactor.swift in Sources */,
-				8426BB4E24A8A9080031AEA2 /* FanAnimalCell.swift in Sources */,
 				84A9A00424851CED0066863B /* ContestDetailResultAwardCellReactor.swift in Sources */,
 				84DA960C2493B07800DF6740 /* ContestAnimalDetailViewController.swift in Sources */,
+				84452A9324AA52AD0092F949 /* ZooDetailResponse.swift in Sources */,
 				844EE1502484A5AF003369F2 /* ContestDetailReactor.swift in Sources */,
 				847B37F5247A57C000B48535 /* HomePastContestListCell.swift in Sources */,
 				847B37ED2479E4F400B48535 /* HomeCurrentContestListCellReactor.swift in Sources */,
 				8494CBE3249B7B5000E35E00 /* ZooDetailAnimalCellReactor.swift in Sources */,
 				847B37DB2479D7FF00B48535 /* HomeViewController.swift in Sources */,
 				848B16E724A5150100150EE7 /* AnimalDetailPastContestCellReactor.swift in Sources */,
-				8426BB8D24A8D2520031AEA2 /* LikedZooCellReactor.swift in Sources */,
 				84A99FDE2484D5FF0066863B /* ContestDetailInfoSponsorCell.swift in Sources */,
 				84A99FD62484CA530066863B /* ContestDetailInfoViewController.swift in Sources */,
 				84376CB124A788FD00282F3C /* VoteContestViewController.swift in Sources */,
-				8426BB8324A8A9EE0031AEA2 /* ProfileInfoViewController.swift in Sources */,
+				84452AA124AB2FAA0092F949 /* UserRepository.swift in Sources */,
 				84376CBA24A7A54E00282F3C /* VoteContestDetailViewController.swift in Sources */,
 				847B37FB247A583B00B48535 /* HomePastContestListReactor.swift in Sources */,
-				8426BB7E24A8A9EE0031AEA2 /* FanAnimalViewController.swift in Sources */,
 				84A9A00224851CD50066863B /* ContestDetailResultAwardCell.swift in Sources */,
-				8426BB6624A8A9080031AEA2 /* ProfileContestDetailInfoHeader.swift in Sources */,
 				847B37B82479958C00B48535 /* GlobalFunctions.swift in Sources */,
 				847B380E247CB0A400B48535 /* LoggerPlugin.swift in Sources */,
-				8426BB2524A8A8850031AEA2 /* Profile.swift in Sources */,
 				84376CAB24A64FEB00282F3C /* PostPhotoCollectionReactor.swift in Sources */,
 				844EE13B24842808003369F2 /* PastContestReactor.swift in Sources */,
 				844EE137248427D7003369F2 /* PastContestViewController.swift in Sources */,
 				847B3813247CB49700B48535 /* NetworkProvider.swift in Sources */,
-				8426BB9E24A8DF5C0031AEA2 /* LikedZooReactor.swift in Sources */,
 				84376CD924A8529800282F3C /* MapSearchResultCell.swift in Sources */,
-				8426BB5C24A8A9080031AEA2 /* ProfileVotedContestHeader.swift in Sources */,
 				844EE13D24842BEC003369F2 /* Formatter.swift in Sources */,
 				84A9A00024851BC90066863B /* ContestDetailResultReactor.swift in Sources */,
 				847B37DD2479D81B00B48535 /* HomeReactor.swift in Sources */,
 				8491403324A49D9900DFAE20 /* AnimalDetailPastContestView.swift in Sources */,
-				8426BB6124A8A9080031AEA2 /* ProfileFanAnimalListCellReactor.swift in Sources */,
-				8426BB6424A8A9080031AEA2 /* ProfileContestDetailInfoSponsorCellReactor.swift in Sources */,
 				847B37CF2479AA9800B48535 /* IconView.swift in Sources */,
 				844EE146248436AD003369F2 /* RecommendedZooCellReactor.swift in Sources */,
-				8426BB5924A8A9080031AEA2 /* ProfileInfoCell.swift in Sources */,
 				84376CD124A8463500282F3C /* MapSearchButton.swift in Sources */,
 				84A9A00624851D340066863B /* Award.swift in Sources */,
 				847B37F1247A3F0E00B48535 /* UIImageView+Extension.swift in Sources */,
@@ -1823,68 +1568,62 @@
 				847B37EB2479E4CC00B48535 /* HomeCurrentContestListCell.swift in Sources */,
 				84DA96122493B1FB00DF6740 /* ContestAnimalDetailPostCellReactor.swift in Sources */,
 				84D2168A2499218200AFB1A6 /* MapZooListViewController.swift in Sources */,
+				84452A7824AA0C0B0092F949 /* ContestRepository.swift in Sources */,
+				84452A7B24AA0E250092F949 /* ServiceProvider.swift in Sources */,
+				84452A8724AA43980092F949 /* AnimalTarget.swift in Sources */,
 				84C433B3249BDADD00172D6A /* ZooAnimalCellReactor.swift in Sources */,
 				844EE1332484278F003369F2 /* PastContestCell.swift in Sources */,
-				8426BB7F24A8A9EE0031AEA2 /* ProfileContestDetailInfoReactor.swift in Sources */,
 				847B37E62479E23000B48535 /* HomeCurrentContestListView.swift in Sources */,
 				8494CBDD249B767300E35E00 /* ZooDetailAnimalsHeader.swift in Sources */,
 				847B37D52479D27D00B48535 /* Contest.swift in Sources */,
 				84A99FEA2484EE390066863B /* ContestDetailEntryCell.swift in Sources */,
-				8426BB6924A8A9080031AEA2 /* VotedContestCell.swift in Sources */,
-				8426BB8B24A8D0EE0031AEA2 /* LikedZooCell.swift in Sources */,
 				84376CB724A789B500282F3C /* VoteContestCellReactor.swift in Sources */,
 				844EE135248427AF003369F2 /* PastContestCellReactor.swift in Sources */,
-				8426BB9024A8D3DF0031AEA2 /* ProfileLikedZooListCell.swift in Sources */,
-				8426BB7D24A8A9EE0031AEA2 /* FanAnimalReactor.swift in Sources */,
 				844EE1522484A6DF003369F2 /* ContestDetailHeader.swift in Sources */,
-				8426BB5E24A8A9080031AEA2 /* ProfileVotedContestListView.swift in Sources */,
 				847B3803247A681D00B48535 /* HomeRecommendedZooListCellReactor.swift in Sources */,
 				84D216812499124E00AFB1A6 /* MapViewController.swift in Sources */,
-				8426BB5124A8A9080031AEA2 /* ProfileVotedContestListCell.swift in Sources */,
 				84376CC724A7D08200282F3C /* ExploreReactor.swift in Sources */,
+				84452A7624AA08580092F949 /* ContestTarget.swift in Sources */,
 				847B37FD247A586100B48535 /* HomePastContestHeader.swift in Sources */,
-				84C433AF249BD7C800172D6A /* ZooAnimalReactor.swift in Sources */,
-				8426BB8824A8A9EE0031AEA2 /* VotedContestViewController.swift in Sources */,
+				84C433AF249BD7C800172D6A /* ZooAnimalListReactor.swift in Sources */,
 				84C433A9249BD3D700172D6A /* HeartNumberView.swift in Sources */,
 				847B37CA2479A5DD00B48535 /* UIColor+Extension.swift in Sources */,
-				8426BB5524A8A9080031AEA2 /* ProfileInfoListReactor.swift in Sources */,
 				844EE14424843690003369F2 /* RecommendedZooCell.swift in Sources */,
 				84A99FE42484E5090066863B /* ContestDetailInfoHeader.swift in Sources */,
 				84376CBF24A7A96400282F3C /* VoteContestDetailHeader.swift in Sources */,
 				847B3805247A684B00B48535 /* HomeRecommendedZooHeader.swift in Sources */,
-				8426BB9524A8D9910031AEA2 /* ProfileLikedZooListReactor.swift in Sources */,
-				8426BB8724A8A9EE0031AEA2 /* VotedContestReactor.swift in Sources */,
 				84A99FF42484FBF00066863B /* ContestDetailPostViewController.swift in Sources */,
 				847B37C82479A5A200B48535 /* Color.swift in Sources */,
+				84452AA324AB328F0092F949 /* UserService.swift in Sources */,
 				84376CCF24A7DEEB00282F3C /* ExplorePostDetailReactor.swift in Sources */,
 				84867855249B220700BCF94B /* MapZooCell.swift in Sources */,
 				84A99FFC2484FD900066863B /* Post.swift in Sources */,
 				84376CCA24A7DCFE00282F3C /* PostDetailCell.swift in Sources */,
+				84452A9F24AB2E7A0092F949 /* UserTarget.swift in Sources */,
 				84376CD724A84BE000282F3C /* MapSearchReactor.swift in Sources */,
 				8494CBDB249B6E7100E35E00 /* ZooDetailHeader.swift in Sources */,
 				847B37B4247992D300B48535 /* DeviceSize.swift in Sources */,
 				84DA96142493B9A700DF6740 /* ContestAnimalDetailHeader.swift in Sources */,
+				84452A9724AB21740092F949 /* RecommendedZoo.swift in Sources */,
 				84E39BF624A3B824008E6526 /* AnimalDetailViewController.swift in Sources */,
-				8426BB9C24A8DF000031AEA2 /* LikedZooViewController.swift in Sources */,
 				847B3811247CB13800B48535 /* LoggerFormatter.swift in Sources */,
 				84376CCD24A7DED700282F3C /* ExplorePostDetailViewController.swift in Sources */,
 				847B37B62479948C00B48535 /* TextStyle.swift in Sources */,
-				8426BB9224A8D7950031AEA2 /* ProfileLikedZooListCellReactor.swift in Sources */,
-				8426BB5224A8A9080031AEA2 /* ProfileFanAnimalHeader.swift in Sources */,
+				84452A8124AA0F040092F949 /* ContestService.swift in Sources */,
 				847B3776247980E000B48535 /* SceneDelegate.swift in Sources */,
+				84452A8B24AA46B10092F949 /* AnimalService.swift in Sources */,
+				84452A8524AA1A6B0092F949 /* ContestDetailResponse.swift in Sources */,
+				84452A8D24AA4C1F0092F949 /* ZooTarget.swift in Sources */,
 				847B37B12479919800B48535 /* ViewConstructor.swift in Sources */,
 				8494CBD9249B6C1D00E35E00 /* ZooDetailReactor.swift in Sources */,
 				844EE1402484335D003369F2 /* TransitionPresentable.swift in Sources */,
 				84376CA724A5F0A800282F3C /* PostCellReactor.swift in Sources */,
-				8426BB9724A8DA8F0031AEA2 /* ProfileLikedZooListView.swift in Sources */,
 				84DA96102493B1DD00DF6740 /* ContestAnimalDetailPostCell.swift in Sources */,
 				84376CA524A5F08600282F3C /* PostPhotoCell.swift in Sources */,
 				847B37D72479D32A00B48535 /* Zoo.swift in Sources */,
 				84376CDB24A852D400282F3C /* MapSearchResultCellReactor.swift in Sources */,
 				847B37CD2479A94A00B48535 /* TabBarController.swift in Sources */,
-				8426BB6224A8A9080031AEA2 /* ProfileFanAnimalListCell.swift in Sources */,
 				847B3778247980E000B48535 /* ContentView.swift in Sources */,
-				8426BB6524A8A9080031AEA2 /* ProfileContestDetailInfoSponsorCell.swift in Sources */,
 				84D21688249916B600AFB1A6 /* PointZooAnnotation.swift in Sources */,
 				8491403124A4816800DFAE20 /* FloatingContestView.swift in Sources */,
 				847B3801247A67F900B48535 /* HomeRecommendedZooListCell.swift in Sources */,
@@ -1892,12 +1631,10 @@
 				84DA96162493BBDD00DF6740 /* VoteButton.swift in Sources */,
 				84A99FD82484CA7B0066863B /* ContestDetailInfoReactor.swift in Sources */,
 				84376CB524A7899A00282F3C /* VoteContestCell.swift in Sources */,
+				84452A9524AA5BE80092F949 /* ZooAnimalResponse.swift in Sources */,
 				84867857249B221C00BCF94B /* MapZooCellReactor.swift in Sources */,
-				8426BB5024A8A9080031AEA2 /* ProfileVotedContestListCellReactor.swift in Sources */,
-				8426BB9924A8DB880031AEA2 /* ProfileLikedZooHeader.swift in Sources */,
 				8494CBE5249B825600E35E00 /* ZooDetailPostsHeader.swift in Sources */,
 				847B380C247CB03C00B48535 /* APIStatus.swift in Sources */,
-				8426BB8624A8A9EE0031AEA2 /* ProfileReactor.swift in Sources */,
 				844EE14E2484A595003369F2 /* ContestDetailViewController.swift in Sources */,
 				847B37E82479E25E00B48535 /* HomeCurrentContestListReactor.swift in Sources */,
 				847B37C62479A29F00B48535 /* UILabel+Extension.swift in Sources */,
@@ -1905,14 +1642,9 @@
 				84C433B1249BDACD00172D6A /* ZooAnimalCell.swift in Sources */,
 				847B3818247CB7EB00B48535 /* FrontendEchoTarget.swift in Sources */,
 				8494CBE7249B83C800E35E00 /* ZooDetailPostCell.swift in Sources */,
-				8426BB6724A8A9080031AEA2 /* ProfileContestDetailHeader.swift in Sources */,
-				8426BB5324A8A9080031AEA2 /* ProfileFanAnimalListView.swift in Sources */,
 				84C433A7249BCE2600172D6A /* HeartButton.swift in Sources */,
-				8426BB6824A8A9080031AEA2 /* VotedContestCellReactor.swift in Sources */,
-				8426BB5424A8A9080031AEA2 /* ProfileFanAnimalListReactor.swift in Sources */,
 				84A99FFE24851BA20066863B /* ContestDetailResultViewController.swift in Sources */,
 				847B3809247A68A200B48535 /* HomeRecommendedZooListReactor.swift in Sources */,
-				8426BB5624A8A9080031AEA2 /* ProfileInfoListView.swift in Sources */,
 				84A99FF62484FC150066863B /* ContestDetailPostReactor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
