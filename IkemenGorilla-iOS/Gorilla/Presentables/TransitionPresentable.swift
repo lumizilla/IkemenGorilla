@@ -60,12 +60,31 @@ extension TransitionPresentable where Self: UIViewController {
             animated: true
         )
     }
+
+    func showVotedDetailPage(votedContestReactor: VotedContestReactor) {
+        navigationController?.pushViewController(
+            VotedContestViewController().then {
+                $0.reactor = votedContestReactor
+            },
+            animated: true
+        )
+    }
     
+
     // MAP TAB
     func showZooDetailPage(zooDetailReactor: ZooDetailReactor) {
         navigationController?.pushViewController(
             ZooDetailViewController().then {
                 $0.reactor = zooDetailReactor
+            },
+            animated: true
+        )
+    }
+
+    func showFanAnimalPage(fanAnimalReactor: FanAnimalReactor) {
+        navigationController?.pushViewController(
+            FanAnimalViewController().then {
+                $0.reactor = fanAnimalReactor
             },
             animated: true
         )
@@ -95,7 +114,7 @@ extension TransitionPresentable where Self: UIViewController {
         )
     }
     
-    /*
+    // PROFILE TAB
     func showProfileInfoPage(profileInfoReactor: ProfileInfoReactor) {
         navigationController?.pushViewController(
             ProfileInfoViewController().then {
@@ -104,5 +123,13 @@ extension TransitionPresentable where Self: UIViewController {
             animated: true
         )
     }
-    */
+    
+    func showLikedZooPage(likedZooReactor: LikedZooReactor) {
+        navigationController?.pushViewController(
+            LikedZooViewController().then {
+                $0.reactor = likedZooReactor
+            },
+            animated: true
+        )
+    }
 }
