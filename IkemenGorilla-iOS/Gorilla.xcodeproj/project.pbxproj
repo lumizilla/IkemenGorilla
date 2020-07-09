@@ -654,6 +654,7 @@
 		8426BB6A24A8A9EE0031AEA2 /* ProfileTab */ = {
 			isa = PBXGroup;
 			children = (
+				845AAA0724B746A600F20AFA /* SettingModal */,
 				8426BB9A24A8DEDC0031AEA2 /* LikedZoo */,
 				8426BB6B24A8A9EE0031AEA2 /* FanAnimal */,
 				8426BB6E24A8A9EE0031AEA2 /* VotedDetail */,
@@ -948,6 +949,13 @@
 				844EE1512484A6DF003369F2 /* ContestDetailHeader.swift */,
 			);
 			path = ContestDetail;
+			sourceTree = "<group>";
+		};
+		845AAA0724B746A600F20AFA /* SettingModal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SettingModal;
 			sourceTree = "<group>";
 		};
 		847B3767247980E000B48535 = {
@@ -1931,7 +1939,7 @@
 				84376CC724A7D08200282F3C /* ExploreReactor.swift in Sources */,
 				84452A7624AA08580092F949 /* ContestTarget.swift in Sources */,
 				847B37FD247A586100B48535 /* HomePastContestHeader.swift in Sources */,
-				84C433AF249BD7C800172D6A /* ZooAnimalReactor.swift in Sources */,
+				84C433AF249BD7C800172D6A /* ZooAnimalListReactor.swift in Sources */,
 				8426BB8824A8A9EE0031AEA2 /* VotedContestViewController.swift in Sources */,
 				84C433AF249BD7C800172D6A /* ZooAnimalListReactor.swift in Sources */,
 				84C433A9249BD3D700172D6A /* HeartNumberView.swift in Sources */,
