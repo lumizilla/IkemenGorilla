@@ -31,6 +31,14 @@ final class ProfileViewController: UIViewController, View, ViewConstructor, Tran
     
     // MARK: - Views
     
+    private let gearButton = UIButton().then {
+        $0.setImage(#imageLiteral(resourceName: "gear"), for: .normal)
+        $0.frame = CGRect(x: 0, y: 0, width: 32, height: 32)
+        $0.imageView?.contentMode = .scaleAspectFit
+        $0.contentHorizontalAlignment = .fill
+        $0.contentVerticalAlignment = .fill
+    }
+    
     private let scrollView = UIScrollView().then {
         $0.alwaysBounceVertical = true
         $0.showsVerticalScrollIndicator = false
@@ -79,6 +87,7 @@ final class ProfileViewController: UIViewController, View, ViewConstructor, Tran
     // MARK: - Setup Methods
     
     func setupViews() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: gearButton)
         scrollView.contentInset = Const.scrollViewContentInset
         view.addSubview(stackView)
         stackView.addArrangedSubview(profileInfoHeader)
