@@ -10,7 +10,7 @@ import ReactorKit
 import RxSwift
 import ReusableKit
 
-final class ZooDetailViewController: UIViewController, View, ViewConstructor {
+final class ZooDetailViewController: UIViewController, View, ViewConstructor, TransitionPresentable {
     struct Const {
         static let sectionHeight: CGFloat = ((DeviceSize.screenWidth - 48) / 3 + 8) * 6
     }
@@ -198,6 +198,13 @@ final class ZooDetailViewController: UIViewController, View, ViewConstructor {
                     $0.reactor = reactor.createZooAnimalListReactor()
                 }
                 self?.navigationController?.pushViewController(vc, animated: true)
+            }
+            .disposed(by: disposeBag)
+        
+        postsCollectionView.rx.itemSelected
+            .bind { [weak self] indexPath in
+                logger.debug(indexPath)
+                self?.showExplorePostDetailPage(explorePostDetailReactor: reactor.createExplorePostDetailReactor(indexPath: indexPath))
             }
             .disposed(by: disposeBag)
         
