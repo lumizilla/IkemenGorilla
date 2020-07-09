@@ -23,7 +23,13 @@ final class PastContestReactor: Reactor {
         var isLoading: Bool = false
     }
     
-    let initialState = PastContestReactor.State()
+    let initialState: State
+    private let provider: ServiceProviderType
+    
+    init(provider: ServiceProviderType) {
+        self.provider = provider
+        initialState = State()
+    }
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
@@ -50,5 +56,9 @@ final class PastContestReactor: Reactor {
             state.isLoading = isLoading
         }
         return state
+    }
+    
+    func createContestDetailReactor(indexPath: IndexPath) -> ContestDetailReactor {
+        return ContestDetailReactor(provider: provider, contest: currentState.contestCellReactors[indexPath.row].currentState.contest)
     }
 }
