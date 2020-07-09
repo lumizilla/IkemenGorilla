@@ -150,7 +150,7 @@ final class ZooDetailHeader: UIView, View, ViewConstructor {
             .bind(to: heartNumberView.numberLabel.rx.text)
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.zoo.address }
+        reactor.state.map { $0.zooDetail?.address }
             .distinctUntilChanged()
             .bind(to: addressLabel.rx.text)
             .disposed(by: disposeBag)
