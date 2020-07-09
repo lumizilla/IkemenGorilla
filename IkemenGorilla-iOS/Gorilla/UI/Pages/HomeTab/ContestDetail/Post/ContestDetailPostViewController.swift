@@ -12,7 +12,7 @@ import RxSwift
 import ReusableKit
 import SegementSlide
 
-final class ContestDetailPostViewController: UIViewController, View, ViewConstructor, SegementSlideContentScrollViewDelegate {
+final class ContestDetailPostViewController: UIViewController, View, ViewConstructor, SegementSlideContentScrollViewDelegate, TransitionPresentable {
     
     struct Reusable {
         static let postCell = ReusableCell<ContestDetailPostCell>()
@@ -144,6 +144,13 @@ final class ContestDetailPostViewController: UIViewController, View, ViewConstru
     func bind(reactor: ContestDetailPostReactor) {
         // Action
         reactor.action.onNext(.load)
+        
+        postsCollectionView.rx.itemSelected
+            .bind { [weak self] indexPath in
+                logger.debug(indexPath)
+                self?.showExplorePostDetailPage(explorePostDetailReactor: reactor.createExplorePostDetailReactor(indexPath: indexPath))
+            }
+            .disposed(by: disposeBag)
         
         // State
         reactor.state.map { $0.postCellReactors }
