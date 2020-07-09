@@ -94,4 +94,8 @@ final class AnimalDetailReactor: Reactor {
     func createPostPhotoCollectionReactor() -> PostPhotoCollectionReactor {
         return PostPhotoCollectionReactor()
     }
+    
+    func createExplorePostDetailReactor(indexPath: IndexPath) -> ExplorePostDetailReactor {
+        return ExplorePostDetailReactor(startAt: indexPath.row, posts: currentState.posts)
+    }
 }
