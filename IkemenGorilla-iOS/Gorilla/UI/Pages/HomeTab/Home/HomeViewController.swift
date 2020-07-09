@@ -109,6 +109,13 @@ final class HomeViewController: UIViewController, View, ViewConstructor, Transit
             }
             .disposed(by: disposeBag)
         
+        recommendedZooListView.rx.itemSelected
+            .bind { [weak self] indexPath in
+                guard let reactor = self?.recommendedZooListView.reactor?.createZooDetailReactor(indexPath: indexPath) else { return }
+                self?.showZooDetailPage(zooDetailReactor: reactor)
+            }
+            .disposed(by: disposeBag)
+        
         // State
     }
 }
