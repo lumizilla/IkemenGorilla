@@ -119,35 +119,26 @@ final class ContestDetailInfoHeader: UIView, View, ViewConstructor {
             .bind(to: catchCopyLabel.rx.text)
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.contestDetail?.description }
+        reactor.state.map { $0.contest.description }
             .distinctUntilChanged()
             .bind(to: descriptionLabel.rx.text)
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.contestDetail?.numberOfEntries }
+        reactor.state.map { $0.contest.numberOfEntries }
             .distinctUntilChanged()
-            .map { number in
-                guard let number = number else { return "" }
-                 return "エントリー数：\(number)"
-            }
+            .map { "エントリー数：\($0)" }
             .bind(to: numberOfEntriesLabel.rx.text)
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.contestDetail?.numberOfVotedPeople }
+        reactor.state.map { $0.contest.numberOfVotedPeople }
             .distinctUntilChanged()
-            .map { number in
-                guard let number = number else { return "" }
-                 return "これまでの参加人数：\(number)"
-            }
+            .map { "これまでの参加人数：\($0)" }
             .bind(to: numberOfVotedPeopleLabel.rx.text)
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.contestDetail?.numberOfVotes }
+        reactor.state.map { $0.contest.numberOfVotes }
             .distinctUntilChanged()
-            .map { number in
-                guard let number = number else { return "" }
-                 return "これまでの投票数：\(number)"
-            }
+            .map { "これまでの投票数：\($0)" }
             .bind(to: numberOfVotesLabel.rx.text)
             .disposed(by: disposeBag)
     }

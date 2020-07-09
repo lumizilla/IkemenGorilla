@@ -19,18 +19,6 @@ struct Post: Entity {
     let description: String
     let createdAt: Date
     
-    enum CodingKeys: String, CodingKey {
-        case id
-        case animalId = "animal_id"
-        case animalName = "animal_name"
-        case animalIconUrl = "animal_icon_url"
-        case zooId = "zoo_id"
-        case zooName = "zoo_name"
-        case imageUrl = "image_url"
-        case description
-        case createdAt = "created_at"
-    }
-    
     static func == (lhs: Post, rhs: Post) -> Bool {
         return lhs.id == rhs.id
     }

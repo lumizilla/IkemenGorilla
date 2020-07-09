@@ -16,11 +16,6 @@ struct Zoo: Entity {
     let longitude: Double
     let imageUrl: String
     
-    enum CodingKeys: String, CodingKey {
-        case id, name, address, latitude, longitude
-        case imageUrl = "image_url"
-    }
-    
     static func == (lhs: Zoo, rhs: Zoo) -> Bool {
         lhs.id == rhs.id
     }

@@ -14,13 +14,6 @@ struct Award: Entity {
     let iconUrl: String
     let awardName: String
     
-    enum CodingKeys: String, CodingKey {
-        case animalId = "animal_id"
-        case animalName = "animal_name"
-        case iconUrl = "icon_url"
-        case awardName = "award_name"
-    }
-    
     static func == (lhs: Award, rhs: Award) -> Bool {
         return lhs.animalId == rhs.animalId
     }

@@ -12,18 +12,13 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var provider: ServiceProviderType?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         window = UIWindow(frame: DeviceSize.screenBounds)
         window?.backgroundColor = Color.white
         window?.makeKeyAndVisible()
-        
-        provider = ServiceProvider()
-        
-        guard let provider = provider else { return true }
-        window?.rootViewController = TabBarController(provider: provider)
+        window?.rootViewController = TabBarController()
         return true
     }
 

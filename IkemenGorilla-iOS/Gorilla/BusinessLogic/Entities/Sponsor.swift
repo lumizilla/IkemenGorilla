@@ -14,12 +14,6 @@ struct Sponsor: Entity {
     let imageUrl: String
     let websiteUrl: String
     
-    enum CodingKeys: String, CodingKey {
-        case id, name
-        case imageUrl = "image_url"
-        case websiteUrl = "website_url"
-    }
-    
     static func == (lhs: Sponsor, rhs: Sponsor) -> Bool {
         lhs.id == rhs.id
     }

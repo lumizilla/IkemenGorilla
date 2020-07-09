@@ -15,7 +15,7 @@ final class RecommendedZooReactor: Reactor {
     }
     
     enum Mutation {
-        case setZooCellReactors([RecommendedZoo])
+        case setZooCellReactors([Zoo])
         case setIsLoading(Bool)
     }
     
@@ -24,13 +24,7 @@ final class RecommendedZooReactor: Reactor {
         var isLoading: Bool = false
     }
     
-    let initialState: State
-    private let provider: ServiceProviderType
-    
-    init(provider: ServiceProviderType) {
-        self.provider = provider
-        initialState = State()
-    }
+    let initialState = RecommendedZooReactor.State()
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
@@ -44,15 +38,15 @@ final class RecommendedZooReactor: Reactor {
         }
     }
     
-    private func load() -> Observable<[RecommendedZoo]> {
-        return provider.zooService.getRecommendedZoos().asObservable()
+    private func load() -> Observable<[Zoo]> {
+        .just(TestData.zoos(count: 8))
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
         var state = state
         switch mutation {
-        case .setZooCellReactors(let recommendedZoos):
-            state.zooCellReactors = recommendedZoos.map { RecommendedZooCellReactor(recommendedZoo: $0) }
+        case .setZooCellReactors(let zoos):
+            state.zooCellReactors = zoos.map { RecommendedZooCellReactor(zoo: $0) }
         case .setIsLoading(let isLoading):
             state.isLoading = isLoading
         }

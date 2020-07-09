@@ -17,15 +17,7 @@ struct Animal: Entity {
     let description: String
     let numberOfFans: Int
     var isFan: Bool
-    let zooName: String
-    
-    enum CodingKeys: String, CodingKey {
-        case id, name, sex, birthday, description
-        case iconUrl = "icon_url"
-        case numberOfFans = "number_of_fans"
-        case isFan = "is_fan"
-        case zooName = "zoo_name"
-    }
+    let isVotedToday: Bool
     
     static func == (lhs: Animal, rhs: Animal) -> Bool {
         return lhs.id == rhs.id

@@ -25,7 +25,6 @@ final class ContestAnimalDetailReactor: Reactor {
     
     struct State {
         let entry: Entry
-        let contestId: String
         var response: ContestAnimalDetailResponse?
         var postCellReactors: [ContestAnimalDetailPostCellReactor] = []
         var isLoading: Bool = false
@@ -33,11 +32,9 @@ final class ContestAnimalDetailReactor: Reactor {
     }
     
     let initialState: ContestAnimalDetailReactor.State
-    private let provider: ServiceProviderType
     
-    init(provider: ServiceProviderType, entry: Entry, contestId: String) {
-        self.provider = provider
-        initialState = State(entry: entry, contestId: contestId)
+    init(entry: Entry) {
+        initialState = State(entry: entry)
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
@@ -57,12 +54,11 @@ final class ContestAnimalDetailReactor: Reactor {
     }
     
     private func loadAnimal() -> Observable<ContestAnimalDetailResponse> {
-        logger.warning("no user id")
-        return provider.contestService.getAnimal(contestId: currentState.contestId, animalId: currentState.entry.animalId, userId: "user01").asObservable()
+        return .just(TestData.contestAnimalDetailResponse())
     }
     
     private func loadPosts() -> Observable<[Post]> {
-        return provider.animalService.getPosts(animalId: currentState.entry.animalId, page: 0).asObservable()
+        return .just(TestData.posts(count: 12))
     }
     
     func reduce(state: State, mutation: Mutation) -> State {

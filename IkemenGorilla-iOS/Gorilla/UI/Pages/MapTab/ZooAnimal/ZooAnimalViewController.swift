@@ -1,5 +1,5 @@
 //
-//  ZooAnimalListViewController.swift
+//  ZooAnimalViewController.swift
 //  Gorilla
 //
 //  Created by admin on 2020/06/19.
@@ -11,7 +11,7 @@ import ReactorKit
 import RxSwift
 import ReusableKit
 
-final class ZooAnimalListViewController: UIViewController, View, ViewConstructor {
+final class ZooAnimalViewController: UIViewController, View, ViewConstructor {
     
     struct Reusable {
         static let animalCell = ReusableCell<ZooAnimalCell>()
@@ -53,7 +53,7 @@ final class ZooAnimalListViewController: UIViewController, View, ViewConstructor
     }
     
     // MARK: - Bind Method
-    func bind(reactor: ZooAnimalListReactor) {
+    func bind(reactor: ZooAnimalReactor) {
         // Action
         reactor.action.onNext(.loadAnimals)
         

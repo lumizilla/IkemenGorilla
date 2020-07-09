@@ -26,10 +26,8 @@ final class ContestDetailPostReactor: Reactor {
     }
     
     let initialState: ContestDetailPostReactor.State
-    private let provider: ServiceProviderType
     
-    init(provider: ServiceProviderType, contest: Contest) {
-        self.provider = provider
+    init(contest: Contest) {
         initialState = State(contest: contest)
     }
     
@@ -46,7 +44,7 @@ final class ContestDetailPostReactor: Reactor {
     }
     
     private func load() -> Observable<[Post]> {
-        return provider.contestService.getPosts(contestId: currentState.contest.id, page: 0).asObservable()
+        return .just(TestData.posts(count: 12))
     }
     
     func reduce(state: State, mutation: Mutation) -> State {

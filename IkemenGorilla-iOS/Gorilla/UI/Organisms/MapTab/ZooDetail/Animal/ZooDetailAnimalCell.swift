@@ -53,7 +53,7 @@ final class ZooDetailAnimalCell: UICollectionViewCell, View, ViewConstructor {
         // Action
         
         // State
-        reactor.state.map { $0.zooAnimal.iconUrl }
+        reactor.state.map { $0.animal.iconUrl }
             .distinctUntilChanged()
             .bind { [weak self] iconUrl in
                 self?.imageView.setImage(imageUrl: iconUrl)

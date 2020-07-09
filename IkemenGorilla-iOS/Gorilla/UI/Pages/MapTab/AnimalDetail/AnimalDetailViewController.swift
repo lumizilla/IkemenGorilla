@@ -80,8 +80,6 @@ final class AnimalDetailViewController: UIViewController, View, ViewConstructor 
         postCollectionView.reactor = reactor.createPostPhotoCollectionReactor()
         
         // Action
-        reactor.action.onNext(.loadAnimal)
-        reactor.action.onNext(.loadCurrentContest)
         reactor.action.onNext(.loadPastContests)
         reactor.action.onNext(.loadPost)
         

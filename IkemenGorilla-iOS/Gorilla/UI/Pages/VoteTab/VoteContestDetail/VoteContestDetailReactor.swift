@@ -30,10 +30,8 @@ final class VoteContestDetailReactor: Reactor {
     }
     
     let initialState: State
-    private let provider: ServiceProviderType
     
-    init(provider: ServiceProviderType, contest: Contest) {
-        self.provider = provider
+    init(contest: Contest) {
         initialState = State(contest: contest)
     }
     
@@ -47,8 +45,7 @@ final class VoteContestDetailReactor: Reactor {
     }
     
     private func loadEntries() -> Observable<[Entry]> {
-        logger.warning("todo: paging from VoteContestDetailReactor")
-        return provider.contestService.getAnimals(contestId: currentState.contest.id, page: 0).asObservable()
+        return .just(TestData.entries(count: 8))
     }
     
     func reduce(state: State, mutation: Mutation) -> State {

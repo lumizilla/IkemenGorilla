@@ -180,7 +180,7 @@ final class ContestAnimalDetailViewController: UIViewController, View, ViewConst
         reactor.state.map { $0.postCellReactors.count / 12 }
             .distinctUntilChanged()
             .bind { [weak self] sectionCount in
-                self?.postsCollectionView.removeConstraints(self?.postsCollectionView.constraints ?? [])
+                self?.stackView.removeConstraints(self?.postsCollectionView.constraints ?? [])
                 self?.postsCollectionView.snp.makeConstraints {
                     $0.height.equalTo(16 + Const.sectionHeight * CGFloat(sectionCount))
                     $0.width.equalTo(DeviceSize.screenWidth)

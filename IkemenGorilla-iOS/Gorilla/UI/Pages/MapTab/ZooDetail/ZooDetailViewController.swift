@@ -187,15 +187,14 @@ final class ZooDetailViewController: UIViewController, View, ViewConstructor {
     func bind(reactor: ZooDetailReactor) {
         header.reactor = reactor
         // Action
-        reactor.action.onNext(.loadZooDetail)
         reactor.action.onNext(.loadAnimals)
         reactor.action.onNext(.loadPosts)
         
         animalsHeader.showAllButton.rx.tap
             .bind { [weak self] _ in
                 logger.debug("tap show all button")
-                let vc = ZooAnimalListViewController().then {
-                    $0.reactor = reactor.createZooAnimalListReactor()
+                let vc = ZooAnimalViewController().then {
+                    $0.reactor = reactor.createZooAnimalReactor()
                 }
                 self?.navigationController?.pushViewController(vc, animated: true)
             }
@@ -219,7 +218,7 @@ final class ZooDetailViewController: UIViewController, View, ViewConstructor {
         reactor.state.map { $0.postCellReactors.count / 12 }
             .distinctUntilChanged()
             .bind { [weak self] sectionCount in
-                self?.postsCollectionView.removeConstraints(self?.postsCollectionView.constraints ?? [])
+                self?.stackView.removeConstraints(self?.postsCollectionView.constraints ?? [])
                 self?.postsCollectionView.snp.makeConstraints {
                     $0.height.equalTo(16 + Const.sectionHeight * CGFloat(sectionCount))
                     $0.width.equalTo(DeviceSize.screenWidth)

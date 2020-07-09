@@ -12,7 +12,6 @@ import SwiftUI
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    var provider: ServiceProviderType?
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -27,11 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             window.backgroundColor = Color.white
-            
-            provider = ServiceProvider()
-            guard let provider = provider else { return }
-            
-            window.rootViewController = TabBarController(provider: provider)
+            window.rootViewController = TabBarController()
             self.window = window
             window.makeKeyAndVisible()
         }

@@ -14,22 +14,22 @@ final class RecommendedZooCellReactor: Reactor {
     enum Mutation {}
     
     struct State {
-        let recommendedZoo: RecommendedZoo
+        let zoo: Zoo
         
-        init(recommendedZoo: RecommendedZoo) {
-            self.recommendedZoo = recommendedZoo
+        init(zoo: Zoo) {
+            self.zoo = zoo
         }
     }
     
     let initialState: RecommendedZooCellReactor.State
     
-    init(recommendedZoo: RecommendedZoo) {
-        initialState = State(recommendedZoo: recommendedZoo)
+    init(zoo: Zoo) {
+        initialState = State(zoo: zoo)
     }
 }
 
 extension RecommendedZooCellReactor: Equatable {
     static func == (lhs: RecommendedZooCellReactor, rhs: RecommendedZooCellReactor) -> Bool {
-        return lhs.currentState.recommendedZoo.id == rhs.currentState.recommendedZoo.id
+        return lhs.currentState.zoo.id == rhs.currentState.zoo.id
     }
 }

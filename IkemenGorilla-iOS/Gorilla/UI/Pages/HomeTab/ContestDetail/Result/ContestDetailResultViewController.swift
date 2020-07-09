@@ -131,7 +131,7 @@ final class ContestDetailResultViewController: UIViewController, View, ViewConst
         reactor.state.map { $0.awardCellReactors.count }
             .distinctUntilChanged()
             .bind { [weak self] count in
-                self?.awardsCollectionView.removeConstraints(self?.awardsCollectionView.constraints ?? [])
+                self?.stackView.removeConstraints(self?.awardsCollectionView.constraints ?? [])
                 self?.awardsCollectionView.snp.makeConstraints {
                     $0.height.equalTo(ContestDetailResultAwardCell.Const.cellHeight * CGFloat((count + 1) / 2))
                     $0.width.equalTo(DeviceSize.screenWidth)
@@ -149,7 +149,7 @@ final class ContestDetailResultViewController: UIViewController, View, ViewConst
         reactor.state.map { $0.resultCellReactors.count }
             .distinctUntilChanged()
             .bind { [weak self] count in
-                self?.resultsCollectionView.removeConstraints(self?.resultsCollectionView.constraints ?? [])
+                self?.stackView.removeConstraints(self?.resultsCollectionView.constraints ?? [])
                 self?.resultsCollectionView.snp.makeConstraints {
                     $0.height.equalTo(ContestDetailResultVoteCell.Const.cellHeight * CGFloat(count))
                     $0.width.equalTo(DeviceSize.screenWidth)

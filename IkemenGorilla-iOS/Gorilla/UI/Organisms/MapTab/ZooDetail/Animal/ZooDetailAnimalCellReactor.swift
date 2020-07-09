@@ -13,22 +13,22 @@ final class ZooDetailAnimalCellReactor: Reactor {
     enum Action {}
     enum Mutation {}
     struct State {
-        let zooAnimal: ZooAnimal
+        let animal: Animal
         
-        init(zooAnimal: ZooAnimal) {
-            self.zooAnimal = zooAnimal
+        init(animal: Animal) {
+            self.animal = animal
         }
     }
     
     let initialState: State
     
-    init(zooAnimal: ZooAnimal) {
-        initialState = State(zooAnimal: zooAnimal)
+    init(animal: Animal) {
+        initialState = State(animal: animal)
     }
 }
 
 extension ZooDetailAnimalCellReactor: Equatable {
     static func == (lhs: ZooDetailAnimalCellReactor, rhs: ZooDetailAnimalCellReactor) -> Bool {
-        return lhs.currentState.zooAnimal.id == rhs.currentState.zooAnimal.id
+        return lhs.currentState.animal.id == rhs.currentState.animal.id
     }
 }

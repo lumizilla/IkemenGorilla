@@ -14,16 +14,16 @@ final class HomeRecommendedZooListCellReactor: Reactor {
     enum Mutation {}
     
     struct State {
-        let recommendedZoo: RecommendedZoo
+        let zoo: Zoo
         
-        init(recommendedZoo: RecommendedZoo) {
-            self.recommendedZoo = recommendedZoo
+        init(zoo: Zoo) {
+            self.zoo = zoo
         }
     }
     
     let initialState: HomeRecommendedZooListCellReactor.State
     
-    init(recommendedZoo: RecommendedZoo) {
-        initialState = State(recommendedZoo: recommendedZoo)
+    init(zoo: Zoo) {
+        initialState = State(zoo: zoo)
     }
 }

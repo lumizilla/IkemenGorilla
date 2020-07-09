@@ -24,13 +24,7 @@ final class HomeCurrentContestListReactor: Reactor {
         var isLoading: Bool = false
     }
     
-    let initialState: State
-    private let provider: ServiceProviderType
-    
-    init(provider: ServiceProviderType) {
-        self.provider = provider
-        initialState = State()
-    }
+    let initialState = HomeCurrentContestListReactor.State()
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
@@ -44,7 +38,7 @@ final class HomeCurrentContestListReactor: Reactor {
     }
     
     private func loadCurrentContests() -> Observable<[Contest]> {
-        provider.contestService.getContests(status: .current, page: 1).asObservable()
+        .just(TestData.contests(count: 4))
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
