@@ -15,6 +15,7 @@ target 'Gorilla' do
   pod 'LoggerKit'
   pod 'SegementSlide', '3.0.0'
   pod 'FloatingPanel'
+  pod 'PanModal'
 
   target 'GorillaTests' do
     inherit! :search_paths

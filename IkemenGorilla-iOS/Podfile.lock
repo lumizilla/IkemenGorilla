@@ -10,6 +10,7 @@ PODS:
   - Moya/RxSwift (14.0.0):
     - Moya/Core
     - RxSwift (~> 5.0)
+  - PanModal (1.2.7)
   - ReactorKit (2.0.1):
     - RxSwift (~> 5.0)
   - ReusableKit/Core (3.0.0)
@@ -32,6 +33,7 @@ DEPENDENCIES:
   - Kingfisher (~> 5.0)
   - LoggerKit
   - Moya/RxSwift (~> 14.0)
+  - PanModal
   - ReactorKit
   - ReusableKit/RxSwift
   - SegementSlide (= 3.0.0)
@@ -45,6 +47,7 @@ SPEC REPOS:
     - Kingfisher
     - LoggerKit
     - Moya
+    - PanModal
     - ReactorKit
     - ReusableKit
     - RxCocoa
@@ -60,6 +63,7 @@ SPEC CHECKSUMS:
   Kingfisher: 7b64389a43139c903ec434788344c288217c792d
   LoggerKit: d209547382484920b676c5f963031c1032f0c83d
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  PanModal: 3e16ead1a907fb06f4df3f13492fd00149fa4974
   ReactorKit: a63c5e11e0fd32d59d672e54178b0ed2876b764b
   ReusableKit: e5f853ad4652e411f96b6119b2488afa12929be6
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
@@ -69,6 +73,6 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
 
-PODFILE CHECKSUM: 61762807d0b765a20bec6339cc523cafa0b738a7
+PODFILE CHECKSUM: c0cbb429bd773394612820f2c7781a184c1bd1f8
 
 COCOAPODS: 1.9.3
