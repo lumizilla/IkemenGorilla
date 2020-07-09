@@ -79,4 +79,9 @@ final class ContestAnimalDetailReactor: Reactor {
         }
         return state
     }
+    
+    func createExplorePostDetailReactor(indexPath: IndexPath) -> ExplorePostDetailReactor {
+        let posts = currentState.postCellReactors.compactMap { $0.currentState.post }
+        return ExplorePostDetailReactor(startAt: indexPath.row, posts: posts)
+    }
 }
