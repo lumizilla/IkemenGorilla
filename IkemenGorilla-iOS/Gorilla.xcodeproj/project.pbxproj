@@ -535,6 +535,7 @@
 		8426BB2624A8A9080031AEA2 /* ProfileTab */ = {
 			isa = PBXGroup;
 			children = (
+				845AAA0A24B7486B00F20AFA /* SettingModal */,
 				8426BB8924A8D0D60031AEA2 /* LikedZoo */,
 				8426BB2724A8A9080031AEA2 /* FanAnimal */,
 				8426BB2A24A8A9080031AEA2 /* Profile */,
@@ -957,6 +958,13 @@
 			isa = PBXGroup;
 			children = (
 				845AAA0824B746F200F20AFA /* SettingModalViewController.swift */,
+			);
+			path = SettingModal;
+			sourceTree = "<group>";
+		};
+		845AAA0A24B7486B00F20AFA /* SettingModal */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = SettingModal;
 			sourceTree = "<group>";
