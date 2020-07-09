@@ -111,6 +111,7 @@
 		844EE14E2484A595003369F2 /* ContestDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE14D2484A595003369F2 /* ContestDetailViewController.swift */; };
 		844EE1502484A5AF003369F2 /* ContestDetailReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE14F2484A5AF003369F2 /* ContestDetailReactor.swift */; };
 		844EE1522484A6DF003369F2 /* ContestDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE1512484A6DF003369F2 /* ContestDetailHeader.swift */; };
+		845AAA0924B746F200F20AFA /* SettingModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845AAA0824B746F200F20AFA /* SettingModalViewController.swift */; };
 		847B3774247980E000B48535 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3773247980E000B48535 /* AppDelegate.swift */; };
 		847B3776247980E000B48535 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3775247980E000B48535 /* SceneDelegate.swift */; };
 		847B3778247980E000B48535 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3777247980E000B48535 /* ContentView.swift */; };
@@ -353,6 +354,7 @@
 		844EE14D2484A595003369F2 /* ContestDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDetailViewController.swift; sourceTree = "<group>"; };
 		844EE14F2484A5AF003369F2 /* ContestDetailReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDetailReactor.swift; sourceTree = "<group>"; };
 		844EE1512484A6DF003369F2 /* ContestDetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDetailHeader.swift; sourceTree = "<group>"; };
+		845AAA0824B746F200F20AFA /* SettingModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModalViewController.swift; sourceTree = "<group>"; };
 		847B3770247980E000B48535 /* Gorilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gorilla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		847B3773247980E000B48535 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		847B3775247980E000B48535 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -954,6 +956,7 @@
 		845AAA0724B746A600F20AFA /* SettingModal */ = {
 			isa = PBXGroup;
 			children = (
+				845AAA0824B746F200F20AFA /* SettingModalViewController.swift */,
 			);
 			path = SettingModal;
 			sourceTree = "<group>";
@@ -2016,6 +2019,7 @@
 				8426BB6824A8A9080031AEA2 /* VotedContestCellReactor.swift in Sources */,
 				8426BB5424A8A9080031AEA2 /* ProfileFanAnimalListReactor.swift in Sources */,
 				84A99FFE24851BA20066863B /* ContestDetailResultViewController.swift in Sources */,
+				845AAA0924B746F200F20AFA /* SettingModalViewController.swift in Sources */,
 				847B3809247A68A200B48535 /* HomeRecommendedZooListReactor.swift in Sources */,
 				8426BB5624A8A9080031AEA2 /* ProfileInfoListView.swift in Sources */,
 				84A99FF62484FC150066863B /* ContestDetailPostReactor.swift in Sources */,
