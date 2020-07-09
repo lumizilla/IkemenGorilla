@@ -89,4 +89,9 @@ final class ZooDetailReactor: Reactor {
         let zooAnimals = currentState.animalCellReactors.compactMap { $0.currentState.zooAnimal }
         return ZooAnimalListReactor(provider: provider, zoo: currentState.zoo, zooAnimals: zooAnimals)
     }
+    
+    func createExplorePostDetailReactor(indexPath: IndexPath) -> ExplorePostDetailReactor {
+        let posts = currentState.postCellReactors.compactMap { $0.currentState.post }
+        return ExplorePostDetailReactor(startAt: indexPath.row, posts: posts)
+    }
 }
