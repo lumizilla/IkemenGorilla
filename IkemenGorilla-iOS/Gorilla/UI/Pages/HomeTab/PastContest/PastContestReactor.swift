@@ -44,7 +44,8 @@ final class PastContestReactor: Reactor {
     }
     
     private func load() -> Observable<[Contest]> {
-        .just(TestData.contests(count: 8))
+        provider.contestService.getContests(status: .past
+            , page: 0).asObservable()
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
