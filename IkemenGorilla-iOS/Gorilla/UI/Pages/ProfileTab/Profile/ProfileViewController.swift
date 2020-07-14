@@ -9,6 +9,7 @@
 import UIKit
 import ReactorKit
 import RxSwift
+import PanModal
 
 final class ProfileViewController: UIViewController, View, ViewConstructor, TransitionPresentable {
     
@@ -126,6 +127,22 @@ final class ProfileViewController: UIViewController, View, ViewConstructor, Tran
                self?.showLikedZooPage(likedZooReactor: reactor.createLikedZooReactor())
            }
            .disposed(by: disposeBag)
+    
+        gearButton.rx.tap
+            .bind { [weak self] _ in
+                logger.debug("gear button tapped")
+                let vc = SettingModalViewController()
+                vc.delegate = self
+                self?.presentPanModal(vc)
+            }
+            .disposed(by: disposeBag)
+    
        // State
    }
+}
+
+extension ProfileViewController: SettingModalViewControllerDelegate {
+    func didTapHerokuAPI() {
+        logger.debug("didtap from profileviewcontroller")
+    }
 }
