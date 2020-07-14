@@ -16,6 +16,7 @@ target 'Gorilla' do
   pod 'SegementSlide', '3.0.0'
   pod 'FloatingPanel'
   pod 'PanModal'
+  pod 'SwiftyUserDefaults', '~> 5.0'
 
   target 'GorillaTests' do
     inherit! :search_paths
