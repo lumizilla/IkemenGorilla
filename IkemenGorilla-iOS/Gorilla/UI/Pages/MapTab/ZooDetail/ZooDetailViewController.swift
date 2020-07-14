@@ -48,6 +48,7 @@ final class ZooDetailViewController: UIViewController, View, ViewConstructor, Tr
         $0.backgroundColor = Color.white
         $0.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         $0.showsHorizontalScrollIndicator = false
+        $0.alwaysBounceHorizontal = true
     }
     
     private let postsHeader = ZooDetailPostsHeader()
