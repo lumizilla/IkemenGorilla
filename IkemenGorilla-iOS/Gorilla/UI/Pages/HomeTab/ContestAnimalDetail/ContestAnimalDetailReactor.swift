@@ -58,7 +58,7 @@ final class ContestAnimalDetailReactor: Reactor {
     
     private func loadAnimal() -> Observable<ContestAnimalDetailResponse> {
         logger.warning("no user id")
-        return provider.contestService.getAnimal(contestId: currentState.contestId, animalId: currentState.entry.animalId, userId: "user01").asObservable()
+        return provider.contestService.getAnimal(contestId: currentState.contestId, animalId: currentState.entry.animalId, userId: "1").asObservable()
     }
     
     private func loadPosts() -> Observable<[Post]> {

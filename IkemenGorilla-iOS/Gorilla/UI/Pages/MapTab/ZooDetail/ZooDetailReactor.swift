@@ -58,12 +58,12 @@ final class ZooDetailReactor: Reactor {
     
     private func loadZooDetail() -> Observable<ZooDetail> {
         logger.warning("no user id")
-        return provider.zooService.getZoo(zooId: currentState.zoo.id, userId: "user01").asObservable()
+        return provider.zooService.getZoo(zooId: currentState.zoo.id, userId: "1").asObservable()
     }
     
     private func loadAnimals() -> Observable<[ZooAnimal]> {
         logger.warning("no user id")
-        return provider.zooService.getAnimals(zooId: currentState.zoo.id, page: 0, userId: "user01").asObservable()
+        return provider.zooService.getAnimals(zooId: currentState.zoo.id, page: 0, userId: "1").asObservable()
     }
     
     private func loadPosts() -> Observable<[Post]> {

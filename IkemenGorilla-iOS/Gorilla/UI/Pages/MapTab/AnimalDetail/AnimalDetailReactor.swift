@@ -60,7 +60,7 @@ final class AnimalDetailReactor: Reactor {
     
     private func loadAnimal() -> Observable<Animal> {
         logger.warning("no user id from AnimalDetailReactor")
-        return provider.animalService.getAnimal(animalId: currentState.zooAnimal.id, userId: "user01").asObservable()
+        return provider.animalService.getAnimal(animalId: currentState.zooAnimal.id, userId: "1").asObservable()
     }
     
     private func loadCurrentContest() -> Observable<Contest?> {
