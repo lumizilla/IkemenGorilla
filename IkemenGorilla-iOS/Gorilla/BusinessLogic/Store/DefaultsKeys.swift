@@ -6,4 +6,9 @@
 //  Copyright © 2020 admin. All rights reserved.
 //
 
-import Foundation
+import SwiftyUserDefaults
+
+extension DefaultsKeys {
+    // Store
+    static let userID = DefaultsKey<String?>("userID")
+}
