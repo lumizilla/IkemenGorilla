@@ -10,5 +10,5 @@ import SwiftyUserDefaults
 
 extension DefaultsKeys {
     // Store
-    static let userID = DefaultsKey<String?>("userID")
+    var userID: DefaultsKey<String?> { return .init("") }
 }
