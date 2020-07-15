@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+protocol StoreServiceType {
+    var store: StoreType { get set }
+}
+
+class StoreService: BaseService, StoreServiceType {
+    var store: StoreType = Store()
+}
