@@ -17,6 +17,7 @@ target 'Gorilla' do
   pod 'FloatingPanel'
   pod 'PanModal'
   pod 'SwiftyUserDefaults', '~> 5.0'
+  pod "RxGesture"
 
   target 'GorillaTests' do
     inherit! :search_paths
