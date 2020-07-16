@@ -55,4 +55,8 @@ final class ExplorePostDetailReactor: Reactor {
     func createAnimalDetailReactor(zooAnimal: ZooAnimal) -> AnimalDetailReactor {
         return AnimalDetailReactor(provider: provider, zooAnimal: zooAnimal)
     }
+    
+    func createZooDetailReactor(zoo: Zoo) -> ZooDetailReactor {
+        return ZooDetailReactor(provider: provider, zoo: zoo)
+    }
 }
