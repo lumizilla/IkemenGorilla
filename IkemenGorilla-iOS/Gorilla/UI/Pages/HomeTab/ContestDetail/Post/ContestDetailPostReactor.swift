@@ -11,18 +11,24 @@ import RxSwift
 
 final class ContestDetailPostReactor: Reactor {
     enum Action {
+        case refresh
         case load
     }
     
     enum Mutation {
         case setPostCellReactors([Post])
-        case setIsLoading(Bool)
+        case addPostCellReactors([Post])
+        case setApiStatus(APIStatus)
+        case setPage(Int)
+        case setDidReachedBottom(Bool)
     }
     
     struct State {
         let contest: Contest
         var postCellReactors: [ContestDetailPostCellReactor] = []
-        var isLoading: Bool = false
+        var page: Int = 0
+        var apiStatus: APIStatus = .pending
+        var didReachedBottom: Bool = false
     }
     
     let initialState: ContestDetailPostReactor.State
@@ -35,18 +41,27 @@ final class ContestDetailPostReactor: Reactor {
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
-        case .load:
-            guard !currentState.isLoading else { return .empty() }
+        case .refresh:
+            guard currentState.apiStatus == .pending else { return .empty() }
             return .concat(
-                .just(.setIsLoading(true)),
-                load().map(Mutation.setPostCellReactors),
-                .just(.setIsLoading(false))
+                .just(.setApiStatus(.loading)),
+                load(page: 0).map(Mutation.setPostCellReactors),
+                .just(.setPage(0)),
+                .just(.setApiStatus(.pending))
+            )
+        case .load:
+            guard currentState.apiStatus == .pending && !currentState.didReachedBottom else { return .empty() }
+            return .concat(
+                .just(.setApiStatus(.loading)),
+                load(page: currentState.page+1).map(Mutation.addPostCellReactors),
+                .just(.setPage(currentState.page+1)),
+                .just(.setApiStatus(.pending))
             )
         }
     }
     
-    private func load() -> Observable<[Post]> {
-        return provider.contestService.getPosts(contestId: currentState.contest.id, page: 0).asObservable()
+    private func load(page: Int) -> Observable<[Post]> {
+        return provider.contestService.getPosts(contestId: currentState.contest.id, page: page).asObservable()
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
@@ -54,8 +69,15 @@ final class ContestDetailPostReactor: Reactor {
         switch mutation {
         case .setPostCellReactors(let posts):
             state.postCellReactors = posts.map { ContestDetailPostCellReactor(post: $0) }
-        case .setIsLoading(let isLoading):
-            state.isLoading = isLoading
+        case .addPostCellReactors(let posts):
+            state.postCellReactors += posts.map { ContestDetailPostCellReactor(post: $0) }
+            state.didReachedBottom = posts.count == 0
+        case .setApiStatus(let apiStatus):
+            state.apiStatus = apiStatus
+        case .setPage(let page):
+            state.page = page
+        case .setDidReachedBottom(let didReachedBottom):
+            state.didReachedBottom = didReachedBottom
         }
         return state
     }
