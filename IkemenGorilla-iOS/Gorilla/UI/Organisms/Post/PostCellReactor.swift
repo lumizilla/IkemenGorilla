@@ -26,6 +26,15 @@ final class PostCellReactor: Reactor {
     init(post: Post) {
         initialState = State(post: post)
     }
+    
+    func createZooAnimal() -> ZooAnimal {
+        return ZooAnimal(
+            id: currentState.post.animalId,
+            name: currentState.post.animalName,
+            iconUrl: currentState.post.animalIconUrl,
+            isFan: false
+        )
+    }
 }
 
 extension PostCellReactor: Equatable {
