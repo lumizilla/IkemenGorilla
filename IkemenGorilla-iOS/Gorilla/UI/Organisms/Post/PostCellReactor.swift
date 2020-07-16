@@ -35,6 +35,17 @@ final class PostCellReactor: Reactor {
             isFan: false
         )
     }
+    
+    func createZoo() -> Zoo {
+        return Zoo(
+            id: currentState.post.zooId,
+            name: currentState.post.zooName,
+            address: "",
+            latitude: 0,
+            longitude: 0,
+            imageUrl: ""
+        )
+    }
 }
 
 extension PostCellReactor: Equatable {
