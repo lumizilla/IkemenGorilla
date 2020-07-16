@@ -12,7 +12,7 @@ import RxSwift
 import ReusableKit
 import SegementSlide
 
-final class ContestDetailResultViewController: UIViewController, View, ViewConstructor, SegementSlideContentScrollViewDelegate {
+final class ContestDetailResultViewController: UIViewController, View, ViewConstructor, SegementSlideContentScrollViewDelegate, TransitionPresentable {
     
     struct Reusable {
         static let awardCell = ReusableCell<ContestDetailResultAwardCell>()
@@ -119,6 +119,18 @@ final class ContestDetailResultViewController: UIViewController, View, ViewConst
     func bind(reactor: ContestDetailResultReactor) {
         // Action
         reactor.action.onNext(.load)
+        
+        awardsCollectionView.rx.itemSelected
+            .bind { [weak self] indexPath in
+                self?.showContestAnimalDetailPage(contestAnimalDetailReactor: reactor.createContestAnimalDetailReactorFromAward(indexPath: indexPath))
+            }
+            .disposed(by: disposeBag)
+        
+        resultsCollectionView.rx.itemSelected
+            .bind { [weak self] indexPath in
+                self?.showContestAnimalDetailPage(contestAnimalDetailReactor: reactor.createContestAnimalDetailReactorFromResult(indexPath: indexPath))
+            }
+            .disposed(by: disposeBag)
         
         // State
         reactor.state.map { $0.awardCellReactors }
