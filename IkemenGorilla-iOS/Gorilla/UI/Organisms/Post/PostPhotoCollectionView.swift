@@ -147,18 +147,43 @@ class PostPhotoCollectionView: UICollectionView, View, ViewConstructor {
             }
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.postCellReactors.count / 12 }
-            .distinctUntilChanged()
-            .bind { [weak self] sectionCount in
-                if self?.isCalculateHeight ?? false {
-                    self?.removeConstraints(self?.constraints ?? [])
-                    self?.snp.makeConstraints {
-                        $0.height.equalTo(16 + Const.sectionHeight * CGFloat(sectionCount))
-                        $0.width.equalTo(DeviceSize.screenWidth)
-                    }
-                } else {
-                    self?.contentSize.height = 16 + Const.sectionHeight * CGFloat(sectionCount)
+        reactor.state.map { $0.postCellReactors.count }
+        .distinctUntilChanged()
+        .bind { [weak self] count in
+            if self?.isCalculateHeight ?? false {
+                self?.removeConstraints(self?.constraints ?? [])
+                self?.snp.makeConstraints {
+                    $0.height.equalTo(self?.viewHeight(count: count) ?? 0)
+                    $0.width.equalTo(DeviceSize.screenWidth)
                 }
+            } else {
+                self?.contentSize.height = self?.viewHeight(count: count) ?? 0
             }
+        }
+        .disposed(by: disposeBag)
+    }
+    
+    private func viewHeight(count: Int) -> CGFloat {
+        let topMargin: CGFloat = 16
+        let rowHeight: CGFloat = (DeviceSize.screenWidth - 48) / 3 + 8
+        let sectionCount = count / 12
+        var bodyHeight: CGFloat = 0
+        switch count % 12 {
+        case 0:
+            bodyHeight = CGFloat(sectionCount) * Const.sectionHeight
+        case 1:
+            bodyHeight = rowHeight
+        case 2, 3:
+            bodyHeight = rowHeight * 2
+        case 4, 5, 6:
+            bodyHeight = rowHeight * 3
+        case 7, 8, 9:
+            bodyHeight = rowHeight * 5
+        case 10, 11:
+            bodyHeight = CGFloat(sectionCount) * Const.sectionHeight
+        default:
+            break
+        }
+        return topMargin + bodyHeight
     }
 }
