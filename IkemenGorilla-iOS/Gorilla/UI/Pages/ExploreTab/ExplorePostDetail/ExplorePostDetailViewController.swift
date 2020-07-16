@@ -11,7 +11,7 @@ import ReactorKit
 import RxSwift
 import ReusableKit
 
-final class ExplorePostDetailViewController: UIViewController, View, ViewConstructor {
+final class ExplorePostDetailViewController: UIViewController, View, ViewConstructor, TransitionPresentable {
     
     struct Reusable {
         static let postCell = ReusableCell<PostDetailCell>()
@@ -78,9 +78,19 @@ final class ExplorePostDetailViewController: UIViewController, View, ViewConstru
         // State
         reactor.state.map { $0.postCellReactors }
             .distinctUntilChanged()
-            .bind(to: postsTableView.rx.items(Reusable.postCell)) { _, reactor, cell in
+            .bind(to: postsTableView.rx.items(Reusable.postCell)) { [weak self] _, reactor, cell in
                 cell.reactor = reactor
+                cell.delegate = self
             }
             .disposed(by: disposeBag)
     }
 }
+
+extension ExplorePostDetailViewController: PostDetailCellDelegate {
+    func didTapAnimal(zooAnimal: ZooAnimal) {
+        logger.debug("didTapAnimal from ExplorePostDetailViewController")
+        guard let reactor = reactor else { return }
+        showAnimalDetailPage(animalDetailReactor: reactor.createAnimalDetailReactor(zooAnimal: zooAnimal))
+    }
+}
+
