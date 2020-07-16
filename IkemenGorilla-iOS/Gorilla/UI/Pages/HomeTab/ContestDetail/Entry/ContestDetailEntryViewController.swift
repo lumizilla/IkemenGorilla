@@ -70,11 +70,21 @@ final class ContestDetailEntryViewController: UIViewController, View, ViewConstr
     // MARK: - Bind Method
     func bind(reactor: ContestDetailEntryReactor) {
         // Action
-        reactor.action.onNext(.load)
+        reactor.action.onNext(.refresh)
         
         entriesCollectionView.rx.itemSelected
             .bind { [weak self] indexPath in
                 self?.showContestAnimalDetailPage(contestAnimalDetailReactor: reactor.createContestAnimalDetailReactor(indexPath: indexPath))
+            }
+            .disposed(by: disposeBag)
+        
+        entriesCollectionView.rx.contentOffset
+            .distinctUntilChanged()
+            .bind { [weak self] contentOffset in
+                guard let collectionView = self?.entriesCollectionView else { return }
+                if collectionView.contentOffset.y + collectionView.frame.size.height > collectionView.contentSize.height {
+                    reactor.action.onNext(.load)
+                }
             }
             .disposed(by: disposeBag)
         
