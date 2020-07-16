@@ -12,7 +12,7 @@ import RxSwift
 import RxGesture
 
 protocol PostDetailCellDelegate {
-    func didTapAnimal() -> Void
+    func didTapAnimal(zooAnimal: ZooAnimal) -> Void
 }
 
 final class PostDetailCell: UITableViewCell, ReactorKit.View, ViewConstructor {
@@ -119,14 +119,14 @@ final class PostDetailCell: UITableViewCell, ReactorKit.View, ViewConstructor {
         animalIconView.rx.tapGesture()
             .when(.recognized)
             .bind { [weak self] _ in
-                self?.delegate?.didTapAnimal()
+                self?.delegate?.didTapAnimal(zooAnimal: reactor.createZooAnimal())
             }
             .disposed(by: disposeBag)
         
         animalNameLabel.rx.tapGesture()
             .when(.recognized)
             .bind { [weak self] _ in
-                self?.delegate?.didTapAnimal()
+                self?.delegate?.didTapAnimal(zooAnimal: reactor.createZooAnimal())
             }
             .disposed(by: disposeBag)
         
