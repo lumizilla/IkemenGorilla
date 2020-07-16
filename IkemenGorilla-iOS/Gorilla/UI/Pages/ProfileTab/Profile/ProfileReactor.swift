@@ -40,7 +40,7 @@ final class ProfileReactor: Reactor {
     }
     
     func createFanAnimalReactor() -> FanAnimalReactor {
-        return FanAnimalReactor()
+        return FanAnimalReactor(provider: provider)
     }
     
     func createProfileLikedZooListReactor() -> ProfileLikedZooListReactor {

@@ -9,7 +9,10 @@
 import RxSwift
 
 protocol UserServiceType {
-    func getUser(userId: String) -> Single<Bool>
+    func getUser(userId: String) -> Single<Profile>
+    func getAnimals(userId: String, page: Int) -> Single<[Animal]>
+    func getZoos(userId: String) -> Single<[Zoo]>
+    func getContests(userId: String) -> Single<[Contest]>
 }
 
 final class UserService: BaseService, UserServiceType {
@@ -20,7 +23,19 @@ final class UserService: BaseService, UserServiceType {
         super.init(provider: provider)
     }
     
-    func getUser(userId: String) -> Single<Bool> {
+    func getUser(userId: String) -> Single<Profile> {
         userRepository.getUser(userId: userId)
+    }
+    
+    func getZoos(userId: String) -> Single<[Zoo]> {
+        userRepository.getZoos(userId: userId)
+    }
+    
+    func getAnimals(userId: String, page: Int) -> Single<[Animal]> {
+        userRepository.getAnimals(userId: userId, page: page)
+    }
+    
+    func getContests(userId: String) -> Single<[Contest]> {
+        userRepository.getContests(userId: userId)
     }
 }

@@ -24,7 +24,13 @@ final class FanAnimalReactor: Reactor {
         var isLoading: Bool = false
     }
     
-    let initialState = FanAnimalReactor.State()
+    let initialState: State
+    private let provider: ServiceProviderType
+
+    init(provider: ServiceProviderType) {
+        self.provider = provider
+        initialState = State()
+    }
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
@@ -46,10 +52,15 @@ final class FanAnimalReactor: Reactor {
         var state = state
         switch mutation {
         case .setAnimalCellReactors(let animals):
-            state.animalCellReactors = animals.map { FanAnimalCellReactor(animal: $0) }
+            state.animalCellReactors += animals.map { FanAnimalCellReactor(animal: $0) }
         case .setIsLoading(let isLoading):
             state.isLoading = isLoading
         }
         return state
     }
+    
+    func createFanAnimalDetailReactor(indexPath: IndexPath) -> FanAnimalDetailReactor {
+        return FanAnimalDetailReactor(provider: provider, animal: currentState.animalCellReactors[indexPath.row].currentState.animal)
+    }
+    
 }

@@ -12,6 +12,7 @@ import RxSwift
 import ReusableKit
 
 final class FanAnimalViewController: UIViewController, View, ViewConstructor {
+    
     struct Reusable {
         static let animalCell = ReusableCell<FanAnimalCell>()
     }
@@ -55,6 +56,16 @@ final class FanAnimalViewController: UIViewController, View, ViewConstructor {
     func bind(reactor: FanAnimalReactor) {
         // Action
         reactor.action.onNext(.load)
+        
+        collectionView.rx.itemSelected
+            .bind { [weak self] indexPath in
+                logger.debug(indexPath)
+                let vc = FanAnimalDetailViewController().then {
+                    $0.reactor = reactor.createFanAnimalDetailReactor(indexPath: indexPath)
+                }
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }
+            .disposed(by: disposeBag)
         
         // State
         reactor.state.map { $0.animalCellReactors }
