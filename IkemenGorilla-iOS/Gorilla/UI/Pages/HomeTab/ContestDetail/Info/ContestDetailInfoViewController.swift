@@ -59,7 +59,7 @@ final class ContestDetailInfoViewController: UIViewController, View, ViewConstru
         guard let flowLayout = sponsorsCollectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
         let height = contestDetailInfoHeader.frame.height
         
-        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.6, delay: 0, options: .curveEaseOut, animations: {
             flowLayout.headerReferenceSize = CGSize(width: DeviceSize.screenWidth, height: height)
             self.sponsorsCollectionView.alpha = 1
             self.activityIndicator.stopAnimating()
