@@ -11,7 +11,7 @@ import ReactorKit
 import RxSwift
 import ReusableKit
 
-final class ExploreViewController: UIViewController, View, ViewConstructor {
+final class ExploreViewController: UIViewController, View, ViewConstructor, TransitionPresentable {
     
     // MARK: - Variables
     var disposeBag = DisposeBag()
@@ -49,10 +49,7 @@ final class ExploreViewController: UIViewController, View, ViewConstructor {
         postsCollectionView.rx.itemSelected
             .bind { [weak self] indexPath in
                 logger.debug(indexPath)
-                let vc = ExplorePostDetailViewController().then {
-                    $0.reactor = reactor.createExplorePostDetailReactor(indexPath: indexPath)
-                }
-                self?.navigationController?.pushViewController(vc, animated: true)
+                self?.showExplorePostDetailPage(explorePostDetailReactor: reactor.createExplorePostDetailReactor(indexPath: indexPath))
             }
             .disposed(by: disposeBag)
         

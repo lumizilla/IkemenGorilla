@@ -11,7 +11,7 @@ import ReactorKit
 import RxSwift
 import ReusableKit
 
-final class ContestAnimalDetailViewController: UIViewController, View, ViewConstructor {
+final class ContestAnimalDetailViewController: UIViewController, View, ViewConstructor, TransitionPresentable {
     struct Const {
         static let sectionHeight: CGFloat = ((DeviceSize.screenWidth - 48) / 3 + 8) * 6
     }
@@ -168,6 +168,12 @@ final class ContestAnimalDetailViewController: UIViewController, View, ViewConst
         // Action
         reactor.action.onNext(.loadAnimal)
         reactor.action.onNext(.loadPosts)
+        
+        postsCollectionView.rx.itemSelected
+            .bind { [weak self] indexPath in
+                self?.showExplorePostDetailPage(explorePostDetailReactor: reactor.createExplorePostDetailReactor(indexPath: indexPath))
+            }
+            .disposed(by: disposeBag)
         
         // State
         reactor.state.map { $0.postCellReactors }

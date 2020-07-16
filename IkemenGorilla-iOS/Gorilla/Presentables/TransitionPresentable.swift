@@ -17,10 +17,14 @@ protocol TransitionPresentable: class {
     
     // MAP TAB
     func showZooDetailPage(zooDetailReactor: ZooDetailReactor)
+    func showAnimalDetailPage(animalDetailReactor: AnimalDetailReactor)
     
     // VOTE TAB
     func showVoteContestPage(voteContestReactor: VoteContestReactor)
     func showVoteContestDetailPage(voteContestDetailReactor: VoteContestDetailReactor)
+    
+    // EXPLORE TAB
+    func showExplorePostDetailPage(explorePostDetailReactor: ExplorePostDetailReactor)
 }
 
 extension TransitionPresentable where Self: UIViewController {
@@ -80,6 +84,15 @@ extension TransitionPresentable where Self: UIViewController {
             animated: true
         )
     }
+    
+    func showAnimalDetailPage(animalDetailReactor: AnimalDetailReactor) {
+        navigationController?.pushViewController(
+            AnimalDetailViewController().then {
+                $0.reactor = animalDetailReactor
+            },
+            animated: true
+        )
+    }
 
     func showFanAnimalPage(fanAnimalReactor: FanAnimalReactor) {
         navigationController?.pushViewController(
@@ -109,6 +122,16 @@ extension TransitionPresentable where Self: UIViewController {
         navigationController?.pushViewController(
             VoteContestDetailViewController().then {
                 $0.reactor = voteContestDetailReactor
+            },
+            animated: true
+        )
+    }
+    
+    // EXPLORE TAB
+    func showExplorePostDetailPage(explorePostDetailReactor: ExplorePostDetailReactor) {
+        navigationController?.pushViewController(
+            ExplorePostDetailViewController().then {
+                $0.reactor = explorePostDetailReactor
             },
             animated: true
         )

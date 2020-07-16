@@ -11,7 +11,7 @@ import ReactorKit
 import RxSwift
 import ReusableKit
 
-final class ZooAnimalListViewController: UIViewController, View, ViewConstructor {
+final class ZooAnimalListViewController: UIViewController, View, ViewConstructor, TransitionPresentable {
     
     struct Reusable {
         static let animalCell = ReusableCell<ZooAnimalCell>()
@@ -59,11 +59,7 @@ final class ZooAnimalListViewController: UIViewController, View, ViewConstructor
         
         animalsCollectionView.rx.itemSelected
             .bind { [weak self] indexPath in
-                logger.debug(indexPath)
-                let vc = AnimalDetailViewController().then {
-                    $0.reactor = reactor.createAnimalDetailReactor(indexPath: indexPath)
-                }
-                self?.navigationController?.pushViewController(vc, animated: true)
+                self?.showAnimalDetailPage(animalDetailReactor: reactor.createAnimalDetailReactor(indexPath: indexPath))
             }
             .disposed(by: disposeBag)
         

@@ -111,6 +111,8 @@
 		844EE14E2484A595003369F2 /* ContestDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE14D2484A595003369F2 /* ContestDetailViewController.swift */; };
 		844EE1502484A5AF003369F2 /* ContestDetailReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE14F2484A5AF003369F2 /* ContestDetailReactor.swift */; };
 		844EE1522484A6DF003369F2 /* ContestDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EE1512484A6DF003369F2 /* ContestDetailHeader.swift */; };
+		845AAA0924B746F200F20AFA /* SettingModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845AAA0824B746F200F20AFA /* SettingModalViewController.swift */; };
+		845AAA0C24B7489D00F20AFA /* SettingModalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845AAA0B24B7489D00F20AFA /* SettingModalCell.swift */; };
 		847B3774247980E000B48535 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3773247980E000B48535 /* AppDelegate.swift */; };
 		847B3776247980E000B48535 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3775247980E000B48535 /* SceneDelegate.swift */; };
 		847B3778247980E000B48535 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3777247980E000B48535 /* ContentView.swift */; };
@@ -178,6 +180,9 @@
 		8494CBE5249B825600E35E00 /* ZooDetailPostsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494CBE4249B825600E35E00 /* ZooDetailPostsHeader.swift */; };
 		8494CBE7249B83C800E35E00 /* ZooDetailPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494CBE6249B83C800E35E00 /* ZooDetailPostCell.swift */; };
 		8494CBE9249B83DB00E35E00 /* ZooDetailPostCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494CBE8249B83DB00E35E00 /* ZooDetailPostCellReactor.swift */; };
+		84A8376524BE162D00DA49E9 /* DefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A8376424BE162D00DA49E9 /* DefaultsKeys.swift */; };
+		84A8376724BEDC1A00DA49E9 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A8376624BEDC1A00DA49E9 /* Store.swift */; };
+		84A8376924BEDFCD00DA49E9 /* StoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A8376824BEDFCD00DA49E9 /* StoreService.swift */; };
 		84A99FD62484CA530066863B /* ContestDetailInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99FD52484CA530066863B /* ContestDetailInfoViewController.swift */; };
 		84A99FD82484CA7B0066863B /* ContestDetailInfoReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99FD72484CA7B0066863B /* ContestDetailInfoReactor.swift */; };
 		84A99FDE2484D5FF0066863B /* ContestDetailInfoSponsorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99FDD2484D5FF0066863B /* ContestDetailInfoSponsorCell.swift */; };
@@ -353,6 +358,8 @@
 		844EE14D2484A595003369F2 /* ContestDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDetailViewController.swift; sourceTree = "<group>"; };
 		844EE14F2484A5AF003369F2 /* ContestDetailReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDetailReactor.swift; sourceTree = "<group>"; };
 		844EE1512484A6DF003369F2 /* ContestDetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDetailHeader.swift; sourceTree = "<group>"; };
+		845AAA0824B746F200F20AFA /* SettingModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModalViewController.swift; sourceTree = "<group>"; };
+		845AAA0B24B7489D00F20AFA /* SettingModalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModalCell.swift; sourceTree = "<group>"; };
 		847B3770247980E000B48535 /* Gorilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gorilla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		847B3773247980E000B48535 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		847B3775247980E000B48535 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -426,6 +433,9 @@
 		8494CBE4249B825600E35E00 /* ZooDetailPostsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooDetailPostsHeader.swift; sourceTree = "<group>"; };
 		8494CBE6249B83C800E35E00 /* ZooDetailPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooDetailPostCell.swift; sourceTree = "<group>"; };
 		8494CBE8249B83DB00E35E00 /* ZooDetailPostCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooDetailPostCellReactor.swift; sourceTree = "<group>"; };
+		84A8376424BE162D00DA49E9 /* DefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKeys.swift; sourceTree = "<group>"; };
+		84A8376624BEDC1A00DA49E9 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		84A8376824BEDFCD00DA49E9 /* StoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreService.swift; sourceTree = "<group>"; };
 		84A99FD52484CA530066863B /* ContestDetailInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDetailInfoViewController.swift; sourceTree = "<group>"; };
 		84A99FD72484CA7B0066863B /* ContestDetailInfoReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDetailInfoReactor.swift; sourceTree = "<group>"; };
 		84A99FDD2484D5FF0066863B /* ContestDetailInfoSponsorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDetailInfoSponsorCell.swift; sourceTree = "<group>"; };
@@ -533,6 +543,7 @@
 		8426BB2624A8A9080031AEA2 /* ProfileTab */ = {
 			isa = PBXGroup;
 			children = (
+				845AAA0A24B7486B00F20AFA /* SettingModal */,
 				8426BB8924A8D0D60031AEA2 /* LikedZoo */,
 				8426BB2724A8A9080031AEA2 /* FanAnimal */,
 				8426BB2A24A8A9080031AEA2 /* Profile */,
@@ -654,6 +665,7 @@
 		8426BB6A24A8A9EE0031AEA2 /* ProfileTab */ = {
 			isa = PBXGroup;
 			children = (
+				845AAA0724B746A600F20AFA /* SettingModal */,
 				8426BB9A24A8DEDC0031AEA2 /* LikedZoo */,
 				8426BB6B24A8A9EE0031AEA2 /* FanAnimal */,
 				8426BB6E24A8A9EE0031AEA2 /* VotedDetail */,
@@ -877,6 +889,7 @@
 				84452A9024AA4E8B0092F949 /* ZooService.swift */,
 				84452A9C24AB297C0092F949 /* PostService.swift */,
 				84452AA224AB328F0092F949 /* UserService.swift */,
+				84A8376824BEDFCD00DA49E9 /* StoreService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -948,6 +961,22 @@
 				844EE1512484A6DF003369F2 /* ContestDetailHeader.swift */,
 			);
 			path = ContestDetail;
+			sourceTree = "<group>";
+		};
+		845AAA0724B746A600F20AFA /* SettingModal */ = {
+			isa = PBXGroup;
+			children = (
+				845AAA0824B746F200F20AFA /* SettingModalViewController.swift */,
+			);
+			path = SettingModal;
+			sourceTree = "<group>";
+		};
+		845AAA0A24B7486B00F20AFA /* SettingModal */ = {
+			isa = PBXGroup;
+			children = (
+				845AAA0B24B7489D00F20AFA /* SettingModalCell.swift */,
+			);
+			path = SettingModal;
 			sourceTree = "<group>";
 		};
 		847B3767247980E000B48535 = {
@@ -1149,6 +1178,7 @@
 		847B37D02479D1B800B48535 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
+				84A8376324BE160700DA49E9 /* Store */,
 				84452A7924AA0DDF0092F949 /* Service */,
 				84DA96172493C7E700DF6740 /* Responses */,
 				847B3819247CBA3100B48535 /* Repositories */,
@@ -1369,6 +1399,15 @@
 				8494CBE8249B83DB00E35E00 /* ZooDetailPostCellReactor.swift */,
 			);
 			path = Post;
+			sourceTree = "<group>";
+		};
+		84A8376324BE160700DA49E9 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				84A8376424BE162D00DA49E9 /* DefaultsKeys.swift */,
+				84A8376624BEDC1A00DA49E9 /* Store.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 		84A99FCF2484C9C70066863B /* Info */ = {
@@ -1831,6 +1870,7 @@
 				84376CC524A7D06A00282F3C /* ExploreViewController.swift in Sources */,
 				8426BB5A24A8A9080031AEA2 /* ProfileInfoCellReactor.swift in Sources */,
 				84452A8324AA18610092F949 /* GorillaDecoder.swift in Sources */,
+				845AAA0C24B7489D00F20AFA /* SettingModalCell.swift in Sources */,
 				8494CBD7249B6C0400E35E00 /* ZooDetailViewController.swift in Sources */,
 				8426BB5D24A8A9080031AEA2 /* ProfileVotedContestListReactor.swift in Sources */,
 				84C433B5249BE7C400172D6A /* FanButton.swift in Sources */,
@@ -1849,6 +1889,7 @@
 				84D216832499126300AFB1A6 /* MapReactor.swift in Sources */,
 				84376CA924A5F17000282F3C /* PostPhotoCollectionView.swift in Sources */,
 				847B381D247CBB1800B48535 /* FrontendEchoReactor.swift in Sources */,
+				84A8376924BEDFCD00DA49E9 /* StoreService.swift in Sources */,
 				84A99FEC2484EE500066863B /* ContestDetailEntryCellReactor.swift in Sources */,
 				84452A9D24AB297C0092F949 /* PostService.swift in Sources */,
 				84452A8924AA45AB0092F949 /* AnimalRepository.swift in Sources */,
@@ -1931,7 +1972,7 @@
 				84376CC724A7D08200282F3C /* ExploreReactor.swift in Sources */,
 				84452A7624AA08580092F949 /* ContestTarget.swift in Sources */,
 				847B37FD247A586100B48535 /* HomePastContestHeader.swift in Sources */,
-				84C433AF249BD7C800172D6A /* ZooAnimalReactor.swift in Sources */,
+				84C433AF249BD7C800172D6A /* ZooAnimalListReactor.swift in Sources */,
 				8426BB8824A8A9EE0031AEA2 /* VotedContestViewController.swift in Sources */,
 				84C433AF249BD7C800172D6A /* ZooAnimalListReactor.swift in Sources */,
 				84C433A9249BD3D700172D6A /* HeartNumberView.swift in Sources */,
@@ -1965,6 +2006,7 @@
 				8426BB5224A8A9080031AEA2 /* ProfileFanAnimalHeader.swift in Sources */,
 				84452A8124AA0F040092F949 /* ContestService.swift in Sources */,
 				847B3776247980E000B48535 /* SceneDelegate.swift in Sources */,
+				84A8376724BEDC1A00DA49E9 /* Store.swift in Sources */,
 				84452A8B24AA46B10092F949 /* AnimalService.swift in Sources */,
 				84452A8524AA1A6B0092F949 /* ContestDetailResponse.swift in Sources */,
 				84452A8D24AA4C1F0092F949 /* ZooTarget.swift in Sources */,
@@ -2003,11 +2045,13 @@
 				847B3818247CB7EB00B48535 /* FrontendEchoTarget.swift in Sources */,
 				8494CBE7249B83C800E35E00 /* ZooDetailPostCell.swift in Sources */,
 				8426BB6724A8A9080031AEA2 /* ProfileContestDetailHeader.swift in Sources */,
+				84A8376524BE162D00DA49E9 /* DefaultsKeys.swift in Sources */,
 				8426BB5324A8A9080031AEA2 /* ProfileFanAnimalListView.swift in Sources */,
 				84C433A7249BCE2600172D6A /* HeartButton.swift in Sources */,
 				8426BB6824A8A9080031AEA2 /* VotedContestCellReactor.swift in Sources */,
 				8426BB5424A8A9080031AEA2 /* ProfileFanAnimalListReactor.swift in Sources */,
 				84A99FFE24851BA20066863B /* ContestDetailResultViewController.swift in Sources */,
+				845AAA0924B746F200F20AFA /* SettingModalViewController.swift in Sources */,
 				847B3809247A68A200B48535 /* HomeRecommendedZooListReactor.swift in Sources */,
 				8426BB5624A8A9080031AEA2 /* ProfileInfoListView.swift in Sources */,
 				84A99FF62484FC150066863B /* ContestDetailPostReactor.swift in Sources */,

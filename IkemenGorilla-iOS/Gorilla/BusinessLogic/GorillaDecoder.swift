@@ -15,7 +15,7 @@ final class GorillaDecoder: JSONDecoder {
         super.init()
         dateDecodingStrategy = .formatted(DateFormatter().then {
             $0.locale = Locale(identifier: "en_US_POSIX")
-            $0.dateFormat = "yyyy-MM-dd"
+            $0.dateFormat = "dd-MM-yyyy"
         })
     }
 }

@@ -57,4 +57,10 @@ final class HomeRecommendedZooListReactor: Reactor {
         }
         return state
     }
+    
+    func createZooDetailReactor(indexPath: IndexPath) -> ZooDetailReactor {
+        let recommendedZoo = currentState.recommendedZooListCellReactors[indexPath.row].currentState.recommendedZoo
+        let zoo: Zoo = Zoo(id: recommendedZoo.id, name: recommendedZoo.name, address: "", latitude: 0, longitude: 0, imageUrl: recommendedZoo.imageUrl)
+        return ZooDetailReactor(provider: provider, zoo: zoo)
+    }
 }

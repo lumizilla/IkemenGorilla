@@ -58,12 +58,12 @@ final class ZooDetailReactor: Reactor {
     
     private func loadZooDetail() -> Observable<ZooDetail> {
         logger.warning("no user id")
-        return provider.zooService.getZoo(zooId: currentState.zoo.id, userId: "user01").asObservable()
+        return provider.zooService.getZoo(zooId: currentState.zoo.id, userId: "1").asObservable()
     }
     
     private func loadAnimals() -> Observable<[ZooAnimal]> {
         logger.warning("no user id")
-        return provider.zooService.getAnimals(zooId: currentState.zoo.id, page: 0, userId: "user01").asObservable()
+        return provider.zooService.getAnimals(zooId: currentState.zoo.id, page: 0, userId: "1").asObservable()
     }
     
     private func loadPosts() -> Observable<[Post]> {
@@ -88,5 +88,14 @@ final class ZooDetailReactor: Reactor {
     func createZooAnimalListReactor() -> ZooAnimalListReactor {
         let zooAnimals = currentState.animalCellReactors.compactMap { $0.currentState.zooAnimal }
         return ZooAnimalListReactor(provider: provider, zoo: currentState.zoo, zooAnimals: zooAnimals)
+    }
+    
+    func createAnimalDetailReactor(indexPath: IndexPath) -> AnimalDetailReactor {
+        return AnimalDetailReactor(provider: provider, zooAnimal: currentState.animalCellReactors[indexPath.row].currentState.zooAnimal)
+    }
+    
+    func createExplorePostDetailReactor(indexPath: IndexPath) -> ExplorePostDetailReactor {
+        let posts = currentState.postCellReactors.compactMap { $0.currentState.post }
+        return ExplorePostDetailReactor(startAt: indexPath.row, posts: posts)
     }
 }

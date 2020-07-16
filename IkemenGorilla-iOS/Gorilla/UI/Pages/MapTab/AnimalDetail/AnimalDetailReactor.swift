@@ -60,7 +60,7 @@ final class AnimalDetailReactor: Reactor {
     
     private func loadAnimal() -> Observable<Animal> {
         logger.warning("no user id from AnimalDetailReactor")
-        return provider.animalService.getAnimal(animalId: currentState.zooAnimal.id, userId: "user01").asObservable()
+        return provider.animalService.getAnimal(animalId: currentState.zooAnimal.id, userId: "1").asObservable()
     }
     
     private func loadCurrentContest() -> Observable<Contest?> {
@@ -93,5 +93,9 @@ final class AnimalDetailReactor: Reactor {
     
     func createPostPhotoCollectionReactor() -> PostPhotoCollectionReactor {
         return PostPhotoCollectionReactor()
+    }
+    
+    func createExplorePostDetailReactor(indexPath: IndexPath) -> ExplorePostDetailReactor {
+        return ExplorePostDetailReactor(startAt: indexPath.row, posts: currentState.posts)
     }
 }

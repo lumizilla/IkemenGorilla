@@ -12,6 +12,7 @@ protocol ServiceProviderType: AnyObject {
     var zooService: ZooServiceType { get set }
     var postService: PostServiceType { get set }
     var userService: UserServiceType { get set }
+    var storeService: StoreServiceType { get set }
 }
 
 final class ServiceProvider: ServiceProviderType {
@@ -27,4 +28,5 @@ final class ServiceProvider: ServiceProviderType {
     lazy var zooService: ZooServiceType = ZooService(provider: self, zooRepository: zooRepository)
     lazy var postService: PostServiceType = PostService(provider: self, postRepository: postRepository)
     lazy var userService: UserServiceType = UserService(provider: self, userRepository: userRepository)
+    lazy var storeService: StoreServiceType = StoreService(provider: self)
 }
