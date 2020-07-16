@@ -13,6 +13,7 @@ import RxGesture
 
 protocol PostDetailCellDelegate {
     func didTapAnimal(zooAnimal: ZooAnimal) -> Void
+    func didTapZoo(zoo: Zoo) -> Void
 }
 
 final class PostDetailCell: UITableViewCell, ReactorKit.View, ViewConstructor {
@@ -127,6 +128,13 @@ final class PostDetailCell: UITableViewCell, ReactorKit.View, ViewConstructor {
             .when(.recognized)
             .bind { [weak self] _ in
                 self?.delegate?.didTapAnimal(zooAnimal: reactor.createZooAnimal())
+            }
+            .disposed(by: disposeBag)
+        
+        zooNameLabel.rx.tapGesture()
+            .when(.recognized)
+            .bind { [weak self] _ in
+                self?.delegate?.didTapZoo(zoo: reactor.createZoo())
             }
             .disposed(by: disposeBag)
         
