@@ -92,5 +92,11 @@ extension ExplorePostDetailViewController: PostDetailCellDelegate {
         guard let reactor = reactor else { return }
         showAnimalDetailPage(animalDetailReactor: reactor.createAnimalDetailReactor(zooAnimal: zooAnimal))
     }
+    
+    func didTapZoo(zoo: Zoo) {
+        logger.debug("didTapZoo from ExplorePostDetailViewController")
+        guard let reactor = reactor else { return }
+        showZooDetailPage(zooDetailReactor: reactor.createZooDetailReactor(zoo: zoo))
+    }
 }
 
