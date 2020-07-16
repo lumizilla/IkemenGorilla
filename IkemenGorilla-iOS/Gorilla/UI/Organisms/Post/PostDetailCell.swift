@@ -9,8 +9,14 @@
 import UIKit
 import ReactorKit
 import RxSwift
+import RxGesture
 
-final class PostDetailCell: UITableViewCell, View, ViewConstructor {
+protocol PostDetailCellDelegate {
+    func didTapAnimal(zooAnimal: ZooAnimal) -> Void
+    func didTapZoo(zoo: Zoo) -> Void
+}
+
+final class PostDetailCell: UITableViewCell, ReactorKit.View, ViewConstructor {
     
     struct Const {
         static let iconImageSize: CGFloat = 40
@@ -19,6 +25,8 @@ final class PostDetailCell: UITableViewCell, View, ViewConstructor {
     
     // MARK: - Variables
     var disposeBag = DisposeBag()
+    
+    var delegate: PostDetailCellDelegate?
     
     // MARK: - Views
     private let animalIconView = UIImageView().then {
@@ -109,6 +117,26 @@ final class PostDetailCell: UITableViewCell, View, ViewConstructor {
     // MARK: - Bind Method
     func bind(reactor: PostCellReactor) {
         // Action
+        animalIconView.rx.tapGesture()
+            .when(.recognized)
+            .bind { [weak self] _ in
+                self?.delegate?.didTapAnimal(zooAnimal: reactor.createZooAnimal())
+            }
+            .disposed(by: disposeBag)
+        
+        animalNameLabel.rx.tapGesture()
+            .when(.recognized)
+            .bind { [weak self] _ in
+                self?.delegate?.didTapAnimal(zooAnimal: reactor.createZooAnimal())
+            }
+            .disposed(by: disposeBag)
+        
+        zooNameLabel.rx.tapGesture()
+            .when(.recognized)
+            .bind { [weak self] _ in
+                self?.delegate?.didTapZoo(zoo: reactor.createZoo())
+            }
+            .disposed(by: disposeBag)
         
         // State
         reactor.state.map { $0.post.animalIconUrl }

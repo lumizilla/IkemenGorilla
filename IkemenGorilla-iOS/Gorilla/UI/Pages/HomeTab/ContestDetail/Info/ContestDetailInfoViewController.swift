@@ -41,6 +41,10 @@ final class ContestDetailInfoViewController: UIViewController, View, ViewConstru
         $0.alpha = 0
     }
     
+    private let activityIndicator = UIActivityIndicatorView().then {
+        $0.startAnimating()
+    }
+    
     // MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,9 +59,10 @@ final class ContestDetailInfoViewController: UIViewController, View, ViewConstru
         guard let flowLayout = sponsorsCollectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
         let height = contestDetailInfoHeader.frame.height
         
-        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.6, delay: 0, options: .curveEaseOut, animations: {
             flowLayout.headerReferenceSize = CGSize(width: DeviceSize.screenWidth, height: height)
             self.sponsorsCollectionView.alpha = 1
+            self.activityIndicator.stopAnimating()
         }, completion: nil)
     }
     
@@ -65,7 +70,7 @@ final class ContestDetailInfoViewController: UIViewController, View, ViewConstru
     func setupViews() {
         view.addSubview(sponsorsCollectionView)
         sponsorsCollectionView.addSubview(contestDetailInfoHeader)
-        
+        view.addSubview(activityIndicator)
     }
     
     func setupViewConstraints() {
@@ -75,6 +80,10 @@ final class ContestDetailInfoViewController: UIViewController, View, ViewConstru
         sponsorsCollectionView.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.left.right.bottom.equalToSuperview()
+        }
+        activityIndicator.snp.makeConstraints {
+            $0.top.equalTo(sponsorsCollectionView).inset(24)
+            $0.centerX.equalTo(view)
         }
     }
     

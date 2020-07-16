@@ -29,8 +29,10 @@ final class ExplorePostDetailReactor: Reactor {
     }
     
     let initialState: State
+    private let provider: ServiceProviderType
     
-    init(startAt: Int, posts: [Post]) {
+    init(provider: ServiceProviderType, startAt: Int, posts: [Post]) {
+        self.provider = provider
         initialState = State(startAt: startAt, posts: posts)
     }
     
@@ -48,5 +50,13 @@ final class ExplorePostDetailReactor: Reactor {
             state.didScrollToItem = true
         }
         return state
+    }
+    
+    func createAnimalDetailReactor(zooAnimal: ZooAnimal) -> AnimalDetailReactor {
+        return AnimalDetailReactor(provider: provider, zooAnimal: zooAnimal)
+    }
+    
+    func createZooDetailReactor(zoo: Zoo) -> ZooDetailReactor {
+        return ZooDetailReactor(provider: provider, zoo: zoo)
     }
 }

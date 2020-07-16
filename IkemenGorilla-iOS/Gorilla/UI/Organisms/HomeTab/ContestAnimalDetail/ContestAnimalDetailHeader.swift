@@ -149,7 +149,7 @@ final class ContestAnimalDetailHeader: UIView, View, ViewConstructor {
             .bind(to: animalNameLabel.rx.text)
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.entry.zooName }
+        reactor.state.map { $0.response?.zooName }
             .distinctUntilChanged()
             .bind(to: zooNameLabel.rx.text)
             .disposed(by: disposeBag)

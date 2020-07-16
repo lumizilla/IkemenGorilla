@@ -127,7 +127,14 @@ final class ZooDetailHeader: UIView, View, ViewConstructor {
             .disposed(by: disposeBag)
         
         // State
-        reactor.state.map { $0.zoo.imageUrl }
+        reactor.state
+            .map {
+                if $0.zoo.imageUrl.isEmpty {
+                    return $0.zooDetail?.imageUrl ?? ""
+                } else {
+                    return $0.zoo.imageUrl
+                }
+            }
             .distinctUntilChanged()
             .bind { [weak self] imageUrl in
                 self?.imageView.setImage(imageUrl: imageUrl)

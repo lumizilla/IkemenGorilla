@@ -17,14 +17,14 @@ final class ContestDetailInfoReactor: Reactor {
     enum Mutation {
         case setContestDetail(ContestDetail)
         case setSponsorCellReactors([Sponsor])
-        case setIsLoading(Bool)
+        case setApiStatus(APIStatus)
     }
     
     struct State {
         let contest: Contest
         var contestDetail: ContestDetail?
         var sponsorCellReactors: [ContestDetailInfoSponsorCellReactor] = []
-        var isLoading: Bool = false
+        var apiStatus: APIStatus = .pending
         
         init(contest: Contest) {
             self.contest = contest
@@ -44,11 +44,11 @@ final class ContestDetailInfoReactor: Reactor {
         case .loadContestDetail:
             return loadContestDetail().map(Mutation.setContestDetail)
         case .loadSponsors:
-            guard !currentState.isLoading else { return .empty() }
+            guard currentState.apiStatus == .pending else { return .empty() }
             return .concat(
-                .just(.setIsLoading(true)),
+                .just(.setApiStatus(.loading)),
                 loadSponsors().map(Mutation.setSponsorCellReactors),
-                .just(.setIsLoading(false))
+                .just(.setApiStatus(.pending))
             )
         }
     }
@@ -68,8 +68,8 @@ final class ContestDetailInfoReactor: Reactor {
             state.contestDetail = contestDetail
         case .setSponsorCellReactors(let sponsors):
             state.sponsorCellReactors = sponsors.map { ContestDetailInfoSponsorCellReactor(sponsor: $0) }
-        case .setIsLoading(let isLoading):
-            state.isLoading = isLoading
+        case .setApiStatus(let apiStatus):
+            state.apiStatus = apiStatus
         }
         return state
     }

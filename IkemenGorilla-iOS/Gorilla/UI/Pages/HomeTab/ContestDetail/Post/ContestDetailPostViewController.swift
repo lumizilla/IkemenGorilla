@@ -143,7 +143,7 @@ final class ContestDetailPostViewController: UIViewController, View, ViewConstru
     // MARK: - Bind Method
     func bind(reactor: ContestDetailPostReactor) {
         // Action
-        reactor.action.onNext(.load)
+        reactor.action.onNext(.refresh)
         
         postsCollectionView.rx.itemSelected
             .bind { [weak self] indexPath in
@@ -151,6 +151,16 @@ final class ContestDetailPostViewController: UIViewController, View, ViewConstru
                 self?.showExplorePostDetailPage(explorePostDetailReactor: reactor.createExplorePostDetailReactor(indexPath: indexPath))
             }
             .disposed(by: disposeBag)
+        
+        postsCollectionView.rx.contentOffset
+        .distinctUntilChanged()
+        .bind { [weak self] contentOffset in
+            guard let collectionView = self?.postsCollectionView else { return }
+            if collectionView.contentOffset.y + collectionView.frame.size.height > collectionView.contentSize.height {
+                reactor.action.onNext(.load)
+            }
+        }
+        .disposed(by: disposeBag)
         
         // State
         reactor.state.map { $0.postCellReactors }

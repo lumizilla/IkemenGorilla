@@ -96,6 +96,6 @@ final class ZooDetailReactor: Reactor {
     
     func createExplorePostDetailReactor(indexPath: IndexPath) -> ExplorePostDetailReactor {
         let posts = currentState.postCellReactors.compactMap { $0.currentState.post }
-        return ExplorePostDetailReactor(startAt: indexPath.row, posts: posts)
+        return ExplorePostDetailReactor(provider: provider, startAt: indexPath.row, posts: posts)
     }
 }
