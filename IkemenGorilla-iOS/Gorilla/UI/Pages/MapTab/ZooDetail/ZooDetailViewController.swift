@@ -111,6 +111,13 @@ final class ZooDetailViewController: UIViewController, View, ViewConstructor, Tr
             }
             .disposed(by: disposeBag)
         
+        animalsCollectionView.rx.itemSelected
+            .bind { [weak self] indexPath in
+                logger.debug(indexPath)
+                self?.showAnimalDetailPage(animalDetailReactor: reactor.createAnimalDetailReactor(indexPath: indexPath))
+            }
+            .disposed(by: disposeBag)
+        
         postsCollectionView.rx.itemSelected
             .bind { [weak self] indexPath in
                 logger.debug(indexPath)
