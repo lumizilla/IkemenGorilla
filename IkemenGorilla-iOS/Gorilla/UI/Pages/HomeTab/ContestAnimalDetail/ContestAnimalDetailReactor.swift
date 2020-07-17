@@ -84,6 +84,22 @@ final class ContestAnimalDetailReactor: Reactor {
         return PostPhotoCollectionReactor()
     }
     
+    func createZooDetailReactor() -> ZooDetailReactor {
+        if let response = currentState.response {
+            let zoo = Zoo(
+                id: response.zooId,
+                name: response.zooName,
+                address: response.zooAddress,
+                latitude: 0,
+                longitude: 0,
+                imageUrl: ""
+            )
+            return ZooDetailReactor(provider: provider, zoo: zoo)
+        } else {
+            return ZooDetailReactor(provider: provider, zoo: TestData.zoo())
+        }
+    }
+    
     func createExplorePostDetailReactor(indexPath: IndexPath) -> ExplorePostDetailReactor {
         let posts = currentState.posts
         return ExplorePostDetailReactor(provider: provider, startAt: indexPath.row, posts: posts)
