@@ -148,19 +148,19 @@ class PostPhotoCollectionView: UICollectionView, View, ViewConstructor {
             .disposed(by: disposeBag)
         
         reactor.state.map { $0.postCellReactors.count }
-        .distinctUntilChanged()
-        .bind { [weak self] count in
-            if self?.isCalculateHeight ?? false {
-                self?.removeConstraints(self?.constraints ?? [])
-                self?.snp.makeConstraints {
-                    $0.height.equalTo(self?.viewHeight(count: count) ?? 0)
-                    $0.width.equalTo(DeviceSize.screenWidth)
+            .distinctUntilChanged()
+            .bind { [weak self] count in
+                if self?.isCalculateHeight ?? false {
+                    self?.removeConstraints(self?.constraints ?? [])
+                    self?.snp.makeConstraints {
+                        $0.height.equalTo(self?.viewHeight(count: count) ?? 0)
+                        $0.width.equalTo(DeviceSize.screenWidth)
+                    }
+                } else {
+                    self?.contentSize.height = self?.viewHeight(count: count) ?? 0
                 }
-            } else {
-                self?.contentSize.height = self?.viewHeight(count: count) ?? 0
             }
-        }
-        .disposed(by: disposeBag)
+            .disposed(by: disposeBag)
     }
     
     private func viewHeight(count: Int) -> CGFloat {
