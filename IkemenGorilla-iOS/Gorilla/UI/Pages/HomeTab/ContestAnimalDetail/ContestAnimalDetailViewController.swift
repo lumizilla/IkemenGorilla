@@ -42,6 +42,7 @@ final class ContestAnimalDetailViewController: UIViewController, View, ViewConst
     
     // MARK: - Setup Methods
     func setupViews() {
+        header.delegate = self
         view.backgroundColor = Color.white
         view.addSubview(contentScrollView)
         contentScrollView.addSubview(stackView)
@@ -83,5 +84,12 @@ final class ContestAnimalDetailViewController: UIViewController, View, ViewConst
                 self?.postsCollectionView.reactor?.action.onNext(.setPosts(posts))
             }
             .disposed(by: disposeBag)
+    }
+}
+
+extension ContestAnimalDetailViewController: ContestAnimalDetailHeaderDelegate {
+    func didTapZoo() {
+        guard let reactor = reactor else { return }
+        showZooDetailPage(zooDetailReactor: reactor.createZooDetailReactor())
     }
 }
