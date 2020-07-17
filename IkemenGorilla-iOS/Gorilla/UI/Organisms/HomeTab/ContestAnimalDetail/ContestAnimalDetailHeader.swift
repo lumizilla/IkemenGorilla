@@ -11,6 +11,7 @@ import ReactorKit
 import RxSwift
 
 protocol ContestAnimalDetailHeaderDelegate {
+    func didTapAnimal() -> Void
     func didTapZoo() -> Void
 }
 
@@ -136,6 +137,13 @@ final class ContestAnimalDetailHeader: UIView, View, ViewConstructor {
     // MARK: - Bind Method
     func bind(reactor: ContestAnimalDetailReactor) {
         // Action
+        animalNameLabel.rx.tapGesture()
+            .when(.recognized)
+            .bind { [weak self] _ in
+                self?.delegate?.didTapAnimal()
+            }
+            .disposed(by: disposeBag)
+        
         voteButton.rx.tap
             .bind { _ in
                 reactor.action.onNext(.tapVoteButton)
