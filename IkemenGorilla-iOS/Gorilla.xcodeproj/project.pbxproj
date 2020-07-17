@@ -221,8 +221,6 @@
 		84D2168A2499218200AFB1A6 /* MapZooListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D216892499218200AFB1A6 /* MapZooListViewController.swift */; };
 		84DA960C2493B07800DF6740 /* ContestAnimalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DA960B2493B07800DF6740 /* ContestAnimalDetailViewController.swift */; };
 		84DA960E2493B0D600DF6740 /* ContestAnimalDetailReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DA960D2493B0D600DF6740 /* ContestAnimalDetailReactor.swift */; };
-		84DA96102493B1DD00DF6740 /* ContestAnimalDetailPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DA960F2493B1DD00DF6740 /* ContestAnimalDetailPostCell.swift */; };
-		84DA96122493B1FB00DF6740 /* ContestAnimalDetailPostCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DA96112493B1FB00DF6740 /* ContestAnimalDetailPostCellReactor.swift */; };
 		84DA96142493B9A700DF6740 /* ContestAnimalDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DA96132493B9A700DF6740 /* ContestAnimalDetailHeader.swift */; };
 		84DA96162493BBDD00DF6740 /* VoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DA96152493BBDD00DF6740 /* VoteButton.swift */; };
 		84DA96192493C81900DF6740 /* ContestAnimalDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DA96182493C81900DF6740 /* ContestAnimalDetailResponse.swift */; };
@@ -474,8 +472,6 @@
 		84D216892499218200AFB1A6 /* MapZooListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapZooListViewController.swift; sourceTree = "<group>"; };
 		84DA960B2493B07800DF6740 /* ContestAnimalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestAnimalDetailViewController.swift; sourceTree = "<group>"; };
 		84DA960D2493B0D600DF6740 /* ContestAnimalDetailReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestAnimalDetailReactor.swift; sourceTree = "<group>"; };
-		84DA960F2493B1DD00DF6740 /* ContestAnimalDetailPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestAnimalDetailPostCell.swift; sourceTree = "<group>"; };
-		84DA96112493B1FB00DF6740 /* ContestAnimalDetailPostCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestAnimalDetailPostCellReactor.swift; sourceTree = "<group>"; };
 		84DA96132493B9A700DF6740 /* ContestAnimalDetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestAnimalDetailHeader.swift; sourceTree = "<group>"; };
 		84DA96152493BBDD00DF6740 /* VoteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteButton.swift; sourceTree = "<group>"; };
 		84DA96182493C81900DF6740 /* ContestAnimalDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestAnimalDetailResponse.swift; sourceTree = "<group>"; };
@@ -1559,8 +1555,6 @@
 		84DA960A2493AF2600DF6740 /* ContestAnimalDetail */ = {
 			isa = PBXGroup;
 			children = (
-				84DA960F2493B1DD00DF6740 /* ContestAnimalDetailPostCell.swift */,
-				84DA96112493B1FB00DF6740 /* ContestAnimalDetailPostCellReactor.swift */,
 				84DA96132493B9A700DF6740 /* ContestAnimalDetailHeader.swift */,
 			);
 			path = ContestAnimalDetail;
@@ -1946,7 +1940,6 @@
 				844EE148248439E4003369F2 /* RecommendedZooViewController.swift in Sources */,
 				84A99FF82484FD020066863B /* ContestDetailPostCell.swift in Sources */,
 				847B37EB2479E4CC00B48535 /* HomeCurrentContestListCell.swift in Sources */,
-				84DA96122493B1FB00DF6740 /* ContestAnimalDetailPostCellReactor.swift in Sources */,
 				84D2168A2499218200AFB1A6 /* MapZooListViewController.swift in Sources */,
 				84452A7824AA0C0B0092F949 /* ContestRepository.swift in Sources */,
 				84452A7B24AA0E250092F949 /* ServiceProvider.swift in Sources */,
@@ -2015,7 +2008,6 @@
 				844EE1402484335D003369F2 /* TransitionPresentable.swift in Sources */,
 				84376CA724A5F0A800282F3C /* PostCellReactor.swift in Sources */,
 				8426BB9724A8DA8F0031AEA2 /* ProfileLikedZooListView.swift in Sources */,
-				84DA96102493B1DD00DF6740 /* ContestAnimalDetailPostCell.swift in Sources */,
 				84376CA524A5F08600282F3C /* PostPhotoCell.swift in Sources */,
 				847B37D72479D32A00B48535 /* Zoo.swift in Sources */,
 				84376CDB24A852D400282F3C /* MapSearchResultCellReactor.swift in Sources */,
