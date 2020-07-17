@@ -70,6 +70,10 @@ final class ZooDetailReactor: Reactor {
         return provider.zooService.getPosts(zooId: currentState.zoo.id, page: 0).asObservable()
     }
     
+    private func updateIsFan() -> Observable<Bool> {
+        return .just(true)
+    }
+    
     func reduce(state: State, mutation: Mutation) -> State {
         var state = state
         switch mutation {
@@ -81,6 +85,11 @@ final class ZooDetailReactor: Reactor {
             state.posts = posts
         case .setIsFan(let isFan):
             state.zooDetail?.isFavorite = isFan
+            if isFan {
+                state.zooDetail?.numberOfFavorites += 1
+            } else {
+                state.zooDetail?.numberOfFavorites -= 1
+            }
         }
         return state
     }
