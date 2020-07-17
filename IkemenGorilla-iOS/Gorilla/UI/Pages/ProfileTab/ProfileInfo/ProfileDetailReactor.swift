@@ -1,26 +1,26 @@
 //
-//  ProfileFanAnimalListReactor.swift
+//  ProfileDetailReactor.swift
 //  Gorilla
 //
-//  Created by admin on 2020/06/11.
+//  Created by admin on 2020/07/17.
 //  Copyright © 2020 admin. All rights reserved.
 //
 
 import ReactorKit
 import RxSwift
 
-final class ProfileFanAnimalListReactor: Reactor {
+final class ProfileDetailReactor: Reactor {
     enum Action {
-        case load
+        case loadUserDetail
     }
     
     enum Mutation {
-        case setFanAnimalListCellReactors([Animal])
+        case setUserDetail(UserDetail)
         case setIsLoading(Bool)
     }
     
     struct State {
-        var animalListCellReactors: [ProfileFanAnimalListCellReactor] = []
+        var userDetail: UserDetail?
         var isLoading: Bool = false
     }
     
@@ -34,27 +34,30 @@ final class ProfileFanAnimalListReactor: Reactor {
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
-        case .load:
+        case .loadUserDetail:
+            guard !currentState.isLoading else { return .empty() }
             return Observable.concat(
                 Observable.just(.setIsLoading(true)),
-                loadFanAnimals().map(Mutation.setFanAnimalListCellReactors),
+                loadUserDetail().map(Mutation.setUserDetail),
                 Observable.just(.setIsLoading(false))
             )
         }
     }
     
-    private func loadFanAnimals() -> Observable<[Animal]> {
-        .just(TestData.animals(count: 4))
+    private func loadUserDetail() -> Observable<UserDetail> {
+        logger.warning("no user id from UserDetailReactor")
+        return provider.userService.getUser(userId: "1").asObservable()
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
         var state = state
         switch mutation {
-        case .setFanAnimalListCellReactors(let animals):
-            state.animalListCellReactors = animals.map { ProfileFanAnimalListCellReactor(animal: $0) }
+        case .setUserDetail(let userDetail):
+            state.userDetail = userDetail
         case .setIsLoading(let isLoading):
             state.isLoading = isLoading
         }
         return state
     }
 }
+

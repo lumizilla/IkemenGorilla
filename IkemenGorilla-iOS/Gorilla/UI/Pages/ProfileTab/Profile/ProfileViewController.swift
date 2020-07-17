@@ -53,8 +53,8 @@ final class ProfileViewController: UIViewController, View, ViewConstructor, Tran
     
     private let profileInfoHeader = ProfileInfoHeader()
     
-    private lazy var profileInfoListView = ProfileInfoListView().then {
-        $0.reactor = reactor?.createProfileInfoListReactor()
+    private lazy var profileInfoDetail = ProfileInfoDetail().then {
+        $0.reactor = reactor?.createProfileInfoDetailReactor()
     }
     
     private let profileFanAnimalHeader = ProfileFanAnimalHeader()
@@ -92,7 +92,8 @@ final class ProfileViewController: UIViewController, View, ViewConstructor, Tran
         scrollView.contentInset = Const.scrollViewContentInset
         view.addSubview(stackView)
         stackView.addArrangedSubview(profileInfoHeader)
-        stackView.addArrangedSubview(profileInfoListView)
+        stackView.addArrangedSubview(profileInfoDetail)
+        stackView.setCustomSpacing(130, after: profileInfoDetail)
         view.addSubview(scrollView)
         scrollView.addSubview(stackView)
         stackView.addArrangedSubview(profileFanAnimalHeader)
@@ -122,6 +123,12 @@ final class ProfileViewController: UIViewController, View, ViewConstructor, Tran
     // MARK: - Bind Method
    func bind(reactor: ProfileReactor) {
        // Action
+       profileFanAnimalHeader.showAllButton.rx.tap
+           .bind { [weak self] _ in
+               self?.showFanAnimalPage(fanAnimalReactor: reactor.createFanAnimalReactor())
+           }
+           .disposed(by: disposeBag)
+    
        likedZooHeader.showAllButton.rx.tap
            .bind { [weak self] _ in
                self?.showLikedZooPage(likedZooReactor: reactor.createLikedZooReactor())

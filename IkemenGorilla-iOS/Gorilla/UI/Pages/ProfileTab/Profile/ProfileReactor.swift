@@ -10,7 +10,9 @@ import ReactorKit
 import RxSwift
 
 final class ProfileReactor: Reactor {
-    enum Action {}
+    enum Action {
+        case createProfileInfoDetailReactor
+    }
     enum Mutation {}
     
     struct State {}
@@ -23,8 +25,8 @@ final class ProfileReactor: Reactor {
         initialState = State()
     }
     
-    func createProfileInfoListReactor() -> ProfileInfoReactor {
-        return ProfileInfoReactor()
+    func createProfileInfoDetailReactor() -> ProfileDetailReactor {
+        return ProfileDetailReactor(provider: provider)
     }
     
     func createProfileVotedContestListReactor() -> ProfileVotedContestListReactor {
@@ -35,10 +37,12 @@ final class ProfileReactor: Reactor {
         return VotedContestReactor()
     }
     
+    //Shows animals in main profile page
     func createProfileFanAnimalListReactor() -> ProfileFanAnimalListReactor {
-        return ProfileFanAnimalListReactor()
+        return ProfileFanAnimalListReactor(provider: provider)
     }
     
+    //Shows animals in additional page
     func createFanAnimalReactor() -> FanAnimalReactor {
         return FanAnimalReactor()
     }

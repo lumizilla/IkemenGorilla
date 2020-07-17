@@ -24,10 +24,19 @@ struct Profile: Entity {
     let contestStart: Date
     let contestEnd: Date
     let contestIconUrl: String
-    let likedId: String
-    let likedIconUrl: String
-    let likedZooId: String           //Not sure about this one, how to get the Zoo of the liked animal
-    let likedZooName: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id, name, numberOfAnimals, numberOfContests, contestStart, contestEnd
+        case imageUrl = "image_url"
+        case animalId = "animal_id"
+        case animalName = "animal_name"
+        case animalIconUrl = "animal_icon_url"
+        case zooId = "zoo_id"
+        case zooName = "zoo_name"
+        case contestId = "contest_id"
+        case contestName = "contest_name"
+        case contestIconUrl = "contest_icon_url"
+    }
     
     static func == (lhs: Profile, rhs: Profile) -> Bool {
         lhs.id == rhs.id
