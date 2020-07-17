@@ -88,6 +88,13 @@ final class ContestAnimalDetailViewController: UIViewController, View, ViewConst
 }
 
 extension ContestAnimalDetailViewController: ContestAnimalDetailHeaderDelegate {
+    
+    func didTapAnimal() {
+        logger.debug("didTapAnimal")
+        guard let reactor = reactor else { return }
+        showAnimalDetailPage(animalDetailReactor: reactor.createAnimalDetailReactor())
+    }
+    
     func didTapZoo() {
         guard let reactor = reactor else { return }
         showZooDetailPage(zooDetailReactor: reactor.createZooDetailReactor())
