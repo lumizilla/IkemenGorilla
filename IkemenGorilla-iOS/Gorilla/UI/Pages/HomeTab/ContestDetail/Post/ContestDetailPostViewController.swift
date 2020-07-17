@@ -153,14 +153,14 @@ final class ContestDetailPostViewController: UIViewController, View, ViewConstru
             .disposed(by: disposeBag)
         
         postsCollectionView.rx.contentOffset
-        .distinctUntilChanged()
-        .bind { [weak self] contentOffset in
-            guard let collectionView = self?.postsCollectionView else { return }
-            if collectionView.contentOffset.y + collectionView.frame.size.height > collectionView.contentSize.height {
-                reactor.action.onNext(.load)
+            .distinctUntilChanged()
+            .bind { [weak self] contentOffset in
+                guard let collectionView = self?.postsCollectionView else { return }
+                if collectionView.contentOffset.y + collectionView.frame.size.height > collectionView.contentSize.height {
+                    reactor.action.onNext(.load)
+                }
             }
-        }
-        .disposed(by: disposeBag)
+            .disposed(by: disposeBag)
         
         // State
         reactor.state.map { $0.postCellReactors }
