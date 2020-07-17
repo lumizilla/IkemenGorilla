@@ -100,6 +100,16 @@ final class ContestAnimalDetailReactor: Reactor {
         }
     }
     
+    func createAnimalDetailReactor() -> AnimalDetailReactor {
+        let zooAnimal = ZooAnimal(
+            id: currentState.entry.animalId,
+            name: currentState.entry.name,
+            iconUrl: currentState.entry.iconUrl,
+            isFan: false
+        )
+        return AnimalDetailReactor(provider: provider, zooAnimal: zooAnimal)
+    }
+    
     func createExplorePostDetailReactor(indexPath: IndexPath) -> ExplorePostDetailReactor {
         let posts = currentState.posts
         return ExplorePostDetailReactor(provider: provider, startAt: indexPath.row, posts: posts)
