@@ -99,7 +99,7 @@ final class ZooDetailViewController: UIViewController, View, ViewConstructor, Tr
         // Action
         reactor.action.onNext(.loadZooDetail)
         reactor.action.onNext(.loadAnimals)
-        reactor.action.onNext(.loadPosts)
+        reactor.action.onNext(.refreshPosts)
         
         animalsHeader.showAllButton.rx.tap
             .bind { [weak self] _ in
@@ -130,6 +130,16 @@ final class ZooDetailViewController: UIViewController, View, ViewConstructor, Tr
             .distinctUntilChanged()
             .bind(to: animalsCollectionView.rx.items(Reusable.animalCell)) { _, reactor, cell in
                 cell.reactor = reactor
+            }
+            .disposed(by: disposeBag)
+        
+        contentScrollView.rx.contentOffset
+            .distinctUntilChanged()
+            .bind { [weak self] contentOffset in
+                guard let scrollView = self?.contentScrollView else { return }
+                if scrollView.contentOffset.y + scrollView.frame.size.height > scrollView.contentSize.height {
+                    reactor.action.onNext(.loadPosts)
+                }
             }
             .disposed(by: disposeBag)
         
