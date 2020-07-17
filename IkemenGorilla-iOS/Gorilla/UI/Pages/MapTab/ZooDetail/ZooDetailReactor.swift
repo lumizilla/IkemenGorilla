@@ -19,7 +19,7 @@ final class ZooDetailReactor: Reactor {
     enum Mutation {
         case setZooDetail(ZooDetail)
         case setAnimalCellReactors([ZooAnimal])
-        case setPostCellReactors([Post])
+        case setPosts([Post])
         case setIsFan(Bool)
     }
     
@@ -27,7 +27,7 @@ final class ZooDetailReactor: Reactor {
         let zoo: Zoo
         var zooDetail: ZooDetail?
         var animalCellReactors: [ZooDetailAnimalCellReactor] = []
-        var postCellReactors: [ZooDetailPostCellReactor] = []
+        var posts: [Post] = []
         
         init(zoo: Zoo) {
             self.zoo = zoo
@@ -49,7 +49,7 @@ final class ZooDetailReactor: Reactor {
         case .loadAnimals:
             return loadAnimals().map(Mutation.setAnimalCellReactors)
         case .loadPosts:
-            return loadPosts().map(Mutation.setPostCellReactors)
+            return loadPosts().map(Mutation.setPosts)
         case .tapHeartButton:
             guard let isFavorite = currentState.zooDetail?.isFavorite else { return .empty() }
             return .just(.setIsFan(!isFavorite))
@@ -77,8 +77,8 @@ final class ZooDetailReactor: Reactor {
             state.zooDetail = zooDetail
         case .setAnimalCellReactors(let zooAnimals):
             state.animalCellReactors = zooAnimals.map { ZooDetailAnimalCellReactor(zooAnimal: $0) }
-        case .setPostCellReactors(let posts):
-            state.postCellReactors = posts.map { ZooDetailPostCellReactor(post: $0) }
+        case .setPosts(let posts):
+            state.posts = posts
         case .setIsFan(let isFan):
             state.zooDetail?.isFavorite = isFan
         }
@@ -94,8 +94,12 @@ final class ZooDetailReactor: Reactor {
         return AnimalDetailReactor(provider: provider, zooAnimal: currentState.animalCellReactors[indexPath.row].currentState.zooAnimal)
     }
     
+    func createPostPhotoCollectionReactor() -> PostPhotoCollectionReactor {
+        return PostPhotoCollectionReactor()
+    }
+    
     func createExplorePostDetailReactor(indexPath: IndexPath) -> ExplorePostDetailReactor {
-        let posts = currentState.postCellReactors.compactMap { $0.currentState.post }
+        let posts = currentState.posts
         return ExplorePostDetailReactor(provider: provider, startAt: indexPath.row, posts: posts)
     }
 }
