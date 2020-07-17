@@ -14,6 +14,7 @@ enum ZooTarget {
     case getAnimals(zooId: String, page: Int, userId: String)
     case getPosts(zooId: String, page: Int)
     case getRecommendedZoos
+    case updateIsFan(isFan: Bool, zooId: String)
 }
 
 extension ZooTarget: TargetType {
@@ -29,6 +30,8 @@ extension ZooTarget: TargetType {
             return "/zoos/\(zooId)/posts"
         case .getRecommendedZoos:
             return "/zoos/recommended"
+        case .updateIsFan(_, let zooId):
+            return "/zoos/\(zooId)/favorite"
         }
     }
     
@@ -36,6 +39,8 @@ extension ZooTarget: TargetType {
         switch self {
         case .getZoos, .getZoo, .getAnimals, .getPosts, .getRecommendedZoos:
             return .get
+        case .updateIsFan(let isFan, _):
+            return isFan ? .post : .delete
         }
     }
     
@@ -57,7 +62,7 @@ extension ZooTarget: TargetType {
                 "page": page
             ]
             return .requestParameters(parameters: parameters, encoding: parameterEncoding)
-        case .getZoos, .getRecommendedZoos:
+        case .getZoos, .getRecommendedZoos, .updateIsFan:
             return .requestPlain
         }
     }
@@ -66,7 +71,7 @@ extension ZooTarget: TargetType {
         switch self {
         case .getZoo, .getAnimals, .getPosts:
             return URLEncoding.queryString
-        case .getZoos, .getRecommendedZoos:
+        case .getZoos, .getRecommendedZoos, .updateIsFan:
             return URLEncoding.default
         }
     }

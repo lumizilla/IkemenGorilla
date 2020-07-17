@@ -170,7 +170,7 @@ class PostPhotoCollectionView: UICollectionView, View, ViewConstructor {
         var bodyHeight: CGFloat = 0
         switch count % 12 {
         case 0:
-            bodyHeight = CGFloat(sectionCount) * Const.sectionHeight
+            bodyHeight = 0
         case 1:
             bodyHeight = rowHeight
         case 2, 3:
@@ -180,10 +180,10 @@ class PostPhotoCollectionView: UICollectionView, View, ViewConstructor {
         case 7, 8, 9:
             bodyHeight = rowHeight * 5
         case 10, 11:
-            bodyHeight = CGFloat(sectionCount) * Const.sectionHeight
+            bodyHeight = 0
         default:
             break
         }
-        return topMargin + bodyHeight
+        return topMargin + bodyHeight + CGFloat(sectionCount) * Const.sectionHeight
     }
 }
