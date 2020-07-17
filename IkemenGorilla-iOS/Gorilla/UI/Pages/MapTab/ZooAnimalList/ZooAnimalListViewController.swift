@@ -30,6 +30,7 @@ final class ZooAnimalListViewController: UIViewController, View, ViewConstructor
         $0.backgroundColor = Color.white
         $0.showsVerticalScrollIndicator = false
         $0.contentInset = UIEdgeInsets(top: 16, left: 24, bottom: 24, right: 24)
+        $0.alwaysBounceVertical = true
     }
     
     // MARK: - Life Cycles
@@ -55,11 +56,21 @@ final class ZooAnimalListViewController: UIViewController, View, ViewConstructor
     // MARK: - Bind Method
     func bind(reactor: ZooAnimalListReactor) {
         // Action
-        reactor.action.onNext(.loadAnimals)
+        reactor.action.onNext(.refresh)
         
         animalsCollectionView.rx.itemSelected
             .bind { [weak self] indexPath in
                 self?.showAnimalDetailPage(animalDetailReactor: reactor.createAnimalDetailReactor(indexPath: indexPath))
+            }
+            .disposed(by: disposeBag)
+        
+        animalsCollectionView.rx.contentOffset
+            .distinctUntilChanged()
+            .bind { [weak self] contentOffset in
+                guard let collectionView = self?.animalsCollectionView else { return }
+                if collectionView.contentOffset.y + collectionView.frame.size.height > collectionView.contentSize.height {
+                    reactor.action.onNext(.load)
+                }
             }
             .disposed(by: disposeBag)
         
