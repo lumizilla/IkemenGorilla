@@ -18,7 +18,7 @@ final class ContestAnimalDetailReactor: Reactor {
     
     enum Mutation {
         case setResponse(ContestAnimalDetailResponse)
-        case setPostCellReactors([Post])
+        case setPosts([Post])
         case setIsLoading(Bool)
         case setIsVoted(Bool)
     }
@@ -27,7 +27,7 @@ final class ContestAnimalDetailReactor: Reactor {
         let entry: Entry
         let contestId: String
         var response: ContestAnimalDetailResponse?
-        var postCellReactors: [ContestAnimalDetailPostCellReactor] = []
+        var posts: [Post] = []
         var isLoading: Bool = false
         var isVoted: Bool = false
     }
@@ -48,7 +48,7 @@ final class ContestAnimalDetailReactor: Reactor {
             guard !currentState.isLoading else { return .empty() }
             return .concat(
                 .just(.setIsLoading(true)),
-                loadPosts().map(Mutation.setPostCellReactors),
+                loadPosts().map(Mutation.setPosts),
                 .just(.setIsLoading(false))
             )
         case .tapVoteButton:
@@ -70,8 +70,8 @@ final class ContestAnimalDetailReactor: Reactor {
         switch mutation {
         case .setResponse(let response):
             state.response = response
-        case .setPostCellReactors(let posts):
-            state.postCellReactors = posts.map { ContestAnimalDetailPostCellReactor(post: $0) }
+        case .setPosts(let posts):
+            state.posts = posts
         case .setIsLoading(let isLoading):
             state.isLoading = isLoading
         case .setIsVoted(let isVoted):
@@ -80,8 +80,38 @@ final class ContestAnimalDetailReactor: Reactor {
         return state
     }
     
+    func createPostPhotoCollectionReactor() -> PostPhotoCollectionReactor {
+        return PostPhotoCollectionReactor()
+    }
+    
+    func createZooDetailReactor() -> ZooDetailReactor {
+        if let response = currentState.response {
+            let zoo = Zoo(
+                id: response.zooId,
+                name: response.zooName,
+                address: response.zooAddress,
+                latitude: 0,
+                longitude: 0,
+                imageUrl: ""
+            )
+            return ZooDetailReactor(provider: provider, zoo: zoo)
+        } else {
+            return ZooDetailReactor(provider: provider, zoo: TestData.zoo())
+        }
+    }
+    
+    func createAnimalDetailReactor() -> AnimalDetailReactor {
+        let zooAnimal = ZooAnimal(
+            id: currentState.entry.animalId,
+            name: currentState.entry.name,
+            iconUrl: currentState.entry.iconUrl,
+            isFan: false
+        )
+        return AnimalDetailReactor(provider: provider, zooAnimal: zooAnimal)
+    }
+    
     func createExplorePostDetailReactor(indexPath: IndexPath) -> ExplorePostDetailReactor {
-        let posts = currentState.postCellReactors.compactMap { $0.currentState.post }
+        let posts = currentState.posts
         return ExplorePostDetailReactor(provider: provider, startAt: indexPath.row, posts: posts)
     }
 }

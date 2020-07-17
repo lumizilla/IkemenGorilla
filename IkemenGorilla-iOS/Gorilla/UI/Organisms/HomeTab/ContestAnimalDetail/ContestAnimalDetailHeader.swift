@@ -10,6 +10,11 @@ import UIKit
 import ReactorKit
 import RxSwift
 
+protocol ContestAnimalDetailHeaderDelegate {
+    func didTapAnimal() -> Void
+    func didTapZoo() -> Void
+}
+
 final class ContestAnimalDetailHeader: UIView, View, ViewConstructor {
     struct Const {
         static let imageViewHeight: CGFloat = DeviceSize.screenWidth + 88
@@ -21,6 +26,8 @@ final class ContestAnimalDetailHeader: UIView, View, ViewConstructor {
     override var intrinsicContentSize: CGSize {
         return CGSize(width: DeviceSize.screenWidth, height: Const.imageViewHeight )
     }
+    
+    var delegate: ContestAnimalDetailHeaderDelegate?
     
     // MARK: - Views
     private let imageView = UIImageView().then {
@@ -130,9 +137,37 @@ final class ContestAnimalDetailHeader: UIView, View, ViewConstructor {
     // MARK: - Bind Method
     func bind(reactor: ContestAnimalDetailReactor) {
         // Action
+        animalNameLabel.rx.tapGesture()
+            .when(.recognized)
+            .bind { [weak self] _ in
+                self?.delegate?.didTapAnimal()
+            }
+            .disposed(by: disposeBag)
+        
         voteButton.rx.tap
             .bind { _ in
                 reactor.action.onNext(.tapVoteButton)
+            }
+            .disposed(by: disposeBag)
+        
+        zooNameLabel.rx.tapGesture()
+            .when(.recognized)
+            .bind { [weak self] _ in
+                self?.delegate?.didTapZoo()
+            }
+            .disposed(by: disposeBag)
+        
+        mapIconView.rx.tapGesture()
+            .when(.recognized)
+            .bind { [weak self] _ in
+                self?.delegate?.didTapZoo()
+            }
+            .disposed(by: disposeBag)
+        
+        addressLabel.rx.tapGesture()
+            .when(.recognized)
+            .bind { [weak self] _ in
+                self?.delegate?.didTapZoo()
             }
             .disposed(by: disposeBag)
         
