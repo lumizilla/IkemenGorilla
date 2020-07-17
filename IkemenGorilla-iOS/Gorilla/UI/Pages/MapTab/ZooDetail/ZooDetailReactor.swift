@@ -13,6 +13,7 @@ final class ZooDetailReactor: Reactor {
     enum Action {
         case loadZooDetail
         case loadAnimals
+        case refreshPosts
         case loadPosts
         case tapHeartButton
     }
@@ -20,7 +21,10 @@ final class ZooDetailReactor: Reactor {
         case setZooDetail(ZooDetail)
         case setAnimalCellReactors([ZooAnimal])
         case setPosts([Post])
+        case addPosts([Post])
         case setIsFan(Bool)
+        case setPage(Int)
+        case setApiStatus(APIStatus)
     }
     
     struct State {
@@ -28,6 +32,9 @@ final class ZooDetailReactor: Reactor {
         var zooDetail: ZooDetail?
         var animalCellReactors: [ZooDetailAnimalCellReactor] = []
         var posts: [Post] = []
+        var page: Int = 0
+        var didReachedBottom: Bool = false
+        var apiStatus: APIStatus = .pending
         
         init(zoo: Zoo) {
             self.zoo = zoo
@@ -48,8 +55,22 @@ final class ZooDetailReactor: Reactor {
             return loadZooDetail().map(Mutation.setZooDetail)
         case .loadAnimals:
             return loadAnimals().map(Mutation.setAnimalCellReactors)
+        case .refreshPosts:
+            guard currentState.apiStatus == .pending else { return .empty() }
+            return .concat(
+                .just(.setApiStatus(.refreshing)),
+                loadPosts(page: 0).map(Mutation.setPosts),
+                .just(.setPage(0)),
+                .just(.setApiStatus(.pending))
+            )
         case .loadPosts:
-            return loadPosts().map(Mutation.setPosts)
+            guard currentState.apiStatus == .pending && !currentState.didReachedBottom else { return .empty() }
+            return .concat(
+                .just(.setApiStatus(.refreshing)),
+                loadPosts(page: currentState.page+1).map(Mutation.addPosts),
+                .just(.setPage(currentState.page+1)),
+                .just(.setApiStatus(.pending))
+            )
         case .tapHeartButton:
             guard let isFavorite = currentState.zooDetail?.isFavorite else { return .empty() }
             return .just(.setIsFan(!isFavorite))
@@ -66,8 +87,8 @@ final class ZooDetailReactor: Reactor {
         return provider.zooService.getAnimals(zooId: currentState.zoo.id, page: 0, userId: "1").asObservable()
     }
     
-    private func loadPosts() -> Observable<[Post]> {
-        return provider.zooService.getPosts(zooId: currentState.zoo.id, page: 0).asObservable()
+    private func loadPosts(page: Int) -> Observable<[Post]> {
+        return provider.zooService.getPosts(zooId: currentState.zoo.id, page: page).asObservable()
     }
     
     private func updateIsFan() -> Observable<Bool> {
@@ -83,6 +104,10 @@ final class ZooDetailReactor: Reactor {
             state.animalCellReactors = zooAnimals.map { ZooDetailAnimalCellReactor(zooAnimal: $0) }
         case .setPosts(let posts):
             state.posts = posts
+            state.didReachedBottom = posts.count < 12
+        case .addPosts(let posts):
+            state.posts += posts
+            state.didReachedBottom = posts.count < 12
         case .setIsFan(let isFan):
             state.zooDetail?.isFavorite = isFan
             if isFan {
@@ -90,6 +115,10 @@ final class ZooDetailReactor: Reactor {
             } else {
                 state.zooDetail?.numberOfFavorites -= 1
             }
+        case .setPage(let page):
+            state.page = page
+        case .setApiStatus(let apiStatus):
+            state.apiStatus = apiStatus
         }
         return state
     }
