@@ -93,7 +93,11 @@ final class ExploreReactor: Reactor {
         return ExplorePostDetailReactor(provider: provider, startAt: indexPath.row, posts: currentState.posts)
     }
     
-    func createExploreSearchResultReactor() -> ExploreSearchResultReactor {
+    func createExploreSearchResultReactorFromSearchButton() -> ExploreSearchResultReactor {
         return ExploreSearchResultReactor(provider: provider, keyword: currentState.keyword)
+    }
+    
+    func createExploreSearchResultReactorFromRecommendKeyword(indexPath: IndexPath) -> ExploreSearchResultReactor {
+        return ExploreSearchResultReactor(provider: provider, keyword: currentState.recommendKeywords[indexPath.row])
     }
 }
