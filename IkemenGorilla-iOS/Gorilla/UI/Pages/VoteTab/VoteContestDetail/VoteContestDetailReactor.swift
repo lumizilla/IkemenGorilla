@@ -14,6 +14,7 @@ final class VoteContestDetailReactor: Reactor {
         case refresh
         case load
         case selectEntry(IndexPath)
+        case vote
     }
     enum Mutation {
         case setEntryCellReactors([Entry])
@@ -64,6 +65,9 @@ final class VoteContestDetailReactor: Reactor {
             )
         case .selectEntry(let indexPath):
             return .just(.setVoteEntry(currentState.entryCellReactors[indexPath.row].currentState.entry))
+        case .vote:
+            logger.debug("vote")
+            return .empty()
         }
     }
     
