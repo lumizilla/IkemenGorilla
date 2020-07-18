@@ -30,6 +30,7 @@ final class ExploreReactor: Reactor {
         var apiStatus: APIStatus = .pending
         var didReachedBottom: Bool = false
         var keyword: String = ""
+        let recommendKeywords: [String] = ["コアラ", "ライオン"]
     }
     
     var initialState: State
