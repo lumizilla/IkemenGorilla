@@ -11,7 +11,7 @@ import ReactorKit
 import RxSwift
 import ReusableKit
 
-final class MapSearchViewController: UIViewController, View, ViewConstructor {
+final class MapSearchViewController: UIViewController, View, ViewConstructor, TransitionPresentable {
     
     struct Reusable {
         static let resultCell = ReusableCell<MapSearchResultCell>()
@@ -104,6 +104,13 @@ final class MapSearchViewController: UIViewController, View, ViewConstructor {
         searchBar.rx.searchButtonClicked
             .bind { [weak self] _ in
                 self?.searchBar.resignFirstResponder()
+            }
+            .disposed(by: disposeBag)
+        
+        searchResultCollectionView.rx.itemSelected
+            .bind { [weak self] indexPath in
+                logger.debug(indexPath)
+                self?.showZooDetailPage(zooDetailReactor: reactor.createZooDetailReactor(indexPath: indexPath))
             }
             .disposed(by: disposeBag)
         
