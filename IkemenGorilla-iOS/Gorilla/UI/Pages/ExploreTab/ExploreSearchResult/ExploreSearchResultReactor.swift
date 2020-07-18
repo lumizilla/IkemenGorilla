@@ -10,8 +10,14 @@ import ReactorKit
 import RxSwift
 
 final class ExploreSearchResultReactor: Reactor {
-    enum Action {}
-    enum Mutation {}
+    enum Action {
+        case refresh
+    }
+    enum Mutation {
+        case setPosts([Post])
+        case setPage(Int)
+        case setApiStatus(APIStatus)
+    }
     
     struct State {
         let keyword: String
@@ -30,5 +36,39 @@ final class ExploreSearchResultReactor: Reactor {
     init(provider: ServiceProviderType, keyword: String) {
         self.provider = provider
         initialState = State(keyword: keyword)
+    }
+    
+    func mutate(action: Action) -> Observable<Mutation> {
+        switch action {
+        case .refresh:
+            guard currentState.apiStatus == .pending else { return .empty() }
+            return .concat(
+                .just(.setApiStatus(.refreshing)),
+                load(page: 0).map(Mutation.setPosts),
+                .just(.setPage(0)),
+                .just(.setApiStatus(.pending))
+            )
+        }
+    }
+    
+    private func load(page: Int) -> Observable<[Post]> {
+        return .just(TestData.posts(count: 24))
+    }
+    
+    func reduce(state: State, mutation: Mutation) -> State {
+        var state = state
+        switch mutation {
+        case .setPosts(let posts):
+            state.posts = posts
+        case .setPage(let page):
+            state.page = page
+        case .setApiStatus(let apiStatus):
+            state.apiStatus = apiStatus
+        }
+        return state
+    }
+    
+    func createPostPhotoCollectionReactor() -> PostPhotoCollectionReactor {
+        return PostPhotoCollectionReactor()
     }
 }
