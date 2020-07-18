@@ -13,6 +13,10 @@ import ReusableKit
 
 final class ExploreViewController: UIViewController, View, ViewConstructor, TransitionPresentable {
     
+    struct Reusable {
+        static let recommendKeywordCell = ReusableCell<RecommendKeywordCell>()
+    }
+    
     // MARK: - Variables
     var disposeBag = DisposeBag()
     
@@ -28,6 +32,12 @@ final class ExploreViewController: UIViewController, View, ViewConstructor, Tran
         $0.contentInset.top = 8
     }
     
+    private let recommendKeywordTableView = UITableView().then {
+        $0.register(Reusable.recommendKeywordCell)
+        $0.showsVerticalScrollIndicator = false
+        $0.separatorStyle = .none
+    }
+    
     // MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,10 +50,14 @@ final class ExploreViewController: UIViewController, View, ViewConstructor, Tran
     func setupViews() {
         navigationItem.titleView = searchBar
         view.addSubview(postsCollectionView)
+        view.addSubview(recommendKeywordTableView)
     }
     
     func setupViewConstraints() {
         postsCollectionView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        recommendKeywordTableView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
     }
@@ -97,6 +111,13 @@ final class ExploreViewController: UIViewController, View, ViewConstructor, Tran
             .distinctUntilChanged()
             .bind { [weak self] posts in
                 self?.postsCollectionView.reactor?.action.onNext(.setPosts(posts))
+            }
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.recommendKeywords }
+            .distinctUntilChanged()
+            .bind(to: recommendKeywordTableView.rx.items(Reusable.recommendKeywordCell)) { _, keyword, cell in
+                cell.reactor = RecommendKeywordCellReactor(keyword: keyword)
             }
             .disposed(by: disposeBag)
     }
