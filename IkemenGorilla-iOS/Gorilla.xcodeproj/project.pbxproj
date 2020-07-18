@@ -10,6 +10,7 @@
 		1237FD5EF935F298D1A9503A /* Pods_Gorilla.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88E3F92FF19F1C62D0B465D /* Pods_Gorilla.framework */; };
 		8417BEF524C2B65500E94937 /* ExploreSearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417BEF424C2B65500E94937 /* ExploreSearchResultViewController.swift */; };
 		8417BEF724C2B66C00E94937 /* ExploreSearchResultReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417BEF624C2B66C00E94937 /* ExploreSearchResultReactor.swift */; };
+		8417BEFB24C2C48B00E94937 /* RecommendKeywordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417BEFA24C2C48B00E94937 /* RecommendKeywordCell.swift */; };
 		8426BB2524A8A8850031AEA2 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB2424A8A8850031AEA2 /* Profile.swift */; };
 		8426BB4E24A8A9080031AEA2 /* FanAnimalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB2824A8A9080031AEA2 /* FanAnimalCell.swift */; };
 		8426BB4F24A8A9080031AEA2 /* FanAnimalCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB2924A8A9080031AEA2 /* FanAnimalCellReactor.swift */; };
@@ -255,6 +256,7 @@
 		69F440E1262F9F90997A9A24 /* Pods_Gorilla_GorillaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gorilla_GorillaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8417BEF424C2B65500E94937 /* ExploreSearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreSearchResultViewController.swift; sourceTree = "<group>"; };
 		8417BEF624C2B66C00E94937 /* ExploreSearchResultReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreSearchResultReactor.swift; sourceTree = "<group>"; };
+		8417BEFA24C2C48B00E94937 /* RecommendKeywordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendKeywordCell.swift; sourceTree = "<group>"; };
 		8426BB2424A8A8850031AEA2 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		8426BB2824A8A9080031AEA2 /* FanAnimalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FanAnimalCell.swift; sourceTree = "<group>"; };
 		8426BB2924A8A9080031AEA2 /* FanAnimalCellReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FanAnimalCellReactor.swift; sourceTree = "<group>"; };
@@ -556,6 +558,7 @@
 		8417BEF924C2C46300E94937 /* RecommendKeyword */ = {
 			isa = PBXGroup;
 			children = (
+				8417BEFA24C2C48B00E94937 /* RecommendKeywordCell.swift */,
 			);
 			path = RecommendKeyword;
 			sourceTree = "<group>";
@@ -2052,6 +2055,7 @@
 				8426BB5024A8A9080031AEA2 /* ProfileVotedContestListCellReactor.swift in Sources */,
 				8426BB9924A8DB880031AEA2 /* ProfileLikedZooHeader.swift in Sources */,
 				8494CBE5249B825600E35E00 /* ZooDetailPostsHeader.swift in Sources */,
+				8417BEFB24C2C48B00E94937 /* RecommendKeywordCell.swift in Sources */,
 				847B380C247CB03C00B48535 /* APIStatus.swift in Sources */,
 				8426BB8624A8A9EE0031AEA2 /* ProfileReactor.swift in Sources */,
 				844EE14E2484A595003369F2 /* ContestDetailViewController.swift in Sources */,
