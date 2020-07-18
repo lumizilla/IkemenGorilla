@@ -46,6 +46,16 @@ final class ExploreSearchResultViewController: UIViewController, View, ViewConst
         // Action
         reactor.action.onNext(.refresh)
         
+        postsCollectionView.rx.contentOffset
+            .distinctUntilChanged()
+            .bind { [weak self] contentOffset in
+                guard let scrollView = self?.postsCollectionView else { return }
+                if scrollView.contentOffset.y + scrollView.frame.size.height > scrollView.contentSize.height {
+                    reactor.action.onNext(.load)
+                }
+            }
+            .disposed(by: disposeBag)
+        
         // State
         reactor.state.map { $0.keyword }
             .distinctUntilChanged()
