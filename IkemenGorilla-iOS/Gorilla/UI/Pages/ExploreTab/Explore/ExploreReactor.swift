@@ -13,6 +13,7 @@ final class ExploreReactor: Reactor {
     enum Action {
         case refresh
         case load
+        case updateKeyword(String)
     }
     
     enum Mutation {
@@ -20,6 +21,7 @@ final class ExploreReactor: Reactor {
         case addPosts([Post])
         case setPage(Int)
         case setApiStatus(APIStatus)
+        case setKeyword(String)
     }
     
     struct State {
@@ -27,6 +29,7 @@ final class ExploreReactor: Reactor {
         var page: Int = 0
         var apiStatus: APIStatus = .pending
         var didReachedBottom: Bool = false
+        var keyword: String = ""
     }
     
     var initialState: State
@@ -55,6 +58,8 @@ final class ExploreReactor: Reactor {
                 .just(.setPage(currentState.page+1)),
                 .just(.setApiStatus(.pending))
             )
+        case .updateKeyword(let keyword):
+            return .just(.setKeyword(keyword))
         }
     }
     
@@ -76,6 +81,9 @@ final class ExploreReactor: Reactor {
             state.page = page
         case .setApiStatus(let apiStatus):
             state.apiStatus = apiStatus
+        case .setKeyword(let keyword):
+            state.keyword = keyword
+            logger.debug(keyword)
         }
         return state
     }
