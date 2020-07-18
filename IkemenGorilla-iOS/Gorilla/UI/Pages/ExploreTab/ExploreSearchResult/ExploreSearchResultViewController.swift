@@ -40,8 +40,17 @@ final class ExploreSearchResultViewController: UIViewController, View, ViewConst
     
     // MARK: - Bind Method
     func bind(reactor: ExploreSearchResultReactor) {
+        postsCollectionView.reactor = reactor.createPostPhotoCollectionReactor()
+        
         // Action
+        reactor.action.onNext(.refresh)
         
         // State
+        reactor.state.map { $0.posts }
+            .distinctUntilChanged()
+            .bind { [weak self] posts in
+                self?.postsCollectionView.reactor?.action.onNext(.setPosts(posts))
+            }
+            .disposed(by: disposeBag)
     }
 }
