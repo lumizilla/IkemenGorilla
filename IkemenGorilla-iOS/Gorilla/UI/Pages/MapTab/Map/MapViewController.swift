@@ -93,12 +93,7 @@ final class MapViewController: UIViewController, View, ViewConstructor, Transiti
         searchButton.rx.tap
             .bind { [weak self] _ in
                 self?.isNavBarAppearWhenViewWillDisappear = false
-                let vc = UINavigationController(rootViewController: MapSearchViewController().then {
-                    $0.reactor = reactor.createMapSearchReactor()
-                }).then {
-                    $0.modalPresentationStyle = .fullScreen
-                }
-                self?.present(vc, animated: true, completion: nil)
+                self?.showMapSearchPage(mapSearchReactor: reactor.createMapSearchReactor())
             }
             .disposed(by: disposeBag)
         
