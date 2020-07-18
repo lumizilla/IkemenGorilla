@@ -10,10 +10,17 @@ import ReactorKit
 import RxSwift
 
 final class ExploreReactor: Reactor {
+    
+    enum PageType {
+        case explore
+        case search
+    }
+    
     enum Action {
         case refresh
         case load
         case updateKeyword(String)
+        case updatePageType(PageType)
     }
     
     enum Mutation {
@@ -22,6 +29,7 @@ final class ExploreReactor: Reactor {
         case setPage(Int)
         case setApiStatus(APIStatus)
         case setKeyword(String)
+        case setPageType(PageType)
     }
     
     struct State {
@@ -30,6 +38,7 @@ final class ExploreReactor: Reactor {
         var apiStatus: APIStatus = .pending
         var didReachedBottom: Bool = false
         var keyword: String = ""
+        var pageType: PageType = .explore
         let recommendKeywords: [String] = ["コアラ", "ライオン"]
     }
     
@@ -61,6 +70,8 @@ final class ExploreReactor: Reactor {
             )
         case .updateKeyword(let keyword):
             return .just(.setKeyword(keyword))
+        case .updatePageType(let pageType):
+            return .just(.setPageType(pageType))
         }
     }
     
@@ -85,6 +96,8 @@ final class ExploreReactor: Reactor {
         case .setKeyword(let keyword):
             state.keyword = keyword
             logger.debug(keyword)
+        case .setPageType(let pageType):
+            state.pageType = pageType
         }
         return state
     }
