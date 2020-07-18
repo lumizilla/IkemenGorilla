@@ -65,7 +65,7 @@ final class MapViewController: UIViewController, View, ViewConstructor, Transiti
     
     func setupViewConstraints() {
         searchButton.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(36)
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(36)
             $0.centerX.equalToSuperview()
         }
         mapView.snp.makeConstraints {
