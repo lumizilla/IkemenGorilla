@@ -44,12 +44,22 @@ final class ExploreViewController: UIViewController, View, ViewConstructor, Tran
     func bind(reactor: ExploreReactor) {
         postsCollectionView.reactor = PostPhotoCollectionReactor()
         // Action
-        reactor.action.onNext(.loadPosts)
+        reactor.action.onNext(.refresh)
         
         postsCollectionView.rx.itemSelected
             .bind { [weak self] indexPath in
                 logger.debug(indexPath)
                 self?.showExplorePostDetailPage(explorePostDetailReactor: reactor.createExplorePostDetailReactor(indexPath: indexPath))
+            }
+            .disposed(by: disposeBag)
+        
+        postsCollectionView.rx.contentOffset
+            .distinctUntilChanged()
+            .bind { [weak self] contentOffset in
+                guard let scrollView = self?.postsCollectionView else { return }
+                if scrollView.contentOffset.y + scrollView.frame.size.height > scrollView.contentSize.height {
+                    reactor.action.onNext(.load)
+                }
             }
             .disposed(by: disposeBag)
         
