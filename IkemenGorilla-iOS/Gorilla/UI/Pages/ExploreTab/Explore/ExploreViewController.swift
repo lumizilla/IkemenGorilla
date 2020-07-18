@@ -36,7 +36,10 @@ final class ExploreViewController: UIViewController, View, ViewConstructor, Tran
         $0.register(Reusable.recommendKeywordCell)
         $0.showsVerticalScrollIndicator = false
         $0.separatorStyle = .none
+        $0.contentInset.top = RecommendKeywordHeader.Const.height
     }
+    
+    private let recommendKeywordHeader = RecommendKeywordHeader()
     
     // MARK: - Life Cycles
     override func viewDidLoad() {
@@ -51,6 +54,7 @@ final class ExploreViewController: UIViewController, View, ViewConstructor, Tran
         navigationItem.titleView = searchBar
         view.addSubview(postsCollectionView)
         view.addSubview(recommendKeywordTableView)
+        recommendKeywordTableView.addSubview(recommendKeywordHeader)
     }
     
     func setupViewConstraints() {
@@ -59,6 +63,10 @@ final class ExploreViewController: UIViewController, View, ViewConstructor, Tran
         }
         recommendKeywordTableView.snp.makeConstraints {
             $0.edges.equalToSuperview()
+        }
+        recommendKeywordHeader.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(-RecommendKeywordHeader.Const.height)
+            $0.left.right.equalToSuperview()
         }
     }
     
