@@ -53,4 +53,9 @@ final class MapSearchReactor: Reactor {
         }
         return state
     }
+    
+    func createZooDetailReactor(indexPath: IndexPath) -> ZooDetailReactor {
+        let zoo = currentState.searchResultCellReactors[indexPath.row].currentState.zoo
+        return ZooDetailReactor(provider: provider, zoo: zoo)
+    }
 }
