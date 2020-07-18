@@ -17,6 +17,7 @@ final class ExploreSearchResultViewController: UIViewController, View, ViewConst
     // MARK: - Views
     private let postsCollectionView = PostPhotoCollectionView(isCalculateHeight: false).then {
         $0.contentInset.top = 8
+        $0.alwaysBounceVertical = true
     }
     
     // MARK: - Life Cycles
@@ -46,6 +47,13 @@ final class ExploreSearchResultViewController: UIViewController, View, ViewConst
         reactor.action.onNext(.refresh)
         
         // State
+        reactor.state.map { $0.keyword }
+            .distinctUntilChanged()
+            .bind { [weak self] keyword in
+                self?.title = keyword
+            }
+            .disposed(by: disposeBag)
+        
         reactor.state.map { $0.posts }
             .distinctUntilChanged()
             .bind { [weak self] posts in
