@@ -17,6 +17,13 @@ final class ExploreViewController: UIViewController, View, ViewConstructor, Tran
     var disposeBag = DisposeBag()
     
     // MARK: - Views
+    private let searchBar = UISearchBar().then {
+        $0.placeholder = "動物、動物園、名前"
+        $0.backgroundImage = UIImage()
+        $0.tintColor = Color.black
+        $0.showsCancelButton = true
+    }
+    
     private let postsCollectionView = PostPhotoCollectionView(isCalculateHeight: false).then {
         $0.contentInset.top = 8
     }
@@ -31,6 +38,7 @@ final class ExploreViewController: UIViewController, View, ViewConstructor, Tran
     
     // MARK: - Setup Methods
     func setupViews() {
+        navigationItem.titleView = searchBar
         view.addSubview(postsCollectionView)
     }
     
@@ -45,6 +53,20 @@ final class ExploreViewController: UIViewController, View, ViewConstructor, Tran
         postsCollectionView.reactor = PostPhotoCollectionReactor()
         // Action
         reactor.action.onNext(.refresh)
+        
+        searchBar.rx.cancelButtonClicked
+            .bind { [weak self] _ in
+                self?.searchBar.resignFirstResponder()
+            }
+            .disposed(by: disposeBag)
+        
+        searchBar.rx.text
+            .distinctUntilChanged()
+            .bind { keyword in
+                guard let keyword = keyword else { return }
+                reactor.action.onNext(.updateKeyword(keyword))
+            }
+            .disposed(by: disposeBag)
         
         postsCollectionView.rx.itemSelected
             .bind { [weak self] indexPath in
