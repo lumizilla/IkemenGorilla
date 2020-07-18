@@ -71,10 +71,7 @@ final class ExploreViewController: UIViewController, View, ViewConstructor, Tran
         searchBar.rx.searchButtonClicked
             .bind { [weak self] _ in
                 self?.searchBar.resignFirstResponder()
-                let vc = ExploreSearchResultViewController().then {
-                    $0.reactor = reactor.createExploreSearchResultReactor()
-                }
-                self?.navigationController?.pushViewController(vc, animated: true)
+                self?.showExploreSearchResultPage(exploreSearchResultReactor: reactor.createExploreSearchResultReactor())
             }
             .disposed(by: disposeBag)
         
