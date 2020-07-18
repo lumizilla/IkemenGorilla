@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1237FD5EF935F298D1A9503A /* Pods_Gorilla.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88E3F92FF19F1C62D0B465D /* Pods_Gorilla.framework */; };
 		8417BEF524C2B65500E94937 /* ExploreSearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417BEF424C2B65500E94937 /* ExploreSearchResultViewController.swift */; };
+		8417BEF724C2B66C00E94937 /* ExploreSearchResultReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417BEF624C2B66C00E94937 /* ExploreSearchResultReactor.swift */; };
 		8426BB2524A8A8850031AEA2 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB2424A8A8850031AEA2 /* Profile.swift */; };
 		8426BB4E24A8A9080031AEA2 /* FanAnimalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB2824A8A9080031AEA2 /* FanAnimalCell.swift */; };
 		8426BB4F24A8A9080031AEA2 /* FanAnimalCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB2924A8A9080031AEA2 /* FanAnimalCellReactor.swift */; };
@@ -253,6 +254,7 @@
 		401D33862CFB7B0B9BFF2587 /* Pods-Gorilla.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gorilla.release.xcconfig"; path = "Target Support Files/Pods-Gorilla/Pods-Gorilla.release.xcconfig"; sourceTree = "<group>"; };
 		69F440E1262F9F90997A9A24 /* Pods_Gorilla_GorillaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gorilla_GorillaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8417BEF424C2B65500E94937 /* ExploreSearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreSearchResultViewController.swift; sourceTree = "<group>"; };
+		8417BEF624C2B66C00E94937 /* ExploreSearchResultReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreSearchResultReactor.swift; sourceTree = "<group>"; };
 		8426BB2424A8A8850031AEA2 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		8426BB2824A8A9080031AEA2 /* FanAnimalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FanAnimalCell.swift; sourceTree = "<group>"; };
 		8426BB2924A8A9080031AEA2 /* FanAnimalCellReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FanAnimalCellReactor.swift; sourceTree = "<group>"; };
@@ -538,6 +540,7 @@
 			isa = PBXGroup;
 			children = (
 				8417BEF424C2B65500E94937 /* ExploreSearchResultViewController.swift */,
+				8417BEF624C2B66C00E94937 /* ExploreSearchResultReactor.swift */,
 			);
 			path = ExploreSearchResult;
 			sourceTree = "<group>";
@@ -1942,6 +1945,7 @@
 				84A9A00624851D340066863B /* Award.swift in Sources */,
 				847B37F1247A3F0E00B48535 /* UIImageView+Extension.swift in Sources */,
 				844EE148248439E4003369F2 /* RecommendedZooViewController.swift in Sources */,
+				8417BEF724C2B66C00E94937 /* ExploreSearchResultReactor.swift in Sources */,
 				84A99FF82484FD020066863B /* ContestDetailPostCell.swift in Sources */,
 				847B37EB2479E4CC00B48535 /* HomeCurrentContestListCell.swift in Sources */,
 				84D2168A2499218200AFB1A6 /* MapZooListViewController.swift in Sources */,
