@@ -532,6 +532,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8417BEF324C2B62500E94937 /* ExploreSearchResult */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ExploreSearchResult;
+			sourceTree = "<group>";
+		};
 		8426BB2624A8A9080031AEA2 /* ProfileTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -829,6 +836,7 @@
 		84376CC224A7CFDC00282F3C /* ExploreTab */ = {
 			isa = PBXGroup;
 			children = (
+				8417BEF324C2B62500E94937 /* ExploreSearchResult */,
 				84376CCB24A7DEB000282F3C /* ExplorePostDetail */,
 				84376CC324A7D04E00282F3C /* Explore */,
 			);
