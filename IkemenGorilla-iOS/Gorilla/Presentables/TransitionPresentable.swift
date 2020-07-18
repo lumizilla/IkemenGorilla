@@ -26,6 +26,7 @@ protocol TransitionPresentable: class {
     
     // EXPLORE TAB
     func showExplorePostDetailPage(explorePostDetailReactor: ExplorePostDetailReactor)
+    func showExploreSearchResultPage(exploreSearchResultReactor: ExploreSearchResultReactor)
 }
 
 extension TransitionPresentable where Self: UIViewController {
@@ -147,6 +148,15 @@ extension TransitionPresentable where Self: UIViewController {
         navigationController?.pushViewController(
             ExplorePostDetailViewController().then {
                 $0.reactor = explorePostDetailReactor
+            },
+            animated: true
+        )
+    }
+    
+    func showExploreSearchResultPage(exploreSearchResultReactor: ExploreSearchResultReactor) {
+        navigationController?.pushViewController(
+            ExploreSearchResultViewController().then {
+                $0.reactor = exploreSearchResultReactor
             },
             animated: true
         )
