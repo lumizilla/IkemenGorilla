@@ -545,6 +545,13 @@
 			path = ExploreSearchResult;
 			sourceTree = "<group>";
 		};
+		8417BEF824C2C43500E94937 /* ExploreTab */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ExploreTab;
+			sourceTree = "<group>";
+		};
 		8426BB2624A8A9080031AEA2 /* ProfileTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -1085,6 +1092,7 @@
 			isa = PBXGroup;
 			children = (
 				8426BB2624A8A9080031AEA2 /* ProfileTab */,
+				8417BEF824C2C43500E94937 /* ExploreTab */,
 				84376CAE24A7889D00282F3C /* VoteTab */,
 				84376CA324A5F05E00282F3C /* Post */,
 				84D2167D2499117700AFB1A6 /* MapTab */,
