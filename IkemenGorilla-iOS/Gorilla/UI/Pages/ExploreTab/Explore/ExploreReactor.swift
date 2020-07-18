@@ -91,4 +91,8 @@ final class ExploreReactor: Reactor {
     func createExplorePostDetailReactor(indexPath: IndexPath) -> ExplorePostDetailReactor {
         return ExplorePostDetailReactor(provider: provider, startAt: indexPath.row, posts: currentState.posts)
     }
+    
+    func createExploreSearchResultReactor() -> ExploreSearchResultReactor {
+        return ExploreSearchResultReactor(provider: provider, keyword: currentState.keyword)
+    }
 }
