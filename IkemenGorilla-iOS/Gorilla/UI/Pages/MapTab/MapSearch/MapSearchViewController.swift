@@ -21,6 +21,8 @@ final class MapSearchViewController: UIViewController, View, ViewConstructor {
     var disposeBag = DisposeBag()
     
     // MARK: - Views
+    private let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: nil, action: nil)
+    
     private let searchBar = UISearchBar().then {
         $0.placeholder = "動物園、住所"
         $0.backgroundImage = UIImage()
@@ -54,15 +56,21 @@ final class MapSearchViewController: UIViewController, View, ViewConstructor {
     // MARK: - Setup Methods
     func setupViews() {
         view.backgroundColor = Color.white
-        navigationItem.titleView = searchBar
-        searchBar.becomeFirstResponder()
+        navigationItem.leftBarButtonItem = cancelButton
         view.addSubview(searchResultCollectionView)
+        view.addSubview(searchBar)
         searchResultCollectionView.addSubview(resultCountLabel)
     }
     
     func setupViewConstraints() {
+        searchBar.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.left.right.equalToSuperview()
+            $0.height.equalTo(64)
+        }
         searchResultCollectionView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.equalTo(searchBar.snp.bottom)
+            $0.left.right.bottom.equalToSuperview()
         }
         resultCountLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(-56 + 16)
@@ -73,9 +81,15 @@ final class MapSearchViewController: UIViewController, View, ViewConstructor {
     // MARK: - Bind Method
     func bind(reactor: MapSearchReactor) {
         // Action
-        searchBar.rx.cancelButtonClicked
+        cancelButton.rx.tap
             .bind { [weak self] _ in
                 self?.dismiss(animated: true, completion: nil)
+            }
+            .disposed(by: disposeBag)
+        
+        searchBar.rx.cancelButtonClicked
+            .bind { [weak self] _ in
+                self?.searchBar.resignFirstResponder()
             }
             .disposed(by: disposeBag)
         
