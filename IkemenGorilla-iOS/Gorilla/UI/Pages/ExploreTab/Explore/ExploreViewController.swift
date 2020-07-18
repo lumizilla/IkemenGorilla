@@ -79,6 +79,7 @@ final class ExploreViewController: UIViewController, View, ViewConstructor, Tran
         searchBar.rx.cancelButtonClicked
             .bind { [weak self] _ in
                 self?.searchBar.resignFirstResponder()
+                reactor.action.onNext(.updatePageType(.explore))
             }
             .disposed(by: disposeBag)
         
@@ -87,6 +88,21 @@ final class ExploreViewController: UIViewController, View, ViewConstructor, Tran
             .bind { keyword in
                 guard let keyword = keyword else { return }
                 reactor.action.onNext(.updateKeyword(keyword))
+            }
+            .disposed(by: disposeBag)
+        
+        searchBar.rx.textDidBeginEditing
+            .bind { [weak self] in
+                self?.searchBar.setShowsCancelButton(true, animated: true)
+                reactor.action.onNext(.updatePageType(.search))
+            }
+            .disposed(by: disposeBag)
+        
+        searchBar.rx.textDidEndEditing
+            .bind { [weak self] in
+                if self?.searchBar.text?.isEmpty ?? true {
+                    self?.searchBar.setShowsCancelButton(false, animated: true)
+                }
             }
             .disposed(by: disposeBag)
         
@@ -133,6 +149,14 @@ final class ExploreViewController: UIViewController, View, ViewConstructor, Tran
             .distinctUntilChanged()
             .bind(to: recommendKeywordTableView.rx.items(Reusable.recommendKeywordCell)) { _, keyword, cell in
                 cell.reactor = RecommendKeywordCellReactor(keyword: keyword)
+            }
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.pageType }
+            .distinctUntilChanged()
+            .bind { [weak self] pageType in
+                logger.debug(pageType)
+                self?.recommendKeywordTableView.isHidden = !(pageType == .search)
             }
             .disposed(by: disposeBag)
     }
