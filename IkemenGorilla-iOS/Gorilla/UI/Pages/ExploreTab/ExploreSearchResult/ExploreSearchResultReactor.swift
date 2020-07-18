@@ -15,7 +15,7 @@ final class ExploreSearchResultReactor: Reactor {
     
     struct State {
         let keyword: String
-        var postCellReactors: [PostCellReactor] = []
+        var posts: [Post] = []
         var apiStatus: APIStatus = .pending
         var page: Int = 0
         
