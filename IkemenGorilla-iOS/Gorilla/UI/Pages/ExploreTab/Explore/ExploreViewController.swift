@@ -93,7 +93,7 @@ final class ExploreViewController: UIViewController, View, ViewConstructor, Tran
         searchBar.rx.searchButtonClicked
             .bind { [weak self] _ in
                 self?.searchBar.resignFirstResponder()
-                self?.showExploreSearchResultPage(exploreSearchResultReactor: reactor.createExploreSearchResultReactor())
+                self?.showExploreSearchResultPage(exploreSearchResultReactor: reactor.createExploreSearchResultReactorFromSearchButton())
             }
             .disposed(by: disposeBag)
         
@@ -111,6 +111,13 @@ final class ExploreViewController: UIViewController, View, ViewConstructor, Tran
                 if scrollView.contentOffset.y + scrollView.frame.size.height > scrollView.contentSize.height {
                     reactor.action.onNext(.load)
                 }
+            }
+            .disposed(by: disposeBag)
+        
+        recommendKeywordTableView.rx.itemSelected
+            .bind { [weak self] indexPath in
+                self?.recommendKeywordTableView.deselectRow(at: indexPath, animated: true)
+                self?.showExploreSearchResultPage(exploreSearchResultReactor: reactor.createExploreSearchResultReactorFromRecommendKeyword(indexPath: indexPath))
             }
             .disposed(by: disposeBag)
         
