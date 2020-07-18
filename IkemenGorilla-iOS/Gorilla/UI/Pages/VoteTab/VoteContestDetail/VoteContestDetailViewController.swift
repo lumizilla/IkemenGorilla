@@ -122,6 +122,12 @@ final class VoteContestDetailViewController: UIViewController, View, ViewConstru
             }
             .disposed(by: disposeBag)
         
+        createVoteViewController.voteButton.rx.tap
+            .bind { [weak self] _ in
+                reactor.action.onNext(.vote)
+            }
+            .disposed(by: disposeBag)
+        
         contentScrollView.rx.contentOffset
             .distinctUntilChanged()
             .bind { [weak self] contentOffset in
