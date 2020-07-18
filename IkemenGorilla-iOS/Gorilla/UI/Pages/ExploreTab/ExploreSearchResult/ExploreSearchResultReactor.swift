@@ -6,4 +6,29 @@
 //  Copyright © 2020 admin. All rights reserved.
 //
 
-import Foundation
+import ReactorKit
+import RxSwift
+
+final class ExploreSearchResultReactor: Reactor {
+    enum Action {}
+    enum Mutation {}
+    
+    struct State {
+        let keyword: String
+        var postCellReactors: [PostCellReactor] = []
+        var apiStatus: APIStatus = .pending
+        var page: Int = 0
+        
+        init(keyword: String) {
+            self.keyword = keyword
+        }
+    }
+    
+    let initialState: State
+    private let provider: ServiceProviderType
+    
+    init(provider: ServiceProviderType, keyword: String) {
+        self.provider = provider
+        initialState = State(keyword: keyword)
+    }
+}
