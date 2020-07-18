@@ -65,7 +65,7 @@ final class MapViewController: UIViewController, View, ViewConstructor, Transiti
     
     func setupViewConstraints() {
         searchButton.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(36)
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(36)
             $0.centerX.equalToSuperview()
         }
         mapView.snp.makeConstraints {
@@ -93,12 +93,7 @@ final class MapViewController: UIViewController, View, ViewConstructor, Transiti
         searchButton.rx.tap
             .bind { [weak self] _ in
                 self?.isNavBarAppearWhenViewWillDisappear = false
-                let vc = UINavigationController(rootViewController: MapSearchViewController().then {
-                    $0.reactor = reactor.createMapSearchReactor()
-                }).then {
-                    $0.modalPresentationStyle = .fullScreen
-                }
-                self?.present(vc, animated: true, completion: nil)
+                self?.showMapSearchPage(mapSearchReactor: reactor.createMapSearchReactor())
             }
             .disposed(by: disposeBag)
         

@@ -69,7 +69,7 @@ final class MapReactor: Reactor {
     }
     
     func createMapSearchReactor() -> MapSearchReactor {
-        return MapSearchReactor(zoos: currentState.zoos)
+        return MapSearchReactor(provider: provider, zoos: currentState.zoos)
     }
     
     func createZooDetailReactor(zoo: Zoo) -> ZooDetailReactor {
