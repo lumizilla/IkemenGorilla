@@ -100,7 +100,7 @@ final class VoteContestDetailViewController: UIViewController, View, ViewConstru
         createVoteViewController.reactor = reactor
         
         // Action
-        reactor.action.onNext(.loadEntries)
+        reactor.action.onNext(.refresh)
         
         entriesCollectionView.rx.itemSelected
             .bind { [weak self] indexPath in
@@ -119,6 +119,16 @@ final class VoteContestDetailViewController: UIViewController, View, ViewConstru
         createVoteViewController.cancelButton.rx.tap
             .bind { [weak self] _ in
                 self?.floatingPanelController.move(to: .hidden, animated: true)
+            }
+            .disposed(by: disposeBag)
+        
+        contentScrollView.rx.contentOffset
+            .distinctUntilChanged()
+            .bind { [weak self] contentOffset in
+                guard let scrollView = self?.contentScrollView else { return }
+                if scrollView.contentOffset.y + scrollView.frame.size.height > scrollView.contentSize.height {
+                    reactor.action.onNext(.load)
+                }
             }
             .disposed(by: disposeBag)
         
