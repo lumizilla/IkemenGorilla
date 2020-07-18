@@ -68,6 +68,16 @@ final class ExploreViewController: UIViewController, View, ViewConstructor, Tran
             }
             .disposed(by: disposeBag)
         
+        searchBar.rx.searchButtonClicked
+            .bind { [weak self] _ in
+                self?.searchBar.resignFirstResponder()
+                let vc = ExploreSearchResultViewController().then {
+                    $0.reactor = reactor.createExploreSearchResultReactor()
+                }
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }
+            .disposed(by: disposeBag)
+        
         postsCollectionView.rx.itemSelected
             .bind { [weak self] indexPath in
                 logger.debug(indexPath)
