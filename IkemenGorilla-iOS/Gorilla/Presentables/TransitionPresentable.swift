@@ -18,6 +18,7 @@ protocol TransitionPresentable: class {
     // MAP TAB
     func showZooDetailPage(zooDetailReactor: ZooDetailReactor)
     func showAnimalDetailPage(animalDetailReactor: AnimalDetailReactor)
+    func showMapSearchPage(mapSearchReactor: MapSearchReactor)
     
     // VOTE TAB
     func showVoteContestPage(voteContestReactor: VoteContestReactor)
@@ -100,6 +101,20 @@ extension TransitionPresentable where Self: UIViewController {
                 $0.reactor = fanAnimalReactor
             },
             animated: true
+        )
+    }
+    
+    func showMapSearchPage(mapSearchReactor: MapSearchReactor) {
+        present(
+            UINavigationController(rootViewController:
+                MapSearchViewController().then {
+                    $0.reactor = mapSearchReactor
+                }
+            ).then {
+                $0.modalPresentationStyle = .fullScreen
+            },
+            animated: true,
+            completion: nil
         )
     }
     
