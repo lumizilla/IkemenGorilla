@@ -52,7 +52,7 @@ final class ExploreSearchResultReactor: Reactor {
     }
     
     private func load(page: Int) -> Observable<[Post]> {
-        return .just(TestData.posts(count: 24))
+        return provider.postService.searchPosts(keyword: currentState.keyword).asObservable()
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
