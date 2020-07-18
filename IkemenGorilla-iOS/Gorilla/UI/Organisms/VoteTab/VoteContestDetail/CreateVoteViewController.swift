@@ -49,7 +49,9 @@ final class CreateVoteViewController: UIViewController, View, ViewConstructor {
         $0.setTitleColor(Color.textGray, for: .highlighted)
     }
     
-    private let voteButton = VoteButton()
+    let voteButton = VoteButton()
+    
+    private let activityIndicator = UIActivityIndicatorView()
     
     // MARK: - Life Cycles
     override func viewDidLoad() {
@@ -67,6 +69,7 @@ final class CreateVoteViewController: UIViewController, View, ViewConstructor {
         view.addSubview(zooNameLabel)
         view.addSubview(cancelButton)
         view.addSubview(voteButton)
+        view.addSubview(activityIndicator)
     }
     
     func setupViewConstraints() {
@@ -99,11 +102,32 @@ final class CreateVoteViewController: UIViewController, View, ViewConstructor {
             $0.left.equalTo(zooNameLabel)
             $0.width.equalTo(96)
         }
+        activityIndicator.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalToSuperview().inset(32)
+        }
     }
     
     // MARK: - Bind Method
     func bind(reactor: VoteContestDetailReactor) {
         // Action
+        cancelButton.rx.tap
+            .bind { [weak self] _ in
+                self?.activityIndicator.stopAnimating()
+            }
+            .disposed(by: disposeBag)
+        
+        closeButton.rx.tap
+            .bind { [weak self] _ in
+                self?.activityIndicator.stopAnimating()
+            }
+            .disposed(by: disposeBag)
+        
+        voteButton.rx.tap
+            .bind { [weak self] _ in
+                self?.activityIndicator.startAnimating()
+            }
+            .disposed(by: disposeBag)
         
         // State
         reactor.state.map { $0.voteEntry?.iconUrl }
