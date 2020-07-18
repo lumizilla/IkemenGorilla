@@ -12,9 +12,11 @@ import RxSwift
 final class ExploreSearchResultReactor: Reactor {
     enum Action {
         case refresh
+        case load
     }
     enum Mutation {
         case setPosts([Post])
+        case addPosts([Post])
         case setPage(Int)
         case setApiStatus(APIStatus)
     }
@@ -24,6 +26,7 @@ final class ExploreSearchResultReactor: Reactor {
         var posts: [Post] = []
         var apiStatus: APIStatus = .pending
         var page: Int = 0
+        var didReachBottom: Bool = false
         
         init(keyword: String) {
             self.keyword = keyword
@@ -48,6 +51,14 @@ final class ExploreSearchResultReactor: Reactor {
                 .just(.setPage(0)),
                 .just(.setApiStatus(.pending))
             )
+        case .load:
+            guard currentState.apiStatus == .pending && !currentState.didReachBottom else { return .empty() }
+            return .concat(
+                .just(.setApiStatus(.loading)),
+                load(page: currentState.page+1).map(Mutation.addPosts),
+                .just(.setPage(currentState.page+1)),
+                .just(.setApiStatus(.pending))
+            )
         }
     }
     
@@ -60,6 +71,10 @@ final class ExploreSearchResultReactor: Reactor {
         switch mutation {
         case .setPosts(let posts):
             state.posts = posts
+            state.didReachBottom = posts.count < 24
+        case .addPosts(let posts):
+            state.posts += posts
+            state.didReachBottom = posts.count < 24
         case .setPage(let page):
             state.page = page
         case .setApiStatus(let apiStatus):
