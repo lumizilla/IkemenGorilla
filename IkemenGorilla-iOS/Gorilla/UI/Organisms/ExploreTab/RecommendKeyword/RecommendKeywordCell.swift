@@ -38,16 +38,6 @@ final class RecommendKeywordCell: UITableViewCell, View, ViewConstructor {
         $0.textColor = Color.textBlack
     }
     
-    private let totalObjectsLabel = UILabel().then {
-        $0.apply(fontStyle: .regular, size: 13)
-        $0.textColor = Color.textGray
-    }
-    
-    private let deleteButton = UIButton().then {
-        $0.setImage(#imageLiteral(resourceName: "close"), for: .normal)
-        $0.imageEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-    }
-    
     // MARK: - Initializers
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -65,8 +55,6 @@ final class RecommendKeywordCell: UITableViewCell, View, ViewConstructor {
         contentView.addSubview(circleView)
         contentView.addSubview(searchIconView)
         contentView.addSubview(wordLabel)
-        contentView.addSubview(totalObjectsLabel)
-        contentView.addSubview(deleteButton)
     }
     
     func setupViewConstraints() {
@@ -81,27 +69,13 @@ final class RecommendKeywordCell: UITableViewCell, View, ViewConstructor {
         }
         wordLabel.snp.makeConstraints {
             $0.left.equalTo(circleView.snp.right).offset(12)
-            $0.bottom.equalTo(self.snp.centerY)
-        }
-        totalObjectsLabel.snp.makeConstraints {
-            $0.left.equalTo(circleView.snp.right).offset(12)
-            $0.top.equalTo(self.snp.centerY)
-        }
-        deleteButton.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.right.equalToSuperview().inset(8)
-            $0.size.equalTo(32)
         }
     }
     
     // MARK: - Bind Method
     func bind(reactor: RecommendKeywordCellReactor) {
         // Action
-        deleteButton.rx.tap
-            .bind { indexPath in
-                logger.debug("delete")
-            }
-            .disposed(by: disposeBag)
         
         // State
         reactor.state.map { $0.keyword }
