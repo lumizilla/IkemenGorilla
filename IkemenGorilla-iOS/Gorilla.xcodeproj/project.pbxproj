@@ -548,8 +548,16 @@
 		8417BEF824C2C43500E94937 /* ExploreTab */ = {
 			isa = PBXGroup;
 			children = (
+				8417BEF924C2C46300E94937 /* RecommendKeyword */,
 			);
 			path = ExploreTab;
+			sourceTree = "<group>";
+		};
+		8417BEF924C2C46300E94937 /* RecommendKeyword */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RecommendKeyword;
 			sourceTree = "<group>";
 		};
 		8426BB2624A8A9080031AEA2 /* ProfileTab */ = {
