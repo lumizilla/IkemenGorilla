@@ -11,7 +11,7 @@ import ReactorKit
 import RxSwift
 import ReusableKit
 
-final class LikedZooViewController: UIViewController, View, ViewConstructor {
+final class LikedZooViewController: UIViewController, View, ViewConstructor, TransitionPresentable {
     struct Reusable {
         static let zooCell = ReusableCell<LikedZooCell>()
     }
@@ -54,6 +54,12 @@ final class LikedZooViewController: UIViewController, View, ViewConstructor {
     func bind(reactor: LikedZooReactor) {
         // Action
         reactor.action.onNext(.load)
+        
+        collectionView.rx.itemSelected
+        .bind { [weak self] indexPath in
+            self?.showZooDetailPage(zooDetailReactor: reactor.createZooDetailReactor(indexPath: indexPath))
+        }
+        .disposed(by: disposeBag)
         
         // State
         reactor.state.map { $0.zooCellReactors }

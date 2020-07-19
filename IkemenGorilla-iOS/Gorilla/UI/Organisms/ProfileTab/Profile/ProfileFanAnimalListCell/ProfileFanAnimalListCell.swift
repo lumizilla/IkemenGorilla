@@ -89,19 +89,19 @@ final class ProfileFanAnimalListCell: UICollectionViewCell, View, ViewConstructo
         // Action
         
         // State
-        reactor.state.map { $0.animal.iconUrl }
+        reactor.state.map { $0.fanAnimal.iconUrl }
             .distinctUntilChanged()
-            .bind { [weak self] imageUrl in
-                self?.imageView.setImage(imageUrl: imageUrl)
+            .bind { [weak self] iconUrl in
+                self?.imageView.setImage(imageUrl: iconUrl)
             }
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.animal.name }
+        reactor.state.map { $0.fanAnimal.name }
             .distinctUntilChanged()
             .bind(to: animalNameLabel.rx.text)
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.animal.sex }
+        reactor.state.map { $0.fanAnimal.zooName }
             .distinctUntilChanged()
             .bind(to: zooLabel.rx.text)
             .disposed(by: disposeBag)

@@ -15,7 +15,7 @@ final class LikedZooReactor: Reactor {
     }
     
     enum Mutation {
-        case setZooCellReactors([Zoo])
+        case setZooCellReactors([RecommendedZoo])
         case setIsLoading(Bool)
     }
     
@@ -24,7 +24,13 @@ final class LikedZooReactor: Reactor {
         var isLoading: Bool = false
     }
     
-    let initialState = LikedZooReactor.State()
+    let initialState: State
+    private let provider: ServiceProviderType
+    
+    init(provider: ServiceProviderType) {
+        self.provider = provider
+        initialState = State()
+    }
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
@@ -38,18 +44,25 @@ final class LikedZooReactor: Reactor {
         }
     }
     
-    private func load() -> Observable<[Zoo]> {
-        .just(TestData.zoos(count: 8))
+    private func load() -> Observable<[RecommendedZoo]> {
+        return provider.userService.getZoos(userId:"1", page: 0).asObservable()
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
         var state = state
         switch mutation {
-        case .setZooCellReactors(let zoos):
-            state.zooCellReactors = zoos.map { LikedZooCellReactor(zoo: $0) }
+        case .setZooCellReactors(let recommendedZoos):
+            state.zooCellReactors = recommendedZoos.map { LikedZooCellReactor(recommendedZoo: $0) }
         case .setIsLoading(let isLoading):
             state.isLoading = isLoading
         }
         return state
     }
+    
+    func createZooDetailReactor(indexPath: IndexPath) -> ZooDetailReactor {
+        let likedZoo = currentState.zooCellReactors[indexPath.row].currentState.recommendedZoo
+        let zoo: Zoo = Zoo(id: likedZoo.id, name: likedZoo.name, address: "", latitude: 0, longitude: 0, imageUrl: likedZoo.imageUrl)
+        return ZooDetailReactor(provider: provider, zoo: zoo)
+    }
+    
 }

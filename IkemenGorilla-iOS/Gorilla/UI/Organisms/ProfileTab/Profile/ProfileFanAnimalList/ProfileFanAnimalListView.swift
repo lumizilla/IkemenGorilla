@@ -26,7 +26,7 @@ final class ProfileFanAnimalListView: UICollectionView, View, ViewConstructor {
     }
     
     struct Callback {
-        let itemSelected: (_ contest: Animal) -> Void
+        let itemSelected: (_ contest: FanAnimal) -> Void
     }
     
     // MARK: - Variables
@@ -77,8 +77,8 @@ final class ProfileFanAnimalListView: UICollectionView, View, ViewConstructor {
         
         rx.itemSelected
             .bind { [weak self] indexPath in
-                let animal = reactor.currentState.animalListCellReactors[indexPath.row].currentState.animal
-                self?.callback.itemSelected(animal)
+                let fanAnimal = reactor.currentState.animalListCellReactors[indexPath.row].currentState.fanAnimal
+                self?.callback.itemSelected(fanAnimal)
             }
             .disposed(by: disposeBag)
         

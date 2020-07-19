@@ -27,6 +27,11 @@ protocol TransitionPresentable: class {
     // EXPLORE TAB
     func showExplorePostDetailPage(explorePostDetailReactor: ExplorePostDetailReactor)
     func showExploreSearchResultPage(exploreSearchResultReactor: ExploreSearchResultReactor)
+    
+    //PROFILE TAB
+    func showVotedDetailPage(profileContestDetailReactor: ProfileContestDetailReactor)
+    func showVotedAnimalDetailPage(votedAnimalDetailReactor: VotedAnimalDetailReactor)
+    func showFanAnimalDetailPage(fanAnimalDetailReactor: FanAnimalDetailReactor)
 }
 
 extension TransitionPresentable where Self: UIViewController {
@@ -67,16 +72,6 @@ extension TransitionPresentable where Self: UIViewController {
         )
     }
 
-    func showVotedDetailPage(votedContestReactor: VotedContestReactor) {
-        navigationController?.pushViewController(
-            VotedContestViewController().then {
-                $0.reactor = votedContestReactor
-            },
-            animated: true
-        )
-    }
-    
-
     // MAP TAB
     func showZooDetailPage(zooDetailReactor: ZooDetailReactor) {
         navigationController?.pushViewController(
@@ -91,15 +86,6 @@ extension TransitionPresentable where Self: UIViewController {
         navigationController?.pushViewController(
             AnimalDetailViewController().then {
                 $0.reactor = animalDetailReactor
-            },
-            animated: true
-        )
-    }
-
-    func showFanAnimalPage(fanAnimalReactor: FanAnimalReactor) {
-        navigationController?.pushViewController(
-            FanAnimalViewController().then {
-                $0.reactor = fanAnimalReactor
             },
             animated: true
         )
@@ -143,6 +129,15 @@ extension TransitionPresentable where Self: UIViewController {
         )
     }
     
+    func showVotedAnimalDetailPage(votedAnimalDetailReactor: VotedAnimalDetailReactor) {
+        navigationController?.pushViewController(
+            VotedAnimalDetailViewController().then {
+                $0.reactor = votedAnimalDetailReactor
+            },
+            animated: true
+        )
+    }
+    
     // EXPLORE TAB
     func showExplorePostDetailPage(explorePostDetailReactor: ExplorePostDetailReactor) {
         navigationController?.pushViewController(
@@ -167,6 +162,43 @@ extension TransitionPresentable where Self: UIViewController {
         navigationController?.pushViewController(
             ProfileInfoViewController().then {
                 $0.reactor = profileInfoReactor
+            },
+            animated: true
+        )
+    }
+    
+    func showFanAnimalDetailPage(fanAnimalDetailReactor: FanAnimalDetailReactor) {
+        navigationController?.pushViewController(
+            FanAnimalDetailViewController().then {
+                $0.reactor = fanAnimalDetailReactor
+            },
+            animated: true
+        )
+    }
+
+    //Consider if required
+    func showFanAnimalPage(fanAnimalReactor: FanAnimalReactor) {
+        navigationController?.pushViewController(
+            FanAnimalViewController().then {
+                $0.reactor = fanAnimalReactor
+            },
+            animated: true
+        )
+    }
+    
+    func showVotedDetailPage(profileContestDetailReactor: ProfileContestDetailReactor) {
+        navigationController?.pushViewController(
+            ProfileContestDetailViewController().then {
+                $0.reactor = profileContestDetailReactor
+            },
+            animated: true
+        )
+    }
+    
+    func showVotedContestPage(votedContestReactor: VotedContestReactor) {
+        navigationController?.pushViewController(
+            VotedContestViewController().then {
+                $0.reactor = votedContestReactor
             },
             animated: true
         )

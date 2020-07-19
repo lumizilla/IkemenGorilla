@@ -101,15 +101,15 @@ final class ProfileVotedContestListCell: UICollectionViewCell, View, ViewConstru
             .bind(to: contestNameLabel.rx.text)
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.contest }
-            .distinctUntilChanged()
-            .map { contest in
+        reactor.state
+            .map {
                 var durationString = ""
-                durationString += formatter.string(from: contest.start)
+                durationString += formatter.string(from: $0.contest.start)
                 durationString += " ~ "
-                durationString += formatter.string(from: contest.end)
+                durationString += formatter.string(from: $0.contest.end)
                 return durationString
             }
+            .distinctUntilChanged()
             .bind(to: durationLabel.rx.text)
             .disposed(by: disposeBag)
     }

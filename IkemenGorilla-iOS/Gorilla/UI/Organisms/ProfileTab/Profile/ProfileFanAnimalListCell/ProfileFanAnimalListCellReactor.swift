@@ -14,16 +14,16 @@ final class ProfileFanAnimalListCellReactor: Reactor {
     enum Mutation {}
     
     struct State {
-        let animal: Animal
+        let fanAnimal: FanAnimal
         
-        init(animal: Animal) {
-            self.animal = animal
+        init(fanAnimal: FanAnimal) {
+            self.fanAnimal = fanAnimal
         }
     }
     
     let initialState: ProfileFanAnimalListCellReactor.State
     
-    init(animal: Animal) {
-        initialState = State(animal: animal)
+    init(fanAnimal: FanAnimal) {
+        initialState = State(fanAnimal: fanAnimal)
     }
 }
