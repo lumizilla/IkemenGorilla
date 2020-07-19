@@ -27,8 +27,10 @@ final class MapSearchReactor: Reactor {
     }
     
     let initialState: State
+    private let provider: ServiceProviderType
     
-    init(zoos: [Zoo]) {
+    init(provider: ServiceProviderType, zoos: [Zoo]) {
+        self.provider = provider
         initialState = State(zoos: zoos)
     }
     
@@ -50,5 +52,10 @@ final class MapSearchReactor: Reactor {
             state.searchResultCellReactors = results
         }
         return state
+    }
+    
+    func createZooDetailReactor(indexPath: IndexPath) -> ZooDetailReactor {
+        let zoo = currentState.searchResultCellReactors[indexPath.row].currentState.zoo
+        return ZooDetailReactor(provider: provider, zoo: zoo)
     }
 }

@@ -91,6 +91,7 @@ final class VoteContestDetailViewController: UIViewController, View, ViewConstru
         floatingPanelController.set(contentViewController: createVoteViewController)
         floatingPanelController.addPanel(toParent: self)
         floatingPanelController.delegate = self
+        floatingPanelController.move(to: .hidden, animated: false)
     }
     
     // MARK: - Bind Method
@@ -99,13 +100,13 @@ final class VoteContestDetailViewController: UIViewController, View, ViewConstru
         createVoteViewController.reactor = reactor
         
         // Action
-        reactor.action.onNext(.loadEntries)
+        reactor.action.onNext(.refresh)
         
         entriesCollectionView.rx.itemSelected
             .bind { [weak self] indexPath in
                 logger.debug(indexPath)
                 reactor.action.onNext(.selectEntry(indexPath))
-                self?.floatingPanelController.move(to: .full, animated: true)
+                self?.floatingPanelController.move(to: .half, animated: true)
             }
             .disposed(by: disposeBag)
         
@@ -118,6 +119,22 @@ final class VoteContestDetailViewController: UIViewController, View, ViewConstru
         createVoteViewController.cancelButton.rx.tap
             .bind { [weak self] _ in
                 self?.floatingPanelController.move(to: .hidden, animated: true)
+            }
+            .disposed(by: disposeBag)
+        
+        createVoteViewController.voteButton.rx.tap
+            .bind { [weak self] _ in
+                reactor.action.onNext(.vote)
+            }
+            .disposed(by: disposeBag)
+        
+        contentScrollView.rx.contentOffset
+            .distinctUntilChanged()
+            .bind { [weak self] contentOffset in
+                guard let scrollView = self?.contentScrollView else { return }
+                if scrollView.contentOffset.y + scrollView.frame.size.height > scrollView.contentSize.height {
+                    reactor.action.onNext(.load)
+                }
             }
             .disposed(by: disposeBag)
         
@@ -143,7 +160,6 @@ final class VoteContestDetailViewController: UIViewController, View, ViewConstru
 
 extension VoteContestDetailViewController: FloatingPanelControllerDelegate {
     func floatingPanel(_ vc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
-        VoteContestDetailPanelLayout.fullPosition = DeviceSize.screenHeight - (DeviceSize.navBarHeight(self.navigationController) + CreateVoteViewController.Const.height + DeviceSize.tabBarHeight(self.tabBarController))
         return VoteContestDetailPanelLayout()
     }
     
@@ -153,16 +169,14 @@ extension VoteContestDetailViewController: FloatingPanelControllerDelegate {
 }
 
 class VoteContestDetailPanelLayout: FloatingPanelLayout {
-    static var fullPosition: CGFloat = 0
-    
     var initialPosition: FloatingPanelPosition {
         return .hidden
     }
 
     func insetFor(position: FloatingPanelPosition) -> CGFloat? {
         switch position {
-        case .full: return VoteContestDetailPanelLayout.fullPosition
-        case .half: return 0
+        case .full: return 80
+        case .half: return CreateVoteViewController.Const.height
         case .tip: return 0
         default: return nil
         }

@@ -18,6 +18,7 @@ protocol TransitionPresentable: class {
     // MAP TAB
     func showZooDetailPage(zooDetailReactor: ZooDetailReactor)
     func showAnimalDetailPage(animalDetailReactor: AnimalDetailReactor)
+    func showMapSearchPage(mapSearchReactor: MapSearchReactor)
     
     // VOTE TAB
     func showVoteContestPage(voteContestReactor: VoteContestReactor)
@@ -25,12 +26,12 @@ protocol TransitionPresentable: class {
     
     // EXPLORE TAB
     func showExplorePostDetailPage(explorePostDetailReactor: ExplorePostDetailReactor)
+    func showExploreSearchResultPage(exploreSearchResultReactor: ExploreSearchResultReactor)
     
     //PROFILE TAB
     func showVotedDetailPage(profileContestDetailReactor: ProfileContestDetailReactor)
     func showVotedAnimalDetailPage(votedAnimalDetailReactor: VotedAnimalDetailReactor)
     func showFanAnimalDetailPage(fanAnimalDetailReactor: FanAnimalDetailReactor)
-    
 }
 
 extension TransitionPresentable where Self: UIViewController {
@@ -90,6 +91,20 @@ extension TransitionPresentable where Self: UIViewController {
         )
     }
     
+    func showMapSearchPage(mapSearchReactor: MapSearchReactor) {
+        present(
+            UINavigationController(rootViewController:
+                MapSearchViewController().then {
+                    $0.reactor = mapSearchReactor
+                }
+            ).then {
+                $0.modalPresentationStyle = .fullScreen
+            },
+            animated: true,
+            completion: nil
+        )
+    }
+    
     // VOTE TAB
     func showVoteContestPage(voteContestReactor: VoteContestReactor) {
         present(
@@ -128,6 +143,15 @@ extension TransitionPresentable where Self: UIViewController {
         navigationController?.pushViewController(
             ExplorePostDetailViewController().then {
                 $0.reactor = explorePostDetailReactor
+            },
+            animated: true
+        )
+    }
+    
+    func showExploreSearchResultPage(exploreSearchResultReactor: ExploreSearchResultReactor) {
+        navigationController?.pushViewController(
+            ExploreSearchResultViewController().then {
+                $0.reactor = exploreSearchResultReactor
             },
             animated: true
         )

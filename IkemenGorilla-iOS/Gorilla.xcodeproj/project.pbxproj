@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1237FD5EF935F298D1A9503A /* Pods_Gorilla.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88E3F92FF19F1C62D0B465D /* Pods_Gorilla.framework */; };
+		8417BEF524C2B65500E94937 /* ExploreSearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417BEF424C2B65500E94937 /* ExploreSearchResultViewController.swift */; };
+		8417BEF724C2B66C00E94937 /* ExploreSearchResultReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417BEF624C2B66C00E94937 /* ExploreSearchResultReactor.swift */; };
+		8417BEFB24C2C48B00E94937 /* RecommendKeywordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417BEFA24C2C48B00E94937 /* RecommendKeywordCell.swift */; };
+		8417BEFD24C2C49D00E94937 /* RecommendKeywordCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417BEFC24C2C49D00E94937 /* RecommendKeywordCellReactor.swift */; };
+		8417BF0024C2C83700E94937 /* RecommendKeywordHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417BEFF24C2C83700E94937 /* RecommendKeywordHeader.swift */; };
 		8426BB2524A8A8850031AEA2 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB2424A8A8850031AEA2 /* Profile.swift */; };
 		8426BB4E24A8A9080031AEA2 /* FanAnimalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB2824A8A9080031AEA2 /* FanAnimalCell.swift */; };
 		8426BB4F24A8A9080031AEA2 /* FanAnimalCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB2924A8A9080031AEA2 /* FanAnimalCellReactor.swift */; };
@@ -279,6 +284,11 @@
 		2E1F2DD18530CF1CABC0384F /* Pods-GorillaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GorillaTests.release.xcconfig"; path = "Target Support Files/Pods-GorillaTests/Pods-GorillaTests.release.xcconfig"; sourceTree = "<group>"; };
 		401D33862CFB7B0B9BFF2587 /* Pods-Gorilla.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gorilla.release.xcconfig"; path = "Target Support Files/Pods-Gorilla/Pods-Gorilla.release.xcconfig"; sourceTree = "<group>"; };
 		69F440E1262F9F90997A9A24 /* Pods_Gorilla_GorillaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gorilla_GorillaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8417BEF424C2B65500E94937 /* ExploreSearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreSearchResultViewController.swift; sourceTree = "<group>"; };
+		8417BEF624C2B66C00E94937 /* ExploreSearchResultReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreSearchResultReactor.swift; sourceTree = "<group>"; };
+		8417BEFA24C2C48B00E94937 /* RecommendKeywordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendKeywordCell.swift; sourceTree = "<group>"; };
+		8417BEFC24C2C49D00E94937 /* RecommendKeywordCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendKeywordCellReactor.swift; sourceTree = "<group>"; };
+		8417BEFF24C2C83700E94937 /* RecommendKeywordHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendKeywordHeader.swift; sourceTree = "<group>"; };
 		8426BB2424A8A8850031AEA2 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		8426BB2824A8A9080031AEA2 /* FanAnimalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FanAnimalCell.swift; sourceTree = "<group>"; };
 		8426BB2924A8A9080031AEA2 /* FanAnimalCellReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FanAnimalCellReactor.swift; sourceTree = "<group>"; };
@@ -586,6 +596,33 @@
 				0B68804A246C98CAE881B62C /* Pods_GorillaTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8417BEF324C2B62500E94937 /* ExploreSearchResult */ = {
+			isa = PBXGroup;
+			children = (
+				8417BEF424C2B65500E94937 /* ExploreSearchResultViewController.swift */,
+				8417BEF624C2B66C00E94937 /* ExploreSearchResultReactor.swift */,
+			);
+			path = ExploreSearchResult;
+			sourceTree = "<group>";
+		};
+		8417BEF824C2C43500E94937 /* ExploreTab */ = {
+			isa = PBXGroup;
+			children = (
+				8417BEF924C2C46300E94937 /* RecommendKeyword */,
+			);
+			path = ExploreTab;
+			sourceTree = "<group>";
+		};
+		8417BEF924C2C46300E94937 /* RecommendKeyword */ = {
+			isa = PBXGroup;
+			children = (
+				8417BEFA24C2C48B00E94937 /* RecommendKeywordCell.swift */,
+				8417BEFC24C2C49D00E94937 /* RecommendKeywordCellReactor.swift */,
+				8417BEFF24C2C83700E94937 /* RecommendKeywordHeader.swift */,
+			);
+			path = RecommendKeyword;
 			sourceTree = "<group>";
 		};
 		8426BB2624A8A9080031AEA2 /* ProfileTab */ = {
@@ -896,6 +933,7 @@
 		84376CC224A7CFDC00282F3C /* ExploreTab */ = {
 			isa = PBXGroup;
 			children = (
+				8417BEF324C2B62500E94937 /* ExploreSearchResult */,
 				84376CCB24A7DEB000282F3C /* ExplorePostDetail */,
 				84376CC324A7D04E00282F3C /* Explore */,
 			);
@@ -1241,6 +1279,7 @@
 			isa = PBXGroup;
 			children = (
 				8426BB2624A8A9080031AEA2 /* ProfileTab */,
+				8417BEF824C2C43500E94937 /* ExploreTab */,
 				84376CAE24A7889D00282F3C /* VoteTab */,
 				84376CA324A5F05E00282F3C /* Post */,
 				84D2167D2499117700AFB1A6 /* MapTab */,
@@ -2072,6 +2111,7 @@
 				8494CBE3249B7B5000E35E00 /* ZooDetailAnimalCellReactor.swift in Sources */,
 				847B37DB2479D7FF00B48535 /* HomeViewController.swift in Sources */,
 				848B16E724A5150100150EE7 /* AnimalDetailPastContestCellReactor.swift in Sources */,
+				8417BF0024C2C83700E94937 /* RecommendKeywordHeader.swift in Sources */,
 				8426BB8D24A8D2520031AEA2 /* LikedZooCellReactor.swift in Sources */,
 				846A159824C217D4008DD261 /* FanAnimalDetailReactor.swift in Sources */,
 				84A99FDE2484D5FF0066863B /* ContestDetailInfoSponsorCell.swift in Sources */,
@@ -2115,6 +2155,7 @@
 				847B37F1247A3F0E00B48535 /* UIImageView+Extension.swift in Sources */,
 				846A158624C1DE22008DD261 /* ProfileDetailReactor.swift in Sources */,
 				844EE148248439E4003369F2 /* RecommendedZooViewController.swift in Sources */,
+				8417BEF724C2B66C00E94937 /* ExploreSearchResultReactor.swift in Sources */,
 				84A99FF82484FD020066863B /* ContestDetailPostCell.swift in Sources */,
 				847B37EB2479E4CC00B48535 /* HomeCurrentContestListCell.swift in Sources */,
 				84D2168A2499218200AFB1A6 /* MapZooListViewController.swift in Sources */,
@@ -2188,6 +2229,7 @@
 				84452A8524AA1A6B0092F949 /* ContestDetailResponse.swift in Sources */,
 				84452A8D24AA4C1F0092F949 /* ZooTarget.swift in Sources */,
 				847B37B12479919800B48535 /* ViewConstructor.swift in Sources */,
+				8417BEF524C2B65500E94937 /* ExploreSearchResultViewController.swift in Sources */,
 				8494CBD9249B6C1D00E35E00 /* ZooDetailReactor.swift in Sources */,
 				846A09C624C3833300DF09A6 /* ProfileContestDetailResultAwardCell.swift in Sources */,
 				846A158B24C21634008DD261 /* FanAnimalDetailPastContestCell.swift in Sources */,
@@ -2217,6 +2259,7 @@
 				846A09B224C37A3800DF09A6 /* ProfileContestDetailEntryCellReactor.swift in Sources */,
 				8494CBE5249B825600E35E00 /* ZooDetailPostsHeader.swift in Sources */,
 				846A09AD24C3787000DF09A6 /* VotedAnimalDetailHeader.swift in Sources */,
+				8417BEFB24C2C48B00E94937 /* RecommendKeywordCell.swift in Sources */,
 				847B380C247CB03C00B48535 /* APIStatus.swift in Sources */,
 				8426BB8624A8A9EE0031AEA2 /* ProfileReactor.swift in Sources */,
 				844EE14E2484A595003369F2 /* ContestDetailViewController.swift in Sources */,
@@ -2236,6 +2279,7 @@
 				8426BB5424A8A9080031AEA2 /* ProfileFanAnimalListReactor.swift in Sources */,
 				84A99FFE24851BA20066863B /* ContestDetailResultViewController.swift in Sources */,
 				845AAA0924B746F200F20AFA /* SettingModalViewController.swift in Sources */,
+				8417BEFD24C2C49D00E94937 /* RecommendKeywordCellReactor.swift in Sources */,
 				847B3809247A68A200B48535 /* HomeRecommendedZooListReactor.swift in Sources */,
 				846A157E24C1D69D008DD261 /* UserDetailResponse.swift in Sources */,
 				84A99FF62484FC150066863B /* ContestDetailPostReactor.swift in Sources */,

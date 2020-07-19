@@ -72,17 +72,27 @@ final class VoteContestViewController: UIViewController, View, ViewConstructor, 
     // MARK: - Bind Method
     func bind(reactor: VoteContestReactor) {
         // Action
+        reactor.action.onNext(.refresh)
+        
         cancelButton.rx.tap
             .bind { [weak self] _ in
                 self?.dismiss(animated: true, completion: nil)
             }
             .disposed(by: disposeBag)
-        
-        reactor.action.onNext(.loadContest)
-        
+                
         contestsCollectionView.rx.itemSelected
             .bind { [weak self] indexPath in
                 self?.showVoteContestDetailPage(voteContestDetailReactor: reactor.createVoteContestDetailReactor(indexPath: indexPath))
+            }
+            .disposed(by: disposeBag)
+        
+        contestsCollectionView.rx.contentOffset
+            .distinctUntilChanged()
+            .bind { [weak self] contentOffset in
+                guard let collectionView = self?.contestsCollectionView else { return }
+                if collectionView.contentOffset.y + collectionView.frame.size.height > collectionView.contentSize.height {
+                    reactor.action.onNext(.load)
+                }
             }
             .disposed(by: disposeBag)
         
