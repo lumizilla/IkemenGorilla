@@ -14,16 +14,16 @@ final class ProfileLikedZooListCellReactor: Reactor {
     enum Mutation {}
     
     struct State {
-        let zoo: Zoo
+        let recommendedZoo: RecommendedZoo
         
-        init(zoo: Zoo) {
-            self.zoo = zoo
+        init(recommendedZoo: RecommendedZoo) {
+            self.recommendedZoo = recommendedZoo
         }
     }
     
     let initialState: ProfileLikedZooListCellReactor.State
     
-    init(zoo: Zoo) {
-        initialState = State(zoo: zoo)
+    init(recommendedZoo: RecommendedZoo) {
+        initialState = State(recommendedZoo: recommendedZoo)
     }
 }

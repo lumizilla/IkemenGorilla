@@ -41,6 +41,10 @@ final class ProfileContestDetailInfoViewController: UIViewController, View, View
         $0.alpha = 0
     }
     
+    private let activityIndicator = UIActivityIndicatorView().then {
+        $0.startAnimating()
+    }
+    
     // MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +62,7 @@ final class ProfileContestDetailInfoViewController: UIViewController, View, View
         UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
             flowLayout.headerReferenceSize = CGSize(width: DeviceSize.screenWidth, height: height)
             self.sponsorsCollectionView.alpha = 1
+            self.activityIndicator.stopAnimating()
         }, completion: nil)
     }
     
@@ -65,7 +70,7 @@ final class ProfileContestDetailInfoViewController: UIViewController, View, View
     func setupViews() {
         view.addSubview(sponsorsCollectionView)
         sponsorsCollectionView.addSubview(profileContestDetailInfoHeader)
-        
+        view.addSubview(activityIndicator)
     }
     
     func setupViewConstraints() {
@@ -76,6 +81,10 @@ final class ProfileContestDetailInfoViewController: UIViewController, View, View
             $0.top.equalToSuperview()
             $0.left.right.bottom.equalToSuperview()
         }
+        activityIndicator.snp.makeConstraints {
+            $0.top.equalTo(sponsorsCollectionView).inset(24)
+            $0.centerX.equalTo(view)
+        }
     }
     
     // MARK: - Bind Method
@@ -83,7 +92,8 @@ final class ProfileContestDetailInfoViewController: UIViewController, View, View
         profileContestDetailInfoHeader.reactor = reactor
         
         // Action
-        reactor.action.onNext(.load)
+        reactor.action.onNext(.loadContestDetail)
+        reactor.action.onNext(.loadSponsors)
         
         // State
         

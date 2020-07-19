@@ -15,7 +15,9 @@ final class ProfileReactor: Reactor {
     }
     enum Mutation {}
     
-    struct State {}
+    struct State {
+        var page: Int = 0
+    }
     
     let initialState: State
     private let provider: ServiceProviderType
@@ -25,16 +27,17 @@ final class ProfileReactor: Reactor {
         initialState = State()
     }
     
+    //Call for user profile details
     func createProfileInfoDetailReactor() -> ProfileDetailReactor {
         return ProfileDetailReactor(provider: provider)
     }
     
     func createProfileVotedContestListReactor() -> ProfileVotedContestListReactor {
-        return ProfileVotedContestListReactor()
+        return ProfileVotedContestListReactor(provider: provider)
     }
     
     func createVotedContestReactor() -> VotedContestReactor {
-        return VotedContestReactor()
+        return VotedContestReactor(provider: provider)
     }
     
     //Shows animals in main profile page
@@ -44,18 +47,23 @@ final class ProfileReactor: Reactor {
     
     //Shows animals in additional page
     func createFanAnimalReactor() -> FanAnimalReactor {
-        return FanAnimalReactor()
+        return FanAnimalReactor(provider: provider)
+    }
+    
+    func createFanAnimalDetailReactor(fanAnimal: FanAnimal) -> FanAnimalDetailReactor {
+        return FanAnimalDetailReactor(provider: provider, fanAnimal: fanAnimal)
     }
     
     func createProfileLikedZooListReactor() -> ProfileLikedZooListReactor {
-        return ProfileLikedZooListReactor()
+        return ProfileLikedZooListReactor(provider: provider)
     }
     
     func createLikedZooReactor() -> LikedZooReactor {
-        return LikedZooReactor()
+        return LikedZooReactor(provider: provider)
     }
     
-    func createProfileContestDetailReactor(contest: Contest) -> ContestDetailReactor {
-        return ContestDetailReactor(provider: provider, contest: contest)
+    func createProfileContestDetailReactor(contest: Contest) -> ProfileContestDetailReactor {
+        return ProfileContestDetailReactor(provider: provider, contest: contest)
     }
+
 }

@@ -10,9 +10,9 @@ import RxSwift
 
 protocol UserRepositoryType {
     func getUser(userId: String) -> Single<UserDetail>
-    func getAnimals(userId: String, page: Int) -> Single<[Animal]>
-    func getZoos(userId: String) -> Single<[Zoo]>
-    func getContests(userId: String) -> Single<[Contest]>
+    func getAnimals(userId: String, page: Int) -> Single<[FanAnimal]>
+    func getZoos(userId: String, page: Int) -> Single<[RecommendedZoo]>
+    func getContests(userId: String, page: Int) -> Single<[Contest]>
 }
 
 final class UserRepository: UserRepositoryType {
@@ -32,26 +32,26 @@ final class UserRepository: UserRepositoryType {
             })
     }
     
-    func getAnimals(userId: String, page: Int) -> Single<[Animal]> {
+    func getAnimals(userId: String, page: Int) -> Single<[FanAnimal]> {
         networkProvider.rx.request(.getAnimals(userId: userId, page: page))
             .filterSuccessfulStatusCodes()
-            .map([Animal].self, using: decoder)
+            .map([FanAnimal].self, using: decoder)
             .do(onError: { error in
                 logger.error(error)
             })
     }
     
-    func getZoos(userId: String) -> Single<[Zoo]> {
-        networkProvider.rx.request(.getZoos(userId: userId))
+    func getZoos(userId: String, page: Int) -> Single<[RecommendedZoo]> {
+        networkProvider.rx.request(.getZoos(userId: userId, page: page))
             .filterSuccessfulStatusCodes()
-            .map([Zoo].self, using: decoder)
+            .map([RecommendedZoo].self, using: decoder)
             .do(onError: { error in
                 logger.error(error)
             })
     }
     
-    func getContests(userId: String) -> Single<[Contest]> {
-        networkProvider.rx.request(.getContests(userId: userId))
+    func getContests(userId: String, page: Int) -> Single<[Contest]> {
+        networkProvider.rx.request(.getContests(userId: userId, page: page))
             .filterSuccessfulStatusCodes()
             .map([Contest].self, using: decoder)
             .do(onError: { error in

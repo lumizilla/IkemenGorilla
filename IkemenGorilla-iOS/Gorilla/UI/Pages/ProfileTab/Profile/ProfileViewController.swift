@@ -10,6 +10,7 @@ import UIKit
 import ReactorKit
 import RxSwift
 import PanModal
+import ReusableKit
 
 final class ProfileViewController: UIViewController, View, ViewConstructor, TransitionPresentable {
     
@@ -22,13 +23,17 @@ final class ProfileViewController: UIViewController, View, ViewConstructor, Tran
     
     private lazy var profileVotedContestListCallback = ProfileVotedContestListView.Callback(itemSelected: { contest in
         guard let reactor = self.reactor else { return }
-        self.showVotedDetailPage(votedContestReactor: reactor.createVotedContestReactor())
+        self.showVotedDetailPage(profileContestDetailReactor: reactor.createProfileContestDetailReactor(contest: contest))
     })
     
-    private lazy var profileFanAnimalListCallback = ProfileFanAnimalListView.Callback(itemSelected: { animal in
+    private lazy var profileFanAnimalListCallback = ProfileFanAnimalListView.Callback(itemSelected: { fanAnimal in
         guard let reactor = self.reactor else { return }
-        self.showFanAnimalPage(fanAnimalReactor: reactor.createFanAnimalReactor())
+        self.showFanAnimalDetailPage(fanAnimalDetailReactor: reactor.createFanAnimalDetailReactor(fanAnimal: fanAnimal))
     })
+    
+    struct Reusable {
+        static let animalCell = ReusableCell<ProfileFanAnimalListCell>()
+    }
     
     // MARK: - Views
     
@@ -124,14 +129,31 @@ final class ProfileViewController: UIViewController, View, ViewConstructor, Tran
    func bind(reactor: ProfileReactor) {
        // Action
        profileFanAnimalHeader.showAllButton.rx.tap
-           .bind { [weak self] _ in
-               self?.showFanAnimalPage(fanAnimalReactor: reactor.createFanAnimalReactor())
-           }
-           .disposed(by: disposeBag)
+       .bind { [weak self] _ in
+            logger.debug("tap show all fans button")
+            let vc = FanAnimalViewController().then {
+                $0.reactor = reactor.createFanAnimalReactor()
+            }
+            self?.navigationController?.pushViewController(vc, animated: true)
+       }
+       .disposed(by: disposeBag)
+    
+       profileVotedContestHeader.showAllButton.rx.tap
+       .bind { [weak self] _ in
+           self?.showVotedContestPage(votedContestReactor: reactor.createVotedContestReactor())
+       }
+       .disposed(by: disposeBag)
     
        likedZooHeader.showAllButton.rx.tap
            .bind { [weak self] _ in
                self?.showLikedZooPage(likedZooReactor: reactor.createLikedZooReactor())
+           }
+           .disposed(by: disposeBag)
+       
+       likedZooListView.rx.itemSelected
+           .bind { [weak self] indexPath in
+               guard let reactor = self?.likedZooListView.reactor?.createZooDetailReactor(indexPath: indexPath) else { return }
+               self?.showZooDetailPage(zooDetailReactor: reactor)
            }
            .disposed(by: disposeBag)
     

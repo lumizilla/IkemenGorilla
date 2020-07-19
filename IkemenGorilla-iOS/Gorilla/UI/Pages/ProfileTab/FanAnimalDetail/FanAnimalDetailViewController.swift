@@ -9,7 +9,7 @@
 import ReactorKit
 import RxSwift
 
-final class FanAnimalDetailViewController: UIViewController, View, ViewConstructor {
+final class FanAnimalDetailViewController: UIViewController, View, ViewConstructor, TransitionPresentable {
     
     // MARK: - Variables
     var disposeBag = DisposeBag()
@@ -80,8 +80,16 @@ final class FanAnimalDetailViewController: UIViewController, View, ViewConstruct
         postCollectionView.reactor = reactor.createPostPhotoCollectionReactor()
         
         // Action
+        reactor.action.onNext(.loadCurrentContest)
         reactor.action.onNext(.loadPastContests)
         reactor.action.onNext(.loadPost)
+        
+        postCollectionView.rx.itemSelected
+        .bind { [weak self] indexPath in
+            logger.debug(indexPath)
+            self?.showExplorePostDetailPage(explorePostDetailReactor: reactor.createExplorePostDetailReactor(indexPath: indexPath))
+        }
+        .disposed(by: disposeBag)
         
         // State
         reactor.state.map { $0.posts }

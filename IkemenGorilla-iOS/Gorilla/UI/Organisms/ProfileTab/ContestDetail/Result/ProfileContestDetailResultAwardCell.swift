@@ -1,8 +1,8 @@
 //
-//  FanAnimalCell.swift
+//  ProfileContestDetailResultAwardCell.swift
 //  Gorilla
 //
-//  Created by admin on 2020/06/11.
+//  Created by admin on 2020/07/19.
 //  Copyright © 2020 admin. All rights reserved.
 //
 
@@ -10,11 +10,11 @@ import UIKit
 import ReactorKit
 import RxSwift
 
-final class FanAnimalCell: UICollectionViewCell, View, ViewConstructor {
+final class ProfileContestDetailResultAwardCell: UICollectionViewCell, View, ViewConstructor {
     
     struct Const {
-        static let cellWidth: CGFloat = (DeviceSize.screenWidth - 64) / 2
-        static let cellHeight: CGFloat = cellWidth + 16 + 16 + 16 + 36
+        static let cellWidth: CGFloat = (DeviceSize.screenWidth - 48) / 2
+        static let cellHeight: CGFloat = cellWidth + 8 + 16 + 16 + 24 + 56
         static let itemSize: CGSize = CGSize(width: cellWidth, height: cellHeight)
     }
     
@@ -26,17 +26,25 @@ final class FanAnimalCell: UICollectionViewCell, View, ViewConstructor {
         $0.contentMode = .scaleAspectFill
         $0.layer.masksToBounds = true
         $0.layer.cornerRadius = Const.cellWidth / 2
-        $0.clipsToBounds = true
     }
     
     private let animalNameLabel = UILabel().then {
-        $0.apply(fontStyle: .regular, size: 16)
-        $0.textColor = Color.black
+        $0.apply(fontStyle: .black, size: 16)
+        $0.textColor = Color.textGray
         $0.textAlignment = .center
         $0.adjustsFontSizeToFitWidth = true
     }
     
-    private let fanButton = FanButton()
+    private let awardNameLabel = UILabel().then {
+        $0.apply(fontStyle: .medium, size: 20)
+        $0.textColor = Color.textBlack
+        $0.textAlignment = .center
+        $0.adjustsFontSizeToFitWidth = true
+    }
+    
+    private let border = UIView().then {
+        $0.backgroundColor = Color.textBlack
+    }
     
     // MARK: - Initializers
     override init(frame: CGRect) {
@@ -54,7 +62,8 @@ final class FanAnimalCell: UICollectionViewCell, View, ViewConstructor {
     func setupViews() {
         addSubview(imageView)
         addSubview(animalNameLabel)
-        addSubview(fanButton)
+        addSubview(awardNameLabel)
+        addSubview(border)
     }
     
     func setupViewConstraints() {
@@ -63,42 +72,43 @@ final class FanAnimalCell: UICollectionViewCell, View, ViewConstructor {
             $0.size.equalTo(Const.cellWidth)
         }
         animalNameLabel.snp.makeConstraints {
-            $0.top.equalTo(imageView.snp.bottom).offset(16)
-            $0.centerX.equalToSuperview()
-            $0.centerX.equalTo(imageView.snp.centerX)
+            $0.top.equalTo(imageView.snp.bottom).offset(8)
+            $0.left.right.equalToSuperview().inset(8)
             $0.height.equalTo(16)
         }
-        fanButton.snp.makeConstraints {
+        awardNameLabel.snp.makeConstraints {
             $0.top.equalTo(animalNameLabel.snp.bottom).offset(16)
-            $0.left.right.bottom.equalToSuperview()
+            $0.left.right.equalToSuperview().inset(8)
+            $0.height.equalTo(24)
+            $0.bottom.equalToSuperview().inset(56)
+        }
+        border.snp.makeConstraints {
+            $0.top.equalTo(awardNameLabel.snp.bottom).offset(4)
+            $0.right.left.equalToSuperview().inset(16)
+            $0.height.equalTo(1)
         }
     }
     
     // MARK: - Bind Method
-    func bind(reactor: FanAnimalCellReactor) {
+    func bind(reactor: ProfileContestDetailResultAwardCellReactor) {
         // Action
-        fanButton.rx.tap
-            .bind { _ in
-                reactor.action.onNext(.tapFanButton)
-            }
-            .disposed(by: disposeBag)
         
         // State
-        reactor.state.map { $0.fanAnimal.iconUrl }
+        reactor.state.map { $0.award.iconUrl }
             .distinctUntilChanged()
             .bind { [weak self] iconUrl in
                 self?.imageView.setImage(imageUrl: iconUrl)
             }
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.fanAnimal.name }
+        reactor.state.map { $0.award.animalName }
             .distinctUntilChanged()
             .bind(to: animalNameLabel.rx.text)
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.fanAnimal.isFan }
+        reactor.state.map { $0.award.awardName }
             .distinctUntilChanged()
-            .bind(to: fanButton.rx.isFan)
+            .bind(to: awardNameLabel.rx.text)
             .disposed(by: disposeBag)
     }
 }

@@ -22,24 +22,25 @@ final class FanAnimalDetailReactor: Reactor {
     }
     
     struct State {
-        let animal: Animal
+        let fanAnimal: FanAnimal
+        var animal: Animal?
         let zooName: String = "東山動物園"
         var currentContest: Contest?
         let numberOfVoted: Int = 312
         var pastContestCellReactors: [FanAnimalDetailPastContestCellReactor] = []
         var posts: [Post] = []
         
-        init(animal: Animal) {
-            self.animal = animal
+        init(fanAnimal: FanAnimal) {
+            self.fanAnimal = fanAnimal
         }
     }
     
     let initialState: State
     private let provider: ServiceProviderType
     
-    init(provider: ServiceProviderType, animal: Animal) {
+    init(provider: ServiceProviderType, fanAnimal: FanAnimal) {
         self.provider = provider
-        initialState = State(animal: animal)
+        initialState = State(fanAnimal: fanAnimal)
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
@@ -55,20 +56,20 @@ final class FanAnimalDetailReactor: Reactor {
     
     private func loadAnimal() -> Observable<Animal> {
         logger.warning("no user id from AnimalDetailReactor")
-        return provider.animalService.getAnimal(animalId: currentState.animal.id, userId: "1").asObservable()
+        return provider.animalService.getAnimal(animalId: currentState.fanAnimal.id, userId: "1").asObservable()
     }
     
     private func loadCurrentContest() -> Observable<Contest?> {
-        return provider.animalService.getContests(animalId: currentState.animal.id, status: .current).asObservable().map { $0.first }
+        return provider.animalService.getContests(animalId: currentState.fanAnimal.id, status: .current).asObservable().map { $0.first }
     }
     
     private func loadPastContests() -> Observable<[Contest]> {
-        return provider.animalService.getContests(animalId: currentState.animal.id, status: .past).asObservable()
+        return provider.animalService.getContests(animalId: currentState.fanAnimal.id, status: .past).asObservable()
     }
     
     private func loadPosts() -> Observable<[Post]> {
         logger.warning("todo: pagin")
-        return provider.animalService.getPosts(animalId: currentState.animal.id, page: 0).asObservable()
+        return provider.animalService.getPosts(animalId: currentState.fanAnimal.id, page: 0).asObservable()
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
@@ -86,5 +87,9 @@ final class FanAnimalDetailReactor: Reactor {
     
     func createPostPhotoCollectionReactor() -> PostPhotoCollectionReactor {
         return PostPhotoCollectionReactor()
+    }
+    
+    func createExplorePostDetailReactor(indexPath: IndexPath) -> ExplorePostDetailReactor {
+        return ExplorePostDetailReactor(provider: provider, startAt: indexPath.row, posts: currentState.posts)
     }
 }

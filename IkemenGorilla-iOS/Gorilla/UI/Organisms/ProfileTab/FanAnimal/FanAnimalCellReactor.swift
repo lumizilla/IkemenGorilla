@@ -19,23 +19,23 @@ final class FanAnimalCellReactor: Reactor {
     }
     
     struct State {
-        var animal: Animal
+        var fanAnimal: FanAnimal
         
-        init(animal: Animal) {
-            self.animal = animal
+        init(fanAnimal: FanAnimal) {
+            self.fanAnimal = fanAnimal
         }
     }
     
     let initialState: State
     
-    init(animal: Animal) {
-        initialState = State(animal: animal)
+    init(fanAnimal: FanAnimal) {
+        initialState = State(fanAnimal: fanAnimal)
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .tapFanButton:
-            return .just(.setIsFan(!currentState.animal.isFan))
+            return .just(.setIsFan(!currentState.fanAnimal.isFan))
         }
     }
     
@@ -43,7 +43,7 @@ final class FanAnimalCellReactor: Reactor {
         var state = state
         switch mutation {
         case .setIsFan(let isFan):
-            state.animal.isFan = isFan
+            state.fanAnimal.isFan = isFan
         }
         return state
     }
@@ -51,6 +51,6 @@ final class FanAnimalCellReactor: Reactor {
 
 extension FanAnimalCellReactor: Equatable {
     static func == (lhs: FanAnimalCellReactor, rhs: FanAnimalCellReactor) -> Bool {
-        return lhs.currentState.animal.id == rhs.currentState.animal.id
+        return lhs.currentState.fanAnimal.id == rhs.currentState.fanAnimal.id
     }
 }

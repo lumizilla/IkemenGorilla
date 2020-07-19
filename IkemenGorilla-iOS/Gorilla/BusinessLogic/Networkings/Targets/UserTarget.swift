@@ -11,8 +11,8 @@ import Moya
 enum UserTarget {
     case getUser(userId: String)
     case getAnimals(userId: String, page: Int)
-    case getZoos(userId: String)
-    case getContests(userId: String)
+    case getZoos(userId: String, page: Int)
+    case getContests(userId: String, page: Int)
 }
 
 extension UserTarget: TargetType {
@@ -22,10 +22,10 @@ extension UserTarget: TargetType {
             return "/users/\(userId)"
         case .getAnimals(let userId, _):
             return "/users/\(userId)/fans"
-        case .getZoos(let userId):
+        case .getZoos(let userId, _):
             return "/users/\(userId)/zoos"
-        case .getContests(let userId):
-            return "/users/\(userId)/constests"
+        case .getContests(let userId, _):
+            return "/users/\(userId)/contests"
         }
     }
     
@@ -43,16 +43,26 @@ extension UserTarget: TargetType {
                 "page": page
             ] as [String : Any]
         return .requestParameters(parameters: parameters, encoding: parameterEncoding)
-        case .getUser, .getZoos, .getContests:
+        case .getContests(_ , let page):
+            let parameters = [
+                "page": page
+            ] as [String : Any]
+        return .requestParameters(parameters: parameters, encoding: parameterEncoding)
+        case .getZoos(_ , let page):
+            let parameters = [
+                "page": page
+            ] as [String : Any]
+        return .requestParameters(parameters: parameters, encoding: parameterEncoding)
+        case .getUser:
             return .requestPlain
         }
     }
     
     var parameterEncoding: ParameterEncoding {
         switch self {
-        case .getAnimals:
+        case .getAnimals, .getContests, .getZoos:
             return URLEncoding.queryString
-        case .getUser, .getZoos, .getContests:
+        case .getUser:
             return URLEncoding.default
         }
     }

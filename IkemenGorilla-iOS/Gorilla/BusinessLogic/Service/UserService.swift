@@ -10,9 +10,9 @@ import RxSwift
 
 protocol UserServiceType {
     func getUser(userId: String) -> Single<UserDetail>
-    func getAnimals(userId: String, page: Int) -> Single<[Animal]>
-    func getZoos(userId: String) -> Single<[Zoo]>
-    func getContests(userId: String) -> Single<[Contest]>
+    func getAnimals(userId: String, page: Int) -> Single<[FanAnimal]>
+    func getZoos(userId: String, page: Int) -> Single<[RecommendedZoo]>
+    func getContests(userId: String, page: Int) -> Single<[Contest]>
 }
 
 final class UserService: BaseService, UserServiceType {
@@ -27,15 +27,15 @@ final class UserService: BaseService, UserServiceType {
         userRepository.getUser(userId: userId)
     }
     
-    func getZoos(userId: String) -> Single<[Zoo]> {
-        userRepository.getZoos(userId: userId)
+    func getZoos(userId: String, page: Int) -> Single<[RecommendedZoo]> {
+        userRepository.getZoos(userId: userId, page: page)
     }
     
-    func getAnimals(userId: String, page: Int) -> Single<[Animal]> {
+    func getAnimals(userId: String, page: Int) -> Single<[FanAnimal]> {
         userRepository.getAnimals(userId: userId, page: page)
     }
     
-    func getContests(userId: String) -> Single<[Contest]> {
-        userRepository.getContests(userId: userId)
+    func getContests(userId: String, page: Int) -> Single<[Contest]> {
+        userRepository.getContests(userId: userId, page: page)
     }
 }

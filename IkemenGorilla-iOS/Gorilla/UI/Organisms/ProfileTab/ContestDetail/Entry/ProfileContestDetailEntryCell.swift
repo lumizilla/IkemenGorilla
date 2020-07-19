@@ -1,8 +1,8 @@
 //
-//  FanAnimalCell.swift
+//  ProfileContestDetailEntryCell.swift
 //  Gorilla
 //
-//  Created by admin on 2020/06/11.
+//  Created by admin on 2020/07/19.
 //  Copyright © 2020 admin. All rights reserved.
 //
 
@@ -10,11 +10,11 @@ import UIKit
 import ReactorKit
 import RxSwift
 
-final class FanAnimalCell: UICollectionViewCell, View, ViewConstructor {
+final class ProfileContestDetailEntryCell: UICollectionViewCell, View, ViewConstructor {
     
     struct Const {
-        static let cellWidth: CGFloat = (DeviceSize.screenWidth - 64) / 2
-        static let cellHeight: CGFloat = cellWidth + 16 + 16 + 16 + 36
+        static let cellWidth: CGFloat = (DeviceSize.screenWidth - 48) / 2
+        static let cellHeight: CGFloat = cellWidth * 200 / 164
         static let itemSize: CGSize = CGSize(width: cellWidth, height: cellHeight)
     }
     
@@ -24,19 +24,17 @@ final class FanAnimalCell: UICollectionViewCell, View, ViewConstructor {
     // MARK: - Views
     private let imageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
-        $0.layer.masksToBounds = true
-        $0.layer.cornerRadius = Const.cellWidth / 2
-        $0.clipsToBounds = true
     }
     
     private let animalNameLabel = UILabel().then {
-        $0.apply(fontStyle: .regular, size: 16)
-        $0.textColor = Color.black
-        $0.textAlignment = .center
-        $0.adjustsFontSizeToFitWidth = true
+        $0.apply(fontStyle: .black, size: 16)
+        $0.textColor = Color.white
     }
     
-    private let fanButton = FanButton()
+    private let zooNameLabel = UILabel().then {
+        $0.apply(fontStyle: .bold, size: 10)
+        $0.textColor = Color.white
+    }
     
     // MARK: - Initializers
     override init(frame: CGRect) {
@@ -52,53 +50,47 @@ final class FanAnimalCell: UICollectionViewCell, View, ViewConstructor {
     
     // MARK: - Setup Methods
     func setupViews() {
+        layer.masksToBounds = true
+        layer.cornerRadius = 4
         addSubview(imageView)
         addSubview(animalNameLabel)
-        addSubview(fanButton)
+        addSubview(zooNameLabel)
     }
     
     func setupViewConstraints() {
         imageView.snp.makeConstraints {
-            $0.top.left.right.equalToSuperview()
-            $0.size.equalTo(Const.cellWidth)
+            $0.edges.equalToSuperview()
         }
         animalNameLabel.snp.makeConstraints {
-            $0.top.equalTo(imageView.snp.bottom).offset(16)
-            $0.centerX.equalToSuperview()
-            $0.centerX.equalTo(imageView.snp.centerX)
-            $0.height.equalTo(16)
+            $0.left.right.equalToSuperview().inset(8)
+            $0.bottom.equalTo(zooNameLabel.snp.top).offset(-8)
         }
-        fanButton.snp.makeConstraints {
-            $0.top.equalTo(animalNameLabel.snp.bottom).offset(16)
-            $0.left.right.bottom.equalToSuperview()
+        zooNameLabel.snp.makeConstraints {
+            $0.left.bottom.right.equalToSuperview().inset(8)
         }
     }
     
     // MARK: - Bind Method
-    func bind(reactor: FanAnimalCellReactor) {
+    func bind(reactor: ProfileContestDetailEntryCellReactor) {
         // Action
-        fanButton.rx.tap
-            .bind { _ in
-                reactor.action.onNext(.tapFanButton)
-            }
-            .disposed(by: disposeBag)
         
         // State
-        reactor.state.map { $0.fanAnimal.iconUrl }
+        reactor.state.map { $0.entry.iconUrl }
             .distinctUntilChanged()
             .bind { [weak self] iconUrl in
                 self?.imageView.setImage(imageUrl: iconUrl)
             }
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.fanAnimal.name }
+        reactor.state.map { $0.entry.name }
             .distinctUntilChanged()
             .bind(to: animalNameLabel.rx.text)
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.fanAnimal.isFan }
+        reactor.state.map { $0.entry.zooName }
             .distinctUntilChanged()
-            .bind(to: fanButton.rx.isFan)
+            .bind(to: zooNameLabel.rx.text)
             .disposed(by: disposeBag)
     }
 }
+

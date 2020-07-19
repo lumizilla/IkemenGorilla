@@ -15,7 +15,7 @@ final class ProfileFanAnimalListReactor: Reactor {
     }
     
     enum Mutation {
-        case setFanAnimalListCellReactors([Animal])
+        case setFanAnimalListCellReactors([FanAnimal])
         case setIsLoading(Bool)
     }
     
@@ -43,15 +43,16 @@ final class ProfileFanAnimalListReactor: Reactor {
         }
     }
     
-    private func loadFanAnimals() -> Observable<[Animal]> {
-        .just(TestData.animals(count: 4))
+    private func loadFanAnimals() -> Observable<[FanAnimal]> {
+        logger.warning("no user id from UserDetailReactor")
+        return provider.userService.getAnimals(userId: "5", page: 0).asObservable()
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
         var state = state
         switch mutation {
-        case .setFanAnimalListCellReactors(let animals):
-            state.animalListCellReactors = animals.map { ProfileFanAnimalListCellReactor(animal: $0) }
+        case .setFanAnimalListCellReactors(let fanAnimals):
+            state.animalListCellReactors = fanAnimals.map { ProfileFanAnimalListCellReactor(fanAnimal: $0) }
         case .setIsLoading(let isLoading):
             state.isLoading = isLoading
         }
