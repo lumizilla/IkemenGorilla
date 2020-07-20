@@ -81,8 +81,10 @@ final class FanAnimalReactor: Reactor {
         return state
     }
     
-    func createFanAnimalDetailReactor(indexPath: IndexPath) -> FanAnimalDetailReactor {
-        return FanAnimalDetailReactor(provider: provider, fanAnimal: currentState.animalCellReactors[indexPath.row].currentState.fanAnimal)
+    func createAnimalDetailReactor(indexPath: IndexPath) -> AnimalDetailReactor {
+        let fanAnimal = currentState.animalCellReactors[indexPath.row].currentState.fanAnimal
+        let zooAnimal = ZooAnimal(id: fanAnimal.id, name: fanAnimal.name, iconUrl: fanAnimal.iconUrl, isFan: fanAnimal.isFan)
+        return AnimalDetailReactor(provider: provider, zooAnimal: zooAnimal)
     }
     
 }
