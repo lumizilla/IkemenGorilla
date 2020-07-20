@@ -24,7 +24,13 @@ final class VotedContestReactor: Reactor {
         var isLoading: Bool = false
     }
     
-    let initialState = VotedContestReactor.State()
+    let initialState: State
+    private let provider: ServiceProviderType
+    
+    init(provider: ServiceProviderType) {
+        self.provider = provider
+        initialState = State()
+    }
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
@@ -39,7 +45,7 @@ final class VotedContestReactor: Reactor {
     }
     
     private func load() -> Observable<[Contest]> {
-        .just(TestData.contests(count: 8))
+        provider.userService.getContests(userId: "1", page: 0).asObservable()
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
@@ -51,5 +57,9 @@ final class VotedContestReactor: Reactor {
             state.isLoading = isLoading
         }
         return state
+    }
+    
+    func createContestDetailReactor(indexPath: IndexPath) -> ProfileContestDetailReactor {
+        return ProfileContestDetailReactor(provider: provider, contest: currentState.contestCellReactors[indexPath.row].currentState.contest)
     }
 }

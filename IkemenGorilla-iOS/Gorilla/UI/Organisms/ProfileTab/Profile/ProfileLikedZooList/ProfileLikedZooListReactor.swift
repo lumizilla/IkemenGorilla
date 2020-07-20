@@ -15,7 +15,7 @@ final class ProfileLikedZooListReactor: Reactor {
     }
     
     enum Mutation {
-        case setLikedZooListCellReactors([Zoo])
+        case setLikedZooListCellReactors([RecommendedZoo])
         case setIsLoading(Bool)
     }
     
@@ -24,7 +24,13 @@ final class ProfileLikedZooListReactor: Reactor {
         var isLoading: Bool = false
     }
     
-    let initialState = ProfileLikedZooListReactor.State()
+    let initialState: State
+    private let provider: ServiceProviderType
+    
+    init(provider: ServiceProviderType) {
+        self.provider = provider
+        initialState = State()
+    }
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
@@ -37,18 +43,24 @@ final class ProfileLikedZooListReactor: Reactor {
         }
     }
     
-    private func loadLikedZoos() -> Observable<[Zoo]> {
-        .just(TestData.zoos(count: 4))
+    private func loadLikedZoos() -> Observable<[RecommendedZoo]> {
+        return provider.userService.getZoos(userId: "1", page: 0).asObservable()
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
         var state = state
         switch mutation {
-        case .setLikedZooListCellReactors(let zoos):
-            state.likedZooListCellReactors = zoos.map { ProfileLikedZooListCellReactor(zoo: $0) }
+        case .setLikedZooListCellReactors(let recommendedZoos):
+            state.likedZooListCellReactors = recommendedZoos.map { ProfileLikedZooListCellReactor(recommendedZoo: $0) }
         case .setIsLoading(let isLoading):
             state.isLoading = isLoading
         }
         return state
+    }
+    
+    func createZooDetailReactor(indexPath: IndexPath) -> ZooDetailReactor {
+        let recommendedZoo = currentState.likedZooListCellReactors[indexPath.row].currentState.recommendedZoo
+        let zoo: Zoo = Zoo(id: recommendedZoo.id, name: recommendedZoo.name, address: "", latitude: 0, longitude: 0, imageUrl: recommendedZoo.imageUrl)
+        return ZooDetailReactor(provider: provider, zoo: zoo)
     }
 }

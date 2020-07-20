@@ -24,7 +24,13 @@ final class ProfileVotedContestListReactor: Reactor {
         var isLoading: Bool = false
     }
     
-    let initialState = ProfileVotedContestListReactor.State()
+    let initialState: State
+    private let provider: ServiceProviderType
+    
+    init(provider: ServiceProviderType) {
+        self.provider = provider
+        initialState = State()
+    }
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
@@ -38,7 +44,7 @@ final class ProfileVotedContestListReactor: Reactor {
     }
     
     private func loadVotedContests() -> Observable<[Contest]> {
-        .just(TestData.contests(count: 4))
+        provider.userService.getContests(userId: "1", page: 0).asObservable()
     }
     
     func reduce(state: State, mutation: Mutation) -> State {

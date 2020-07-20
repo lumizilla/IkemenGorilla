@@ -42,11 +42,23 @@ final class ProfileContestDetailViewController: SegementSlideDefaultViewControll
         switch index {
         case 0:
             return ProfileContestDetailInfoViewController().then {
-                $0.reactor = ProfileContestDetailInfoReactor(contest: TestData.contest())
+                $0.reactor = reactor?.createProfileContestDetailInfoReactor()
             }
+        case 1:
+            return ProfileContestDetailEntryViewController().then {
+                $0.reactor = reactor?.createProfileContestDetailEntryReactor()
+        }
+        case 2:
+            return ProfileContestDetailPostViewController().then {
+                $0.reactor = reactor?.createProfileContestDetailPostReactor()
+        }
+        case 3:
+            return ProfileContestDetailResultViewController().then {
+                $0.reactor = reactor?.createProfileContestDetailResultReactor()
+        }
         default:
             return ProfileContestDetailInfoViewController().then {
-                $0.reactor = ProfileContestDetailInfoReactor(contest: TestData.contest())
+                $0.reactor = reactor?.createProfileContestDetailInfoReactor()
             }
         }
     }

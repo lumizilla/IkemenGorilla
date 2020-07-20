@@ -11,18 +11,20 @@ import RxSwift
 
 final class ProfileContestDetailInfoReactor: Reactor {
     enum Action {
-        case load
+        case loadContestDetail
+        case loadSponsors
     }
     enum Mutation {
+        case setContestDetail(ContestDetail)
         case setSponsorCellReactors([Sponsor])
-        case setIsLoading(Bool)
+        case setApiStatus(APIStatus)
     }
     
     struct State {
         let contest: Contest
-        // todo: ContestDetail
+        var contestDetail: ContestDetail?
         var sponsorCellReactors: [ProfileContestDetailInfoSponsorCellReactor] = []
-        var isLoading: Bool = false
+        var apiStatus: APIStatus = .pending
         
         init(contest: Contest) {
             self.contest = contest
@@ -30,34 +32,44 @@ final class ProfileContestDetailInfoReactor: Reactor {
     }
     
     let initialState: ProfileContestDetailInfoReactor.State
+    private let provider: ServiceProviderType
     
-    init(contest: Contest) {
+    init(provider: ServiceProviderType, contest: Contest) {
+        self.provider = provider
         initialState = State(contest: contest)
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
-        case .load:
-            guard !currentState.isLoading else { return .empty() }
+        case .loadContestDetail:
+            return loadContestDetail().map(Mutation.setContestDetail)
+        case .loadSponsors:
+            guard currentState.apiStatus == .pending else { return .empty() }
             return .concat(
-                .just(.setIsLoading(true)),
-                load().map(Mutation.setSponsorCellReactors),
-                .just(.setIsLoading(false))
+                .just(.setApiStatus(.loading)),
+                loadSponsors().map(Mutation.setSponsorCellReactors),
+                .just(.setApiStatus(.pending))
             )
         }
     }
     
-    private func load() -> Observable<[Sponsor]> {
-        return .just(TestData.sponsors(count: 8))
+    private func loadContestDetail() -> Observable<ContestDetail> {
+        return provider.contestService.getContest(contestId: currentState.contest.id).asObservable()
+    }
+    
+    private func loadSponsors() -> Observable<[Sponsor]> {
+        return provider.contestService.getSponsors(contestId: currentState.contest.id).asObservable()
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
         var state = state
         switch mutation {
+        case .setContestDetail(let contestDetail):
+            state.contestDetail = contestDetail
         case .setSponsorCellReactors(let sponsors):
             state.sponsorCellReactors = sponsors.map { ProfileContestDetailInfoSponsorCellReactor(sponsor: $0) }
-        case .setIsLoading(let isLoading):
-            state.isLoading = isLoading
+        case .setApiStatus(let apiStatus):
+            state.apiStatus = apiStatus
         }
         return state
     }
