@@ -24,7 +24,7 @@ final class ProfileInfoDetail: UIView, View, ViewConstructor {
     
     // MARK: - Views
     private let imageView = UIImageView().then {
-        $0.contentMode = .scaleAspectFit
+        $0.contentMode = .scaleAspectFill
         $0.layer.masksToBounds = true
         $0.layer.cornerRadius = 40
     }
