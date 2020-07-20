@@ -21,7 +21,6 @@
 		8426BB5224A8A9080031AEA2 /* ProfileFanAnimalHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB2F24A8A9080031AEA2 /* ProfileFanAnimalHeader.swift */; };
 		8426BB5324A8A9080031AEA2 /* ProfileFanAnimalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB3024A8A9080031AEA2 /* ProfileFanAnimalListView.swift */; };
 		8426BB5424A8A9080031AEA2 /* ProfileFanAnimalListReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB3124A8A9080031AEA2 /* ProfileFanAnimalListReactor.swift */; };
-		8426BB5824A8A9080031AEA2 /* ProfileInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB3624A8A9080031AEA2 /* ProfileInfoHeader.swift */; };
 		8426BB5924A8A9080031AEA2 /* ProfileInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB3824A8A9080031AEA2 /* ProfileInfoCell.swift */; };
 		8426BB5A24A8A9080031AEA2 /* ProfileInfoCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB3924A8A9080031AEA2 /* ProfileInfoCellReactor.swift */; };
 		8426BB5C24A8A9080031AEA2 /* ProfileVotedContestHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB3C24A8A9080031AEA2 /* ProfileVotedContestHeader.swift */; };
@@ -297,7 +296,6 @@
 		8426BB2F24A8A9080031AEA2 /* ProfileFanAnimalHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileFanAnimalHeader.swift; sourceTree = "<group>"; };
 		8426BB3024A8A9080031AEA2 /* ProfileFanAnimalListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileFanAnimalListView.swift; sourceTree = "<group>"; };
 		8426BB3124A8A9080031AEA2 /* ProfileFanAnimalListReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileFanAnimalListReactor.swift; sourceTree = "<group>"; };
-		8426BB3624A8A9080031AEA2 /* ProfileInfoHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoHeader.swift; sourceTree = "<group>"; };
 		8426BB3824A8A9080031AEA2 /* ProfileInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoCell.swift; sourceTree = "<group>"; };
 		8426BB3924A8A9080031AEA2 /* ProfileInfoCellReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoCellReactor.swift; sourceTree = "<group>"; };
 		8426BB3C24A8A9080031AEA2 /* ProfileVotedContestHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVotedContestHeader.swift; sourceTree = "<group>"; };
@@ -686,7 +684,6 @@
 		8426BB3224A8A9080031AEA2 /* ProfileInfoList */ = {
 			isa = PBXGroup;
 			children = (
-				8426BB3624A8A9080031AEA2 /* ProfileInfoHeader.swift */,
 				846A15A724C2DE31008DD261 /* ProfileInfoDetail.swift */,
 			);
 			path = ProfileInfoList;
@@ -2073,7 +2070,6 @@
 				8494CBD7249B6C0400E35E00 /* ZooDetailViewController.swift in Sources */,
 				8426BB5D24A8A9080031AEA2 /* ProfileVotedContestListReactor.swift in Sources */,
 				84C433B5249BE7C400172D6A /* FanButton.swift in Sources */,
-				8426BB5824A8A9080031AEA2 /* ProfileInfoHeader.swift in Sources */,
 				84E39BFA24A3BA15008E6526 /* AnimalDetailHeader.swift in Sources */,
 				84C433AD249BD7B200172D6A /* ZooAnimalListViewController.swift in Sources */,
 				84A99FE02484D6260066863B /* ContestDetailInfoSponsorCellReactor.swift in Sources */,
