@@ -46,6 +46,19 @@ final class AnimalDetailPastContestView: UIView, View, ViewConstructor {
         $0.alwaysBounceHorizontal = true
     }
     
+    let emptyImageView = UIImageView().then {
+        $0.contentMode = .scaleAspectFill
+        $0.image = #imageLiteral(resourceName: "empty_state")
+    }
+    
+    let emptyLabel = UILabel().then {
+        $0.apply(fontStyle: .medium, size: 16)
+        $0.textColor = Color.textGray
+        $0.text = "過去に参加したコンテストはありません"
+        $0.numberOfLines = 0
+        $0.textAlignment = .center
+    }
+    
     // MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -62,6 +75,8 @@ final class AnimalDetailPastContestView: UIView, View, ViewConstructor {
     func setupViews() {
         addSubview(pastContestLabel)
         addSubview(contestsCollectionView)
+        addSubview(emptyImageView)
+        addSubview(emptyLabel)
     }
     
     func setupViewConstraints() {
@@ -75,6 +90,18 @@ final class AnimalDetailPastContestView: UIView, View, ViewConstructor {
             $0.top.equalTo(pastContestLabel.snp.bottom).offset(24)
             $0.width.equalTo(DeviceSize.screenWidth)
             $0.height.equalTo(AnimalDetailPastContestCell.Const.cellHeight)
+        }
+        emptyImageView.snp.makeConstraints {
+            $0.bottom.equalToSuperview().inset(48)
+            $0.width.equalTo(DeviceSize.screenWidth - 32)
+            $0.left.equalToSuperview().inset(16)
+            $0.height.equalTo(AnimalDetailPastContestCell.Const.cellWidth)
+        }
+        emptyLabel.snp.makeConstraints {
+            $0.centerX.equalTo(emptyImageView)
+            $0.width.equalTo(DeviceSize.screenWidth - 32)
+            $0.height.equalTo(24)
+            $0.bottom.equalTo(emptyImageView).offset(32)
         }
     }
     
