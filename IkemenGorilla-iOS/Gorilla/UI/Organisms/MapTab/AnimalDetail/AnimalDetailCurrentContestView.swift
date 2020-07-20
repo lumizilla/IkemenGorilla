@@ -71,10 +71,15 @@ final class AnimalDetailCurrentContestView: UIView, View, ViewConstructor {
             .bind(to: floatingContestView.contestNameLabel.rx.text)
             .disposed(by: disposeBag)
         
+        reactor.state.map { $0.currentContest?.catchCopy }
+            .distinctUntilChanged()
+            .bind(to: floatingContestView.catchCopyLabel.rx.text)
+            .disposed(by: disposeBag)
+        
         reactor.state
             .map {
                 guard let contest = $0.currentContest else { return "" }
-                var durationString = "開催期間"
+                var durationString = "開催期間："
                 durationString += formatter.string(from: contest.start)
                 durationString += " ~ "
                 durationString += formatter.string(from: contest.end)
@@ -84,10 +89,9 @@ final class AnimalDetailCurrentContestView: UIView, View, ViewConstructor {
             .bind(to: floatingContestView.durationLabel.rx.text)
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.numberOfVoted }
+        reactor.state.map { $0.currentContest != nil }
             .distinctUntilChanged()
-            .map { "現在\($0)人参加" }
-            .bind(to: floatingContestView.votedLabel.rx.text)
+            .bind(to: floatingContestView.emptyLabel.rx.isHidden)
             .disposed(by: disposeBag)
     }
 }

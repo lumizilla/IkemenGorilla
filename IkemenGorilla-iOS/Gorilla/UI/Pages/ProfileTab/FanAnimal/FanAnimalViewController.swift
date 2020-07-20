@@ -58,7 +58,7 @@ final class FanAnimalViewController: UIViewController, View, ViewConstructor, Tr
         
         collectionView.rx.itemSelected
             .bind { [weak self] indexPath in
-                self?.showFanAnimalDetailPage(fanAnimalDetailReactor: reactor.createFanAnimalDetailReactor(indexPath: indexPath))
+                self?.showAnimalDetailPage(animalDetailReactor: reactor.createAnimalDetailReactor(indexPath: indexPath))
             }
             .disposed(by: disposeBag)
         

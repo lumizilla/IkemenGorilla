@@ -50,8 +50,9 @@ final class ProfileReactor: Reactor {
         return FanAnimalReactor(provider: provider)
     }
     
-    func createFanAnimalDetailReactor(fanAnimal: FanAnimal) -> FanAnimalDetailReactor {
-        return FanAnimalDetailReactor(provider: provider, fanAnimal: fanAnimal)
+    func createAnimalDetailReactor(fanAnimal: FanAnimal) -> AnimalDetailReactor {
+        let zooAnimal = ZooAnimal(id: fanAnimal.id, name: fanAnimal.name, iconUrl: fanAnimal.iconUrl, isFan: fanAnimal.isFan)
+        return AnimalDetailReactor(provider: provider, zooAnimal: zooAnimal)
     }
     
     func createProfileLikedZooListReactor() -> ProfileLikedZooListReactor {
@@ -62,8 +63,8 @@ final class ProfileReactor: Reactor {
         return LikedZooReactor(provider: provider)
     }
     
-    func createProfileContestDetailReactor(contest: Contest) -> ProfileContestDetailReactor {
-        return ProfileContestDetailReactor(provider: provider, contest: contest)
+    func createContestDetailReactor(contest: Contest) -> ContestDetailReactor {
+        return ContestDetailReactor(provider: provider, contest: contest)
     }
 
 }

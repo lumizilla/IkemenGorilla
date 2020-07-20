@@ -11,6 +11,7 @@ import RxSwift
 
 final class FanAnimalDetailReactor: Reactor {
     enum Action {
+        case loadAnimal
         case loadCurrentContest
         case loadPastContests
         case loadPost
@@ -19,6 +20,7 @@ final class FanAnimalDetailReactor: Reactor {
         case setCurrentContest(Contest?)
         case setPastContestCellReactors([Contest])
         case setPosts([Post])
+        case setAnimal(Animal)
     }
     
     struct State {
@@ -45,6 +47,8 @@ final class FanAnimalDetailReactor: Reactor {
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
+        case .loadAnimal:
+            return loadAnimal().map(Mutation.setAnimal)
         case .loadCurrentContest:
             return loadCurrentContest().map(Mutation.setCurrentContest)
         case .loadPastContests:
@@ -81,6 +85,8 @@ final class FanAnimalDetailReactor: Reactor {
             state.pastContestCellReactors = contests.map { FanAnimalDetailPastContestCellReactor(contest: $0) }
         case .setPosts(let posts):
             state.posts = posts
+        case .setAnimal(let animal):
+            state.animal = animal
         }
         return state
     }

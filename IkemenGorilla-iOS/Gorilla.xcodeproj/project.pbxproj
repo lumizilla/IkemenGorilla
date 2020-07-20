@@ -21,7 +21,6 @@
 		8426BB5224A8A9080031AEA2 /* ProfileFanAnimalHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB2F24A8A9080031AEA2 /* ProfileFanAnimalHeader.swift */; };
 		8426BB5324A8A9080031AEA2 /* ProfileFanAnimalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB3024A8A9080031AEA2 /* ProfileFanAnimalListView.swift */; };
 		8426BB5424A8A9080031AEA2 /* ProfileFanAnimalListReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB3124A8A9080031AEA2 /* ProfileFanAnimalListReactor.swift */; };
-		8426BB5824A8A9080031AEA2 /* ProfileInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB3624A8A9080031AEA2 /* ProfileInfoHeader.swift */; };
 		8426BB5924A8A9080031AEA2 /* ProfileInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB3824A8A9080031AEA2 /* ProfileInfoCell.swift */; };
 		8426BB5A24A8A9080031AEA2 /* ProfileInfoCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB3924A8A9080031AEA2 /* ProfileInfoCellReactor.swift */; };
 		8426BB5C24A8A9080031AEA2 /* ProfileVotedContestHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB3C24A8A9080031AEA2 /* ProfileVotedContestHeader.swift */; };
@@ -41,8 +40,6 @@
 		8426BB8024A8A9EE0031AEA2 /* ProfileContestDetailInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB7124A8A9EE0031AEA2 /* ProfileContestDetailInfoViewController.swift */; };
 		8426BB8124A8A9EE0031AEA2 /* ProfileContestDetailReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB7224A8A9EE0031AEA2 /* ProfileContestDetailReactor.swift */; };
 		8426BB8224A8A9EE0031AEA2 /* ProfileContestDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB7324A8A9EE0031AEA2 /* ProfileContestDetailViewController.swift */; };
-		8426BB8324A8A9EE0031AEA2 /* ProfileInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB7524A8A9EE0031AEA2 /* ProfileInfoViewController.swift */; };
-		8426BB8424A8A9EE0031AEA2 /* ProfileInfoReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB7624A8A9EE0031AEA2 /* ProfileInfoReactor.swift */; };
 		8426BB8524A8A9EE0031AEA2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB7824A8A9EE0031AEA2 /* ProfileViewController.swift */; };
 		8426BB8624A8A9EE0031AEA2 /* ProfileReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB7924A8A9EE0031AEA2 /* ProfileReactor.swift */; };
 		8426BB8724A8A9EE0031AEA2 /* VotedContestReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB7B24A8A9EE0031AEA2 /* VotedContestReactor.swift */; };
@@ -135,7 +132,6 @@
 		846A09CC24C383C000DF09A6 /* ProfileContestDetailResultVoteCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A09CB24C383C000DF09A6 /* ProfileContestDetailResultVoteCellReactor.swift */; };
 		846A157E24C1D69D008DD261 /* UserDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A157D24C1D69D008DD261 /* UserDetailResponse.swift */; };
 		846A158624C1DE22008DD261 /* ProfileDetailReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A158524C1DE22008DD261 /* ProfileDetailReactor.swift */; };
-		846A158824C1DE47008DD261 /* ProfileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A158724C1DE47008DD261 /* ProfileDetailViewController.swift */; };
 		846A158B24C21634008DD261 /* FanAnimalDetailPastContestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A158A24C21634008DD261 /* FanAnimalDetailPastContestCell.swift */; };
 		846A158D24C21666008DD261 /* FanAnimalDetailPastContestCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A158C24C21666008DD261 /* FanAnimalDetailPastContestCellReactor.swift */; };
 		846A158F24C21694008DD261 /* FanAnimalDetailCurrentContestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A158E24C21694008DD261 /* FanAnimalDetailCurrentContestView.swift */; };
@@ -297,7 +293,6 @@
 		8426BB2F24A8A9080031AEA2 /* ProfileFanAnimalHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileFanAnimalHeader.swift; sourceTree = "<group>"; };
 		8426BB3024A8A9080031AEA2 /* ProfileFanAnimalListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileFanAnimalListView.swift; sourceTree = "<group>"; };
 		8426BB3124A8A9080031AEA2 /* ProfileFanAnimalListReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileFanAnimalListReactor.swift; sourceTree = "<group>"; };
-		8426BB3624A8A9080031AEA2 /* ProfileInfoHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoHeader.swift; sourceTree = "<group>"; };
 		8426BB3824A8A9080031AEA2 /* ProfileInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoCell.swift; sourceTree = "<group>"; };
 		8426BB3924A8A9080031AEA2 /* ProfileInfoCellReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoCellReactor.swift; sourceTree = "<group>"; };
 		8426BB3C24A8A9080031AEA2 /* ProfileVotedContestHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVotedContestHeader.swift; sourceTree = "<group>"; };
@@ -317,8 +312,6 @@
 		8426BB7124A8A9EE0031AEA2 /* ProfileContestDetailInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileContestDetailInfoViewController.swift; sourceTree = "<group>"; };
 		8426BB7224A8A9EE0031AEA2 /* ProfileContestDetailReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileContestDetailReactor.swift; sourceTree = "<group>"; };
 		8426BB7324A8A9EE0031AEA2 /* ProfileContestDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileContestDetailViewController.swift; sourceTree = "<group>"; };
-		8426BB7524A8A9EE0031AEA2 /* ProfileInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoViewController.swift; sourceTree = "<group>"; };
-		8426BB7624A8A9EE0031AEA2 /* ProfileInfoReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoReactor.swift; sourceTree = "<group>"; };
 		8426BB7824A8A9EE0031AEA2 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8426BB7924A8A9EE0031AEA2 /* ProfileReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileReactor.swift; sourceTree = "<group>"; };
 		8426BB7B24A8A9EE0031AEA2 /* VotedContestReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VotedContestReactor.swift; sourceTree = "<group>"; };
@@ -411,7 +404,6 @@
 		846A09CB24C383C000DF09A6 /* ProfileContestDetailResultVoteCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContestDetailResultVoteCellReactor.swift; sourceTree = "<group>"; };
 		846A157D24C1D69D008DD261 /* UserDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailResponse.swift; sourceTree = "<group>"; };
 		846A158524C1DE22008DD261 /* ProfileDetailReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailReactor.swift; sourceTree = "<group>"; };
-		846A158724C1DE47008DD261 /* ProfileDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailViewController.swift; sourceTree = "<group>"; };
 		846A158A24C21634008DD261 /* FanAnimalDetailPastContestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanAnimalDetailPastContestCell.swift; sourceTree = "<group>"; };
 		846A158C24C21666008DD261 /* FanAnimalDetailPastContestCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanAnimalDetailPastContestCellReactor.swift; sourceTree = "<group>"; };
 		846A158E24C21694008DD261 /* FanAnimalDetailCurrentContestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanAnimalDetailCurrentContestView.swift; sourceTree = "<group>"; };
@@ -686,7 +678,6 @@
 		8426BB3224A8A9080031AEA2 /* ProfileInfoList */ = {
 			isa = PBXGroup;
 			children = (
-				8426BB3624A8A9080031AEA2 /* ProfileInfoHeader.swift */,
 				846A15A724C2DE31008DD261 /* ProfileInfoDetail.swift */,
 			);
 			path = ProfileInfoList;
@@ -801,10 +792,7 @@
 		8426BB7424A8A9EE0031AEA2 /* ProfileInfo */ = {
 			isa = PBXGroup;
 			children = (
-				8426BB7524A8A9EE0031AEA2 /* ProfileInfoViewController.swift */,
-				8426BB7624A8A9EE0031AEA2 /* ProfileInfoReactor.swift */,
 				846A158524C1DE22008DD261 /* ProfileDetailReactor.swift */,
-				846A158724C1DE47008DD261 /* ProfileDetailViewController.swift */,
 			);
 			path = ProfileInfo;
 			sourceTree = "<group>";
@@ -2047,7 +2035,6 @@
 				84DA96192493C81900DF6740 /* ContestAnimalDetailResponse.swift in Sources */,
 				847B3774247980E000B48535 /* AppDelegate.swift in Sources */,
 				847B37F7247A57E100B48535 /* HomePastContestListCellReactor.swift in Sources */,
-				8426BB8424A8A9EE0031AEA2 /* ProfileInfoReactor.swift in Sources */,
 				84452A9124AA4E8B0092F949 /* ZooService.swift in Sources */,
 				84A99FE62484ED700066863B /* ContestDetailEntryViewController.swift in Sources */,
 				848B16E524A514EC00150EE7 /* AnimalDetailPastContestCell.swift in Sources */,
@@ -2073,7 +2060,6 @@
 				8494CBD7249B6C0400E35E00 /* ZooDetailViewController.swift in Sources */,
 				8426BB5D24A8A9080031AEA2 /* ProfileVotedContestListReactor.swift in Sources */,
 				84C433B5249BE7C400172D6A /* FanButton.swift in Sources */,
-				8426BB5824A8A9080031AEA2 /* ProfileInfoHeader.swift in Sources */,
 				84E39BFA24A3BA15008E6526 /* AnimalDetailHeader.swift in Sources */,
 				84C433AD249BD7B200172D6A /* ZooAnimalListViewController.swift in Sources */,
 				84A99FE02484D6260066863B /* ContestDetailInfoSponsorCellReactor.swift in Sources */,
@@ -2117,7 +2103,6 @@
 				84A99FDE2484D5FF0066863B /* ContestDetailInfoSponsorCell.swift in Sources */,
 				84A99FD62484CA530066863B /* ContestDetailInfoViewController.swift in Sources */,
 				84376CB124A788FD00282F3C /* VoteContestViewController.swift in Sources */,
-				8426BB8324A8A9EE0031AEA2 /* ProfileInfoViewController.swift in Sources */,
 				846A09C124C3816200DF09A6 /* ProfileContestDetailResultViewController.swift in Sources */,
 				84452AA124AB2FAA0092F949 /* UserRepository.swift in Sources */,
 				846A09A324C374B000DF09A6 /* ProfileContestDetailEntryReactor.swift in Sources */,
@@ -2268,7 +2253,6 @@
 				84A99FFA2484FD150066863B /* ContestDetailPostCellReactor.swift in Sources */,
 				84C433B1249BDACD00172D6A /* ZooAnimalCell.swift in Sources */,
 				847B3818247CB7EB00B48535 /* FrontendEchoTarget.swift in Sources */,
-				846A158824C1DE47008DD261 /* ProfileDetailViewController.swift in Sources */,
 				8426BB6724A8A9080031AEA2 /* ProfileContestDetailHeader.swift in Sources */,
 				84A8376524BE162D00DA49E9 /* DefaultsKeys.swift in Sources */,
 				8426BB5324A8A9080031AEA2 /* ProfileFanAnimalListView.swift in Sources */,
@@ -2450,7 +2434,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.0.0;
+				CURRENT_PROJECT_VERSION = 1.0.1;
 				DEVELOPMENT_ASSET_PATHS = "\"Gorilla/Preview Content\"";
 				DEVELOPMENT_TEAM = MYUAB72A7J;
 				ENABLE_PREVIEWS = YES;
@@ -2459,7 +2443,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.akihirokokubo.ikemengorilla;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = ikemenGorilla;
@@ -2475,7 +2459,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.0.0;
+				CURRENT_PROJECT_VERSION = 1.0.1;
 				DEVELOPMENT_ASSET_PATHS = "\"Gorilla/Preview Content\"";
 				DEVELOPMENT_TEAM = MYUAB72A7J;
 				ENABLE_PREVIEWS = YES;
@@ -2484,7 +2468,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.akihirokokubo.ikemengorilla;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = ikemenGorilla;

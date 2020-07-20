@@ -71,10 +71,15 @@ final class FanAnimalDetailCurrentContestView: UIView, View, ViewConstructor {
             .bind(to: floatingContestView.contestNameLabel.rx.text)
             .disposed(by: disposeBag)
         
+        reactor.state.map { $0.currentContest?.catchCopy }
+            .distinctUntilChanged()
+            .bind(to: floatingContestView.catchCopyLabel.rx.text)
+            .disposed(by: disposeBag)
+        
         reactor.state
             .map {
                 guard let contest = $0.currentContest else { return "" }
-                var durationString = "開催期間"
+                var durationString = "開催期間："
                 durationString += formatter.string(from: contest.start)
                 durationString += " ~ "
                 durationString += formatter.string(from: contest.end)
@@ -82,12 +87,6 @@ final class FanAnimalDetailCurrentContestView: UIView, View, ViewConstructor {
             }
             .distinctUntilChanged()
             .bind(to: floatingContestView.durationLabel.rx.text)
-            .disposed(by: disposeBag)
-        
-        reactor.state.map { $0.numberOfVoted }
-            .distinctUntilChanged()
-            .map { "現在\($0)人参加" }
-            .bind(to: floatingContestView.votedLabel.rx.text)
             .disposed(by: disposeBag)
     }
 }

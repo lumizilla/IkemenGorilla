@@ -158,14 +158,6 @@ extension TransitionPresentable where Self: UIViewController {
     }
     
     // PROFILE TAB
-    func showProfileInfoPage(profileInfoReactor: ProfileInfoReactor) {
-        navigationController?.pushViewController(
-            ProfileInfoViewController().then {
-                $0.reactor = profileInfoReactor
-            },
-            animated: true
-        )
-    }
     
     func showFanAnimalDetailPage(fanAnimalDetailReactor: FanAnimalDetailReactor) {
         navigationController?.pushViewController(

@@ -80,6 +80,7 @@ final class FanAnimalDetailViewController: UIViewController, View, ViewConstruct
         postCollectionView.reactor = reactor.createPostPhotoCollectionReactor()
         
         // Action
+        reactor.action.onNext(.loadAnimal)
         reactor.action.onNext(.loadCurrentContest)
         reactor.action.onNext(.loadPastContests)
         reactor.action.onNext(.loadPost)

@@ -23,12 +23,12 @@ final class ProfileViewController: UIViewController, View, ViewConstructor, Tran
     
     private lazy var profileVotedContestListCallback = ProfileVotedContestListView.Callback(itemSelected: { contest in
         guard let reactor = self.reactor else { return }
-        self.showVotedDetailPage(profileContestDetailReactor: reactor.createProfileContestDetailReactor(contest: contest))
+        self.showContestDetailPage(contestDetailReactor: reactor.createContestDetailReactor(contest: contest))
     })
     
     private lazy var profileFanAnimalListCallback = ProfileFanAnimalListView.Callback(itemSelected: { fanAnimal in
         guard let reactor = self.reactor else { return }
-        self.showFanAnimalDetailPage(fanAnimalDetailReactor: reactor.createFanAnimalDetailReactor(fanAnimal: fanAnimal))
+        self.showAnimalDetailPage(animalDetailReactor: reactor.createAnimalDetailReactor(fanAnimal: fanAnimal))
     })
     
     struct Reusable {
@@ -55,8 +55,6 @@ final class ProfileViewController: UIViewController, View, ViewConstructor, Tran
         $0.alignment = .fill
         $0.distribution = .fill
     }
-    
-    private let profileInfoHeader = ProfileInfoHeader()
     
     private lazy var profileInfoDetail = ProfileInfoDetail().then {
         $0.reactor = reactor?.createProfileInfoDetailReactor()
@@ -93,10 +91,11 @@ final class ProfileViewController: UIViewController, View, ViewConstructor, Tran
     // MARK: - Setup Methods
     
     func setupViews() {
+        title = "プロフィール"
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: gearButton)
         scrollView.contentInset = Const.scrollViewContentInset
         view.addSubview(stackView)
-        stackView.addArrangedSubview(profileInfoHeader)
         stackView.addArrangedSubview(profileInfoDetail)
         stackView.setCustomSpacing(130, after: profileInfoDetail)
         view.addSubview(scrollView)
