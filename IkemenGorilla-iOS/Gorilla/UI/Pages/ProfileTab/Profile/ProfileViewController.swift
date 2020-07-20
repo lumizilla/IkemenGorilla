@@ -28,7 +28,7 @@ final class ProfileViewController: UIViewController, View, ViewConstructor, Tran
     
     private lazy var profileFanAnimalListCallback = ProfileFanAnimalListView.Callback(itemSelected: { fanAnimal in
         guard let reactor = self.reactor else { return }
-        self.showFanAnimalDetailPage(fanAnimalDetailReactor: reactor.createFanAnimalDetailReactor(fanAnimal: fanAnimal))
+        self.showAnimalDetailPage(animalDetailReactor: reactor.createAnimalDetailReactor(fanAnimal: fanAnimal))
     })
     
     struct Reusable {
