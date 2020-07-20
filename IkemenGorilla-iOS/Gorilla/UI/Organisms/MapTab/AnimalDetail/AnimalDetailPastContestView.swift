@@ -116,5 +116,15 @@ final class AnimalDetailPastContestView: UIView, View, ViewConstructor {
                 cell.reactor = reactor
             }
             .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.pastContestCellReactors.count != 0 }
+            .distinctUntilChanged()
+            .bind(to: emptyLabel.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.pastContestCellReactors.count != 0 }
+            .distinctUntilChanged()
+            .bind(to: emptyImageView.rx.isHidden)
+            .disposed(by: disposeBag)
     }
 }
