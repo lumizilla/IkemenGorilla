@@ -26,18 +26,25 @@ final class FloatingContestView: UIView, ViewConstructor {
     
     let contestNameLabel = UILabel().then {
         $0.apply(fontStyle: .bold, size: 15)
-        $0.textColor = Color.textGray
+        $0.textColor = Color.textBlack
         $0.numberOfLines = 0
     }
     
-    let durationLabel = UILabel().then {
-        $0.apply(fontStyle: .bold, size: 10)
+    let catchCopyLabel = UILabel().then {
+        $0.apply(fontStyle: .medium, size: 14)
         $0.textColor = Color.textGray
     }
     
-    let votedLabel = UILabel().then {
+    let durationLabel = UILabel().then {
         $0.apply(fontStyle: .bold, size: 13)
         $0.textColor = Color.textGray
+    }
+    
+    let emptyLabel = UILabel().then {
+        $0.apply(fontStyle: .black, size: 16)
+        $0.textColor = Color.textBlack
+        $0.text = "現在参加しているコンテストはありません"
+        $0.numberOfLines = 0
     }
     
     // MARK: - Initializers
@@ -57,8 +64,9 @@ final class FloatingContestView: UIView, ViewConstructor {
         addSubview(sheet)
         addSubview(imageView)
         addSubview(contestNameLabel)
+        addSubview(catchCopyLabel)
         addSubview(durationLabel)
-        addSubview(votedLabel)
+        addSubview(emptyLabel)
         
         layer.shadowOffset = CGSize(width: 0, height: 0)
         layer.shadowColor = Color.black.cgColor
@@ -80,14 +88,20 @@ final class FloatingContestView: UIView, ViewConstructor {
             $0.top.right.equalTo(sheet).inset(16)
             $0.left.equalTo(imageView.snp.right).offset(16)
         }
+        catchCopyLabel.snp.makeConstraints {
+            $0.top.equalTo(contestNameLabel.snp.bottom).offset(8)
+            $0.right.equalTo(sheet).inset(16)
+            $0.left.equalTo(imageView.snp.right).offset(16)
+        }
         durationLabel.snp.makeConstraints {
             $0.left.equalTo(imageView.snp.right).offset(16)
-            $0.right.equalToSuperview().inset(16)
-            $0.bottom.equalTo(votedLabel.snp.top).offset(-8)
+            $0.right.equalTo(sheet).inset(16)
+            $0.bottom.equalToSuperview().inset(16)
         }
-        votedLabel.snp.makeConstraints {
+        emptyLabel.snp.makeConstraints {
             $0.left.equalTo(imageView.snp.right).offset(16)
-            $0.right.bottom.equalToSuperview().inset(16)
+            $0.right.equalTo(sheet).inset(16)
+            $0.centerY.equalTo(sheet)
         }
     }
 }
