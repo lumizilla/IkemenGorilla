@@ -26,9 +26,7 @@ final class AnimalDetailReactor: Reactor {
     struct State {
         let zooAnimal: ZooAnimal
         var animal: Animal?
-        let zooName: String = "東山動物園"
         var currentContest: Contest?
-        let numberOfVoted: Int = 312
         var pastContestCellReactors: [AnimalDetailPastContestCellReactor] = []
         var posts: [Post] = []
         
