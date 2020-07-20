@@ -132,7 +132,6 @@
 		846A09CC24C383C000DF09A6 /* ProfileContestDetailResultVoteCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A09CB24C383C000DF09A6 /* ProfileContestDetailResultVoteCellReactor.swift */; };
 		846A157E24C1D69D008DD261 /* UserDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A157D24C1D69D008DD261 /* UserDetailResponse.swift */; };
 		846A158624C1DE22008DD261 /* ProfileDetailReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A158524C1DE22008DD261 /* ProfileDetailReactor.swift */; };
-		846A158824C1DE47008DD261 /* ProfileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A158724C1DE47008DD261 /* ProfileDetailViewController.swift */; };
 		846A158B24C21634008DD261 /* FanAnimalDetailPastContestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A158A24C21634008DD261 /* FanAnimalDetailPastContestCell.swift */; };
 		846A158D24C21666008DD261 /* FanAnimalDetailPastContestCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A158C24C21666008DD261 /* FanAnimalDetailPastContestCellReactor.swift */; };
 		846A158F24C21694008DD261 /* FanAnimalDetailCurrentContestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A158E24C21694008DD261 /* FanAnimalDetailCurrentContestView.swift */; };
@@ -405,7 +404,6 @@
 		846A09CB24C383C000DF09A6 /* ProfileContestDetailResultVoteCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContestDetailResultVoteCellReactor.swift; sourceTree = "<group>"; };
 		846A157D24C1D69D008DD261 /* UserDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailResponse.swift; sourceTree = "<group>"; };
 		846A158524C1DE22008DD261 /* ProfileDetailReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailReactor.swift; sourceTree = "<group>"; };
-		846A158724C1DE47008DD261 /* ProfileDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailViewController.swift; sourceTree = "<group>"; };
 		846A158A24C21634008DD261 /* FanAnimalDetailPastContestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanAnimalDetailPastContestCell.swift; sourceTree = "<group>"; };
 		846A158C24C21666008DD261 /* FanAnimalDetailPastContestCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanAnimalDetailPastContestCellReactor.swift; sourceTree = "<group>"; };
 		846A158E24C21694008DD261 /* FanAnimalDetailCurrentContestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanAnimalDetailCurrentContestView.swift; sourceTree = "<group>"; };
@@ -795,7 +793,6 @@
 			isa = PBXGroup;
 			children = (
 				846A158524C1DE22008DD261 /* ProfileDetailReactor.swift */,
-				846A158724C1DE47008DD261 /* ProfileDetailViewController.swift */,
 			);
 			path = ProfileInfo;
 			sourceTree = "<group>";
@@ -2256,7 +2253,6 @@
 				84A99FFA2484FD150066863B /* ContestDetailPostCellReactor.swift in Sources */,
 				84C433B1249BDACD00172D6A /* ZooAnimalCell.swift in Sources */,
 				847B3818247CB7EB00B48535 /* FrontendEchoTarget.swift in Sources */,
-				846A158824C1DE47008DD261 /* ProfileDetailViewController.swift in Sources */,
 				8426BB6724A8A9080031AEA2 /* ProfileContestDetailHeader.swift in Sources */,
 				84A8376524BE162D00DA49E9 /* DefaultsKeys.swift in Sources */,
 				8426BB5324A8A9080031AEA2 /* ProfileFanAnimalListView.swift in Sources */,
