@@ -41,7 +41,6 @@
 		8426BB8124A8A9EE0031AEA2 /* ProfileContestDetailReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB7224A8A9EE0031AEA2 /* ProfileContestDetailReactor.swift */; };
 		8426BB8224A8A9EE0031AEA2 /* ProfileContestDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB7324A8A9EE0031AEA2 /* ProfileContestDetailViewController.swift */; };
 		8426BB8324A8A9EE0031AEA2 /* ProfileInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB7524A8A9EE0031AEA2 /* ProfileInfoViewController.swift */; };
-		8426BB8424A8A9EE0031AEA2 /* ProfileInfoReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB7624A8A9EE0031AEA2 /* ProfileInfoReactor.swift */; };
 		8426BB8524A8A9EE0031AEA2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB7824A8A9EE0031AEA2 /* ProfileViewController.swift */; };
 		8426BB8624A8A9EE0031AEA2 /* ProfileReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB7924A8A9EE0031AEA2 /* ProfileReactor.swift */; };
 		8426BB8724A8A9EE0031AEA2 /* VotedContestReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426BB7B24A8A9EE0031AEA2 /* VotedContestReactor.swift */; };
@@ -316,7 +315,6 @@
 		8426BB7224A8A9EE0031AEA2 /* ProfileContestDetailReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileContestDetailReactor.swift; sourceTree = "<group>"; };
 		8426BB7324A8A9EE0031AEA2 /* ProfileContestDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileContestDetailViewController.swift; sourceTree = "<group>"; };
 		8426BB7524A8A9EE0031AEA2 /* ProfileInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoViewController.swift; sourceTree = "<group>"; };
-		8426BB7624A8A9EE0031AEA2 /* ProfileInfoReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoReactor.swift; sourceTree = "<group>"; };
 		8426BB7824A8A9EE0031AEA2 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8426BB7924A8A9EE0031AEA2 /* ProfileReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileReactor.swift; sourceTree = "<group>"; };
 		8426BB7B24A8A9EE0031AEA2 /* VotedContestReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VotedContestReactor.swift; sourceTree = "<group>"; };
@@ -799,7 +797,6 @@
 			isa = PBXGroup;
 			children = (
 				8426BB7524A8A9EE0031AEA2 /* ProfileInfoViewController.swift */,
-				8426BB7624A8A9EE0031AEA2 /* ProfileInfoReactor.swift */,
 				846A158524C1DE22008DD261 /* ProfileDetailReactor.swift */,
 				846A158724C1DE47008DD261 /* ProfileDetailViewController.swift */,
 			);
@@ -2044,7 +2041,6 @@
 				84DA96192493C81900DF6740 /* ContestAnimalDetailResponse.swift in Sources */,
 				847B3774247980E000B48535 /* AppDelegate.swift in Sources */,
 				847B37F7247A57E100B48535 /* HomePastContestListCellReactor.swift in Sources */,
-				8426BB8424A8A9EE0031AEA2 /* ProfileInfoReactor.swift in Sources */,
 				84452A9124AA4E8B0092F949 /* ZooService.swift in Sources */,
 				84A99FE62484ED700066863B /* ContestDetailEntryViewController.swift in Sources */,
 				848B16E524A514EC00150EE7 /* AnimalDetailPastContestCell.swift in Sources */,
