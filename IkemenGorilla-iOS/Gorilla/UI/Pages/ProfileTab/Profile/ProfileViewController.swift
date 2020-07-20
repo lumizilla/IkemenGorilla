@@ -56,7 +56,7 @@ final class ProfileViewController: UIViewController, View, ViewConstructor, Tran
         $0.distribution = .fill
     }
     
-    private let profileInfoHeader = ProfileInfoHeader()
+//    private let profileInfoHeader = ProfileInfoHeader()
     
     private lazy var profileInfoDetail = ProfileInfoDetail().then {
         $0.reactor = reactor?.createProfileInfoDetailReactor()
@@ -93,10 +93,12 @@ final class ProfileViewController: UIViewController, View, ViewConstructor, Tran
     // MARK: - Setup Methods
     
     func setupViews() {
+        title = "プロフィール"
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: gearButton)
         scrollView.contentInset = Const.scrollViewContentInset
         view.addSubview(stackView)
-        stackView.addArrangedSubview(profileInfoHeader)
+//        stackView.addArrangedSubview(profileInfoHeader)
         stackView.addArrangedSubview(profileInfoDetail)
         stackView.setCustomSpacing(130, after: profileInfoDetail)
         view.addSubview(scrollView)
