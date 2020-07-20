@@ -63,8 +63,8 @@ final class ProfileReactor: Reactor {
         return LikedZooReactor(provider: provider)
     }
     
-    func createProfileContestDetailReactor(contest: Contest) -> ProfileContestDetailReactor {
-        return ProfileContestDetailReactor(provider: provider, contest: contest)
+    func createContestDetailReactor(contest: Contest) -> ContestDetailReactor {
+        return ContestDetailReactor(provider: provider, contest: contest)
     }
 
 }

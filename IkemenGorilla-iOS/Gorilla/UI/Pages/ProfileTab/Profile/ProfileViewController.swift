@@ -23,7 +23,7 @@ final class ProfileViewController: UIViewController, View, ViewConstructor, Tran
     
     private lazy var profileVotedContestListCallback = ProfileVotedContestListView.Callback(itemSelected: { contest in
         guard let reactor = self.reactor else { return }
-        self.showVotedDetailPage(profileContestDetailReactor: reactor.createProfileContestDetailReactor(contest: contest))
+        self.showContestDetailPage(contestDetailReactor: reactor.createContestDetailReactor(contest: contest))
     })
     
     private lazy var profileFanAnimalListCallback = ProfileFanAnimalListView.Callback(itemSelected: { fanAnimal in
