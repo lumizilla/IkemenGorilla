@@ -53,6 +53,9 @@ final class ContestDetailResultReactor: Reactor {
     }
     
     private func loadAwards() -> Observable<[Award]> {
+        if currentState.contest.status == "current" {
+            return .empty()
+        }
         return provider.contestService.getAwards(contestId: currentState.contest.id).asObservable()
     }
     
