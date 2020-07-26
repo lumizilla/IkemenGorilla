@@ -46,7 +46,8 @@ final class ProfileDetailReactor: Reactor {
     
     private func loadUserDetail() -> Observable<UserDetail> {
         logger.warning("no user id from UserDetailReactor")
-        return provider.userService.getUser(userId: "1").asObservable()
+        let userId = Int.random(in: 1 ..< 7)
+        return provider.userService.getUser(userId: String(userId)).asObservable()
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
