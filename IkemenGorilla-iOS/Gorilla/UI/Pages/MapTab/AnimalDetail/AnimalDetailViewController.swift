@@ -15,6 +15,8 @@ final class AnimalDetailViewController: UIViewController, View, ViewConstructor,
     var disposeBag = DisposeBag()
     
     // MARK: - Views
+    private let fanButton = FanButton()
+    
     private let contentScrollView = UIScrollView().then {
         $0.showsVerticalScrollIndicator = false
         $0.alwaysBounceVertical = true
@@ -48,6 +50,8 @@ final class AnimalDetailViewController: UIViewController, View, ViewConstructor,
     // MARK: - Setup Methods
     func setupViews() {
         view.backgroundColor = Color.white
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: fanButton)
+        
         view.addSubview(contentScrollView)
         contentScrollView.addSubview(stackView)
         stackView.addArrangedSubview(header)
@@ -69,6 +73,9 @@ final class AnimalDetailViewController: UIViewController, View, ViewConstructor,
         }
         header.snp.makeConstraints {
             $0.width.equalTo(DeviceSize.screenWidth)
+        }
+        fanButton.snp.makeConstraints {
+            $0.width.equalTo(120)
         }
     }
     
@@ -92,11 +99,25 @@ final class AnimalDetailViewController: UIViewController, View, ViewConstructor,
             }
             .disposed(by: disposeBag)
         
+        fanButton.rx.tap
+            .bind {
+                reactor.action.onNext(.tapFanButton)
+            }
+            .disposed(by: disposeBag)
+        
         // State
         reactor.state.map { $0.posts }
             .distinctUntilChanged()
             .bind { [weak self] posts in
                 self?.postCollectionView.reactor?.action.onNext(.setPosts(posts))
+            }
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.animal?.isFan }
+            .distinctUntilChanged()
+            .bind { [weak self] isFan in
+                guard let isFan = isFan else { return }
+                self?.fanButton.isFan = isFan
             }
             .disposed(by: disposeBag)
     }
