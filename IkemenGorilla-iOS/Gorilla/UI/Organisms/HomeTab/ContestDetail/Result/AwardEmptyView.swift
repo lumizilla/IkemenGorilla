@@ -11,12 +11,13 @@ import UIKit
 final class AwardEmptyView: UIView, ViewConstructor {
     
     struct Const {
-        static let height: CGFloat = 160
+        static let height: CGFloat = 200
     }
     
     let emptyImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
         $0.image = #imageLiteral(resourceName: "empty_state")
+        $0.clipsToBounds = true
     }
     
     let emptyLabel = UILabel().then {
