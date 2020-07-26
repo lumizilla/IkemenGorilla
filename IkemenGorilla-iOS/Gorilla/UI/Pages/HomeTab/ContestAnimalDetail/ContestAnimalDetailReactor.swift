@@ -114,4 +114,8 @@ final class ContestAnimalDetailReactor: Reactor {
         let posts = currentState.posts
         return ExplorePostDetailReactor(provider: provider, startAt: indexPath.row, posts: posts)
     }
+    
+    func createVoteContestDetailReactor() -> VoteContestDetailReactor {
+        return VoteContestDetailReactor(provider: provider, contest: currentState.contest, entry: currentState.entry)
+    }
 }
