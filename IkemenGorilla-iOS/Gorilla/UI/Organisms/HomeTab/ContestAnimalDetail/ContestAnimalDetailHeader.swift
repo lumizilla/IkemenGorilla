@@ -203,5 +203,12 @@ final class ContestAnimalDetailHeader: UIView, View, ViewConstructor {
             .distinctUntilChanged()
             .bind(to: voteButton.rx.isVoted)
             .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.contest.status == "past" }
+            .distinctUntilChanged()
+            .bind { [weak self] isPast in
+                self?.voteButton.isHidden = isPast
+            }
+            .disposed(by: disposeBag)
     }
 }
