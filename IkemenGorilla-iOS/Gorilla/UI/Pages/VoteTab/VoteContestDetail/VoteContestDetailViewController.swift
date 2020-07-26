@@ -125,6 +125,7 @@ final class VoteContestDetailViewController: UIViewController, View, ViewConstru
         createVoteViewController.voteButton.rx.tap
             .bind { [weak self] _ in
                 reactor.action.onNext(.vote)
+                self?.dismiss(animated: true, completion: nil)
             }
             .disposed(by: disposeBag)
         
