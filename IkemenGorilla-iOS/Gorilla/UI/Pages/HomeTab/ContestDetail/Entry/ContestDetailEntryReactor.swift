@@ -86,6 +86,6 @@ final class ContestDetailEntryReactor: Reactor {
     }
     
     func createContestAnimalDetailReactor(indexPath: IndexPath) -> ContestAnimalDetailReactor {
-        return ContestAnimalDetailReactor(provider: provider, entry: currentState.entryCellReactors[indexPath.row].currentState.entry, contestId: currentState.contest.id)
+        return ContestAnimalDetailReactor(provider: provider, entry: currentState.entryCellReactors[indexPath.row].currentState.entry, contest: currentState.contest)
     }
 }

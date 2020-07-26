@@ -31,18 +31,23 @@ final class VoteContestDetailReactor: Reactor {
         var page: Int = 0
         var apiStatus: APIStatus = .pending
         var didReachedBottom: Bool = false
+        var isVoteFromAnimalPage: Bool = false
         
-        init(contest: Contest) {
+        init(contest: Contest, voteEntry: Entry?) {
             self.contest = contest
+            self.voteEntry = voteEntry
+            if voteEntry != nil {
+                self.isVoteFromAnimalPage = true
+            }
         }
     }
     
     let initialState: State
     private let provider: ServiceProviderType
     
-    init(provider: ServiceProviderType, contest: Contest) {
+    init(provider: ServiceProviderType, contest: Contest, entry: Entry?) {
         self.provider = provider
-        initialState = State(contest: contest)
+        initialState = State(contest: contest, voteEntry: entry)
     }
     
     func mutate(action: Action) -> Observable<Mutation> {

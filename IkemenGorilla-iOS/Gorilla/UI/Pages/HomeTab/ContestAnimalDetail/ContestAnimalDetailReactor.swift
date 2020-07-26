@@ -25,7 +25,7 @@ final class ContestAnimalDetailReactor: Reactor {
     
     struct State {
         let entry: Entry
-        let contestId: String
+        let contest: Contest
         var response: ContestAnimalDetailResponse?
         var posts: [Post] = []
         var isLoading: Bool = false
@@ -35,9 +35,9 @@ final class ContestAnimalDetailReactor: Reactor {
     let initialState: ContestAnimalDetailReactor.State
     private let provider: ServiceProviderType
     
-    init(provider: ServiceProviderType, entry: Entry, contestId: String) {
+    init(provider: ServiceProviderType, entry: Entry, contest: Contest) {
         self.provider = provider
-        initialState = State(entry: entry, contestId: contestId)
+        initialState = State(entry: entry, contest: contest)
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
@@ -58,7 +58,7 @@ final class ContestAnimalDetailReactor: Reactor {
     
     private func loadAnimal() -> Observable<ContestAnimalDetailResponse> {
         logger.warning("no user id")
-        return provider.contestService.getAnimal(contestId: currentState.contestId, animalId: currentState.entry.animalId, userId: "1").asObservable()
+        return provider.contestService.getAnimal(contestId: currentState.contest.id, animalId: currentState.entry.animalId, userId: "1").asObservable()
     }
     
     private func loadPosts() -> Observable<[Post]> {
@@ -113,5 +113,9 @@ final class ContestAnimalDetailReactor: Reactor {
     func createExplorePostDetailReactor(indexPath: IndexPath) -> ExplorePostDetailReactor {
         let posts = currentState.posts
         return ExplorePostDetailReactor(provider: provider, startAt: indexPath.row, posts: posts)
+    }
+    
+    func createVoteContestDetailReactor() -> VoteContestDetailReactor {
+        return VoteContestDetailReactor(provider: provider, contest: currentState.contest, entry: currentState.entry)
     }
 }

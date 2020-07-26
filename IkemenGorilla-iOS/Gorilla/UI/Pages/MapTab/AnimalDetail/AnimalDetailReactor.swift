@@ -15,12 +15,14 @@ final class AnimalDetailReactor: Reactor {
         case loadCurrentContest
         case loadPastContests
         case loadPost
+        case tapFanButton
     }
     enum Mutation {
         case setAnimal(Animal)
         case setCurrentContest(Contest?)
         case setPastContestCellReactors([Contest])
         case setPosts([Post])
+        case setIsFan
     }
     
     struct State {
@@ -53,6 +55,8 @@ final class AnimalDetailReactor: Reactor {
             return loadPastContests().map(Mutation.setPastContestCellReactors)
         case .loadPost:
             return loadPosts().map(Mutation.setPosts)
+        case .tapFanButton:
+            return .just(.setIsFan)
         }
     }
     
@@ -85,6 +89,16 @@ final class AnimalDetailReactor: Reactor {
             state.pastContestCellReactors = contests.map { AnimalDetailPastContestCellReactor(contest: $0) }
         case .setPosts(let posts):
             state.posts = posts
+        case .setIsFan:
+            guard let isFan = currentState.animal?.isFan else {
+                return state
+            }
+            state.animal?.isFan = !isFan
+            if isFan {
+                state.animal?.numberOfFans -= 1
+            } else {
+                state.animal?.numberOfFans += 1
+            }
         }
         return state
     }

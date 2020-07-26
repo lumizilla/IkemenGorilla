@@ -82,6 +82,8 @@ final class ContestDetailResultViewController: UIViewController, View, ViewConst
         $0.isScrollEnabled = false
     }
     
+    private let awardEmptyView = AwardEmptyView()
+    
     // MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,6 +98,7 @@ final class ContestDetailResultViewController: UIViewController, View, ViewConst
         contentScrollView.addSubview(stackView)
         stackView.addArrangedSubview(awardHeader)
         stackView.addArrangedSubview(awardsCollectionView)
+        stackView.addArrangedSubview(awardEmptyView)
         stackView.addArrangedSubview(resultHeader)
         stackView.addArrangedSubview(resultsCollectionView)
     }
@@ -166,6 +169,15 @@ final class ContestDetailResultViewController: UIViewController, View, ViewConst
                     $0.height.equalTo(ContestDetailResultVoteCell.Const.cellHeight * CGFloat(count))
                     $0.width.equalTo(DeviceSize.screenWidth)
                 }
+            }
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.contest.status == "current" }
+            .distinctUntilChanged()
+            .bind { [weak self] isCurrent in
+                logger.debug(isCurrent)
+                self?.awardsCollectionView.isHidden = isCurrent
+                self?.awardEmptyView.isHidden = !isCurrent
             }
             .disposed(by: disposeBag)
     }

@@ -15,7 +15,7 @@ struct Animal: Entity {
     let sex: String
     let birthday: Date
     let description: String
-    let numberOfFans: Int
+    var numberOfFans: Int
     var isFan: Bool
     let zooName: String
     
