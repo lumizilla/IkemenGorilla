@@ -26,6 +26,8 @@ final class VoteContestDetailViewController: UIViewController, View, ViewConstru
     var disposeBag = DisposeBag()
     
     // MARK: - Views
+    let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: nil, action: nil)
+    
     private let contentScrollView = UIScrollView().then {
         $0.showsVerticalScrollIndicator = false
         $0.alwaysBounceVertical = true
@@ -139,6 +141,12 @@ final class VoteContestDetailViewController: UIViewController, View, ViewConstru
             }
             .disposed(by: disposeBag)
         
+        cancelButton.rx.tap
+            .bind { [weak self] _ in
+                self?.dismiss(animated: true, completion: nil)
+            }
+            .disposed(by: disposeBag)
+        
         // State
         reactor.state.map { $0.entryCellReactors }
             .distinctUntilChanged()
@@ -148,14 +156,24 @@ final class VoteContestDetailViewController: UIViewController, View, ViewConstru
             .disposed(by: disposeBag)
         
         reactor.state.map { ($0.entryCellReactors.count + 1) / 2 }
-        .distinctUntilChanged()
+            .distinctUntilChanged()
             .bind { [weak self] rowCount in
                 logger.debug(rowCount)
                 self?.entriesCollectionView.removeConstraints(self?.entriesCollectionView.constraints ?? [])
                 self?.entriesCollectionView.snp.makeConstraints {
                     $0.height.equalTo(CGFloat(rowCount) * Const.rowHeight)
                 }
-        }
+            }
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.isVoteFromAnimalPage }
+            .distinctUntilChanged()
+            .bind { [weak self] isVoteFromAnimalPage in
+                if isVoteFromAnimalPage {
+                    self?.navigationItem.leftBarButtonItem = self?.cancelButton
+                }
+            }
+            .disposed(by: disposeBag)
     }
 }
 
