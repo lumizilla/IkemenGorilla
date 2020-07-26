@@ -76,12 +76,12 @@ final class ContestDetailResultReactor: Reactor {
     func createContestAnimalDetailReactorFromAward(indexPath: IndexPath) -> ContestAnimalDetailReactor {
         let award = currentState.awardCellReactors[indexPath.row].currentState.award
         let entry = Entry(animalId: award.animalId, name: award.animalName, iconUrl: award.iconUrl, zooName: "")
-        return ContestAnimalDetailReactor(provider: provider, entry: entry, contestId: currentState.contest.id)
+        return ContestAnimalDetailReactor(provider: provider, entry: entry, contest: currentState.contest)
     }
     
     func createContestAnimalDetailReactorFromResult(indexPath: IndexPath) -> ContestAnimalDetailReactor {
         let result = currentState.resultCellReactors[indexPath.row].currentState.contestResult
         let entry = Entry(animalId: result.animalId, name: result.animalName, iconUrl: result.iconUrl, zooName: "")
-        return ContestAnimalDetailReactor(provider: provider, entry: entry, contestId: currentState.contest.id)
+        return ContestAnimalDetailReactor(provider: provider, entry: entry, contest: currentState.contest)
     }
 }
