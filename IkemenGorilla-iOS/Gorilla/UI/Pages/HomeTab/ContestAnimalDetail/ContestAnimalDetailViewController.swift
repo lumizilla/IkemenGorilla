@@ -84,6 +84,21 @@ final class ContestAnimalDetailViewController: UIViewController, View, ViewConst
                 self?.postsCollectionView.reactor?.action.onNext(.setPosts(posts))
             }
             .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.isVoted }
+            .distinctUntilChanged()
+            .bind { [weak self] isVoted in
+                if isVoted {
+                    let vc = VoteContestDetailViewController().then {
+                        $0.reactor = reactor.createVoteContestDetailReactor()
+                    }
+                    let nv = UINavigationController(rootViewController: vc).then {
+                        $0.modalPresentationStyle = .fullScreen
+                    }
+                    self?.present(nv, animated: true, completion: nil)
+                }
+            }
+            .disposed(by: disposeBag)
     }
 }
 
